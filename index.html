@@ -1,21 +1,2016 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>AiMetaverse</title>
-    <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1 { color: #24292e; }
-        .info { background: #f6f8fa; padding: 15px; border-radius: 6px; }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ai Metaverse — Creative Intelligence, Virtual Worlds &amp; AI for All</title>
+<meta name="description" content="Ai Metaverse (VERSED'ai) — an AI-powered metaverse hub. Clone yourself virtually, create royalty-free AI art, explore 100s of metaverse environments, access VR platforms, free AI tools directory, AI education &amp; enterprise agent models." />
+<meta name="keywords" content="AI metaverse, virtual reality, augmented reality, AI tools, Craiyon, avatar creation, VERSED ai, AI enterprise, metaverse environments" />
+<meta name="theme-color" content="#070312" />
+<meta property="og:title" content="Ai Metaverse — Explore the New Worlds of the Metaverse" />
+<meta property="og:description" content="Clone yourself virtually with a selfie, a voice snippet &amp; your birthday. Free AI tools, AI-Labs, AI Education and enterprise agent models." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://aimetaverse.cloud/" />
+<!-- Present only when this page is served by py/main.py (Eel injects its RPC bridge).
+     A 404 here is expected and harmless when the file is opened standalone. -->
+<script defer src="/eel.js" onerror="window.__eelMissing=true"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/humanoid.css" data-humanoid="css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2300f0ff'/%3E%3Cstop offset='1' stop-color='%23a855f7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%23070312'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='url(%23g)' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='6' fill='url(%23g)'/%3E%3C/svg%3E">
+<style>
+/* ============================================================
+   Ai Metaverse — rebuilt stylesheet (inline, no external deps)
+   ============================================================ */
+:root{
+  --bg:#070312;
+  --bg-2:#0d0722;
+  --panel:rgba(255,255,255,.045);
+  --panel-2:rgba(255,255,255,.07);
+  --stroke:rgba(255,255,255,.12);
+  --stroke-2:rgba(255,255,255,.22);
+  --txt:#f2eeff;
+  --muted:#a79fc4;
+  --dim:#7c739c;
+  --cyan:#00f0ff;
+  --violet:#a855f7;
+  --magenta:#ff2fb9;
+  --lime:#9dff3d;
+  --amber:#ffc857;
+  --grad:linear-gradient(100deg,#00f0ff 0%,#7c5cff 45%,#ff2fb9 100%);
+  --grad-soft:linear-gradient(140deg,rgba(0,240,255,.18),rgba(168,85,247,.16),rgba(255,47,185,.14));
+  --r-lg:26px; --r-md:18px; --r-sm:12px;
+  --max:1240px;
+  --shadow:0 24px 60px -24px rgba(0,0,0,.85);
+  --font-head:'Space Grotesk',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --font-body:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--txt);
+  font-family:var(--font-body);font-size:16px;line-height:1.65;
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:var(--font-head);line-height:1.12;margin:0;letter-spacing:-.02em;font-weight:700}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+::selection{background:rgba(255,47,185,.4)}
+
+/* --- ambient background --- */
+.bg-fx{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bg-fx .grid{
+  position:absolute;inset:-10%;
+  background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 25%,#000 30%,transparent 78%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 25%,#000 30%,transparent 78%);
+}
+.bg-fx .orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;animation:drift 26s ease-in-out infinite alternate}
+.bg-fx .o1{width:52vw;height:52vw;left:-14vw;top:-16vw;background:radial-gradient(circle,#1b3cff,transparent 68%)}
+.bg-fx .o2{width:44vw;height:44vw;right:-12vw;top:8vh;background:radial-gradient(circle,#a118d6,transparent 68%);animation-duration:32s}
+.bg-fx .o3{width:38vw;height:38vw;left:22vw;bottom:-18vw;background:radial-gradient(circle,#00b3c4,transparent 70%);animation-duration:38s}
+.bg-fx .noise{position:absolute;inset:0;opacity:.045;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+@keyframes drift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(4vw,-3vh,0) scale(1.12)}}
+
+/* --- layout --- */
+.wrap{width:min(100% - 40px,var(--max));margin-inline:auto}
+section{position:relative;z-index:1}
+.sec{padding:96px 0}
+.sec-tight{padding:64px 0}
+
+/* --- utilities --- */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--font-head);font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--cyan);background:rgba(0,240,255,.08);border:1px solid rgba(0,240,255,.28);
+  padding:7px 14px;border-radius:999px;
+}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.8)}}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.h-xl{font-size:clamp(2.5rem,7vw,4.6rem)}
+.h-lg{font-size:clamp(1.9rem,4.4vw,3rem)}
+.h-md{font-size:clamp(1.35rem,2.6vw,1.85rem)}
+.lead{color:var(--muted);font-size:clamp(1rem,1.6vw,1.13rem);max-width:64ch}
+.center{text-align:center}
+.center .lead{margin-inline:auto}
+.sec-head{display:flex;flex-direction:column;gap:18px;align-items:flex-start;margin-bottom:46px}
+.sec-head.center{align-items:center;text-align:center}
+
+/* --- buttons --- */
+.btn{
+  --bg1:#00f0ff;--bg2:#a855f7;
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:14px 26px;border-radius:999px;border:1px solid transparent;
+  font-family:var(--font-head);font-weight:600;font-size:14.5px;letter-spacing:.06em;text-transform:uppercase;
+  color:#070312;background:linear-gradient(100deg,var(--bg1),var(--bg2));
+  transition:transform .25s cubic-bezier(.2,.8,.3,1),box-shadow .25s,filter .25s;
+  box-shadow:0 12px 30px -12px rgba(124,92,255,.9);white-space:nowrap;
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 20px 42px -14px rgba(255,47,185,.75);filter:saturate(1.15)}
+.btn:active{transform:translateY(-1px)}
+.btn-ghost{
+  background:transparent;color:var(--txt);border:1px solid var(--stroke-2);
+  box-shadow:none;backdrop-filter:blur(8px);
+}
+.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan);box-shadow:0 0 0 1px rgba(0,240,255,.25),0 16px 34px -18px rgba(0,240,255,.7)}
+.btn-sm{padding:10px 18px;font-size:12.5px}
+.btn-row{display:flex;flex-wrap:wrap;gap:14px}
+
+/* --- cards / panels --- */
+.card{
+  background:var(--panel);border:1px solid var(--stroke);border-radius:var(--r-lg);
+  padding:28px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  transition:transform .35s cubic-bezier(.2,.8,.3,1),border-color .35s,background .35s,box-shadow .35s;
+  position:relative;overflow:hidden;
+}
+.card:hover{transform:translateY(-6px);border-color:var(--stroke-2);background:var(--panel-2);box-shadow:var(--shadow)}
+.card h3{font-size:1.12rem;margin-bottom:12px}
+.card p{color:var(--muted);font-size:14.6px}
+.glow-line{position:absolute;inset-inline:0;top:0;height:1px;background:var(--grad);opacity:.75}
+
+/* ============================================================
+   TOP STRIP + HEADER
+   ============================================================ */
+.topstrip{
+  position:relative;z-index:60;background:var(--grad);color:#0a0418;
+  font-family:var(--font-head);font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  font-size:11.5px;text-align:center;padding:9px 16px;
+}
+.topstrip a{border-bottom:1px solid rgba(10,4,24,.45)}
+.topstrip:hover{filter:brightness(1.08)}
+
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(7,3,18,.72);backdrop-filter:blur(18px) saturate(150%);-webkit-backdrop-filter:blur(18px) saturate(150%);
+  border-bottom:1px solid var(--stroke);
+}
+.nav{display:flex;align-items:center;gap:26px;height:74px}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand .mark{width:40px;height:40px;border-radius:12px;background:var(--grad);display:grid;place-items:center;box-shadow:0 8px 22px -8px rgba(168,85,247,.9)}
+.brand .mark svg{width:24px;height:24px}
+.brand .txt{display:flex;flex-direction:column;line-height:1}
+.brand .name{font-family:var(--font-head);font-weight:700;font-size:17px;letter-spacing:-.01em}
+.brand .sub{font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--cyan);margin-top:4px;font-weight:600}
+
+.nav-links{display:flex;align-items:center;gap:4px;margin-left:auto}
+.nav-links a{
+  position:relative;padding:9px 13px;border-radius:10px;font-size:13.4px;font-weight:500;color:var(--muted);
+  transition:color .2s,background .2s;letter-spacing:.01em;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--txt);background:rgba(255,255,255,.07)}
+.nav-links a.active::after{content:"";position:absolute;left:13px;right:13px;bottom:3px;height:2px;border-radius:2px;background:var(--grad)}
+.nav-cta{margin-left:12px}
+.burger{display:none;margin-left:auto;width:44px;height:44px;border-radius:12px;background:var(--panel);border:1px solid var(--stroke);place-items:center}
+.burger span{display:block;width:19px;height:2px;background:var(--txt);border-radius:2px;transition:.3s}
+.burger span+span{margin-top:5px}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-panel{display:none;border-top:1px solid var(--stroke);background:rgba(7,3,18,.97);padding:14px 0 22px}
+.mobile-panel.open{display:block;animation:slideDown .3s ease}
+@keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+.mobile-panel a{display:block;padding:13px 4px;border-bottom:1px solid rgba(255,255,255,.07);font-size:15px;color:var(--muted)}
+.mobile-panel a:hover{color:var(--cyan)}
+.mobile-panel .btn{width:100%;margin-top:16px}
+
+@media (max-width:1080px){
+  .nav-links,.nav-cta{display:none}
+  .burger{display:grid}
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{padding:78px 0 40px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,6.4vw,4.7rem);margin:22px 0 20px}
+.hero .lead{font-size:clamp(1.02rem,1.7vw,1.2rem)}
+.gen-tabs{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 30px}
+.gen-tab{
+  display:inline-flex;align-items:center;gap:9px;padding:9px 16px;border-radius:999px;
+  border:1px solid var(--stroke);background:var(--panel);color:var(--muted);
+  font-family:var(--font-head);font-size:12.6px;font-weight:600;letter-spacing:.04em;
+  transition:.25s;
+}
+.gen-tab svg{width:15px;height:15px}
+.gen-tab:hover{color:var(--txt);border-color:var(--stroke-2);transform:translateY(-2px)}
+.gen-tab[aria-selected="true"]{color:#070312;background:var(--grad);border-color:transparent;box-shadow:0 10px 26px -12px rgba(0,240,255,.8)}
+.clone-quote{
+  border-left:3px solid var(--magenta);padding:16px 20px;border-radius:0 var(--r-md) var(--r-md) 0;
+  background:linear-gradient(90deg,rgba(255,47,185,.12),transparent);
+  font-size:15.4px;color:#e7ddff;font-style:italic;max-width:56ch;margin-bottom:30px;
+}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+.stat{background:var(--panel);border:1px solid var(--stroke);border-radius:var(--r-md);padding:16px 18px;text-align:center}
+.stat b{display:block;font-family:var(--font-head);font-size:clamp(1.3rem,2.6vw,1.8rem);background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:600}
+
+/* hero visual */
+.hero-visual{position:relative;aspect-ratio:1/1;max-width:520px;margin-inline:auto;width:100%}
+.hv-planet{position:absolute;inset:8%;border-radius:50%;background:radial-gradient(circle at 32% 28%,#2b1a6b,#0a0620 62%);border:1px solid rgba(168,85,247,.35);box-shadow:inset -30px -30px 80px rgba(0,0,0,.8),0 0 90px -20px rgba(124,92,255,.7)}
+.hv-ring{position:absolute;border-radius:50%;border:1px solid rgba(0,240,255,.22)}
+.hv-r1{inset:2%;animation:spin 34s linear infinite}
+.hv-r2{inset:-6%;border-color:rgba(255,47,185,.18);border-style:dashed;animation:spin 52s linear reverse infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hv-node{position:absolute;width:13px;height:13px;border-radius:50%;background:var(--cyan);box-shadow:0 0 18px var(--cyan)}
+.hv-core{position:absolute;inset:30%;border-radius:50%;background:conic-gradient(from 0deg,#00f0ff,#7c5cff,#ff2fb9,#00f0ff);filter:blur(1px);opacity:.85;animation:spin 14s linear infinite}
+.hv-core-in{position:absolute;inset:34%;border-radius:50%;background:#0b0620;border:1px solid rgba(255,255,255,.2);display:grid;place-items:center;text-align:center;padding:8%}
+.hv-core-in strong{font-family:var(--font-head);font-size:clamp(.85rem,2vw,1.05rem);letter-spacing:.05em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hv-core-in small{display:block;color:var(--dim);font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-top:6px}
+.hv-chip{
+  position:absolute;background:rgba(10,5,26,.86);border:1px solid var(--stroke-2);border-radius:999px;
+  padding:7px 14px;font-size:11.5px;font-weight:600;letter-spacing:.06em;color:var(--txt);
+  backdrop-filter:blur(8px);box-shadow:var(--shadow);white-space:nowrap;
+  animation:float 6s ease-in-out infinite;
+}
+.hv-chip.c1{top:6%;left:-4%;color:var(--cyan);border-color:rgba(0,240,255,.4)}
+.hv-chip.c2{top:26%;right:-8%;color:var(--magenta);border-color:rgba(255,47,185,.4);animation-delay:1.2s}
+.hv-chip.c3{bottom:24%;left:-9%;color:var(--lime);border-color:rgba(157,255,61,.35);animation-delay:2.1s}
+.hv-chip.c4{bottom:4%;right:2%;color:var(--amber);border-color:rgba(255,200,87,.35);animation-delay:3s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+.hero-tap{
+  margin-top:22px;text-align:center;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);font-weight:600;
+}
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .hero-visual{max-width:400px}
+  .hero-stats{grid-template-columns:1fr;gap:10px}
+  .stat{display:flex;align-items:center;justify-content:space-between;text-align:left}
+}
+
+/* marquee */
+.marquee{border-block:1px solid var(--stroke);background:rgba(255,255,255,.025);overflow:hidden;padding:14px 0;margin-top:56px}
+.marquee-track{display:flex;gap:44px;width:max-content;animation:scroll 34s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee span{font-family:var(--font-head);font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);white-space:nowrap;display:flex;align-items:center;gap:44px}
+.marquee span::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--violet);opacity:.6}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ============================================================
+   METABOX CONSOLE
+   ============================================================ */
+.metabox{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:stretch}
+.console{
+  background:linear-gradient(160deg,rgba(20,10,48,.9),rgba(8,4,20,.92));
+  border:1px solid var(--stroke-2);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;
+}
+.console-bar{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--stroke);background:rgba(255,255,255,.04)}
+.console-bar i{width:11px;height:11px;border-radius:50%;background:#ff5f57;display:block}
+.console-bar i:nth-child(2){background:#febc2e}.console-bar i:nth-child(3){background:#28c840}
+.console-bar b{margin-left:8px;font-family:var(--font-head);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.console-bar .live{margin-left:auto;display:flex;align-items:center;gap:7px;font-size:10.5px;letter-spacing:.16em;color:var(--lime);text-transform:uppercase;font-weight:700}
+.console-bar .live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime);animation:pulse 1.6s infinite}
+.console-body{padding:20px;display:flex;flex-direction:column;gap:14px;flex:1;min-height:300px}
+.msg{max-width:86%;padding:13px 17px;border-radius:16px;font-size:14.4px;line-height:1.55;animation:msgIn .45s cubic-bezier(.2,.8,.3,1) both}
+@keyframes msgIn{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+.msg.bot{background:rgba(255,255,255,.06);border:1px solid var(--stroke);border-bottom-left-radius:5px;align-self:flex-start;color:#eae4ff}
+.msg.user{background:var(--grad);color:#0a0418;align-self:flex-end;border-bottom-right-radius:5px;font-weight:500}
+.msg.bot .who{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);margin-bottom:6px;font-weight:700}
+.typing{display:inline-flex;gap:5px;align-items:center;padding:14px 18px;background:rgba(255,255,255,.06);border:1px solid var(--stroke);border-radius:16px;border-bottom-left-radius:5px;align-self:flex-start}
+.typing i{width:7px;height:7px;border-radius:50%;background:var(--cyan);animation:bounce 1.2s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes bounce{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-6px);opacity:1}}
+.console-form{display:flex;gap:10px;padding:14px;border-top:1px solid var(--stroke);background:rgba(0,0,0,.28)}
+.console-form input{
+  flex:1;background:rgba(255,255,255,.06);border:1px solid var(--stroke);border-radius:999px;
+  padding:12px 18px;color:var(--txt);font-size:14px;font-family:var(--font-body);min-width:0;
+}
+.console-form input::placeholder{color:var(--dim)}
+.console-form input:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,240,255,.14)}
+.quick{display:flex;flex-wrap:wrap;gap:8px;padding:0 14px 14px;background:rgba(0,0,0,.28)}
+.quick button{
+  background:rgba(255,255,255,.05);border:1px solid var(--stroke);color:var(--muted);
+  border-radius:999px;padding:6px 13px;font-size:11.6px;transition:.2s;
+}
+.quick button:hover{color:var(--cyan);border-color:rgba(0,240,255,.45);background:rgba(0,240,255,.08)}
+
+/* feature pillar list beside console */
+.pillars{display:grid;gap:14px;align-content:center}
+.pillar{display:flex;gap:16px;align-items:flex-start;padding:18px;border-radius:var(--r-md);border:1px solid var(--stroke);background:var(--panel);transition:.3s}
+.pillar:hover{border-color:var(--stroke-2);transform:translateX(6px);background:var(--panel-2)}
+.pillar .ic{flex-shrink:0;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--grad-soft);border:1px solid var(--stroke)}
+.pillar .ic svg{width:22px;height:22px;stroke:var(--cyan)}
+.pillar h4{font-size:15.5px;margin-bottom:4px}
+.pillar p{font-size:13.6px;color:var(--muted)}
+@media (max-width:980px){.metabox{grid-template-columns:1fr}}
+
+/* ============================================================
+   KEY FEATURES (accordion groups)
+   ============================================================ */
+.acc{display:grid;gap:12px}
+.acc-item{border:1px solid var(--stroke);border-radius:var(--r-md);background:var(--panel);overflow:hidden;transition:border-color .3s,background .3s}
+.acc-item:hover{border-color:var(--stroke-2)}
+.acc-item.open{border-color:rgba(0,240,255,.4);background:rgba(0,240,255,.05)}
+.acc-head{
+  width:100%;display:flex;align-items:center;gap:16px;padding:20px 22px;background:transparent;border:0;text-align:left;color:var(--txt);
+}
+.acc-head .num{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--cyan);letter-spacing:.1em;min-width:26px}
+.acc-head h3{font-size:clamp(1rem,1.9vw,1.16rem);flex:1}
+.acc-head .chev{width:30px;height:30px;border-radius:50%;border:1px solid var(--stroke-2);display:grid;place-items:center;flex-shrink:0;transition:.3s}
+.acc-head .chev svg{width:14px;height:14px;stroke:var(--muted);transition:.3s}
+.acc-item.open .chev{background:var(--grad);border-color:transparent;transform:rotate(180deg)}
+.acc-item.open .chev svg{stroke:#070312}
+.acc-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .38s cubic-bezier(.2,.8,.3,1)}
+.acc-item.open .acc-panel{grid-template-rows:1fr}
+.acc-inner{overflow:hidden}
+.acc-inner ul{padding:0 22px 22px 64px;display:grid;gap:11px}
+.acc-inner li{position:relative;padding-left:22px;font-size:14.6px;color:var(--muted)}
+.acc-inner li::before{
+  content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:2px;
+  background:var(--grad);transform:rotate(45deg);
+}
+.acc-inner li b{color:var(--txt);font-weight:600}
+@media (max-width:640px){.acc-inner ul{padding-left:22px}}
+
+/* ============================================================
+   ABOUT / VALUE PROPS
+   ============================================================ */
+.value-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:20px}
+.value{padding:32px 26px;border-radius:var(--r-lg);border:1px solid var(--stroke);background:linear-gradient(165deg,rgba(255,255,255,.055),rgba(255,255,255,.015));position:relative;overflow:hidden;transition:.35s}
+.value::before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:var(--grad);filter:blur(70px);opacity:.22;top:-70px;right:-70px;transition:.4s}
+.value:hover{transform:translateY(-7px);border-color:var(--stroke-2)}
+.value:hover::before{opacity:.4;transform:scale(1.2)}
+.value .vi{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:rgba(0,240,255,.1);border:1px solid rgba(0,240,255,.3);margin-bottom:20px}
+.value .vi svg{width:26px;height:26px;stroke:var(--cyan)}
+.value h3{font-size:1.14rem;margin-bottom:11px}
+.value p{font-size:14.4px;color:var(--muted)}
+
+/* ============================================================
+   CRAIYON / KRE8TIVITY
+   ============================================================ */
+.kre8{border-radius:var(--r-lg);border:1px solid var(--stroke);background:linear-gradient(140deg,rgba(168,85,247,.16),rgba(0,240,255,.07) 55%,rgba(255,47,185,.12));padding:clamp(28px,5vw,58px);position:relative;overflow:hidden}
+.kre8-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;position:relative;z-index:2}
+.kre8 h2{margin-bottom:16px}
+.kre8 p{color:#ded4ff;font-size:15.2px;margin-bottom:14px}
+.kre8 .quote{font-family:var(--font-head);font-size:clamp(1.2rem,2.6vw,1.6rem);color:var(--txt);margin:22px 0}
+.art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.art-tile{aspect-ratio:1/1;border-radius:16px;border:1px solid var(--stroke-2);position:relative;overflow:hidden;cursor:pointer;transition:.35s}
+.art-tile:hover{transform:scale(1.05) rotate(-1deg);z-index:3;box-shadow:0 22px 44px -18px rgba(0,0,0,.9)}
+.art-tile span{position:absolute;left:8px;bottom:7px;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.85);font-weight:700;text-shadow:0 1px 6px #000}
+.a1{background:conic-gradient(from 210deg at 40% 40%,#ff2fb9,#7c5cff,#00f0ff,#ff2fb9)}
+.a2{background:radial-gradient(circle at 30% 30%,#ffd166,#ef476f 55%,#3d1a5b)}
+.a3{background:linear-gradient(135deg,#0f2027,#203a43,#2c5364)}
+.a4{background:radial-gradient(circle at 70% 25%,#9dff3d,#0b7285 60%,#06121f)}
+.a5{background:conic-gradient(from 40deg at 60% 60%,#ff9e00,#ff2fb9,#5f27cd,#ff9e00)}
+.a6{background:linear-gradient(160deg,#141e30,#243b55 55%,#00f0ff)}
+.art-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.6));opacity:.85}
+@media (max-width:900px){.kre8-grid{grid-template-columns:1fr}}
+
+/* ============================================================
+   EXPLORE GRID (MECCA OF AI)
+   ============================================================ */
+.explore-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.tile{
+  position:relative;display:flex;flex-direction:column;gap:12px;padding:22px 20px;border-radius:var(--r-md);
+  border:1px solid var(--stroke);background:var(--panel);overflow:hidden;
+  transition:transform .3s cubic-bezier(.2,.8,.3,1),border-color .3s,background .3s;cursor:pointer;text-align:left;color:var(--txt);
+}
+.tile::before{content:"";position:absolute;inset:0;background:var(--grad-soft);opacity:0;transition:.35s}
+.tile:hover{transform:translateY(-5px);border-color:rgba(0,240,255,.42)}
+.tile:hover::before{opacity:1}
+.tile>*{position:relative;z-index:2}
+.tile .ti{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:rgba(255,255,255,.07);border:1px solid var(--stroke);transition:.3s}
+.tile:hover .ti{background:var(--grad);border-color:transparent}
+.tile .ti svg{width:20px;height:20px;stroke:var(--cyan);transition:.3s}
+.tile:hover .ti svg{stroke:#070312}
+.tile h4{font-size:14.6px;line-height:1.32}
+.tile small{font-size:12.4px;color:var(--dim);margin-top:auto}
+.tile .go{position:absolute;right:16px;top:20px;opacity:0;transform:translateX(-6px);transition:.3s;color:var(--cyan);font-size:18px}
+.tile:hover .go{opacity:1;transform:none}
+
+/* ============================================================
+   SPONSORED AI TOOLS
+   ============================================================ */
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:18px}
+.tool{display:flex;flex-direction:column;gap:12px;padding:26px;border-radius:var(--r-lg);border:1px solid var(--stroke);background:var(--panel);transition:.35s;position:relative;overflow:hidden}
+.tool:hover{transform:translateY(-6px);border-color:var(--stroke-2);background:var(--panel-2)}
+.tool .tagline{position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad)}
+.tool .logo{height:34px;display:flex;align-items:center;font-family:var(--font-head);font-weight:700;font-size:19px;letter-spacing:-.02em}
+.tool h4{font-size:16px}
+.tool p{font-size:13.8px;color:var(--muted)}
+.tool .meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:8px}
+.chip{font-size:10.6px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;padding:5px 11px;border-radius:999px;border:1px solid var(--stroke);color:var(--muted);background:rgba(255,255,255,.04)}
+.chip.hot{color:var(--magenta);border-color:rgba(255,47,185,.4);background:rgba(255,47,185,.09)}
+.tool a.more{font-family:var(--font-head);font-size:12.6px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);display:inline-flex;align-items:center;gap:7px;margin-top:6px}
+.tool a.more:hover{gap:12px}
+
+/* ============================================================
+   CARDBOARD / VR CALLOUT
+   ============================================================ */
+.callout{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;border-radius:var(--r-lg);border:1px solid var(--stroke);background:linear-gradient(120deg,rgba(0,240,255,.09),rgba(13,7,34,.6));padding:clamp(26px,4.6vw,50px)}
+.vr-vis{position:relative;aspect-ratio:16/11;border-radius:var(--r-md);border:1px solid var(--stroke-2);background:radial-gradient(circle at 50% 45%,#1b1147,#08041a 70%);display:grid;place-items:center;overflow:hidden}
+.vr-vis svg{width:74%;height:auto;filter:drop-shadow(0 14px 30px rgba(0,240,255,.35))}
+.vr-vis .scan{position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(0,240,255,.14),transparent);height:38%;animation:scan 4.5s linear infinite}
+@keyframes scan{0%{transform:translateY(-120%)}100%{transform:translateY(320%)}}
+@media (max-width:900px){.callout{grid-template-columns:1fr}}
+
+/* ============================================================
+   AI-CLOUD / GADGETS
+   ============================================================ */
+.cloud-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.cloud-card{border-radius:var(--r-md);border:1px solid var(--stroke);background:var(--panel);overflow:hidden;transition:.35s}
+.cloud-card:hover{transform:translateY(-6px);border-color:rgba(168,85,247,.5)}
+.cloud-card .thumb{aspect-ratio:16/10;position:relative;overflow:hidden}
+.cloud-card .thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(7,3,18,.85))}
+.cloud-card .body{padding:18px 20px 22px}
+.cloud-card h4{font-size:15px;margin-bottom:6px}
+.cloud-card p{font-size:13.2px;color:var(--muted)}
+.t1{background:linear-gradient(135deg,#2b0a5e,#00f0ff)}
+.t2{background:linear-gradient(135deg,#ff2fb9,#3b0764)}
+.t3{background:linear-gradient(135deg,#0b3b4a,#9dff3d)}
+.t4{background:linear-gradient(135deg,#5b1e00,#ffc857)}
+.t5{background:linear-gradient(135deg,#101a4d,#7c5cff)}
+.t6{background:linear-gradient(135deg,#062b26,#00f0ff)}
+.thumb-ico{position:absolute;inset:0;display:grid;place-items:center;z-index:2}
+.thumb-ico svg{width:56px;height:56px;stroke:rgba(255,255,255,.9);filter:drop-shadow(0 6px 16px rgba(0,0,0,.5))}
+
+/* ============================================================
+   TABS: Explore AI / Metaverse / Virtual worlds
+   ============================================================ */
+.tabs-nav{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px;justify-content:center}
+.tab-btn{
+  padding:11px 22px;border-radius:999px;border:1px solid var(--stroke);background:var(--panel);color:var(--muted);
+  font-family:var(--font-head);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:.25s;
+}
+.tab-btn:hover{color:var(--txt);border-color:var(--stroke-2)}
+.tab-btn[aria-selected="true"]{color:#070312;background:var(--grad);border-color:transparent;box-shadow:0 12px 28px -14px rgba(0,240,255,.9)}
+.tab-panel{display:none;animation:fadeUp .45s cubic-bezier(.2,.8,.3,1)}
+.tab-panel.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.pill-cloud{display:flex;flex-wrap:wrap;gap:10px}
+.pill{
+  padding:9px 17px;border-radius:999px;border:1px solid var(--stroke);background:rgba(255,255,255,.04);
+  font-size:13.4px;color:var(--muted);transition:.25s;
+}
+.pill:hover{color:#070312;background:var(--grad);border-color:transparent;transform:translateY(-3px)}
+.worlds-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:12px}
+.world{
+  aspect-ratio:4/3;border-radius:var(--r-md);border:1px solid var(--stroke);position:relative;overflow:hidden;
+  display:flex;align-items:flex-end;padding:14px;transition:.35s;cursor:pointer;
+}
+.world::before{content:"";position:absolute;inset:0;background:var(--wb,linear-gradient(140deg,#1a1040,#0a0620));transition:.4s}
+.world::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(4,2,12,.88));z-index:1}
+.world:hover{transform:translateY(-5px) scale(1.02);border-color:rgba(0,240,255,.5)}
+.world:hover::before{transform:scale(1.12)}
+.world b{position:relative;z-index:2;font-family:var(--font-head);font-size:13px;letter-spacing:.01em;text-transform:capitalize}
+.world .w-dot{position:absolute;top:12px;right:12px;z-index:2;width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime);opacity:.85}
+.worlds-note{margin-top:16px;font-size:13px;color:var(--dim);text-align:center;letter-spacing:.04em}
+
+/* ============================================================
+   AGENT / ENTERPRISE
+   ============================================================ */
+.agent{display:grid;grid-template-columns:.95fr 1.05fr;gap:44px;align-items:center}
+.agent-visual{border-radius:var(--r-lg);border:1px solid var(--stroke);background:linear-gradient(160deg,rgba(20,10,48,.9),rgba(7,3,18,.9));padding:26px;box-shadow:var(--shadow)}
+.flow{display:grid;gap:10px}
+.flow-step{display:flex;align-items:center;gap:14px;padding:13px 16px;border-radius:14px;border:1px solid var(--stroke);background:rgba(255,255,255,.045);font-size:13.6px;transition:.3s}
+.flow-step:hover{border-color:rgba(0,240,255,.45);background:rgba(0,240,255,.07);transform:translateX(5px)}
+.flow-step .n{width:26px;height:26px;border-radius:8px;background:var(--grad);color:#070312;display:grid;place-items:center;font-family:var(--font-head);font-size:12px;font-weight:700;flex-shrink:0}
+.flow-arrow{text-align:center;color:var(--dim);font-size:15px;line-height:1}
+.checklist{display:grid;gap:13px;margin-top:22px}
+.checklist li{display:flex;gap:12px;font-size:14.6px;color:var(--muted);align-items:flex-start}
+.checklist svg{width:19px;height:19px;flex-shrink:0;margin-top:2px;stroke:var(--lime)}
+@media (max-width:900px){.agent{grid-template-columns:1fr}}
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:start}
+.info-card{border-radius:var(--r-lg);border:1px solid var(--stroke);background:var(--panel);padding:30px;display:grid;gap:22px}
+.info-row{display:flex;gap:15px;align-items:flex-start}
+.info-row .ic{width:42px;height:42px;border-radius:12px;background:var(--grad-soft);border:1px solid var(--stroke);display:grid;place-items:center;flex-shrink:0}
+.info-row .ic svg{width:20px;height:20px;stroke:var(--cyan)}
+.info-row b{display:block;font-family:var(--font-head);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:5px;font-weight:600}
+.info-row p,.info-row a{font-size:14.6px;color:var(--txt)}
+.info-row a:hover{color:var(--cyan)}
+.status{display:inline-flex;align-items:center;gap:9px;padding:8px 15px;border-radius:999px;font-size:12.4px;font-weight:600;border:1px solid rgba(157,255,61,.35);background:rgba(157,255,61,.09);color:var(--lime)}
+.status .d{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime);animation:pulse 1.8s infinite}
+.status.closed{border-color:rgba(255,95,87,.4);background:rgba(255,95,87,.09);color:#ff8a80}
+.status.closed .d{background:#ff8a80;box-shadow:0 0 10px #ff8a80}
+
+form.contact{border-radius:var(--r-lg);border:1px solid var(--stroke);background:linear-gradient(165deg,rgba(255,255,255,.055),rgba(255,255,255,.015));padding:32px;display:grid;gap:18px}
+.field{display:grid;gap:8px}
+.field label{font-family:var(--font-head);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.field label .req{color:var(--magenta)}
+.field input,.field textarea,.field select{
+  background:rgba(0,0,0,.32);border:1px solid var(--stroke);border-radius:var(--r-sm);
+  padding:14px 16px;color:var(--txt);font-family:var(--font-body);font-size:14.6px;transition:.25s;width:100%;
+}
+.field textarea{resize:vertical;min-height:132px}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,240,255,.14);background:rgba(0,0,0,.5)}
+.field input::placeholder,.field textarea::placeholder{color:#5d5479}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-foot{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.recap{font-size:11.6px;color:var(--dim);max-width:38ch;line-height:1.5}
+.form-msg{display:none;padding:14px 18px;border-radius:var(--r-sm);font-size:14px;border:1px solid rgba(157,255,61,.4);background:rgba(157,255,61,.1);color:var(--lime)}
+.form-msg.show{display:block;animation:fadeUp .4s ease}
+.form-msg.err{border-color:rgba(255,95,87,.45);background:rgba(255,95,87,.1);color:#ff9d95}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr}.two{grid-template-columns:1fr}}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer{border-top:1px solid var(--stroke);background:linear-gradient(180deg,rgba(13,7,34,.6),rgba(4,2,10,.95));padding:66px 0 0;position:relative;z-index:1}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:38px;padding-bottom:48px}
+.foot-grid h5{font-family:var(--font-head);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);margin:0 0 16px;font-weight:700}
+.foot-grid li{margin-bottom:10px}
+.foot-grid a{font-size:13.8px;color:var(--muted);transition:.2s}
+.foot-grid a:hover{color:var(--txt);padding-left:5px}
+.foot-about p{font-size:13.8px;color:var(--muted);margin-top:14px;max-width:38ch}
+.socials{display:flex;gap:10px;margin-top:20px}
+.socials a{width:38px;height:38px;border-radius:11px;border:1px solid var(--stroke);display:grid;place-items:center;background:var(--panel);transition:.25s}
+.socials a:hover{background:var(--grad);border-color:transparent;transform:translateY(-3px)}
+.socials svg{width:17px;height:17px;stroke:var(--muted);transition:.25s}
+.socials a:hover svg{stroke:#070312}
+.hashtags{border-top:1px solid var(--stroke);padding:22px 0;font-size:11.6px;color:var(--dim);line-height:2;word-break:break-word}
+.hashtags b{color:var(--muted);font-family:var(--font-head);letter-spacing:.14em;text-transform:uppercase;font-size:10.5px;display:block;margin-bottom:8px}
+.foot-bottom{border-top:1px solid var(--stroke);padding:22px 0;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;font-size:12.8px;color:var(--dim)}
+.foot-bottom a:hover{color:var(--cyan)}
+@media (max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.foot-grid{grid-template-columns:1fr}}
+
+/* --- scroll reveal --- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.8,.3,1),transform .7s cubic-bezier(.2,.8,.3,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+
+/* --- back to top --- */
+.totop{
+  position:fixed;right:22px;bottom:22px;z-index:70;width:48px;height:48px;border-radius:14px;border:1px solid var(--stroke-2);
+  background:rgba(10,5,26,.9);backdrop-filter:blur(10px);display:grid;place-items:center;opacity:0;pointer-events:none;transition:.3s;
+}
+.totop.show{opacity:1;pointer-events:auto}
+.totop:hover{background:var(--grad);border-color:transparent}
+.totop svg{width:18px;height:18px;stroke:var(--cyan)}
+.totop:hover svg{stroke:#070312}
+
+/* --- signup modal --- */
+.modal{position:fixed;inset:0;z-index:100;display:none;place-items:center;padding:20px}
+.modal.open{display:grid}
+.modal-bd{position:absolute;inset:0;background:rgba(4,2,10,.82);backdrop-filter:blur(7px);animation:fadeUp .3s}
+.modal-box{position:relative;width:min(100%,470px);border-radius:var(--r-lg);border:1px solid var(--stroke-2);background:linear-gradient(165deg,#150c33,#08041a);padding:34px;box-shadow:var(--shadow);animation:fadeUp .4s cubic-bezier(.2,.8,.3,1)}
+.modal-box h3{font-size:1.45rem;margin-bottom:8px}
+.modal-box p{color:var(--muted);font-size:14.2px;margin-bottom:22px}
+.modal-close{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:10px;border:1px solid var(--stroke);background:transparent;color:var(--muted);display:grid;place-items:center;font-size:18px;line-height:1}
+.modal-close:hover{color:var(--txt);border-color:var(--stroke-2)}
+.perks{display:grid;gap:9px;margin-bottom:22px}
+.perks li{display:flex;gap:10px;font-size:13.4px;color:var(--muted);align-items:center}
+.perks svg{width:16px;height:16px;stroke:var(--lime);flex-shrink:0}
+
+/* ============================================================
+   HEADER CONSTELLATION BACKDROP
+   ============================================================ */
+.site-header{overflow:visible}
+#constellation{
+  position:absolute;inset:0;width:100%;height:100%;
+  z-index:0;pointer-events:none;opacity:.95;
+}
+.site-header>.wrap{position:relative;z-index:2}
+.site-header::after{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(90deg,rgba(7,3,18,.88) 0%,rgba(7,3,18,.32) 38%,rgba(7,3,18,.32) 62%,rgba(7,3,18,.88) 100%);
+}
+
+</style>
 </head>
 <body>
-    <h1>AiMetaverse</h1>
-    <div class="info">
-        <strong>Repository:</strong> Constillation25/AiMetaverse<br>
-        <strong>Status:</strong> Deployed via GitHub Pages
+
+<div class="bg-fx" aria-hidden="true">
+  <div class="grid"></div>
+  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+  <div class="noise"></div>
+</div>
+
+<!-- ============ TOP STRIP ============ -->
+<div class="topstrip">
+  <a href="#signup" data-open-modal>★ Start your free trial today — Create your free account &amp; clone yourself virtually ★</a>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <canvas id="constellation" aria-hidden="true"></canvas>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Ai Metaverse home">
+      <span class="mark">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="8.2" stroke="#070312" stroke-width="2"/>
+          <circle cx="12" cy="12" r="3" fill="#070312"/>
+          <path d="M12 1.6v3M12 19.4v3M1.6 12h3M19.4 12h3" stroke="#070312" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="txt">
+        <span class="name">Ai&nbsp;Metaverse</span>
+        <span class="sub">VERSED'ai</span>
+      </span>
+    </a>
+
+    <nav class="nav-links" id="primary-nav" aria-label="Primary">
+      <a href="#top" class="active">Home</a>
+      <a href="why-ai.html">Why AI</a>
+      <a href="enterprise.html">AI for Enterprise</a>
+      <a href="tools.html">Free AI Tools Directory</a>
+      <a href="labs.html">Access AI-Labs</a>
+      <a href="education.html">AI Education</a>
+      <a href="worlds.html">Explore</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="#signup" class="btn btn-sm nav-cta" data-open-modal>Sign Up Free</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-panel" id="mobile-nav">
+    <div class="wrap">
+      <a href="#top">Home</a>
+      <a href="why-ai.html">Why AI</a>
+      <a href="enterprise.html">AI for Enterprise</a>
+      <a href="tools.html">Free AI Tools Directory</a>
+      <a href="labs.html">Access AI-Labs</a>
+      <a href="education.html">AI Education</a>
+      <a href="#explore">Explore the Metaverse</a>
+      <a href="worlds.html">Virtual Worlds</a>
+      <a href="shop.html">Virtual Shopping Kre8tor</a>
+      <a href="contact.html">Contact</a>
+      <a href="#signup" class="btn" data-open-modal>Create Your Free Account</a>
     </div>
-    <footer style="margin-top: 40px; color: #586069;">
-        <p>© 2026 CyGeL White / Kre8tive Holdings</p>
-    </footer>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><span class="dot"></span> Ai for All — App Hub for AI</span>
+      <h1>Explore the new worlds of the <span class="grad-text">Metaverse</span></h1>
+      <p class="lead">Welcome to a world that revolves around <b style="color:var(--txt)">creative intelligence</b>. Generate, converse and build across text, image, video and 3D objects — then step inside your creation.</p>
+
+      <div class="gen-tabs" role="tablist" aria-label="Generation modes">
+        <button class="gen-tab" role="tab" aria-selected="true" data-gen="text">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5h16v2M9 5v14M15 19h-6"/></svg>Text Generation
+        </button>
+        <button class="gen-tab" role="tab" aria-selected="false" data-gen="image">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.6"/><path d="m4 17 5-5 4 4 3-2 4 4"/></svg>Image Generation
+        </button>
+        <button class="gen-tab" role="tab" aria-selected="false" data-gen="video">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 11 6-3v8l-6-3z"/></svg>Video Generation
+        </button>
+        <button class="gen-tab" role="tab" aria-selected="false" data-gen="object">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="m3 7 9 5 9-5M12 12v10"/></svg>Object Generation
+        </button>
+      </div>
+
+      <blockquote class="clone-quote">
+        “Clone yourself virtually by taking a selfie, uploading a voice snippet &amp; entering your birthday to mimic horoscope traits.”
+      </blockquote>
+
+      <div class="btn-row">
+        <a href="#signup" class="btn" data-open-modal>
+          Create Your Free Account
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#metabox" class="btn btn-ghost">Conversate with the Metabox</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat"><b data-count="20000" data-suffix="+">0</b><span>AI Models</span></div>
+        <div class="stat"><b data-count="100" data-suffix="s">0</b><span>Metaverse Environments</span></div>
+        <div class="stat"><b data-count="24" data-suffix="/7">0</b><span>AI-Labs Access</span></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="hero-visual" id="hero-visual" aria-label="VERSED'ai humanoid companion stage">
+        <div class="hv-ring hv-r1"><span class="hv-node" style="top:-6px;left:50%"></span></div>
+        <div class="hv-ring hv-r2"><span class="hv-node" style="bottom:-6px;left:22%;background:var(--magenta);box-shadow:0 0 18px var(--magenta)"></span></div>
+        <div class="hv-planet" style="opacity:.35"></div>
+        <div id="hero-stage" style="position:absolute;inset:6%;z-index:5"><img id="hero-fallback-face" alt="VERSED&#39;ai — your humanoid companion" src="data:image/jpeg;base64,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" style="position:absolute;inset:2%;width:96%;height:96%;object-fit:cover;object-position:50% 30%;border-radius:50%;box-shadow:0 30px 80px -30px rgba(124,92,255,.95),0 0 0 6px rgba(255,255,255,.05),inset 0 0 60px rgba(0,240,255,.15);" /><span style="position:absolute;left:50%;bottom:-4%;transform:translateX(-50%);white-space:nowrap;font-family:var(--font-head);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);background:rgba(7,3,18,.85);border:1px solid rgba(0,240,255,.35);border-radius:999px;padding:6px 14px;">VERSED&#39;ai · humanoid companion</span></div>
+        <span class="hv-chip c1">Artificial Intelligence</span>
+        <span class="hv-chip c2">Metaverse</span>
+        <span class="hv-chip c3">Virtual Reality</span>
+        <span class="hv-chip c4">Augmented Reality</span>
+      </div>
+      <p class="hero-tap">▲ Your humanoid companion — click to talk, or pick a suggested prompt</p>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marquee">
+      <span>Artificial Intelligence</span><span>Metaverse</span><span>Virtual Reality</span><span>Augmented Reality</span><span>AI-powered Metaverse</span><span>Neural Networks</span><span>Deep Learning</span><span>Computer Vision</span><span>Natural Language Processing</span><span>Robotics</span><span>Autonomous Systems</span><span>Blockchain</span><span>Smart Contracts</span><span>NFTs</span>
+      <span>Artificial Intelligence</span><span>Metaverse</span><span>Virtual Reality</span><span>Augmented Reality</span><span>AI-powered Metaverse</span><span>Neural Networks</span><span>Deep Learning</span><span>Computer Vision</span><span>Natural Language Processing</span><span>Robotics</span><span>Autonomous Systems</span><span>Blockchain</span><span>Smart Contracts</span><span>NFTs</span>
+    </div>
+  </div>
+</section>
+<!-- ============ METABOX CONSOLE ============ -->
+<section class="sec" id="metabox">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow"><span class="dot"></span> Live AI Assistant</span>
+      <h2 class="h-lg">Conversate with the <span class="grad-text">Metabox</span></h2>
+      <p class="lead">Your always-on guide to the Ai Metaverse. Ask about avatar creation, environments, enterprise agents, or any of our 20,000+ AI models.</p>
+    </div>
+
+    <div class="metabox">
+      <div class="console reveal">
+        <div class="console-bar">
+          <i></i><i></i><i></i>
+          <b>metabox // session</b>
+          <span class="live">Online</span>
+        </div>
+        <div class="console-body" id="chat-body" aria-live="polite">
+          <div class="msg bot"><span class="who">Metabox</span>Welcome to the Ai Metaverse 👋 I can help you clone your avatar, generate royalty-free art, find a virtual world to explore, or deploy a custom agent model for your business. What would you like to create today?</div>
+        </div>
+        <div class="quick" id="quick-prompts">
+          <button type="button" data-q="How do I clone my avatar?">Clone my avatar</button>
+          <button type="button" data-q="Generate royalty-free AI art">Free AI art</button>
+          <button type="button" data-q="Show me virtual worlds to explore">Explore virtual worlds</button>
+          <button type="button" data-q="What AI tools are free?">Free AI tools</button>
+          <button type="button" data-q="Tell me about AI for enterprise">AI for enterprise</button>
+        </div>
+        <div class="hm-sugs" id="m-sugs" style="padding:0 14px 10px;background:rgba(0,0,0,.28)"></div>
+        <form class="console-form" id="chat-form" autocomplete="off">
+          <label for="chat-input" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Message the Metabox</label>
+          <input id="chat-input" type="text" placeholder="Ask the Metabox anything…" maxlength="240" />
+          <button class="btn btn-sm" type="submit">Send</button>
+        </form>
+        <div style="padding:0 14px 14px;background:rgba(0,0,0,.28)"><div class="hm-ads" id="m-ads"></div></div>
+      </div>
+
+      <div class="pillars reveal">
+        <div class="pillar">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a4 4 0 0 0-4 4v1a4 4 0 0 0-1 7.9V17a4 4 0 0 0 8 0v-1.1A4 4 0 0 0 16 8V7a4 4 0 0 0-4-4z"/><path d="M12 3v18"/></svg></span>
+          <div><h4>Artificial Intelligence</h4><p>Neural networks, deep learning, computer vision &amp; NLP — trained, validated and deployed for you.</p></div>
+        </div>
+        <div class="pillar">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 4 6 4 9s-1.4 6.2-4 9c-2.6-2.8-4-6-4-9s1.4-6.2 4-9z"/></svg></span>
+          <div><h4>Metaverse</h4><p>100s of persistent virtual worlds, social rooms, concerts, retail stores and communities.</p></div>
+        </div>
+        <div class="pillar">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="8" width="20" height="9" rx="3"/><path d="M7 12.5h.01M17 12.5h.01M9.5 12.5h5"/></svg></span>
+          <div><h4>Virtual Reality</h4><p>Head-mounted displays, Cardboard viewers and AI-powered sensors for full immersion.</p></div>
+        </div>
+        <div class="pillar">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H4z"/><path d="M8 20h8M12 16v4"/><path d="m8 12 2.5-3 2 2.2L15 8l1.5 4z"/></svg></span>
+          <div><h4>Augmented Reality</h4><p>Overlay digital twins, product previews and 3D scans onto the real world around you.</p></div>
+        </div>
+        <div class="pillar">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <div><h4>AI-powered Metaverse</h4><p>Digital humans, chatbots and autonomous agents that populate and run your worlds.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KEY FEATURES ============ -->
+<section class="sec" id="why-ai" style="background:linear-gradient(180deg,transparent,rgba(124,92,255,.07),transparent)">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow"><span class="dot"></span> Why AI</span>
+      <h2 class="h-lg">Key features &amp; services of the <span class="grad-text">Ai Metaverse</span></h2>
+      <p class="lead">Seven pillars. One platform. Tap any pillar to expand what's inside.</p>
+    </div>
+
+    <div class="acc reveal" id="features-acc">
+      <div class="acc-item open">
+        <button class="acc-head" aria-expanded="true">
+          <span class="num">01</span>
+          <h3>Social &amp; Interactive Features</h3>
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+        </button>
+        <div class="acc-panel"><div class="acc-inner"><ul>
+          <li>Interact with other users and <b>AI-powered entities</b> in a realistic and engaging way</li>
+          <li>Virtual remote meetings and collaboration</li>
+          <li>Virtual concerts and events</li>
+          <li>Virtual shopping and immersive shopping experiences</li>
+          <li>Social network with <b>free speech</b> and revenue opportunities through digital asset creation and trading</li>
+        </ul></div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="num">02</span>
+          <h3>AI-Powered Tools &amp; Services</h3>
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+        </button>
+        <div class="acc-panel"><div class="acc-inner"><ul>
+          <li><b>Craiyon:</b> AI art generator that turns text prompts into images</li>
+          <li>Product recommendation systems based on user preferences and behavior</li>
+          <li>Plagiarism analyzer for written content</li>
+          <li>Bird species prediction based on characteristics</li>
+          <li>AI model building, training, validation, testing and deployment</li>
+        </ul></div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="num">03</span>
+          <h3>Digital Payment &amp; Economy</h3>
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+        </button>
+        <div class="acc-panel"><div class="acc-inner"><ul>
+          <li>Customer-driven, seamless and secure digital payment ecosystem</li>
+          <li>Decentralized ecosystem with a democratic and equitable economy</li>
+          <li>Blockchain-based game and metaverse world for buying, selling and trading virtual assets</li>
+        </ul></div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="num">04</span>
+          <h3>Virtual Reality &amp; Experiences</h3>
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+        </button>
+        <div class="acc-panel"><div class="acc-inner"><ul>
+          <li>Virtual reality experiences through Cardboard</li>
+          <li>Virtual world creation with little to no human input</li>
+          <li>Wearable consumer head-mounted displays with AI-powered sensors</li>
+          <li>3D scanning technology that reconstructs real-world objects into virtual versions</li>
+        </ul></div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="num">05</span>
+          <h3>Enterprise &amp; Professional Solutions</h3>
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+        </button>
+        <div class="acc-panel"><div class="acc-inner"><ul>
+          <li>Enterprise metaverse solutions to build <b>digital twins</b> of offices and retail storefronts</li>
+          <li>Professional metaverse platform for training, workshops, events, conferences and team collaboration</li>
+        </ul></div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="num">06</span>
+          <h3>Gaming &amp; Entertainment</h3>
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+        </button>
+        <div class="acc-panel"><div class="acc-inner"><ul>
+          <li>Next-generation gaming metaverse from the convergence of blockchain, real-time visuals, multiplayer video games and decentralized financial technologies</li>
+          <li>Online game platform where users can build and access games</li>
+          <li>Social VR platform featuring virtual venues, interactive experiences and digital content</li>
+        </ul></div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="num">07</span>
+          <h3>Infrastructure &amp; Technology</h3>
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+        </button>
+        <div class="acc-panel"><div class="acc-inner"><ul>
+          <li>Supercomputing to build the metaverse of the future</li>
+          <li>AI-powered chatbots and digital humans for interactive experiences</li>
+          <li>Natural language processing for global communication within the metaverse</li>
+        </ul></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT / VALUE ============ -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow"><span class="dot"></span> Unlock the Future of Technology</span>
+      <h2 class="h-lg">Where innovative technology meets <span class="grad-text">immersive experiences</span></h2>
+      <p class="lead">We're dedicated to pushing the boundaries of human existence, creating new possibilities for connection and collaboration.</p>
+    </div>
+
+    <div class="value-grid">
+      <article class="value reveal">
+        <span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.8 2.8M16.2 16.2 19 19M19 5l-2.8 2.8M7.8 16.2 5 19"/><circle cx="12" cy="12" r="4"/></svg></span>
+        <h3>Empowering Individuals &amp; Businesses</h3>
+        <p>With a focus on excellence and efficiency, we provide cutting-edge virtual and artificial solutions. Our state-of-the-art AI models — numbering over <b style="color:var(--txt)">20,000</b> — are designed to help you work smarter, not harder.</p>
+      </article>
+
+      <article class="value reveal">
+        <span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span>
+        <h3>Streamline Your Workflow</h3>
+        <p>Say goodbye to manual work and hello to increased productivity. Our AI models assist with natural language processing, code generation and translation across your entire stack.</p>
+      </article>
+
+      <article class="value reveal">
+        <span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9" r="2.6"/><path d="M16 14.4a5.6 5.6 0 0 1 5.5 5.6"/></svg></span>
+        <h3>Join the AiMetAVerse Community</h3>
+        <p>Gain access to our virtual world: connect with AI enthusiasts, attend exclusive events and enjoy free storage cloud services. Upgraded users unlock our most advanced AI models and tools.</p>
+      </article>
+
+      <article class="value reveal">
+        <span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg></span>
+        <h3>Start Turning Ambitions into Realities</h3>
+        <p>Don't wait — stop dreaming and start achieving with Ai Metaverse today. Build your world, launch your store, deploy your agent.</p>
+        <a href="#signup" class="btn btn-sm btn-ghost" style="margin-top:16px" data-open-modal>Find out more</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CRAIYON / KRE8TIVITY ============ -->
+<section class="sec-tight" id="labs">
+  <div class="wrap">
+    <div class="kre8 reveal">
+      <div class="kre8-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span> Access Ai-Labs</span>
+          <h2 class="h-lg" style="margin-top:20px">Supercharge your artistic <span class="grad-text">Kre8tivty</span></h2>
+          <p style="font-family:var(--font-head);letter-spacing:.14em;text-transform:uppercase;font-size:12.5px;color:var(--cyan);margin-bottom:18px">Stop imagining and start creating</p>
+          <p><b style="color:var(--txt)">Craiyon</b> is the new kid on the tech block and the best AI art generator (in our community's words!). The brainchild of our CEO, lead researcher and AI hero, <b style="color:var(--txt)">Boris Dayma</b>, Craiyon is a free AI image generator that's painting a new generation for the AI art revolution through our own model. Since 2022 we've been ushering in the next era of AI image generation.</p>
+          <p class="quote">“If you can dream it, Craiyon can draw it.”</p>
+          <div class="btn-row">
+            <a href="#explore" class="btn">Kre8te Free Royalty-Free Images with AI</a>
+            <a href="#tools" class="btn btn-ghost">Browse the Tools Directory</a>
+          </div>
+        </div>
+        <div>
+          <div class="art-grid" id="art-grid">
+            <div class="art-tile a1" tabindex="0" role="button" aria-label="Generate AI artwork: neon nebula"><span>Nebula</span></div>
+            <div class="art-tile a2" tabindex="0" role="button" aria-label="Generate AI artwork: solar flare"><span>Solar</span></div>
+            <div class="art-tile a3" tabindex="0" role="button" aria-label="Generate AI artwork: deep ocean"><span>Abyss</span></div>
+            <div class="art-tile a4" tabindex="0" role="button" aria-label="Generate AI artwork: bio garden"><span>Bio</span></div>
+            <div class="art-tile a5" tabindex="0" role="button" aria-label="Generate AI artwork: prism bloom"><span>Prism</span></div>
+            <div class="art-tile a6" tabindex="0" role="button" aria-label="Generate AI artwork: cyber city"><span>Cyber</span></div>
+          </div>
+          <p style="margin-top:16px;font-size:12px;color:var(--dim);text-align:center;letter-spacing:.14em;text-transform:uppercase">Tap a tile to re-roll a new prompt</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============ EXPLORE THE MECCA OF AI ============ -->
+<section class="sec" id="explore">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow"><span class="dot"></span> Experience the Mecca of AI</span>
+      <h2 class="h-lg">Create a universe of <span class="grad-text">your own</span></h2>
+      <p class="lead">Twenty-two doors into the Ai Metaverse. Every tile is a live launch point — avatar, art, voice, education, commerce and worlds.</p>
+    </div>
+
+    <div class="explore-grid reveal" id="explore-grid">
+      <a class="tile" href="avatar-create.html">
+        <span class="go">→</span>
+        <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span>
+        <h4>Upload Your Voice to Attach to Avatar</h4><small>Voice cloning &amp; lip-sync</small>
+      </a>
+      <a class="tile" href="avatar-create.html">
+        <span class="go">→</span>
+        <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3.5 8.5h17M3.5 15.5h17"/></svg></span>
+        <h4>Connect Your Avatar to Your Birth Chart</h4><small>Horoscope trait mimicry</small>
+      </a>
+      <a class="tile" href="metabox.html">
+        <span class="go">→</span>
+        <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></span>
+        <h4>Select Avatar Prompts with Prompter</h4><small>Guided prompt library</small>
+      </a>
+      <a class="tile" href="worlds.html">
+        <span class="go">→</span>
+        <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m3.5 9.5 17 5M12 3c-3 3-4.5 6-4.5 9s1.5 6 4.5 9c3-3 4.5-6 4.5-9s-1.5-6-4.5-9z"/></svg></span>
+        <h4>Explore the Ai_Metaverse</h4><small>Persistent shared worlds</small>
+      </a>
+      <a class="tile" href="education.html">
+        <span class="go">→</span>
+        <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9 12 4 2 9l10 5z"/><path d="M6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg></span>
+        <h4>Get Educated with AI</h4><small>Ai_Education portal</small>
+      </a>
+      <a class="tile" href="education.html">
+        <span class="go">→</span>
+        <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></span>
+        <h4>Learn AI Programming &amp; Development</h4><small>Get certified</small>
+      </a>
+      <a class="tile" href="worlds.html">
+        <span class="go">→</span>
+        <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="1.6"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.6"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.6"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.6"/></svg></span>
+        <h4>Explore 100s of Metaverse Environments</h4><small>World directory</small>
+      </a>
+      <a class="tile" href="worlds.html">
+        <span class="go">→</span>
+        <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="8" width="20" height="9" rx="3"/><path d="M9.5 17 12 13.5 14.5 17"/></svg></span>
+        <h4>Access VR Virtual Reality Platforms</h4><small>Cardboard to HMD</small>
+      </a>
+      <a class="tile" href="enterprise.html">
+        <span class="go">→</span>
+        <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="m3 7 9 5 9-5M12 12v10"/></svg></span>
+        <h4>Build Your Own Metaverse — Learn How</h4><small>Creator toolkit</small>
+      </a>
+      <a class="tile" href="labs.html">
+        <span class="go">→</span>
+        <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 11 6-3v8l-6-3z"/></svg></span>
+        <h4>Create YouTube / Social Media Videos with AI</h4><small>Script → render → post</small>
+      </a>
+      <a class="tile" href="labs.html">
+        <span class="go">→</span>
+        <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="4"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 5.5a4 4 0 0 1 0 7M21.5 20a6 6 0 0 0-3.2-5.4"/></svg></span>
+        <h4>Create Videos &amp; Face Swaps with Re-Face AI</h4><small>Identity-safe swaps</small>
+      </a>
+      <a class="tile" href="tools.html">
+        <span class="go">→</span>
+        <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 4 6 4 9s-1.4 6.2-4 9c-2.6-2.8-4-6-4-9s1.4-6.2 4-9z"/></svg></span>
+        <h4>Create Websites with AI</h4><small>Prompt-to-page builder</small>
+      </a>
+      <a class="tile" href="tools.html">
+        <span class="go">→</span>
+        <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18.5h2"/></svg></span>
+        <h4>Create Mobile Apps — AI AppBuilder</h4><small>No-code to app store</small>
+      </a>
+      <a class="tile" href="enterprise.html">
+        <span class="go">→</span>
+        <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+        <h4>Hire AI Telemarketers</h4><small>24/7 outbound agents</small>
+      </a>
+      <a class="tile" href="shop.html">
+        <span class="go">→</span>
+        <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9 5 3h14l2 6"/><path d="M3 9h18v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 13h6"/></svg></span>
+        <h4>Setup Virtual Retail Store</h4><small>Immersive commerce</small>
+      </a>
+      <a class="tile" href="enterprise.html">
+        <span class="go">→</span>
+        <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/></svg></span>
+        <h4>Create a Free AI CRM</h4><small>Customer relationship management</small>
+      </a>
+      <a class="tile" href="enterprise.html">
+        <span class="go">→</span>
+        <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4z"/><path d="M5 21a7 7 0 0 1 14 0"/><path d="M2 12h2M20 12h2"/></svg></span>
+        <h4>AI Biometric Verification &amp; Payments</h4><small>Enroll with MyBUY'o</small>
+      </a>
+      <a class="tile" href="shop.html">
+        <span class="go">→</span>
+        <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg></span>
+        <h4>Earn BitBucks</h4><small>AI-powered purchase &amp; round-up rewards</small>
+      </a>
+      <a class="tile" href="worlds.html">
+        <span class="go">→</span>
+        <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="9.5" cy="10" r="1.4" fill="currentColor" stroke="none"/><circle cx="15" cy="14.5" r="1" fill="currentColor" stroke="none"/><path d="M6 14c2-1.5 4-2 6.5-1.5"/></svg></span>
+        <h4>Explore Mars Virtually with AI</h4><small>Planet.Ai expedition</small>
+      </a>
+      <a class="tile" href="tools.html">
+        <span class="go">→</span>
+        <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/><path d="M10 21v-6h4v6"/></svg></span>
+        <h4>Search Virtual Real-Estate with AI</h4><small>Land &amp; venue discovery</small>
+      </a>
+      <a class="tile" href="labs.html">
+        <span class="go">→</span>
+        <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.6"/><circle cx="17.5" cy="16" r="2.6"/></svg></span>
+        <h4>Create Your Own Song Lyrics</h4><small>Ai.Records studio</small>
+      </a>
+      <a class="tile" href="worlds.html">
+        <span class="go">→</span>
+        <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.8-.9L3 20.5l1.6-5A8.4 8.4 0 1 1 21 11.5z"/></svg></span>
+        <h4>Find Friends in Metaverse Communities</h4><small>Virtual concerts &amp; in-store shopping</small>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOCIAL / COMMUNITIES ============ -->
+<section class="sec-tight" id="social" style="background:linear-gradient(180deg,transparent,rgba(255,47,185,.07),transparent)">
+  <div class="wrap">
+    <div class="callout reveal">
+      <div>
+        <span class="eyebrow" style="color:var(--magenta);border-color:rgba(255,47,185,.35);background:rgba(255,47,185,.09)"><span class="dot" style="background:var(--magenta);box-shadow:0 0 12px var(--magenta)"></span> Ai.Records &amp; Communities</span>
+        <h2 class="h-md" style="margin:20px 0 14px">Find like-minded friends currently online</h2>
+        <p class="lead">Drop into <b style="color:var(--txt)">100s of different virtual video chat rooms</b> and metaverse communities. Create your own song lyrics with Ai.Records, explore virtual concerts, and shop in-store virtually — all from one avatar.</p>
+        <p style="margin-top:18px;color:var(--muted);font-size:14.6px">Millions of virtual fashion, home décor and clothing items are available in the virtual world AiMetaverse.</p>
+        <div class="btn-row" style="margin-top:26px">
+          <a href="#shop" class="btn">Shop In-Store Virtually</a>
+          <a href="#virtual-worlds" class="btn btn-ghost">Browse Chat Rooms</a>
+        </div>
+      </div>
+      <div class="vr-vis" aria-hidden="true">
+        <div class="scan"></div>
+        <svg viewBox="0 0 200 140" fill="none">
+          <defs>
+            <linearGradient id="vg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#00f0ff"/><stop offset=".5" stop-color="#a855f7"/><stop offset="1" stop-color="#ff2fb9"/>
+            </linearGradient>
+          </defs>
+          <circle cx="100" cy="52" r="20" stroke="url(#vg)" stroke-width="3"/>
+          <path d="M62 118c0-21 17-34 38-34s38 13 38 34" stroke="url(#vg)" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="40" cy="70" r="12" stroke="url(#vg)" stroke-width="2.4" opacity=".65"/>
+          <circle cx="160" cy="70" r="12" stroke="url(#vg)" stroke-width="2.4" opacity=".65"/>
+          <circle cx="56" cy="34" r="8" stroke="url(#vg)" stroke-width="2" opacity=".45"/>
+          <circle cx="146" cy="30" r="8" stroke="url(#vg)" stroke-width="2" opacity=".45"/>
+          <path d="M52 70h16M132 70h16M64 38l16 10M136 34l-16 12" stroke="url(#vg)" stroke-width="1.6" opacity=".5" stroke-dasharray="3 4"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FREE AI TOOLS DIRECTORY ============ -->
+<section class="sec" id="tools">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow"><span class="dot"></span> Free AI Tools Directory</span>
+      <h2 class="h-lg">Take advantage of <span class="grad-text">Ai'Social</span></h2>
+      <p class="lead">The sponsored AI tools below can help you write, create videos, images, music, and suggestive prompts with calls to action. Grow your reach and get more business with social media.</p>
+    </div>
+
+    <div class="tools-grid reveal">
+      <article class="tool">
+        <span class="tagline"></span>
+        <div class="logo"><span class="grad-text">MagicStudio</span></div>
+        <h4>Make beautiful images, with the magic of AI</h4>
+        <p>Remove backgrounds, extend canvases, and generate product-ready visuals from a single text prompt.</p>
+        <div class="meta"><span class="chip">AI-driven Experiences</span><span class="chip">Personalized Content</span><span class="chip">Interactive Media</span><span class="chip">Data Visualization</span><span class="chip">User Experience</span></div>
+        <a class="more" href="https://magicstudio.com" target="_blank" rel="noopener noreferrer">Visit magicstudio.com →</a>
+      </article>
+
+      <article class="tool">
+        <span class="tagline"></span>
+        <div class="logo"><span class="grad-text">Wordtune</span></div>
+        <h4>Reach Your Professional Potential</h4>
+        <p>Everyone has tons of work to get through. Choose Wordtune Generative AI to speed up their tasks. Trusted by over 2 million users from 100+ countries.</p>
+        <div class="meta"><span class="chip hot">2M+ users</span><span class="chip">100+ countries</span><span class="chip">Rewrite</span><span class="chip">Summarize</span></div>
+        <a class="more" href="https://www.wordtune.com" target="_blank" rel="noopener noreferrer">Visit wordtune.com →</a>
+      </article>
+
+      <article class="tool">
+        <span class="tagline"></span>
+        <div class="logo"><span class="grad-text">Acrolinx</span></div>
+        <h4>Make your writing standards… STANDARD</h4>
+        <p>Whether a company has written 100,000 words or 1 billion, Acrolinx makes sure each one reflects your style guide.</p>
+        <div class="meta"><span class="chip">Style guide</span><span class="chip">Governance</span><span class="chip">Enterprise scale</span></div>
+        <a class="more" href="https://www.acrolinx.com" target="_blank" rel="noopener noreferrer">Visit acrolinx.com →</a>
+      </article>
+
+      <article class="tool">
+        <span class="tagline"></span>
+        <div class="logo"><span class="grad-text">Brandwatch</span></div>
+        <h4>Understand + engage with customers at the speed of social</h4>
+        <p>Forbes 100 most valuable brands trust Brandwatch — the social suite built for our fast-moving world.</p>
+        <div class="meta"><span class="chip hot">Forbes 100 trusted</span><span class="chip">Listening</span><span class="chip">Analytics</span></div>
+        <a class="more" href="https://www.brandwatch.com" target="_blank" rel="noopener noreferrer">Visit brandwatch.com →</a>
+      </article>
+
+      <article class="tool">
+        <span class="tagline"></span>
+        <div class="logo"><span class="grad-text">Craiyon</span></div>
+        <h4>Free AI image generator</h4>
+        <p>Text prompt in, nine royalty-free images out. Built in-house since 2022 by our own model and research team.</p>
+        <div class="meta"><span class="chip hot">Free</span><span class="chip">Royalty-free</span><span class="chip">In-house model</span></div>
+        <a class="more" href="#labs">Open Craiyon in Ai-Labs →</a>
+      </article>
+
+      <article class="tool">
+        <span class="tagline"></span>
+        <div class="logo"><span class="grad-text">Zoom AI Companion</span></div>
+        <h4>AI-powered collaboration platform</h4>
+        <p>Zoom AI Companion for Zoom Phone, Team Chat, Events and Contact Center. Ask AI Companion anything inside Zoom Workplace.</p>
+        <div class="meta"><span class="chip">Phone</span><span class="chip">Team Chat</span><span class="chip">Events</span><span class="chip">Contact Center</span></div>
+        <a class="more" href="https://www.zoom.com" target="_blank" rel="noopener noreferrer">Visit zoom.com →</a>
+      </article>
+    </div>
+
+    <div class="center reveal" style="margin-top:34px">
+      <button class="btn btn-ghost" id="tools-more" aria-expanded="false">Show More Tools</button>
+    </div>
+    <div class="tools-grid reveal" id="tools-extra" style="display:none;margin-top:22px">
+      <article class="tool"><span class="tagline"></span><div class="logo"><span class="grad-text">Re-Face AI</span></div><h4>Videos &amp; face swaps</h4><p>Swap identities into short-form video for social, ads and entertainment with consent-safe pipelines.</p><div class="meta"><span class="chip">Video</span><span class="chip">Face swap</span></div><a class="more" href="#labs">Open in Ai-Labs →</a></article>
+      <article class="tool"><span class="tagline"></span><div class="logo"><span class="grad-text">Ai.Records</span></div><h4>Song lyrics &amp; music</h4><p>Write, structure and produce original lyrics and tracks for your metaverse venue or brand.</p><div class="meta"><span class="chip">Music</span><span class="chip">Lyrics</span></div><a class="more" href="#labs">Open in Ai-Labs →</a></article>
+      <article class="tool"><span class="tagline"></span><div class="logo"><span class="grad-text">AI AppBuilder</span></div><h4>Prompt-to-mobile-app</h4><p>Describe the app you want; get screens, logic and a build you can ship to stores.</p><div class="meta"><span class="chip">No-code</span><span class="chip">Mobile</span></div><a class="more" href="#enterprise">Learn more →</a></article>
+      <article class="tool"><span class="tagline"></span><div class="logo"><span class="grad-text">MyBUY'o</span></div><h4>Biometric verification &amp; payments</h4><p>Enroll once, pay with your face or voice across the virtual retail network.</p><div class="meta"><span class="chip hot">Payments</span><span class="chip">Biometrics</span></div><a class="more" href="#enterprise">Enroll now →</a></article>
+      <article class="tool"><span class="tagline"></span><div class="logo"><span class="grad-text">Plagiarism Analyzer</span></div><h4>Written content checks</h4><p>Scan drafts for originality before you publish to your blog, store or metaverse signage.</p><div class="meta"><span class="chip">Writing</span><span class="chip">Integrity</span></div><a class="more" href="#labs">Run a scan →</a></article>
+      <article class="tool"><span class="tagline"></span><div class="logo"><span class="grad-text">Bird Species Predictor</span></div><h4>Characteristic-based ID</h4><p>A classic demo model: describe a bird, get the species. Great for AI education labs.</p><div class="meta"><span class="chip">Education</span><span class="chip">Vision</span></div><a class="more" href="#education">Try in class →</a></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VR / CARDBOARD ============ -->
+<section class="sec-tight" id="vr">
+  <div class="wrap">
+    <div class="callout reveal" style="background:linear-gradient(120deg,rgba(157,255,61,.08),rgba(13,7,34,.6))">
+      <div>
+        <span class="eyebrow" style="color:var(--lime);border-color:rgba(157,255,61,.32);background:rgba(157,255,61,.08)"><span class="dot" style="background:var(--lime);box-shadow:0 0 12px var(--lime)"></span> Explore Web3 &amp; 3D AI Environments</span>
+        <h2 class="h-md" style="margin:20px 0 14px">Welcome to the Ai-Cloud</h2>
+        <p class="lead">Visit new places, play immersive games, fly through space and more. Get it, fold it and look inside to enter the world of Cardboard — a VR experience starting with a simple viewer anyone can build or buy.</p>
+        <p style="margin-top:16px;color:var(--muted);font-size:14.6px">Once you have it, you can explore a variety of apps that unfold all around you. And with plenty of viewer types available, you're sure to find one that fits you just right.</p>
+        <div class="btn-row" style="margin-top:26px">
+          <a class="btn" href="https://arvr.google.com/cardboard/get-cardboard/" target="_blank" rel="noopener noreferrer">Get Cardboard — Learn More</a>
+          <a class="btn btn-ghost" href="#virtual-worlds">See 3D Environments</a>
+        </div>
+      </div>
+      <div class="vr-vis" aria-hidden="true" style="background:radial-gradient(circle at 50% 45%,#123018,#06120a 72%)">
+        <div class="scan" style="background:linear-gradient(180deg,transparent,rgba(157,255,61,.16),transparent)"></div>
+        <svg viewBox="0 0 220 120" fill="none">
+          <defs><linearGradient id="cg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9dff3d"/><stop offset="1" stop-color="#00f0ff"/></linearGradient></defs>
+          <rect x="18" y="30" width="184" height="62" rx="22" stroke="url(#cg)" stroke-width="3.4"/>
+          <circle cx="76" cy="61" r="21" stroke="url(#cg)" stroke-width="3"/>
+          <circle cx="144" cy="61" r="21" stroke="url(#cg)" stroke-width="3"/>
+          <path d="M97 61c4-6 22-6 26 0" stroke="url(#cg)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M18 46 6 34M202 46l12-12" stroke="url(#cg)" stroke-width="3" stroke-linecap="round" opacity=".6"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AI-CLOUD / SHOP ============ -->
+<section class="sec" id="shop">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow"><span class="dot"></span> Virtual Shopping Kre8tor</span>
+      <h2 class="h-lg">Shop the latest must-have <span class="grad-text">AI gadgets &amp; accessories</span></h2>
+      <p class="lead">AI Avatar &amp; Environments setup — everything you need to go from selfie to fully rigged, world-ready digital twin.</p>
+    </div>
+
+    <div class="cloud-grid reveal">
+      <article class="cloud-card">
+        <div class="thumb t1"><span class="thumb-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></svg></span></div>
+        <div class="body"><h4>Meta Avatar Setup</h4><p>Selfie → rigged 3D avatar with voice and birth-chart personality traits.</p></div>
+      </article>
+      <article class="cloud-card">
+        <div class="thumb t2"><span class="thumb-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8v8l9 5 9-5V8z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></span></div>
+        <div class="body"><h4>Environment Kits</h4><p>Pre-built rooms, venues and planets — drop in and host in minutes.</p></div>
+      </article>
+      <article class="cloud-card">
+        <div class="thumb t3"><span class="thumb-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="8" width="20" height="9" rx="3"/><path d="M9.5 12.5h.01M14.5 12.5h.01"/></svg></span></div>
+        <div class="body"><h4>HMD &amp; Sensors</h4><p>Wearable consumer head-mounted displays with AI-powered sensors.</p></div>
+      </article>
+      <article class="cloud-card">
+        <div class="thumb t4"><span class="thumb-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M8 5l4 3 4-3"/><rect x="4" y="9" width="16" height="12" rx="3"/><circle cx="12" cy="15" r="3"/></svg></span></div>
+        <div class="body"><h4>3D Scanning Rig</h4><p>Reconstruct real-world objects into virtual versions you can sell.</p></div>
+      </article>
+      <article class="cloud-card">
+        <div class="thumb t5"><span class="thumb-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a5 5 0 1 1 1-9.9A6 6 0 0 1 19.7 10 4.5 4.5 0 0 1 18 18z"/></svg></span></div>
+        <div class="body"><h4>Free Cloud Storage</h4><p>Members get free storage cloud services for assets, renders and worlds.</p></div>
+      </article>
+      <article class="cloud-card">
+        <div class="thumb t6"><span class="thumb-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18.5h2"/></svg></span></div>
+        <div class="body"><h4>Creator Accessories</h4><p>Controllers, capture gear and prompt packs for the Kre8tor workflow.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- ============ EDUCATION + EXPLORE AI (TABS) ============ -->
+<section class="sec" id="education" style="background:linear-gradient(180deg,transparent,rgba(0,240,255,.06),transparent)">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow"><span class="dot"></span> Ai_Education — Get Certified</span>
+      <h2 class="h-lg">Explore the different <span class="grad-text">AI</span> &amp; <span class="grad-text">Metaverse</span></h2>
+      <p class="lead">Learn AI programming &amp; development, earn certification, and get oriented across the full stack — from neural networks to NFTs to named virtual worlds.</p>
+    </div>
+
+    <div class="reveal">
+      <div class="tabs-nav" id="virtual-worlds" role="tablist" aria-label="Explore topics">
+        <button class="tab-btn" role="tab" id="tab-ai" aria-controls="panel-ai" aria-selected="true">Explore AI</button>
+        <button class="tab-btn" role="tab" id="tab-meta" aria-controls="panel-meta" aria-selected="false">Metaverse Stack</button>
+        <button class="tab-btn" role="tab" id="tab-worlds" aria-controls="panel-worlds" aria-selected="false">Virtual Worlds</button>
+        <button class="tab-btn" role="tab" id="tab-dev" aria-controls="panel-dev" aria-selected="false">Developer &amp; Coding Repo</button>
+      </div>
+
+      <div class="tab-panel active" role="tabpanel" id="panel-ai" aria-labelledby="tab-ai">
+        <div class="pill-cloud center" style="justify-content:center">
+          <span class="pill">Artificial Intelligence</span>
+          <span class="pill">Neural Networks</span>
+          <span class="pill">Deep Learning</span>
+          <span class="pill">Computer Vision</span>
+          <span class="pill">Natural Language Processing</span>
+          <span class="pill">Robotics</span>
+          <span class="pill">Autonomous Systems</span>
+        </div>
+      </div>
+
+      <div class="tab-panel" role="tabpanel" id="panel-meta" aria-labelledby="tab-meta" hidden>
+        <div class="pill-cloud center" style="justify-content:center">
+          <span class="pill">Virtual Reality</span>
+          <span class="pill">Augmented Reality</span>
+          <span class="pill">Blockchain</span>
+          <span class="pill">Decentralization</span>
+          <span class="pill">Cryptocurrency</span>
+          <span class="pill">Smart Contracts</span>
+          <span class="pill">Non-Fungible Tokens (NFTs)</span>
+        </div>
+      </div>
+
+      <div class="tab-panel" role="tabpanel" id="panel-worlds" aria-labelledby="tab-worlds" hidden>
+        <div class="worlds-grid" id="worlds-grid"></div>
+        <p class="worlds-note">Tap any world to access <b style="color:var(--cyan)">Planet.Ai</b> — 100s of environments, chat rooms, arenas and classrooms.</p>
+      </div>
+
+      <div class="tab-panel" role="tabpanel" id="panel-dev" aria-labelledby="tab-dev" hidden>
+        <div class="value-grid">
+          <article class="value">
+            <span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></span>
+            <h3>Explore Our AI Developer &amp; Coding Repo</h3>
+            <p>Notebooks, starter agents, model cards and deployment templates — everything used in our certification track.</p>
+            <a class="btn btn-sm btn-ghost" style="margin-top:16px" href="#contact">Request repo access</a>
+          </article>
+          <article class="value">
+            <span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+            <h3>Get Certified</h3>
+            <p>Learn AI programming &amp; development with hands-on labs, then publish your credential to your avatar profile.</p>
+            <a class="btn btn-sm btn-ghost" style="margin-top:16px" href="#signup" data-open-modal>Enroll free</a>
+          </article>
+          <article class="value">
+            <span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/><path d="m8 11 2 2 4-4"/></svg></span>
+            <h3>AI-Labs Sandbox</h3>
+            <p>Build, train, validate, test and deploy models in a hosted sandbox with supercomputing behind it.</p>
+            <a class="btn btn-sm btn-ghost" style="margin-top:16px" href="#labs">Access Ai-Labs</a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENTERPRISE AGENTS ============ -->
+<section class="sec" id="enterprise">
+  <div class="wrap">
+    <div class="agent">
+      <div class="reveal">
+        <span class="eyebrow"><span class="dot"></span> AI for Enterprise</span>
+        <h2 class="h-lg" style="margin:20px 0 16px">The Ai-Metaverse landscape <span class="grad-text">dominates the market</span></h2>
+        <p class="lead">We help the world deploy purpose-driven, custom-built agent models for your dedicated tasks — plus digital twins of offices and retail storefronts, and a professional platform for training, workshops, events, conferences and team collaboration.</p>
+        <ul class="checklist">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12.5 5 5L20 6.5"/></svg><span>Avatar creation and metaverse environments, explained end-to-end</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12.5 5 5L20 6.5"/></svg><span>Supercomputing infrastructure to build the metaverse of the future</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12.5 5 5L20 6.5"/></svg><span>Next-generation gaming metaverse: blockchain + real-time visuals + multiplayer + DeFi</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12.5 5 5L20 6.5"/></svg><span>Secure digital payment ecosystem with biometric verification and BitBucks rewards</span></li>
+        </ul>
+        <div class="btn-row" style="margin-top:28px">
+          <a href="#contact" class="btn">Talk to Enterprise Sales</a>
+          <a href="#signup" class="btn btn-ghost" data-open-modal>Start Free Trial</a>
+        </div>
+      </div>
+
+      <div class="agent-visual reveal">
+        <div style="font-family:var(--font-head);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:16px">Agent deployment pipeline</div>
+        <div class="flow">
+          <div class="flow-step"><span class="n">1</span> Define the dedicated task &amp; success metrics</div>
+          <div class="flow-arrow">▼</div>
+          <div class="flow-step"><span class="n">2</span> Build the custom agent model in Ai-Labs</div>
+          <div class="flow-arrow">▼</div>
+          <div class="flow-step"><span class="n">3</span> Train &amp; validate against your own data</div>
+          <div class="flow-arrow">▼</div>
+          <div class="flow-step"><span class="n">4</span> Test in a digital-twin of your space</div>
+          <div class="flow-arrow">▼</div>
+          <div class="flow-step"><span class="n">5</span> Deploy to web, mobile, VR &amp; voice channels</div>
+        </div>
+        <div style="margin-top:22px;padding-top:20px;border-top:1px solid var(--stroke);display:flex;flex-wrap:wrap;gap:10px">
+          <span class="chip">20,000+ models</span><span class="chip">Digital twins</span><span class="chip">NLP for global teams</span><span class="chip">Digital humans</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section class="sec-tight" id="signup">
+  <div class="wrap">
+    <div class="kre8 reveal center" style="background:linear-gradient(135deg,rgba(0,240,255,.14),rgba(168,85,247,.18) 50%,rgba(255,47,185,.14))">
+      <span class="eyebrow" style="margin-bottom:20px"><span class="dot"></span> Meta-Port</span>
+      <h2 class="h-lg">Start turning your ambitions <span class="grad-text">into realities</span></h2>
+      <p class="lead" style="margin:18px auto 30px">Don't wait — stop dreaming and start achieving with Ai Metaverse today. Free account, free AI tools, free cloud storage.</p>
+      <div class="btn-row" style="justify-content:center">
+        <button class="btn" data-open-modal>Create Your Free Account</button>
+        <a class="btn btn-ghost" href="#contact">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow"><span class="dot"></span> Contact Us</span>
+      <h2 class="h-lg">Better yet, <span class="grad-text">see us in person</span></h2>
+      <p class="lead">We love our customers, so feel free to visit during normal business hours — computer programming software, metaverse environments and AI agent design.</p>
+    </div>
+
+    <div class="contact-grid">
+      <aside class="info-card reveal">
+        <div class="info-row">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></span>
+          <div>
+            <b>Ai Metaverse</b>
+            <p>1007 Yanceyville Street<br>Greensboro, North Carolina 27405<br>United States</p>
+            <a href="#contact" style="font-size:12.6px;color:var(--cyan);display:inline-block;margin-top:8px" onclick="alert('Open your maps app and search: 1007 Yanceyville Street, Greensboro, NC 27405');return false;">Get directions →</a>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+          <div><b>Phone</b><a href="tel:+13368050229">336-805-0229</a></div>
+        </div>
+        <div class="info-row">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg></span>
+          <div>
+            <b>Hours</b>
+            <p>Monday – Friday<br>09:00 am – 05:00 pm</p>
+            <span class="status" id="open-status" style="margin-top:10px"><span class="d"></span><span id="status-text">Open today</span></span>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v14H5.5L4 19.5z"/><path d="M8 9h8M8 13h5"/></svg></span>
+          <div><b>Email</b><a href="mailto:hello@aimetaverse.cloud">hello@aimetaverse.cloud</a></div>
+        </div>
+      </aside>
+
+      <form class="contact reveal" id="contact-form" novalidate>
+        <h3 class="h-md">Drop us a line!</h3>
+        <div class="two">
+          <div class="field">
+            <label for="c-name">Name</label>
+            <input id="c-name" name="name" type="text" placeholder="Your name" autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="c-email">Email <span class="req">*</span></label>
+            <input id="c-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+          </div>
+        </div>
+        <div class="field">
+          <label for="c-topic">I'm interested in</label>
+          <select id="c-topic" name="topic">
+            <option>Free account &amp; avatar creation</option>
+            <option>AI for Enterprise / custom agent models</option>
+            <option>Free AI Tools Directory</option>
+            <option>Access Ai-Labs</option>
+            <option>Ai_Education &amp; certification</option>
+            <option>Virtual Shopping Kre8tor / Meta-Port</option>
+            <option>Press, partnerships &amp; Ai Metaverse News</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="c-msg">Message</label>
+          <textarea id="c-msg" name="message" placeholder="Tell us what you want to build in the metaverse…"></textarea>
+        </div>
+        <div class="form-msg" id="form-msg" role="status"></div>
+        <div class="form-foot">
+          <p class="recap">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color:var(--muted);text-decoration:underline">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" style="color:var(--muted);text-decoration:underline">Terms of Service</a> apply.</p>
+          <div class="btn-row" style="gap:10px">
+            <button type="submit" class="btn">Send</button>
+            <button type="reset" class="btn btn-ghost" id="form-cancel">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a class="brand" href="#top">
+          <span class="mark">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="8.2" stroke="#070312" stroke-width="2"/>
+              <circle cx="12" cy="12" r="3" fill="#070312"/>
+              <path d="M12 1.6v3M12 19.4v3M1.6 12h3M19.4 12h3" stroke="#070312" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="txt"><span class="name">Ai Metaverse</span><span class="sub">VERSED'ai</span></span>
+        </a>
+        <p>A world that revolves around creative intelligence. AI for All — the app hub for AI, metaverse, virtual and augmented reality.</p>
+        <div class="socials">
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v9.5a3.5 3.5 0 1 1-3-3.46"/><path d="M14 4c.6 2.4 2.2 3.8 4.6 4"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="m10.5 9.5 5 2.5-5 2.5z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.2 6.9h.01"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M20 4 4 20"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="why-ai.html">Why AI</a></li>
+          <li><a href="enterprise.html">AI for Enterprise</a></li>
+          <li><a href="tools.html">Free AI Tools Directory</a></li>
+          <li><a href="labs.html">Access Ai-Labs</a></li>
+          <li><a href="education.html">Ai_Education</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5>Worlds</h5>
+        <ul>
+          <li><a href="worlds.html">Virtual Worlds</a></li>
+          <li><a href="shop.html">Virtual Shopping Kre8tor</a></li>
+          <li><a href="shop.html">Meta-Port</a></li>
+          <li><a href="worlds.html">VR &amp; Cardboard</a></li>
+          <li><a href="worlds.html">Explore the Ai_Metaverse</a></li>
+          <li><a href="metabox.html">Conversations with Bard</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="news.html">Ai Metaverse News &amp; Blog</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms and Conditions</a></li>
+          <li><a href="#signup" data-open-modal>Sign up</a></li>
+          <li><a href="tel:+13368050229">336-805-0229</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hashtags">
+      <b>Trending tags</b>
+      #fypシ゚viralシ #datavisualization #artificialintelligence #coding #programmers #coder #dataanalytics #aigenerated #generatedimage #aiartcommunity #aiartgenerator #highfashiontiktok #couturetiktok #fy #princess #princessesreels #viral #viraltiktok #pet #petoftiktok #cat #dog #beauty #godness #programmerhumour #pythonprogramming #uidesign
+    </div>
+
+    <div class="foot-bottom">
+      <span>Copyright © 2023–2026 Ai Metaverse — All Rights Reserved.</span>
+      <span>Powered by <b style="color:var(--txt)">Kre8Tive Koncepts</b></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ BACK TO TOP ============ -->
+<button class="totop" id="totop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<!-- ============ SIGNUP MODAL ============ -->
+<div class="modal" id="signup-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-bd" data-close-modal></div>
+  <div class="modal-box">
+    <button class="modal-close" data-close-modal aria-label="Close">✕</button>
+    <span class="eyebrow"><span class="dot"></span> Free Trial</span>
+    <h3 id="modal-title" style="margin-top:16px">Create your <span class="grad-text">free account</span></h3>
+    <p>Clone yourself virtually — selfie, voice snippet and birthday. Then step into the Ai Metaverse.</p>
+    <ul class="perks">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12.5 5 5L20 6.5"/></svg> Free AI tools directory &amp; Craiyon image generation</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12.5 5 5L20 6.5"/></svg> Free storage cloud services</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12.5 5 5L20 6.5"/></svg> Access to 100s of metaverse environments</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12.5 5 5L20 6.5"/></svg> Upgrade to unlock our most advanced AI models</li>
+    </ul>
+    <form id="signup-form" style="display:grid;gap:14px">
+      <div class="field"><label for="s-name">Name</label><input id="s-name" type="text" placeholder="Your name" autocomplete="name" /></div>
+      <div class="field"><label for="s-email">Email <span class="req">*</span></label><input id="s-email" type="email" placeholder="you@example.com" autocomplete="email" required /></div>
+      <div class="form-msg" id="signup-msg" role="status"></div>
+      <button class="btn" type="submit" style="width:100%">Create My Free Account</button>
+      <p style="font-size:11.4px;color:var(--dim);text-align:center">Demo form — no data is transmitted or stored.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var $  = function(s,c){return (c||document).querySelector(s);};
+  var $$ = function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s));};
+  var reduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  /* ---------- mobile nav ---------- */
+  var burger = $('#burger'), mpanel = $('#mobile-nav');
+  burger.addEventListener('click', function(){
+    var open = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', String(!open));
+    mpanel.classList.toggle('open', !open);
+  });
+  $$('#mobile-nav a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mpanel.classList.remove('open');
+      burger.setAttribute('aria-expanded','false');
+    });
+  });
+
+  /* ---------- generation-mode tabs (hero) ---------- */
+  var genCopy = {
+    text:   'Write copy, scripts, code and translations with natural language models tuned for your brand voice.',
+    image:  'Turn a text prompt into royalty-free artwork with Craiyon and our in-house image models.',
+    video:  'Generate short-form video, face swaps and social clips ready for YouTube, TikTok and Reels.',
+    object: 'Produce 3D objects and scanned real-world assets you can drop straight into a virtual world.'
+  };
+  $$('.gen-tab').forEach(function(tab){
+    tab.addEventListener('click', function(){
+      $$('.gen-tab').forEach(function(t){ t.setAttribute('aria-selected','false'); });
+      tab.setAttribute('aria-selected','true');
+      var lead = $('.hero .lead');
+      if(lead){ lead.style.opacity = 0; setTimeout(function(){ lead.innerHTML = genCopy[tab.dataset.gen]; lead.style.transition='opacity .4s'; lead.style.opacity = 1; }, reduceMotion?0:180); }
+    });
+  });
+
+  /* ---------- hero tap to prompt ---------- */
+  var hv = $('#hero-visual');
+  if(hv){
+    var focusPrompt = function(){
+      if(window.AIMV_HUMANOID){
+        window.AIMV_HUMANOID.open();
+        var t = $('.gen-tab[aria-selected="true"]');
+        var inp = document.getElementById('hm-input');
+        if(inp && t) inp.value = t.textContent.trim() + ' generation: ';
+      }
+    };
+    hv.addEventListener('click', focusPrompt);
+    hv.style.cursor = 'pointer';
+  }
+
+  /* ---------- animated counters ---------- */
+  var counters = $$('[data-count]');
+  var runCounter = function(el){
+    var target = parseInt(el.dataset.count,10), suffix = el.dataset.suffix || '';
+    if(reduceMotion){ el.textContent = target.toLocaleString() + suffix; return; }
+    var start = null, dur = 1500;
+    var step = function(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts-start)/dur,1);
+      var eased = 1 - Math.pow(1-p,3);
+      el.textContent = Math.round(target*eased).toLocaleString() + suffix;
+      if(p<1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
+  /* ---------- reveal on scroll ---------- */
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    $$('.reveal').forEach(function(el){ io.observe(el); });
+
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ runCounter(e.target); cio.unobserve(e.target); } });
+    },{threshold:.5});
+    counters.forEach(function(el){ cio.observe(el); });
+  } else {
+    $$('.reveal').forEach(function(el){ el.classList.add('in'); });
+    counters.forEach(runCounter);
+  }
+
+  /* ---------- accordions ---------- */
+  $$('.acc-head').forEach(function(head){
+    head.addEventListener('click', function(){
+      var item = head.parentElement;
+      var open = item.classList.contains('open');
+      $$('.acc-item', item.parentElement).forEach(function(i){
+        i.classList.remove('open');
+        $$('.acc-head', i).forEach(function(h){ h.setAttribute('aria-expanded','false'); });
+      });
+      if(!open){ item.classList.add('open'); head.setAttribute('aria-expanded','true'); }
+    });
+  });
+
+  /* ---------- topic tabs ---------- */
+  var tabBtns = $$('.tab-btn');
+  function selectTab(btn){
+    tabBtns.forEach(function(b){
+      b.setAttribute('aria-selected','false');
+      var p = document.getElementById(b.getAttribute('aria-controls'));
+      if(p){ p.classList.remove('active'); p.setAttribute('hidden',''); }
+    });
+    btn.setAttribute('aria-selected','true');
+    var panel = document.getElementById(btn.getAttribute('aria-controls'));
+    if(panel){ panel.classList.add('active'); panel.removeAttribute('hidden'); }
+  }
+  tabBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){ selectTab(btn); });
+    btn.addEventListener('keydown', function(e){
+      var i = tabBtns.indexOf(btn), n = null;
+      if(e.key === 'ArrowRight') n = tabBtns[(i+1) % tabBtns.length];
+      if(e.key === 'ArrowLeft')  n = tabBtns[(i-1+tabBtns.length) % tabBtns.length];
+      if(n){ e.preventDefault(); selectTab(n); n.focus(); }
+    });
+  });
+  /* deep link: #virtual-worlds opens the Virtual Worlds tab */
+  function syncTabFromHash(){
+    if(location.hash === '#virtual-worlds'){
+      var t = $('#tab-worlds'); if(t) selectTab(t);
+    }
+  }
+  $$('a[href="#virtual-worlds"]').forEach(function(a){
+    a.addEventListener('click', function(){ setTimeout(syncTabFromHash, 80); });
+  });
+  window.addEventListener('hashchange', syncTabFromHash);
+  syncTabFromHash();
+
+  /* ---------- virtual worlds ---------- */
+  var worlds = [
+    'Tivoli Cloud','Twin Planet Metaverse','Vpark','VRland','Hiberworld','Mona','Somnium Space',
+    'The Nemesis','VRChat','Yabal','Alphabatem','Atlas Space','Spatial','Geenee AR','Immersed',
+    'Imsimity','Magecosmos','Marine Cup','Mazing XR','MeetInVR','Anything World','Therack',
+    'Deverse World','Dubbz','Amber Metaverse','Alter.game','Aftermath Island','Mini Royale',
+    'Animo','In Town Metaverse','Hedra Bot Face','Couch.live','Avatar Cam','Mzaalo',
+    'Fleepas','Frolic','GB Arena','iChalleng1','LootOut','Metaverser','Paintball Arena',
+    'House of Math','3DBear','EducaVerse','ImEdu','Metazoome','Opto.city','Syglass','Twin Science Games'
+  ];
+  var wg = $('#worlds-grid');
+  if(wg){
+    var hues = ['#1b1040,#00f0ff','#3a0d4d,#ff2fb9','#0b2f3a,#9dff3d','#2c1a5e,#a855f7','#3a2200,#ffc857','#062a2a,#00f0ff'];
+    worlds.forEach(function(w,i){
+      var h = hues[i % hues.length];
+      var el = document.createElement('div');
+      el.className = 'world';
+      el.setAttribute('role','button');
+      el.setAttribute('tabindex','0');
+      el.style.setProperty('--wb','linear-gradient(140deg,'+h.split(',')[0]+','+h.split(',')[1]+'22)');
+      el.innerHTML = '<span class="w-dot"></span><b>'+w+'</b>';
+      var go = function(){
+        el.style.transform = 'scale(.96)';
+        setTimeout(function(){ el.style.transform=''; }, 160);
+        addBot('Loading <b>'+w+'</b> through Planet.Ai… environment streamed to your Meta-Port. Tip: attach your avatar voice before you enter.');
+        document.getElementById('metabox').scrollIntoView({behavior: reduceMotion?'auto':'smooth', block:'center'});
+      };
+      el.addEventListener('click', go);
+      el.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); go(); } });
+      wg.appendChild(el);
+    });
+  }
+
+  /* ---------- metabox chat ---------- */
+  var chatBody = $('#chat-body');
+  function pushMsg(cls, html, who){
+    var d = document.createElement('div');
+    d.className = 'msg ' + cls;
+    d.innerHTML = (who ? '<span class="who">'+who+'</span>' : '') + html;
+    chatBody.appendChild(d);
+    chatBody.scrollTop = chatBody.scrollHeight;
+    return d;
+  }
+  function typing(){
+    var t = document.createElement('div');
+    t.className = 'typing'; t.innerHTML = '<i></i><i></i><i></i>';
+    chatBody.appendChild(t); chatBody.scrollTop = chatBody.scrollHeight;
+    return t;
+  }
+  var replies = [
+    {k:['avatar','clone','selfie','voice','birth'], r:'To clone yourself: <b>1)</b> upload a selfie, <b>2)</b> attach a 10-second voice snippet, <b>3)</b> enter your birthday so we can mimic your horoscope traits. Your avatar is then ready for any of the 100s of environments.'},
+    {k:['art','image','craiyon','draw','paint','royalty'], r:'Craiyon turns any text prompt into <b>royalty-free images</b>. Describe the subject, style and lighting — then re-roll until it matches your vision. It lives inside Ai-Labs.'},
+    {k:['world','environment','explore','vrchat','somnium','planet'], r:'I can stream any world to your Meta-Port — Tivoli Cloud, Somnium Space, VRChat, Mona, Spatial and 100s more. Pick one from the <b>Virtual Worlds</b> tab and I will route you through Planet.Ai.'},
+    {k:['free','tool','tools','directory','cost','price'], r:'The <b>Free AI Tools Directory</b> includes image, writing, video, music and social tools — plus free cloud storage for members. Upgraded accounts unlock our most advanced models.'},
+    {k:['enterprise','business','agent','digital twin','crm','telemark'], r:'For enterprise we deploy <b>purpose-driven custom agent models</b>, digital twins of offices and storefronts, AI CRM, AI telemarketers and biometric payments with MyBUY\u2019o. I will hand you to enterprise sales.'},
+    {k:['education','learn','certif','course','programming','code'], r:'Ai_Education covers AI programming &amp; development with a <b>certification</b> on completion — neural networks, deep learning, computer vision, NLP, robotics and autonomous systems.'},
+    {k:['video','youtube','face','reface','social'], r:'Create YouTube and social videos with AI, including <b>Re-Face AI</b> face swaps. Script → render → caption → publish, all from one workspace.'},
+    {k:['shop','store','buy','fashion','decor','bitbuck','reward'], r:'Millions of virtual fashion, home décor and clothing items are in-world. Set up a <b>virtual retail store</b>, take biometric payments and earn <b>BitBucks</b> round-up rewards.'},
+    {k:['mars','space','real estate','real-estate','land'], r:'Explore <b>Mars virtually</b> with AI, or search virtual real-estate across worlds. I can filter by venue size, foot traffic and price.'},
+    {k:['hello','hi','hey','yo','start'], r:'Hey — glad you are here 👋 Tell me what you want to create: an avatar, artwork, a video, a store, or a whole world.'},
+    {k:['music','song','lyric','record','concert'], r:'<b>Ai.Records</b> writes and produces song lyrics and tracks. You can then host a virtual concert in your own environment and invite the community.'}
+  ];
+  function answer(q){
+    var s = q.toLowerCase();
+
+    for(var i=0;i<replies.length;i++){
+      for(var j=0;j<replies[i].k.length;j++){
+        if(s.indexOf(replies[i].k[j]) !== -1) return replies[i].r;
+      }
+    }
+    return 'Got it — “'+q.replace(/[<>&]/g,'')+'”. I can route that to <b>Ai-Labs</b> for generation, or to our team for a custom agent model. Would you like the free tools directory or the enterprise track?';
+  }
+  function addBot(html, after){
+    var t = typing();
+    if(window.AIMV_HUMANOID && window.AIMV_HUMANOID.dockOpen()) window.AIMV_HUMANOID.think();
+    setTimeout(function(){
+      t.remove();
+      pushMsg('bot', html, 'Metabox');
+      if(typeof after === 'function'){ after(html); }
+      else if(window.AIMV_HUMANOID && window.AIMV_HUMANOID.dockOpen()){
+        if(!/could not hear|denied|unavailable|failed/i.test(String(html))) window.AIMV_HUMANOID.speak(html);
+      }
+    }, reduceMotion ? 60 : 700 + Math.random()*450);
+  }
+  window.AIMV_BRAIN = answer;   /* the companion dock reuses this brain */
+  (function mountHeroHumanoid(){
+    function go(){
+      if(!window.AIMV_HUMANOID){ return setTimeout(go, 120); }
+      var st = document.getElementById('hero-stage');
+      if(st) window.AIMV_HUMANOID.mountStage(st);
+      var ads = document.getElementById('m-ads'); if(ads) window.AIMV_HUMANOID.renderAds(ads);
+      var sug = document.getElementById('m-sugs'); if(sug) window.AIMV_HUMANOID.renderSugs(sug);
+    }
+    if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
+  })();
+  var chatForm = $('#chat-form'), chatInput = $('#chat-input');
+  chatForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var v = chatInput.value.trim();
+    if(!v) return;
+    pushMsg('user', v.replace(/[<>&]/g,function(m){return {'<':'&lt;','>':'&gt;','&':'&amp;'}[m];}));
+    chatInput.value = '';
+    addBot(answer(v));
+  });
+  $$('#quick-prompts button').forEach(function(b){
+    b.addEventListener('click', function(){
+      pushMsg('user', b.dataset.q);
+      addBot(answer(b.dataset.q));
+    });
+  });
+
+  /* ---------- art tiles re-roll ---------- */
+  var prompts = [
+    'Neon nebula over a chrome canyon, volumetric light',
+    'Bioluminescent garden on Mars, cinematic, 8k',
+    'Cyberpunk street market in the rain, reflective puddles',
+    'Crystal koi pond under an aurora, macro detail',
+    'Retro-futurist observatory, gold and violet haze',
+    'Liquid prism bloom, hyper-saturated, studio lighting'
+  ];
+  $$('#art-grid .art-tile').forEach(function(tile, i){
+    var roll = function(){
+      addBot('Craiyon prompt queued → <b>“'+prompts[Math.floor(Math.random()*prompts.length)]+'”</b><br>Rendering 9 royalty-free variants in Ai-Labs…');
+      tile.animate && !reduceMotion && tile.animate([{filter:'brightness(1.6) saturate(1.4)'},{filter:'brightness(1) saturate(1)'}],{duration:600});
+    };
+    tile.addEventListener('click', roll);
+    tile.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); roll(); } });
+  });
+
+  /* ---------- show more tools ---------- */
+  var tm = $('#tools-more'), tx = $('#tools-extra');
+  tm.addEventListener('click', function(){
+    var open = tx.style.display !== 'none';
+    tx.style.display = open ? 'none' : 'grid';
+    tm.textContent = open ? 'Show More Tools' : 'Show Less';
+    tm.setAttribute('aria-expanded', String(!open));
+    if(!open) tx.scrollIntoView({behavior: reduceMotion?'auto':'smooth', block:'nearest'});
+  });
+
+  /* ---------- modal ---------- */
+  var modal = $('#signup-modal'), lastFocus = null;
+  function openModal(){
+    lastFocus = document.activeElement;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function(){ var f = $('#s-email'); if(f) f.focus(); }, 120);
+  }
+  function closeModal(){
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    if(lastFocus) lastFocus.focus();
+  }
+  $$('[data-open-modal]').forEach(function(el){
+    el.addEventListener('click', function(e){ e.preventDefault(); openModal(); });
+  });
+  $$('[data-close-modal]').forEach(function(el){ el.addEventListener('click', closeModal); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
+
+  var sform = $('#signup-form'), smsg = $('#signup-msg');
+  sform.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = $('#s-email');
+    if(!email.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){
+      smsg.className = 'form-msg show err';
+      smsg.textContent = 'Please enter a valid email address to create your free account.';
+      email.focus();
+      return;
+    }
+    smsg.className = 'form-msg show';
+    smsg.textContent = '✓ Account created (demo). Check your inbox to upload your selfie & voice snippet.';
+    sform.querySelector('button[type=submit]').textContent = 'Welcome to the Ai Metaverse';
+    setTimeout(closeModal, 2200);
+  });
+
+  /* ---------- contact form ---------- */
+  var cform = $('#contact-form'), cmsg = $('#form-msg');
+  cform.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = $('#c-email');
+    if(!email.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){
+      cmsg.className = 'form-msg show err';
+      cmsg.textContent = 'Email is required — please enter a valid address so we can reply.';
+      email.focus();
+      return;
+    }
+    cmsg.className = 'form-msg show';
+    cmsg.textContent = '✓ Message sent. Our team in Greensboro, NC replies within one business day (09:00 am – 05:00 pm).';
+    cform.reset();
+  });
+  $('#form-cancel').addEventListener('click', function(){ cmsg.className = 'form-msg'; });
+
+  /* ---------- live open/closed status ---------- */
+  var st = $('#open-status'), stt = $('#status-text');
+  (function(){
+    var now = new Date();
+    var day = now.getDay();            // 0 Sun … 6 Sat
+    var mins = now.getHours()*60 + now.getMinutes();
+    var weekday = day >= 1 && day <= 5;
+    var open = weekday && mins >= 540 && mins < 1020;   // 09:00–17:00
+    if(open){
+      stt.textContent = 'Open now — closes at 05:00 pm';
+    } else {
+      st.classList.add('closed');
+      stt.textContent = weekday ? 'Closed now — opens 09:00 am' : 'Closed — opens Monday 09:00 am';
+    }
+  })();
+
+  /* ---------- scrollspy + back to top ---------- */
+  var totop = $('#totop');
+  var sections = ['top','why-ai','enterprise','tools','labs','education','explore','contact']
+    .map(function(id){ return document.getElementById(id); })
+    .filter(Boolean);
+  var navLinks = $$('#primary-nav a');
+  function onScroll(){
+    totop.classList.toggle('show', window.scrollY > 700);
+    var pos = window.scrollY + 140, current = null;
+    sections.forEach(function(s){ if(s.offsetTop <= pos) current = s.id; });
+    navLinks.forEach(function(a){
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  totop.addEventListener('click', function(){ window.scrollTo({top:0, behavior: reduceMotion?'auto':'smooth'}); });
+
+  /* ==========================================================
+     HEADER CONSTELLATION  (canvas particle-network backdrop)
+     ========================================================== */
+  (function constellation(){
+    var cvs = document.getElementById('constellation');
+    if(!cvs || !cvs.getContext) return;
+    var ctx = null;
+    try{ ctx = cvs.getContext('2d'); }catch(e){ return; }   /* canvas unavailable -> plain glass header */
+    if(!ctx) return;
+    var header = cvs.parentElement;
+    var stars = [], W = 0, H = 0, dpr = 1, raf = null;
+    var pointer = {x:null, y:null};
+    var LINK = 128, PLINK = 165;
+
+    function seed(){
+      var r = header.getBoundingClientRect();
+      W = Math.max(1, Math.round(r.width));
+      H = Math.max(1, Math.round(r.height));
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      cvs.width = W * dpr; cvs.height = H * dpr;
+      cvs.style.width = W + 'px'; cvs.style.height = H + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var count = Math.max(26, Math.min(96, Math.round(W * H / 13000)));
+      stars = [];
+      for(var i = 0; i < count; i++){
+        stars.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          vx: (Math.random() - .5) * .17,
+          vy: (Math.random() - .5) * .13,
+          r: Math.random() * 1.45 + .5,
+          p: Math.random() * Math.PI * 2,
+          c: Math.random() < .18 ? '255,47,185' : (Math.random() < .35 ? '168,85,247' : '0,240,255')
+        });
+      }
+    }
+
+    function frame(){
+      ctx.clearRect(0, 0, W, H);
+      var i, j, a, b, dx, dy, d, al;
+      for(i = 0; i < stars.length; i++){
+        a = stars[i];
+        a.x += a.vx; a.y += a.vy; a.p += .021;
+        if(a.x < -12) a.x = W + 12; else if(a.x > W + 12) a.x = -12;
+        if(a.y < -12) a.y = H + 12; else if(a.y > H + 12) a.y = -12;
+        for(j = i + 1; j < stars.length; j++){
+          b = stars[j]; dx = a.x - b.x; dy = a.y - b.y; d = Math.sqrt(dx * dx + dy * dy);
+          if(d < LINK){
+            al = (1 - d / LINK) * .3;
+            ctx.strokeStyle = 'rgba(0,240,255,' + al.toFixed(3) + ')';
+            ctx.lineWidth = .7;
+            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+          }
+        }
+        if(pointer.x !== null){
+          dx = a.x - pointer.x; dy = a.y - pointer.y; d = Math.sqrt(dx * dx + dy * dy);
+          if(d < PLINK){
+            ctx.strokeStyle = 'rgba(255,47,185,' + ((1 - d / PLINK) * .42).toFixed(3) + ')';
+            ctx.lineWidth = .85;
+            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(pointer.x, pointer.y); ctx.stroke();
+          }
+        }
+        var tw = .45 + .55 * Math.abs(Math.sin(a.p));
+        ctx.beginPath();
+        ctx.fillStyle = 'rgba(' + a.c + ',' + (.85 * tw).toFixed(3) + ')';
+        ctx.arc(a.x, a.y, a.r, 0, 6.2832); ctx.fill();
+        if(a.r > 1.25){
+          ctx.beginPath();
+          ctx.fillStyle = 'rgba(' + a.c + ',' + (.13 * tw).toFixed(3) + ')';
+          ctx.arc(a.x, a.y, a.r * 3.6, 0, 6.2832); ctx.fill();
+        }
+      }
+      raf = requestAnimationFrame(frame);
+    }
+
+    function start(){ if(raf === null && !reduceMotion) raf = requestAnimationFrame(frame); }
+    function stop(){ if(raf !== null){ cancelAnimationFrame(raf); raf = null; } }
+
+    seed();
+    if(reduceMotion){ frame(); } else { start(); }
+
+    header.addEventListener('pointermove', function(e){
+      var r = header.getBoundingClientRect();
+      pointer.x = e.clientX - r.left; pointer.y = e.clientY - r.top;
+    });
+    header.addEventListener('pointerleave', function(){ pointer.x = null; pointer.y = null; });
+    window.addEventListener('resize', function(){ stop(); seed(); if(!reduceMotion) start(); else frame(); });
+    document.addEventListener('visibilitychange', function(){ document.hidden ? stop() : start(); });
+  })();
+
+})();
+</script>
+<script defer src="assets/humanoid.js" data-humanoid="js"></script>
 </body>
 </html>
