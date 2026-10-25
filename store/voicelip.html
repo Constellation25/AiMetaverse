@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constellation25 | Avatar Voice & Lip-Sync Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        c25: {
+                            dark: '#020617',
+                            panel: '#0f172a',
+                            cyan: '#22d3ee',
+                            purple: '#8b5cf6',
+                            gold: '#fbbf24'
+                        }
+                    },
+                    animation: {
+                        'scan': 'scan 2s linear infinite',
+                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'wave': 'wave 1.2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        scan: {
+                            '0%': { top: '0%' },
+                            '100%': { top: '100%' }
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(139, 92, 246, 0.2)' },
+                            '50%': { boxShadow: '0 0 40px rgba(139, 92, 246, 0.6)' }
+                        },
+                        wave: {
+                            '0%, 100%': { height: '20%' },
+                            '50%': { height: '100%' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #020617; color: #e2e8f0; }
+        .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-hover:hover { background: rgba(30, 41, 59, 0.8); border-color: rgba(139, 92, 246, 0.4); transition: all 0.3s ease; }
+        .text-gradient { background: linear-gradient(135deg, #22d3ee 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-grid { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px); }
+        
+        .scan-line {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #8b5cf6, transparent);
+            box-shadow: 0 0 15px #8b5cf6;
+            opacity: 0;
+        }
+        .scanning .scan-line { opacity: 1; animation: scan 2s linear infinite; }
+        
+        .fade-in { animation: fadeIn 0.6s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-grid min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 glass border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-c25-cyan to-c25-purple rounded-lg flex items-center justify-center font-bold text-white font-display text-xl">C25</div>
+                <div>
+                    <h1 class="font-display text-lg font-bold text-white tracking-wider">VOICE & LIP-SYNC <span class="text-c25-purple">STUDIO</span></h1>
+                    <p class="text-[10px] text-slate-400 uppercase tracking-widest">AI Avatar Animation Engine</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="hidden md:flex items-center gap-2 text-xs text-slate-400 bg-slate-900/50 px-3 py-1.5 rounded-full border border-white/5">
+                    <div class="w-2 h-2 rounded-full bg-c25-purple animate-pulse"></div>
+                    ElevenLabs / HeyGen API Ready
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 max-w-7xl mx-auto px-6 py-8 w-full grid lg:grid-cols-12 gap-8">
+        
+        <!-- LEFT PANEL: Configuration -->
+        <div class="lg:col-span-5 space-y-6 fade-in">
+            
+            <!-- Step 1: Avatar Source -->
+            <div class="glass rounded-2xl p-6 border border-white/10">
+                <h3 class="font-display text-lg font-bold text-white mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-user-astronaut text-c25-cyan"></i> 1. Select Avatar Source
+                </h3>
+                <div class="flex gap-3 mb-4">
+                    <button onclick="setAvatarType('photo')" id="btn-photo" class="flex-1 py-2 rounded-lg bg-c25-purple/20 border border-c25-purple text-c25-purple text-sm font-bold transition-all">Still Photo</button>
+                    <button onclick="setAvatarType('video')" id="btn-video" class="flex-1 py-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-400 text-sm font-bold transition-all hover:border-slate-500">Video Template</button>
+                </div>
+                
+                <div class="relative group">
+                    <input type="file" id="avatarInput" accept="image/*,video/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" onchange="handleAvatarUpload(this)">
+                    <div id="avatarPreview" class="h-48 bg-slate-900/50 rounded-xl border-2 border-dashed border-slate-700 flex flex-col items-center justify-center group-hover:border-c25-purple transition-colors">
+                        <i class="fa-solid fa-cloud-arrow-up text-3xl text-slate-500 mb-2 group-hover:text-c25-purple transition-colors"></i>
+                        <p class="text-sm text-slate-400">Drop front-facing portrait or video</p>
+                        <p class="text-xs text-slate-600 mt-1">.JPG, .PNG, .MP4 supported</p>
+                    </div>
+                    <img id="previewImg" class="absolute inset-0 w-full h-full object-cover rounded-xl hidden" />
+                </div>
+            </div>
+
+            <!-- Step 2: Voice Cloning -->
+            <div class="glass rounded-2xl p-6 border border-white/10">
+                <h3 class="font-display text-lg font-bold text-white mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-microphone-lines text-c25-purple"></i> 2. Voice Cloning Sample
+                </h3>
+                <div class="relative">
+                    <input type="file" id="voiceInput" accept="audio/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" onchange="handleVoiceUpload(this)">
+                    <div id="voicePreview" class="flex items-center gap-3 bg-slate-900/50 rounded-lg border border-slate-700 p-3 hover:border-c25-purple transition-colors cursor-pointer">
+                        <div class="w-10 h-10 rounded-full bg-c25-purple/20 flex items-center justify-center text-c25-purple">
+                            <i class="fa-solid fa-music"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-medium text-white" id="voiceFileName">No file chosen</p>
+                            <p class="text-xs text-slate-500">.MP3, .WAV (Min. 10 seconds, no background noise)</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-slate-600"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Script Input -->
+            <div class="glass rounded-2xl p-6 border border-white/10">
+                <h3 class="font-display text-lg font-bold text-white mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-scroll text-c25-cyan"></i> 3. Avatar Script
+                </h3>
+                <textarea id="scriptInput" rows="4" class="w-full bg-slate-900/50 border border-slate-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-c25-purple transition-colors resize-none" placeholder="e.g., Hello, I am your new AI virtual twin. I can speak in 88 languages with perfect lip-sync accuracy. What would you like me to say today?"></textarea>
+                <div class="flex justify-between mt-2">
+                    <span class="text-xs text-slate-500">Supports multi-lingual auto-translation</span>
+                    <span class="text-xs text-slate-500" id="charCount">0 / 500 chars</span>
+                </div>
+            </div>
+
+            <!-- Step 4: Generate -->
+            <div class="glass rounded-2xl p-1 border border-c25-purple/30 animate-pulse-glow">
+                <div class="bg-gradient-to-br from-slate-900 to-slate-950 rounded-xl p-6 text-center">
+                    <button onclick="startRendering()" id="generateBtn" class="w-full bg-gradient-to-r from-c25-cyan to-c25-purple hover:from-cyan-400 hover:to-purple-400 text-slate-900 font-bold py-4 px-8 rounded-xl text-lg transition-all transform hover:scale-[1.02] shadow-lg shadow-purple-500/20 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        Generate Lip-Sync Video
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL: Render Stage & Preview -->
+        <div class="lg:col-span-7 flex flex-col fade-in" style="animation-delay: 0.2s;">
+            
+            <!-- Initial State Placeholder -->
+            <div id="renderPlaceholder" class="flex-1 glass rounded-2xl border border-white/10 flex flex-col items-center justify-center p-12 text-center min-h-[500px]">
+                <div class="w-24 h-24 rounded-full bg-slate-800/50 flex items-center justify-center mb-6 animate-pulse">
+                    <i class="fa-solid fa-film text-4xl text-slate-600"></i>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-white mb-2">Render Stage Idle</h3>
+                <p class="text-slate-400 max-w-md">Configure your avatar source, upload a clean voice snippet, and provide a script. The AI will map facial landmarks and sync the audio perfectly.</p>
+            </div>
+
+            <!-- Active Rendering State (Hidden by default) -->
+            <div id="renderActive" class="hidden flex-1 glass rounded-2xl border border-c25-purple/30 overflow-hidden relative min-h-[500px]">
+                <!-- Background Image/Video Placeholder -->
+                <img id="renderImage" src="" class="absolute inset-0 w-full h-full object-cover opacity-30" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent"></div>
+                
+                <!-- Scan Line Effect -->
+                <div class="scan-line"></div>
+
+                <!-- Processing Overlay -->
+                <div id="processingOverlay" class="absolute inset-0 flex flex-col items-center justify-center bg-slate-950/90 backdrop-blur-md z-20">
+                    <div class="w-16 h-16 border-4 border-c25-purple/30 border-t-c25-purple rounded-full animate-spin mb-6"></div>
+                    <h3 class="font-display text-xl font-bold text-white mb-2" id="processStatus">Initializing Voice Cloning...</h3>
+                    <div class="w-64 h-1 bg-slate-800 rounded-full overflow-hidden">
+                        <div id="progressBar" class="h-full bg-c25-purple w-0 transition-all duration-500"></div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-4 font-mono" id="processDetail">Extracting vocal biometrics...</p>
+                </div>
+
+                <!-- Final Rendered Video UI (Hidden until complete) -->
+                <div id="videoComplete" class="hidden absolute inset-0 flex flex-col z-10">
+                    <!-- Video Header -->
+                    <div class="p-6 border-b border-white/10 flex justify-between items-start bg-slate-950/40 backdrop-blur-md">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                <span class="text-xs font-bold text-green-400 uppercase tracking-wider">Render Complete</span>
+                            </div>
+                            <h2 class="font-display text-2xl font-bold text-white">AI Avatar Preview</h2>
+                            <p class="text-sm text-slate-400">Lip-sync accuracy: 98.4% • Voice clone matched</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <button onclick="resetStudio()" class="text-xs text-slate-400 hover:text-white border border-slate-700 hover:border-slate-500 px-3 py-1.5 rounded-lg transition-colors">
+                                <i class="fa-solid fa-rotate-right mr-1"></i> New
+                            </button>
+                            <button class="text-xs bg-c25-purple hover:bg-purple-500 text-white px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1">
+                                <i class="fa-solid fa-download"></i> Export MP4
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Video Player Area -->
+                    <div class="flex-1 flex flex-col items-center justify-center p-6 relative">
+                        <!-- Simulated Talking Avatar -->
+                        <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-c25-purple/50 shadow-2xl shadow-purple-500/20 mb-8">
+                            <img id="finalAvatarImg" src="" class="w-full h-full object-cover" />
+                            <!-- Simulated Mouth Movement Overlay -->
+                            <div id="mouthOverlay" class="absolute bottom-16 left-1/2 -translate-x-1/2 w-12 h-4 bg-slate-900/80 rounded-full blur-sm opacity-0 transition-opacity duration-100"></div>
+                        </div>
+
+                        <!-- Audio Visualizer -->
+                        <div class="flex items-center justify-center gap-1 h-12 mb-4" id="voiceVisualizer">
+                            <!-- Bars generated by JS -->
+                        </div>
+                        
+                        <!-- Script Display -->
+                        <div class="bg-slate-900/80 rounded-xl p-4 max-w-lg text-center border border-white/5">
+                            <p class="text-sm text-slate-300 italic" id="finalScriptDisplay">"..."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 border-t border-white/10 text-center text-slate-600 text-xs">
+        <p>Constellation25 Voice & Lip-Sync Studio • Client-Side Simulation • Privacy Guaranteed</p>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-slate-800 border border-white/10 text-white px-4 py-3 rounded-lg shadow-xl transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-3 z-50">
+        <i class="fa-solid fa-check-circle text-c25-purple"></i>
+        <span id="toastMessage" class="text-sm font-medium">Action successful</span>
+    </div>
+
+    <script>
+        let avatarType = 'photo';
+        let avatarDataUrl = null;
+        let voiceFileName = "No file chosen";
+        let isRendering = false;
+
+        function setAvatarType(type) {
+            avatarType = type;
+            const btnPhoto = document.getElementById('btn-photo');
+            const btnVideo = document.getElementById('btn-video');
+            const input = document.getElementById('avatarInput');
+            
+            if (type === 'photo') {
+                btnPhoto.className = "flex-1 py-2 rounded-lg bg-c25-purple/20 border border-c25-purple text-c25-purple text-sm font-bold transition-all";
+                btnVideo.className = "flex-1 py-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-400 text-sm font-bold transition-all hover:border-slate-500";
+                input.accept = "image/*";
+            } else {
+                btnVideo.className = "flex-1 py-2 rounded-lg bg-c25-purple/20 border border-c25-purple text-c25-purple text-sm font-bold transition-all";
+                btnPhoto.className = "flex-1 py-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-400 text-sm font-bold transition-all hover:border-slate-500";
+                input.accept = "video/*";
+            }
+            // Reset preview
+            document.getElementById('previewImg').classList.add('hidden');
+            document.getElementById('avatarPreview').classList.remove('opacity-0');
+            avatarDataUrl = null;
+        }
+
+        function handleAvatarUpload(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    avatarDataUrl = e.target.result;
+                    document.getElementById('previewImg').src = avatarDataUrl;
+                    document.getElementById('previewImg').classList.remove('hidden');
+                    document.getElementById('avatarPreview').classList.add('opacity-0');
+                    showToast("Avatar source synced successfully");
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function handleVoiceUpload(input) {
+            if (input.files && input.files[0]) {
+                voiceFileName = input.files[0].name;
+                document.getElementById('voiceFileName').innerText = voiceFileName;
+                document.getElementById('voiceFileName').classList.add('text-c25-purple');
+                showToast("Voice snippet uploaded and queued for biometric cloning");
+            }
+        }
+
+        // Character count for script
+        document.getElementById('scriptInput').addEventListener('input', function() {
+            document.getElementById('charCount').innerText = `${this.value.length} / 500 chars`;
+        });
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').textContent = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        function startRendering() {
+            const script = document.getElementById('scriptInput').value;
+            if (!avatarDataUrl) {
+                showToast("Please upload an avatar photo or video first.");
+                return;
+            }
+            if (voiceFileName === "No file chosen") {
+                showToast("Please upload a voice cloning sample.");
+                return;
+            }
+            if (!script.trim()) {
+                showToast("Please enter a script for the avatar to speak.");
+                return;
+            }
+
+            // UI State Changes
+            document.getElementById('renderPlaceholder').classList.add('hidden');
+            document.getElementById('renderActive').classList.remove('hidden');
+            document.getElementById('renderImage').src = avatarDataUrl;
+            document.getElementById('finalAvatarImg').src = avatarDataUrl;
+            document.getElementById('renderActive').classList.add('scanning');
+            document.getElementById('generateBtn').disabled = true;
+            document.getElementById('generateBtn').innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Synthesizing...';
+
+            // Simulate Rendering Process
+            const steps = [
+                { pct: 20, text: "Cloning Voice Biometrics...", detail: "Extracting pitch, tone, and cadence markers (ElevenLabs API simulation)", delay: 1000 },
+                { pct: 45, text: "Mapping Facial Landmarks...", detail: "Identifying 68 facial points for precise lip synchronization", delay: 2500 },
+                { pct: 70, text: "Generating Audio Track...", detail: "Synthesizing script with cloned voice profile", delay: 4000 },
+                { pct: 90, text: "Rendering Lip-Sync Video...", detail: "Aligning phonemes to mouth movements frame-by-frame", delay: 5500 },
+                { pct: 100, text: "Finalizing Output...", detail: "Encoding MP4 and applying post-processing", delay: 7000 }
+            ];
+
+            steps.forEach(step => {
+                setTimeout(() => {
+                    document.getElementById('progressBar').style.width = step.pct + '%';
+                    document.getElementById('processStatus').innerText = step.text;
+                    document.getElementById('processDetail').innerText = step.detail;
+                }, step.delay);
+            });
+
+            // Finish Rendering
+            setTimeout(() => {
+                document.getElementById('renderActive').classList.remove('scanning');
+                document.getElementById('processingOverlay').classList.add('hidden');
+                document.getElementById('videoComplete').classList.remove('hidden');
+                document.getElementById('videoComplete').classList.add('fade-in');
+                
+                document.getElementById('finalScriptDisplay').innerText = `"${script}"`;
+                
+                generateVisualizer();
+                simulateTalking();
+                showToast("Lip-sync video successfully generated!");
+            }, 8000);
+        }
+
+        function generateVisualizer() {
+            const container = document.getElementById('voiceVisualizer');
+            container.innerHTML = '';
+            for (let i = 0; i < 40; i++) {
+                const bar = document.createElement('div');
+                bar.className = 'w-1.5 bg-c25-purple rounded-full transition-all duration-150';
+                bar.style.height = '20%';
+                container.appendChild(bar);
+            }
+        }
+
+        function simulateTalking() {
+            const bars = document.getElementById('voiceVisualizer').children;
+            const mouth = document.getElementById('mouthOverlay');
+            
+            // Animate visualizer and mouth to simulate speech
+            setInterval(() => {
+                let isSpeaking = Math.random() > 0.3; // Simulate pauses in speech
+                
+                if (isSpeaking) {
+                    mouth.style.opacity = '1';
+                    mouth.style.height = (Math.random() * 20 + 5) + 'px'; // Random mouth opening
+                    
+                    for (let bar of bars) {
+                        const height = Math.random() * 80 + 20;
+                        bar.style.height = height + '%';
+                        bar.style.opacity = height > 60 ? '1' : '0.5';
+                    }
+                } else {
+                    mouth.style.opacity = '0.3';
+                    mouth.style.height = '4px'; // Closed mouth
+                    for (let bar of bars) {
+                        bar.style.height = '20%';
+                        bar.style.opacity = '0.3';
+                    }
+                }
+            }, 150);
+        }
+
+        function resetStudio() {
+            document.getElementById('renderActive').classList.add('hidden');
+            document.getElementById('renderPlaceholder').classList.remove('hidden');
+            document.getElementById('processingOverlay').classList.remove('hidden');
+            document.getElementById('videoComplete').classList.add('hidden');
+            document.getElementById('progressBar').style.width = '0%';
+            document.getElementById('generateBtn').disabled = false;
+            document.getElementById('generateBtn').innerHTML = '<i class="fa-solid fa-wand-magic-sparkles"></i> Generate Lip-Sync Video';
+            
+            // Reset inputs
+            document.getElementById('avatarInput').value = '';
+            document.getElementById('voiceInput').value = '';
+            document.getElementById('previewImg').classList.add('hidden');
+            document.getElementById('avatarPreview').classList.remove('opacity-0');
+            document.getElementById('voiceFileName').innerText = "No file chosen";
+            document.getElementById('voiceFileName').classList.remove('text-c25-purple');
+            document.getElementById('scriptInput').value = '';
+            document.getElementById('charCount').innerText = "0 / 500 chars";
+            avatarDataUrl = null;
+            voiceFileName = "No file chosen";
+        }
+    </script>
+</body>
+</html>

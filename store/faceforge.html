@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C25 FaceForge | AI Face Swap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #020617; color: #e2e8f0; }
+        h1, h2, .brand { font-family: 'Space Grotesk', sans-serif; }
+        .drop-zone { border: 2px dashed #334155; transition: all 0.3s; }
+        .drop-zone:hover, .drop-zone.dragover { border-color: #22d3ee; background: rgba(34, 211, 238, 0.05); }
+        .loader { border: 3px solid #1e293b; border-top: 3px solid #22d3ee; border-radius: 50%; width: 24px; height: 24px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="brand text-2xl font-bold text-white">C25 <span class="text-cyan-400">FaceForge</span></div>
+            <div class="text-xs text-slate-500 font-mono">POWERED BY CONSTELLATION25</div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 max-w-5xl mx-auto px-6 py-12 w-full">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Reimagine Reality with <span class="text-cyan-400">AI</span></h1>
+            <p class="text-slate-400 text-lg">Upload a source face and a target image. Our local AI engine will seamlessly swap them in seconds.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <!-- Source Face Upload -->
+            <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
+                <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs">1</span>
+                    Source Face (The Face to Use)
+                </h3>
+                <div id="sourceDrop" class="drop-zone rounded-xl p-8 text-center cursor-pointer relative">
+                    <input type="file" id="sourceInput" accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                    <div id="sourcePreview" class="hidden mb-4">
+                        <img id="sourceImg" class="max-h-48 mx-auto rounded-lg shadow-lg" />
+                    </div>
+                    <div id="sourcePlaceholder">
+                        <svg class="w-12 h-12 mx-auto text-slate-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <p class="text-slate-400 text-sm">Click or drag a clear face photo here</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Target Image Upload -->
+            <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
+                <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center text-xs">2</span>
+                    Target Image (The Destination)
+                </h3>
+                <div id="targetDrop" class="drop-zone rounded-xl p-8 text-center cursor-pointer relative">
+                    <input type="file" id="targetInput" accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                    <div id="targetPreview" class="hidden mb-4">
+                        <img id="targetImg" class="max-h-48 mx-auto rounded-lg shadow-lg" />
+                    </div>
+                    <div id="targetPlaceholder">
+                        <svg class="w-12 h-12 mx-auto text-slate-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <p class="text-slate-400 text-sm">Click or drag the target image/video frame here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Button -->
+        <div class="text-center">
+            <button id="swapBtn" class="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold py-4 px-12 rounded-full text-lg transition-all transform hover:scale-105 shadow-lg shadow-cyan-500/25 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-3 mx-auto">
+                <span id="btnText">Generate Face Swap</span>
+                <div id="btnLoader" class="loader hidden"></div>
+            </button>
+            <p id="statusMsg" class="text-slate-500 text-sm mt-4 h-5"></p>
+        </div>
+
+        <!-- Result Section -->
+        <div id="resultSection" class="hidden mt-12 bg-slate-900 p-6 rounded-2xl border border-cyan-500/30 text-center">
+            <h3 class="text-xl font-bold text-white mb-4">✨ Result</h3>
+            <img id="resultImg" class="max-w-full md:max-w-2xl mx-auto rounded-xl shadow-2xl border border-slate-700" />
+            <a id="downloadLink" href="#" download="faceforge_result.png" class="inline-block mt-6 bg-slate-800 hover:bg-slate-700 text-white py-3 px-8 rounded-full font-semibold transition-colors">
+                Download HD Image
+            </a>
+        </div>
+    </main>
+
+    <script>
+        const API_URL = (location.port === '8000') ? '' : 'http://localhost:8000';
+        let sourceFile = null;
+        let targetFile = null;
+
+        function setupDropZone(dropId, inputId, previewId, placeholderId, imgId, fileVar) {
+            const dropZone = document.getElementById(dropId);
+            const input = document.getElementById(inputId);
+            
+            input.addEventListener('change', (e) => handleFile(e.target.files[0], dropId, previewId, placeholderId, imgId, fileVar));
+            
+            dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('dragover'); });
+            dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+            dropZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dropZone.classList.remove('dragover');
+                handleFile(e.dataTransfer.files[0], dropId, previewId, placeholderId, imgId, fileVar);
+            });
+        }
+
+        function handleFile(file, dropId, previewId, placeholderId, imgId, fileVar) {
+            if (!file || !file.type.startsWith('image/')) return;
+            
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                document.getElementById(imgId).src = e.target.result;
+                document.getElementById(previewId).classList.remove('hidden');
+                document.getElementById(placeholderId).classList.add('hidden');
+            };
+            reader.readAsDataURL(file);
+            
+            if (dropId === 'sourceDrop') sourceFile = file;
+            if (dropId === 'targetDrop') targetFile = file;
+        }
+
+        setupDropZone('sourceDrop', 'sourceInput', 'sourcePreview', 'sourcePlaceholder', 'sourceImg', 'sourceFile');
+        setupDropZone('targetDrop', 'targetInput', 'targetPreview', 'targetPlaceholder', 'targetImg', 'targetFile');
+
+        document.getElementById('swapBtn').addEventListener('click', async () => {
+            if (!sourceFile || !targetFile) {
+                document.getElementById('statusMsg').textContent = "⚠️ Please upload both a source face and a target image.";
+                return;
+            }
+
+            const btn = document.getElementById('swapBtn');
+            const btnText = document.getElementById('btnText');
+            const loader = document.getElementById('btnLoader');
+            const status = document.getElementById('statusMsg');
+
+            btn.disabled = true;
+            btnText.textContent = "Processing AI Swap...";
+            loader.classList.remove('hidden');
+            status.textContent = "Detecting faces and running neural network...";
+
+            const formData = new FormData();
+            formData.append('source_file', sourceFile);
+            formData.append('target_file', targetFile);
+
+            try {
+                const response = await fetch(`${API_URL}/api/swap`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    status.textContent = "✅ Swap complete!";
+                    document.getElementById('resultImg').src = `${API_URL}${data.output_url}`;
+                    document.getElementById('downloadLink').href = `${API_URL}${data.output_url}`;
+                    document.getElementById('resultSection').classList.remove('hidden');
+                } else {
+                    status.textContent = `❌ Error: ${data.error}`;
+                }
+            } catch (error) {
+                status.textContent = "❌ Network error. Is the Python backend running? (faceforge/app.py on port 8000 — see FACEFORGE.md)";
+                console.error(error);
+            } finally {
+                btn.disabled = false;
+                btnText.textContent = "Generate Face Swap";
+                loader.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

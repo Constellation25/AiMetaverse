@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metaverse Communities | Find Friends & Explore</title>
+    <meta name="description" content="Find friends in metaverse communities. Explore virtual concerts, in-store shopping, and 3D worlds.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050508;
+            --bg-card: rgba(20, 20, 30, 0.6);
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #00d4ff;
+            --text-main: #ffffff;
+            --text-muted: #a0a0b0;
+            --border-color: rgba(102, 126, 234, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(102, 126, 234, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 40%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Header Section */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .highlight-text {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Communities Grid */
+        .communities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .community-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .community-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .community-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .community-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .card-description {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .card-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .card-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Categories / Filter Section */
+        .categories-section {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 40px 30px;
+        }
+
+        .categories-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .categories-section p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .category-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .tag {
+            padding: 10px 20px;
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 50px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background: rgba(102, 126, 234, 0.3);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container { padding: 40px 15px; }
+            .communities-grid { grid-template-columns: 1fr; }
+            .section-header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="section-header">
+            <h1>Find Friends in Metaverse Communities</h1>
+            <p>Virtual concerts & in-store shopping — <span class="highlight-text">connect socially</span> in the next generation of digital worlds.</p>
+        </div>
+
+        <!-- Communities Grid -->
+        <div class="communities-grid">
+            
+            <!-- Card 1: Metaverse -->
+            <div class="community-card">
+                <div class="card-icon">🏙️</div>
+                <h3 class="card-title">Metaverse</h3>
+                <p class="card-description">A parallel 3D world corresponding to real-world coordinates that features virtual business centers, 3D offices, and art galleries.</p>
+                <a href="#" class="card-btn">Explore World</a>
+            </div>
+
+            <!-- Card 2: Metaverser -->
+            <div class="community-card">
+                <div class="card-icon">🛹</div>
+                <h3 class="card-title">Metaverser</h3>
+                <p class="card-description">A free-to-play, cross-platform 3D virtual world and simulation game featuring play-to-earn mechanics, a skate park, and custom avatars.</p>
+                <a href="#" class="card-btn">Play Now</a>
+            </div>
+
+            <!-- Card 3: Rium -->
+            <div class="community-card">
+                <div class="card-icon">🎨</div>
+                <h3 class="card-title">Rium - Metaverse</h3>
+                <p class="card-description">An interactive social space and digital arts platform where users can explore virtual worlds and showcase NFT galleries with friends.</p>
+                <a href="#" class="card-btn">Join Gallery</a>
+            </div>
+
+            <!-- Card 4: Heritage -->
+            <div class="community-card">
+                <div class="card-icon">🏯</div>
+                <h3 class="card-title">Heritage Metaverse</h3>
+                <p class="card-description">An AR and 3D experience allowing users to roam historical sites like Gyeongbokgung Palace and the Gungisi Relics Exhibition Hall.</p>
+                <a href="#" class="card-btn">Start Tour</a>
+            </div>
+
+        </div>
+
+        <!-- Categories Section -->
+        <div class="categories-section">
+            <h2>Find Your Perfect Experience</h2>
+            <p>If you are looking for a specific type of metaverse experience, browse our curated categories below to find the perfect world for you.</p>
+            
+            <div class="category-tags">
+                <div class="tag"> Social Hangouts</div>
+                <div class="tag">🏠 Virtual Real Estate</div>
+                <div class="tag"> Blockchain Games</div>
+                <div class="tag">🎵 Virtual Concerts</div>
+                <div class="tag">️ In-Store Shopping</div>
+                <div class="tag">🖼️ Digital Art & NFTs</div>
+                <div class="tag">💼 Virtual Business</div>
+                <div class="tag">️ Historical AR</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple interaction for category tags
+        document.querySelectorAll('.tag').forEach(tag => {
+            tag.addEventListener('click', function() {
+                // Remove active class from all
+                document.querySelectorAll('.tag').forEach(t => t.style.background = '');
+                document.querySelectorAll('.tag').forEach(t => t.style.borderColor = '');
+                
+                // Add active style to clicked
+                this.style.background = 'rgba(0, 212, 255, 0.2)';
+                this.style.borderColor = '#00d4ff';
+                
+                console.log(`Filtering by category: ${this.innerText}`);
+                // In production, this would filter the grid above
+            });
+        });
+
+        // Add hover sound effect logic or analytics here if needed
+        console.log('Metaverse Communities Section Loaded Successfully');
+    </script>
+</body>
+</html>

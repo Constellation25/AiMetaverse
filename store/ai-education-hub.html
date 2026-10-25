@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constellation25 | AI Education & Prompt Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        c25: { dark: '#020617', panel: '#0f172a', cyan: '#22d3ee', purple: '#8b5cf6', gold: '#fbbf24' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #020617; color: #e2e8f0; }
+        .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-hover:hover { background: rgba(30, 41, 59, 0.8); border-color: rgba(34, 211, 238, 0.4); transition: all 0.3s ease; }
+        .text-gradient { background: linear-gradient(135deg, #22d3ee 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-grid { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px); }
+        
+        /* Flashcard 3D Flip */
+        .flashcard-container { perspective: 1000px; height: 280px; cursor: pointer; }
+        .flashcard-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+        .flashcard-container.flipped .flashcard-inner { transform: rotateY(180deg); }
+        .flashcard-front, .flashcard-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 1rem; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 1.5rem; }
+        .flashcard-front { background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.9)); border: 1px solid rgba(34, 211, 238, 0.3); }
+        .flashcard-back { background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(34, 211, 238, 0.1)); border: 1px solid rgba(139, 92, 246, 0.4); transform: rotateY(180deg); }
+        
+        .tab-active { border-bottom: 2px solid #22d3ee; color: #22d3ee; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-grid min-h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 px-6 py-4 glass border-b border-slate-800/50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-c25-cyan to-c25-purple rounded-lg flex items-center justify-center font-bold text-white font-display text-xl">C25</div>
+                <div class="text-sm font-bold tracking-wider text-slate-400">AI EDUCATION<span class="text-c25-cyan">™</span> HUB</div>
+            </div>
+            <div class="hidden md:flex gap-6">
+                <button onclick="switchTab('quiz')" id="tab-quiz" class="tab-btn tab-active text-sm font-medium text-slate-400 hover:text-white transition-colors pb-1">Quiz Cards</button>
+                <button onclick="switchTab('prompts')" id="tab-prompts" class="tab-btn text-sm font-medium text-slate-400 hover:text-white transition-colors pb-1">Prompt Library (1000+)</button>
+                <button onclick="switchTab('certs')" id="tab-certs" class="tab-btn text-sm font-medium text-slate-400 hover:text-white transition-colors pb-1">Certifications</button>
+                <button onclick="switchTab('opensource')" id="tab-opensource" class="tab-btn text-sm font-medium text-slate-400 hover:text-white transition-colors pb-1">Open Source</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1 pt-24 pb-20 px-6">
+        
+        <!-- TAB 1: QUIZ CARDS -->
+        <section id="view-quiz" class="view-section max-w-6xl mx-auto fade-in">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-display font-black text-white mb-4">Master AI Engineering</h1>
+                <p class="text-slate-400 max-w-2xl mx-auto">Test your knowledge on Termux Linux, AI Prompting, and Production AI Architecture. Click any card to reveal the answer.</p>
+            </div>
+
+            <!-- Category Filters -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <button onclick="filterQuiz('all')" class="quiz-filter px-5 py-2 rounded-full glass glass-hover text-sm font-bold border border-slate-700 bg-c25-cyan text-slate-900" data-cat="all">All</button>
+                <button onclick="filterQuiz('termux')" class="quiz-filter px-5 py-2 rounded-full glass glass-hover text-sm font-bold border border-slate-700" data-cat="termux">Termux Linux</button>
+                <button onclick="filterQuiz('prompting')" class="quiz-filter px-5 py-2 rounded-full glass glass-hover text-sm font-bold border border-slate-700" data-cat="prompting">AI Prompting</button>
+                <button onclick="filterQuiz('certs')" class="quiz-filter px-5 py-2 rounded-full glass glass-hover text-sm font-bold border border-slate-700" data-cat="certs">AI Certifications</button>
+            </div>
+
+            <!-- Flashcards Grid -->
+            <div id="quiz-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Cards injected via JS -->
+            </div>
+        </section>
+
+        <!-- TAB 2: PROMPT LIBRARY -->
+        <section id="view-prompts" class="view-section hidden max-w-6xl mx-auto fade-in">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-display font-black text-white mb-4">1000+ AI Prompt Library</h1>
+                <p class="text-slate-400 max-w-2xl mx-auto">Copy, paste, and dominate. Curated prompts for Termux automation, RAG systems, and agent building.</p>
+            </div>
+
+            <div class="glass rounded-2xl p-6 mb-8 border border-slate-700/50">
+                <div class="relative">
+                    <i class="fa-solid fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-500"></i>
+                    <input type="text" id="promptSearch" placeholder="Search prompts (e.g., 'Termux', 'RAG', 'Agent')..." 
+                           class="w-full bg-slate-900 border border-slate-700 rounded-xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-c25-cyan transition-colors">
+                </div>
+                <div class="flex gap-2 mt-4 flex-wrap" id="prompt-tags">
+                    <button onclick="filterPrompts('all')" class="prompt-tag px-3 py-1 rounded-full bg-c25-cyan/20 text-c25-cyan text-xs font-bold border border-c25-cyan/30">All</button>
+                    <button onclick="filterPrompts('Termux')" class="prompt-tag px-3 py-1 rounded-full bg-slate-800 text-slate-400 text-xs font-bold border border-slate-700 hover:border-c25-cyan hover:text-c25-cyan transition-colors">Termux</button>
+                    <button onclick="filterPrompts('Prompting')" class="prompt-tag px-3 py-1 rounded-full bg-slate-800 text-slate-400 text-xs font-bold border border-slate-700 hover:border-c25-cyan hover:text-c25-cyan transition-colors">Prompting</button>
+                    <button onclick="filterPrompts('RAG')" class="prompt-tag px-3 py-1 rounded-full bg-slate-800 text-slate-400 text-xs font-bold border border-slate-700 hover:border-c25-cyan hover:text-c25-cyan transition-colors">RAG</button>
+                    <button onclick="filterPrompts('Agents')" class="prompt-tag px-3 py-1 rounded-full bg-slate-800 text-slate-400 text-xs font-bold border border-slate-700 hover:border-c25-cyan hover:text-c25-cyan transition-colors">Agents</button>
+                </div>
+            </div>
+
+            <div id="prompt-grid" class="grid md:grid-cols-2 gap-6">
+                <!-- Prompts injected via JS -->
+            </div>
+        </section>
+
+        <!-- TAB 3: CERTIFICATIONS -->
+        <section id="view-certs" class="view-section hidden max-w-5xl mx-auto fade-in">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-display font-black text-white mb-4">AI Certification Paths</h1>
+                <p class="text-slate-400 max-w-2xl mx-auto">Combine structured certification with strong proof-of-work projects. Choose your path based on experience.</p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Beginner -->
+                <div class="glass rounded-2xl p-8 border-l-4 border-c25-cyan">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-c25-cyan/20 text-c25-cyan px-3 py-1 rounded-full text-xs font-bold uppercase">Beginner</span>
+                        <h2 class="text-2xl font-display font-bold text-white">Low to No Coding Experience</h2>
+                    </div>
+                    <ul class="space-y-4 text-slate-300">
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-c25-cyan mt-1"></i> <div><strong class="text-white">IBM AI Developer Professional Certificate (Coursera):</strong> Zero programming prerequisites. Teaches Python, Flask, and building generative AI-powered apps/chatbots.</div></li>
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-c25-cyan mt-1"></i> <div><strong class="text-white">DataCamp Associate AI Engineer:</strong> Hands-on repetition for building chat interfaces, search features, embeddings, and basic RAG patterns.</div></li>
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-c25-cyan mt-1"></i> <div><strong class="text-white">Codecademy Data & Programming Foundations:</strong> 39-hour skill path covering fundamental coding, data science, and math for ML roles.</div></li>
+                    </ul>
+                </div>
+
+                <!-- Intermediate -->
+                <div class="glass rounded-2xl p-8 border-l-4 border-c25-purple">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-c25-purple/20 text-c25-purple px-3 py-1 rounded-full text-xs font-bold uppercase">Intermediate</span>
+                        <h2 class="text-2xl font-display font-bold text-white">Existing Developers</h2>
+                    </div>
+                    <ul class="space-y-4 text-slate-300">
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-c25-purple mt-1"></i> <div><strong class="text-white">Hugging Face LLM & Agents Courses:</strong> Learn by reading/running real code. Tokenization, model workflows, and transitioning from chatbots to autonomous agents.</div></li>
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-c25-purple mt-1"></i> <div><strong class="text-white">Microsoft Learn: Azure AI Engineer Associate:</strong> Building, programming, and training complex algorithm networks using Azure Foundry tools.</div></li>
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-c25-purple mt-1"></i> <div><strong class="text-white">AWS Certified AI Practitioner / ML Engineer:</strong> Validates foundational/intermediate knowledge of scaling generative AI using AWS infrastructure.</div></li>
+                    </ul>
+                </div>
+
+                <!-- Advanced -->
+                <div class="glass rounded-2xl p-8 border-l-4 border-c25-gold">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-c25-gold/20 text-c25-gold px-3 py-1 rounded-full text-xs font-bold uppercase">Advanced</span>
+                        <h2 class="text-2xl font-display font-bold text-white">Rigorous Specialization</h2>
+                    </div>
+                    <ul class="space-y-4 text-slate-300">
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-c25-gold mt-1"></i> <div><strong class="text-white">MIT Applied AI & Data Science:</strong> 15-week program covering deep learning, multi-agent systems (LangGraph), and RAG setups.</div></li>
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-c25-gold mt-1"></i> <div><strong class="text-white">NVIDIA Generative AI LLMs Certification:</strong> Highly technical exam focused on data preparation, GPU optimization, and fine-tuning LLMs.</div></li>
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-c25-gold mt-1"></i> <div><strong class="text-white">Stanford Online AI Professional Program:</strong> Graduate-level depth requiring Python, Linux CLI, calculus, and linear algebra proficiency.</div></li>
+                    </ul>
+                </div>
+
+                <div class="bg-c25-cyan/10 border border-c25-cyan/30 rounded-xl p-6 text-center">
+                    <h3 class="text-xl font-bold text-white mb-2">💡 Strategy for Success</h3>
+                    <p class="text-slate-300">Employers care far less about the badge than your actual portfolio. Build at least <strong>three serious projects</strong> featuring real data, clear evaluation metrics, and authentic engineering trade-offs you can confidently explain in an interview.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: OPEN SOURCE -->
+        <section id="view-opensource" class="view-section hidden max-w-6xl mx-auto fade-in">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-display font-black text-white mb-4">Open-Source Courses & Templates</h1>
+                <p class="text-slate-400 max-w-2xl mx-auto">The open-source community provides production boilerplates and curriculums that outperform many paid courses.</p>
+            </div>
+
+            <h2 class="text-2xl font-display font-bold text-white mb-6 flex items-center gap-3"><i class="fa-solid fa-book-open text-c25-cyan"></i> Top Open-Source Curriculums</h2>
+            <div class="grid md:grid-cols-2 gap-6 mb-12">
+                <div class="glass p-6 rounded-xl glass-hover">
+                    <h3 class="text-lg font-bold text-c25-cyan mb-2">Microsoft's Generative AI for Beginners</h3>
+                    <p class="text-sm text-slate-400 mb-4">A highly structured 21-lesson open curriculum covering prompt engineering, RAG, and autonomous agents with full Python/TypeScript code samples.</p>
+                    <span class="text-xs bg-slate-800 px-2 py-1 rounded text-slate-300">GitHub</span>
+                </div>
+                <div class="glass p-6 rounded-xl glass-hover">
+                    <h3 class="text-lg font-bold text-c25-purple mb-2">Maxime Labonne’s LLM Course</h3>
+                    <p class="text-sm text-slate-400 mb-4">50,000+ stars. Walks through the entire LLM lifecycle: architecture, dataset preparation, fine-tuning (LoRA/QLoRA), and model quantization.</p>
+                    <span class="text-xs bg-slate-800 px-2 py-1 rounded text-slate-300">GitHub</span>
+                </div>
+                <div class="glass p-6 rounded-xl glass-hover">
+                    <h3 class="text-lg font-bold text-c25-gold mb-2">Microsoft's AI Agents for Beginners</h3>
+                    <p class="text-sm text-slate-400 mb-4">11-lesson repo focused purely on designing autonomous systems, state management, multi-agent orchestration, and Model Context Protocol (MCP).</p>
+                    <span class="text-xs bg-slate-800 px-2 py-1 rounded text-slate-300">GitHub</span>
+                </div>
+                <div class="glass p-6 rounded-xl glass-hover">
+                    <h3 class="text-lg font-bold text-c25-cyan mb-2">Made With ML (Goku Mohandas)</h3>
+                    <p class="text-sm text-slate-400 mb-4">The gold standard for MLOps. Skips the fluff to teach data engineering, model evaluation, testing for attacks, and monitoring distributed systems.</p>
+                    <span class="text-xs bg-slate-800 px-2 py-1 rounded text-slate-300">GitHub</span>
+                </div>
+            </div>
+
+            <h2 class="text-2xl font-display font-bold text-white mb-6 flex items-center gap-3"><i class="fa-solid fa-code text-c25-purple"></i> Production-Ready Boilerplates</h2>
+            <div class="glass rounded-2xl overflow-hidden border border-slate-700/50">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-900/80 border-b border-slate-700">
+                            <tr>
+                                <th class="px-6 py-4 text-sm font-bold text-slate-300">Use Case</th>
+                                <th class="px-6 py-4 text-sm font-bold text-slate-300">Repository Template</th>
+                                <th class="px-6 py-4 text-sm font-bold text-slate-300">Key Features Included</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800 text-sm text-slate-300">
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-6 py-4 font-bold text-white">Full-Stack SaaS / App</td>
+                                <td class="px-6 py-4 text-c25-cyan">vstorm-co / full-stack-ai-agent-template</td>
+                                <td class="px-6 py-4">Next.js front-end, FastAPI backend, type-safe tool calling, streaming over WebSockets, user auth, rate limiting.</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-6 py-4 font-bold text-white">Production Agent Backend</td>
+                                <td class="px-6 py-4 text-c25-cyan">wassim249 / fastapi-langgraph-production</td>
+                                <td class="px-6 py-4">Scalable Python backend powered by LangGraph, long-term memory via pgvector, automatic model fallbacks, Grafana tracking.</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-6 py-4 font-bold text-white">Quick AI Mini-Apps</td>
+                                <td class="px-6 py-4 text-c25-cyan">Shubhamsaboo / awesome-llm-apps</td>
+                                <td class="px-6 py-4">Library of 100+ miniature AI applications and standalone agent skills built using Streamlit and simple Python scripts.</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-6 py-4 font-bold text-white">Multi-Agent RAG</td>
+                                <td class="px-6 py-4 text-c25-cyan">The-Swarm-Corporation / Multi-Agent-RAG</td>
+                                <td class="px-6 py-4">Code blueprint for establishing a collaborative team of AI agents that process and generate insights from multi-format text.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-10 px-6 border-t border-slate-800/50 bg-slate-950 mt-auto">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-sm text-slate-500">
+                © 2026 Kre8tive Konceptz LTD. All Rights Reserved.<br/>
+                <span class="text-xs">Empowering the next generation of AI engineers.</span>
+            </div>
+            <div class="flex gap-6 text-xs font-bold tracking-widest text-slate-600">
+                <span>CONSTELLATION25</span><span>•</span><span>AI EDUCATION</span><span>•</span><span>OPEN SOURCE</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- DATA: QUIZ CARDS ---
+        const quizData = [
+            { cat: 'termux', q: "What is the command to update and upgrade all packages in Termux?", a: "pkg update && pkg upgrade" },
+            { cat: 'termux', q: "How do you grant Termux access to your device's shared storage?", a: "termux-setup-storage" },
+            { cat: 'termux', q: "Which package manager is the default in Termux?", a: "pkg (which is a wrapper around apt)" },
+            { cat: 'prompting', q: "What does 'RAG' stand for in AI engineering?", a: "Retrieval-Augmented Generation. It combines LLMs with external knowledge bases to reduce hallucinations." },
+            { cat: 'prompting', q: "What is 'Chain of Thought' (CoT) prompting?", a: "A technique where you ask the AI to explain its reasoning step-by-step before providing the final answer, improving accuracy on complex tasks." },
+            { cat: 'prompting', q: "What is the purpose of 'Few-Shot' prompting?", a: "Providing the AI with 2-3 examples of the desired input/output format within the prompt to guide its generation." },
+            { cat: 'certs', q: "Which open-source Microsoft curriculum covers 21 lessons on prompt engineering and RAG?", a: "Microsoft's Generative AI for Beginners" },
+            { cat: 'certs', q: "What is the primary focus of 'Made With ML' by Goku Mohandas?", a: "Production-ready MLOps, skipping the fluff to teach data engineering, model evaluation, and monitoring distributed systems." },
+            { cat: 'certs', q: "Which certification is highly technical and focuses on GPU optimization and fine-tuning LLMs?", a: "NVIDIA Generative AI LLMs Certification" },
+            { cat: 'certs', q: "What is the 'Model Context Protocol' (MCP) mentioned in Microsoft's AI Agents course?", a: "A standard for connecting AI agents to external tools and data sources securely and efficiently." }
+        ];
+
+        // --- DATA: PROMPT LIBRARY (Starter set of the "1000+") ---
+        const promptData = [
+            { cat: 'Termux', title: 'Termux Environment Setup', prompt: "Act as a Linux system administrator. Provide a step-by-step bash script to set up a fresh Termux environment for AI development. Include commands for updating packages, installing python, pip, git, clang, and setting up termux-storage. Add comments explaining each step." },
+            { cat: 'Termux', title: 'Ollama Local LLM Deployment', prompt: "Write a bash script for Termux that installs and runs Ollama. Include a command to pull the 'qwen2.5:7b' model and a sample curl command to test the local API endpoint at localhost:11434." },
+            { cat: 'Prompting', title: 'Advanced RAG System Prompt', prompt: "You are an expert AI engineer. Given the following retrieved context: {context}, answer the user's question: {question}. If the answer is not in the context, state 'I do not have enough information to answer this.' Cite the specific part of the context used." },
+            { cat: 'Prompting', title: 'Code Refactoring & Optimization', prompt: "Act as a senior Python developer. Review the following code for performance bottlenecks, PEP 8 compliance, and security vulnerabilities. Provide the refactored code and a bulleted list of the specific improvements made." },
+            { cat: 'Agents', title: 'Multi-Agent Orchestrator Design', prompt: "Design a multi-agent system architecture for a bug bounty hunting tool. Define 3 distinct agents (e.g., Recon, Exploitation, Reporting), their specific roles, the tools they have access to, and how they pass state to each other using a framework like LangGraph." },
+            { cat: 'Agents', title: 'Autonomous Web Scraper Agent', prompt: "Write a Python script using LangChain or AutoGen that acts as an autonomous agent. Its goal is to search a given URL for pricing information, extract it, and save it to a JSON file. Include error handling for network timeouts." },
+            { cat: 'RAG', title: 'Document Chunking Strategy', prompt: "Act as an MLOps engineer. Recommend the optimal text chunking strategy (size and overlap) for a RAG pipeline ingesting 500-page PDF technical manuals. Explain the trade-offs between semantic chunking and fixed-size chunking for this specific use case." },
+            { cat: 'RAG', title: 'Vector Database Selection', prompt: "Compare pgvector, ChromaDB, and Milvus for a production RAG application with 10 million embeddings. Provide a recommendation based on scalability, ease of integration with FastAPI, and hardware requirements." }
+        ];
+
+        // --- RENDER FUNCTIONS ---
+        function renderQuiz(filter = 'all') {
+            const grid = document.getElementById('quiz-grid');
+            grid.innerHTML = '';
+            const filtered = filter === 'all' ? quizData : quizData.filter(q => q.cat === filter);
+            
+            filtered.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'flashcard-container';
+                card.onclick = function() { this.classList.toggle('flipped'); };
+                card.innerHTML = `
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <span class="absolute top-4 left-4 text-xs font-bold uppercase tracking-wider text-c25-cyan bg-c25-cyan/10 px-2 py-1 rounded">${item.cat}</span>
+                            <i class="fa-solid fa-question-circle text-3xl text-slate-600 mb-4"></i>
+                            <p class="text-lg font-medium text-white px-4">${item.q}</p>
+                            <span class="absolute bottom-4 text-xs text-slate-500">Click to reveal</span>
+                        </div>
+                        <div class="flashcard-back">
+                            <i class="fa-solid fa-lightbulb text-3xl text-c25-purple mb-4"></i>
+                            <p class="text-lg font-medium text-white px-4">${item.a}</p>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function renderPrompts(filter = 'all', search = '') {
+            const grid = document.getElementById('prompt-grid');
+            grid.innerHTML = '';
+            
+            const filtered = promptData.filter(p => {
+                const matchesCat = filter === 'all' || p.cat === filter;
+                const matchesSearch = p.title.toLowerCase().includes(search.toLowerCase()) || p.prompt.toLowerCase().includes(search.toLowerCase());
+                return matchesCat && matchesSearch;
+            });
+
+            filtered.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'glass p-6 rounded-xl glass-hover border border-slate-700/50 flex flex-col';
+                card.innerHTML = `
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="text-xs font-bold uppercase tracking-wider text-c25-cyan bg-c25-cyan/10 px-2 py-1 rounded">${p.cat}</span>
+                        <button onclick="copyPrompt(this)" class="text-slate-400 hover:text-c25-cyan transition-colors" title="Copy to clipboard">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">${p.title}</h3>
+                    <div class="bg-slate-900/80 rounded-lg p-4 flex-1">
+                        <p class="text-sm text-slate-300 font-mono leading-relaxed">${p.prompt}</p>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // --- INTERACTION FUNCTIONS ---
+        function switchTab(tabId) {
+            document.querySelectorAll('.view-section').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`view-${tabId}`).classList.remove('hidden');
+            
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('tab-active'));
+            document.getElementById(`tab-${tabId}`).classList.add('tab-active');
+        }
+
+        function filterQuiz(cat) {
+            document.querySelectorAll('.quiz-filter').forEach(btn => {
+                btn.classList.remove('bg-c25-cyan', 'text-slate-900');
+                if(btn.dataset.cat === cat) btn.classList.add('bg-c25-cyan', 'text-slate-900');
+            });
+            renderQuiz(cat);
+        }
+
+        function filterPrompts(cat) {
+            document.querySelectorAll('.prompt-tag').forEach(btn => {
+                btn.classList.remove('bg-c25-cyan/20', 'text-c25-cyan', 'border-c25-cyan/30');
+                btn.classList.add('bg-slate-800', 'text-slate-400', 'border-slate-700');
+            });
+            event.target.classList.remove('bg-slate-800', 'text-slate-400', 'border-slate-700');
+            event.target.classList.add('bg-c25-cyan/20', 'text-c25-cyan', 'border-c25-cyan/30');
+            
+            const searchVal = document.getElementById('promptSearch').value;
+            renderPrompts(cat, searchVal);
+        }
+
+        function copyPrompt(btn) {
+            const text = btn.closest('.glass').querySelector('p').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const original = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check text-c25-cyan"></i>';
+                setTimeout(() => { btn.innerHTML = original; }, 2000);
+            });
+        }
+
+        // Search listener
+        document.getElementById('promptSearch').addEventListener('input', (e) => {
+            const activeCatBtn = document.querySelector('.prompt-tag.bg-c25-cyan\\/20');
+            const cat = activeCatBtn ? activeCatBtn.innerText : 'all';
+            renderPrompts(cat, e.target.value);
+        });
+
+        // Initial Render
+        renderQuiz();
+        renderPrompts();
+    </script>
+</body>
+</html>

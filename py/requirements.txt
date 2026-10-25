@@ -1,0 +1,18 @@
+# Ai Metaverse — humanoid UI backend (py/main.py)
+eel>=0.16.0            # Python <-> HTML/JS bridge (serves web/ and exposes RPC)
+pyttsx3>=2.90          # offline Text-to-Speech for the desktop voice
+SpeechRecognition>=3.10.0   # microphone Speech-to-Text (listen_once)
+PyAudio>=0.2.13        # mic audio backend for SpeechRecognition
+requests>=2.31.0       # optional: Ollama local LLM calls
+
+# --- optional brains (pick one, then set AIMV_LLM=openai or AIMV_LLM=ollama) ---
+# openai>=1.30.0
+#
+# PyAudio on Linux may need:  sudo apt install portaudio19-dev python3-pyaudio
+# On Windows/macOS the wheel usually installs cleanly.
+
+# --- FastAPI companion backend (py/server.py): static hosting + live APIs ---
+fastapi>=0.110.0
+uvicorn>=0.29.0
+pydantic>=2.6.0
+# twilio>=8.13.0        # uncomment for REAL calls via /api/dial + /api/v1/outbound/call

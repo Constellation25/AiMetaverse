@@ -1,132 +1,179 @@
-AI Metaverse — Clone Yourself Virtually
-A self-contained, multi-page web platform that lets visitors clone themselves into a personalized AI agent through a selfie, a voice recording, and a birthday — then chat with a BonziBuddy-style humanoid companion that learns, schedules, jokes, and speaks in five distinct personas.
-🌌 Overview
-Built as a zero-build-step static site (double-click index.html to run), AI Metaverse combines:
-A 19-page marketing + app hub (why-ai, enterprise, tools, labs, education, worlds, shop, metabox, news, contact, developers, avatar-create, avatar dashboard, generated agents, privacy/terms, signup/signin)
-A floating humanoid companion dock with three switchable faces and five voice personas
-A clone-yourself wizard that forges a downloadable standalone agent page
-A Python/Eel desktop bridge for offline TTS/STT and hardware integration
-A constellation canvas header with cursor-reactive particle network
-Every nav, footer, and tile link resolves to a real static page — no dead anchors.
-🧬 The Clone-Yourself Pipeline
-avatar-create.html walks users through four gated steps:
-Step
-Input
-Output
-1 · Selfie
-Photo upload or camera capture
-Face detection, brightness/warmth/palette analysis
-2 · Voice
-Mic recording or WAV upload
-Duration, RMS loudness, fundamental frequency (autocorrelation), voice character classification
-3 · Birthday
-Date picker
-Zodiac sign, Chinese animal, life-path number, 6-trait personality vector (Courage, Wit, Empathy, Ambition, Curiosity, Calm)
-4 · Forge
-Name + role + voice style
-Downloadable standalone agent.html + Ready Player Me GLB capture
-The generated agent page is fully self-contained — its own brain, voice, personality, and model card — and can be hosted anywhere.
-🤖 The Humanoid Companion
-A floating dock (bottom-right) with a pulsing launcher, greeting on first open, and three switchable faces:
-Face
-Style
-Tech
-Spatial (default)
-Head sculpted from flowing light-ribbons (based on Unsplash reference)
-16 gradient SVG ribbons, sway animation, blinking eye-glow, lip-sync mouth bar
-Real
-Photoreal AI-generated portrait
-CSS eyelid blinks, breathing zoom, mouth-glow synced to --mouth variable
-Robot
-Brushed metal with visor eyes
-Articulated jaw grille, pulsing antenna, scale-Y eye blinks
-Click-to-Talk
-One big gradient button cycles through states:
-Idle → Listening (magenta pulse + live interim captions) → Thinking (amber) → Speaking (lime, mouth animating). Gracefully degrades to typed input when SpeechRecognition is unavailable.
-Five Voice Personas
-Each retints the dock and adjusts pitch/rate/voice selection:
-ARIA — warm & human
-ATLAS — deep & grounded
-NOVA — bright & upbeat
-ORACLE — measured & wise
-PIXEL — playful robot
-BonziBuddy Energy (Without the Spyware)
-The companion shares one brain with the Metabox and all forged agents. It:
-Greets visitors into the world of the Ai Metaverse
-Learns likes ("I really like virtual fashion" → recalled later)
-Keeps a schedule ("remember demo day friday" → "what's on my schedule?")
-Tells jokes, reads news, delivers hugs with feeling
-Idles with chatter and blinks on a randomized cycle
-Falls back to the shared AIMV_BRAIN for anything outside its own intents
-📂 Repository Structure
+# Ai Metaverse — static site + humanoid companion + clone-yourself pipeline
+
+A 19-page static rebuild of the archived `aimetaverse.cloud`, with a BonziBuddy-style
+**humanoid companion** on every page and a four-step **"clone yourself virtually"** flow
+(selfie → voice → birthday → your own AI agent). No build step, no server required.
+
+```
 aimetaverse/
-├── index.html              # Landing page + constellation header
-├── why-ai.html             # 7 feature groups + accordion
-├── enterprise.html         # Digital twins, training, workshops
-├── tools.html              # MagicStudio, Wordtune, Acrolinx, Brandwatch, Zoom…
-├── labs.html               # Craiyon + Boris Dayma story
-├── education.html          # AI programming certification
-├── worlds.html             # 49 virtual worlds (Tivoli, Somnium, VRChat…)
-├── shop.html               # Virtual retail + Meta-Port
-├── metabox.html            # Standalone chat console
-├── news.html               # Blog posts grid
-├── contact.html            # Greensboro address, hours badge, form
+├── index.html            ← landing / app page (hero, Metabox chat, explore grid, CTA)
+├── why-ai.html           ← the seven pillars, expanded
+├── enterprise.html       ← custom agent models, digital twins, engagement table
+├── tools.html            ← Free AI Tools Directory (sponsored + in-house)
+├── labs.html             ← Ai-Labs: Craiyon, generation modes, sandbox
+├── education.html        ← AI + metaverse knowledge clouds, certification
+├── worlds.html           ← 49 named virtual worlds + Cardboard
+├── shop.html             ← Virtual Shopping Kre8tor, stores, BitBucks
+├── metabox.html          ← standalone Metabox chat page
+├── news.html             ← release-notes blog
+├── contact.html          ← address/phone/hours with live open-closed badge + form
 ├── signup.html / signin.html
 ├── privacy.html / terms.html
-├── developers.html         # Ready Player Me SDK map
-├── avatar-create.html      # 4-step clone wizard
-├── avatar.html             # Dashboard for forged agents
-├── agents/
-│   └── agent.html          # Template for generated standalone agents
+├── developers.html       ← agent spec schema, Eel bridge, Ready Player Me SDK map
+├── avatar-create.html    ← THE FORGE: selfie → voice → birthday → agent (+RPM)
+├── avatar.html           ← dashboard of your stored clone + agent chat + wipe
+├── agents/agent.html     ← in-browser home of your forged agent
 ├── assets/
-│   ├── site.css            # Shared shell, subpage components, forms
-│   ├── site.js             # Constellation, reveals, counters, humanoid injection
-│   ├── avatar.js           # Clone engine + agent persona brain
-│   ├── humanoid.css        # Companion dock + faces
-│   ├── humanoid.js         # STT/TTS, personas, shared brain routing
-│   └── face-real.jpg       # Photoreal companion face (71 KB)
-├── py/
-│   ├── main.py             # Eel bridge: user_said, listen_once, avatar_say, capabilities
-│   └── requirements.txt    # eel, pyttsx3, SpeechRecognition, PyAudio
-├── gen_pages.py            # Static page generator (re-runnable)
-└── README.md
-🚀 Quick Start
-Static mode (no install)
-bash
-# Just open index.html in any modern browser
-open index.html
-Desktop mode (Python TTS/STT bridge)
-bash
-cd py
-pip install -r requirements.txt
-python main.py
-# Opens a local window at http://localhost:8080 with full voice pipeline
-The page auto-detects the Eel bridge and routes voice through pyttsx3 while the browser stays silent and only lip-syncs.
-🧠 Architecture Highlights
-Shared brain pattern: AIMV_BRAIN is defined once in index.html and reused by the Metabox, the companion dock, and every generated agent.
-Path-aware asset loading: site.js detects whether the page lives in /agents/ and adjusts relative paths for the humanoid injection.
-Canvas fallback: The constellation animation wraps getContext('2d') in a try/catch so the header degrades to plain glass in canvas-less contexts.
-Deterministic persona math: Birthday → zodiac → life-path → trait vector uses fixed seed math so the same birthday always produces the same agent personality.
-Voice analysis without decoding: Fundamental frequency is measured via autocorrelation on a Float32Array window; duration comes from <audio> metadata as a fallback.
-🔮 Planned / In-Progress Features
-The following are scoped for the next iteration:
-Visible humanoid image stage in the hero (the companion becomes the centerpiece, not a corner dock)
-Suggestive-prompt chips in the prompt box, seeded from the repo's knowledge brain
-Alibaba / Qwen ad-serve slot under every prompt box
-APIKonnect onboarding tab — checkbox-driven sign-in + token generation for ~250 enterprise APIs (ChatGPT, Gemini, Grok, Blackbox, Qwen, Kimi, Muse, Copilot, GitHub, Vercel, Cloudflare, Azure Cognitive Services, CrowdStrike, Google Cloud AI, IBM Watson, DeepAI, ParallelDots, Alexa Skill APIs, Salesforce Einstein, and the full list provided)
-DevZone terminal — in-page shell that bridges to Linux, Termux, or any user terminal via WebSocket/SSH
-Scheduled tasks & reminders — "remind me at 3pm" → companion pings with a spoken alert
-Agentic + communicative actions — the companion can proactively draft, email, post, and chain tools on the user's behalf
-🧪 Testing
-Every page was verified headlessly with JSDOM:
-Zero uncaught JS errors across index, subpages, wizard, dashboard, and generated agents
-Voice analysis measured 220.02 Hz from a synthetic 220 Hz test tone
-STT → chat → spoken reply pipeline verified end-to-end
-Persona switching, face switching, mute toggle, and deep-link #virtual-worlds all pass
-All 19+ pages resolve their internal links (no broken href or src)
-📜 License & Credits
-Photoreal face: AI-generated (not a real person's likeness)
-Spatial face: inspired by a Unsplash light-ribbon head reference
-Companion personality: BonziBuddy energy, reimplemented cleanly
-Voice personas: pitch/rate mapped to OS-installed voices (character carries everywhere)
-Powered by Kre8Tive Koncepts · Greensboro, NC ·
+│   ├── site.css / site.js        ← shared shell: constellation header, nav, footer,
+│   │                                cookie banner, scroll progress, reveals
+│   ├── humanoid.css / humanoid.js← the companion (faces, personas, talk, brain)
+│   ├── avatar.js                 ← clone pipeline engine + agent page generator
+│   └── face-real.jpg             ← photoreal companion face (900px, 71 KB)
+├── py/main.py + requirements.txt ← optional Python/Eel backend (desktop TTS/STT/LLM)
+└── gen_pages.py                  ← regenerates the 17 content subpages
+```
+
+Open `index.html` directly, or serve the folder (`python -m http.server`) — everything
+works either way. The only network requests are Google Fonts and links you click.
+
+---
+
+## 1 · The humanoid companion (every page)
+
+A floating launcher in the bottom-right corner opens the **companion dock**.
+
+**Three faces** (persisted in `localStorage`):
+| Face | What it is |
+|---|---|
+| **Spatial** (default) | A head sculpted from flowing light-ribbons — the site's reinterpretation of the layered-strand reference art. SVG, animated sway, eye-glow blinks, mouth light-bar lip-sync |
+| **Real** | A photoreal photographed face (`assets/face-real.jpg`) with CSS eyelid blinks, breathing zoom, sheen sweep and a mouth glow driven by the same `--mouth` variable |
+| **Robot** | Brushed-metal head with gradient visor eyes, articulated jaw grille and pulsing antenna |
+
+**Five voice personas** (Web Speech TTS; pitch/rate + preferred-voice matching + accent colour):
+`ARIA` warm & human · `ATLAS` deep & grounded · `NOVA` bright & upbeat · `ORACLE` measured & wise · `PIXEL` playful robot.
+No `speechSynthesis`? The dock flips to captions + simulated mouth movement.
+
+**CLICK TO TALK** — the big button under the face runs `SpeechRecognition` with live
+interim captions, then thinks and answers out loud. States: idle → listening (magenta
+pulse) → thinking (amber) → speaking (lime, mouth animates; tap to stop).
+
+**Companion kit (the BonziBuddy energy, minus the spyware):**
+- greets you by name of the metaverse when first opened, remembers you across sessions
+- **learns what you like** (“I love virtual fashion”) and brings it up later
+- **keeps a schedule** (“remember demo day on friday” → “what's on my schedule?”)
+- tells **jokes**, **trivia**, late-breaking **news**, and delivers **hugs** with feeling
+- six clickable capability cards, idle chatter while open, blinks and floats constantly
+- shares one brain with the Metabox (`window.AIMV_BRAIN`) and routes to `py/main.py`
+  automatically when the Eel bridge is present (`window.eel.user_said`, `avatar_say`)
+
+Everything the companion stores lives under `localStorage` keys `aimv_*`; nothing uploads.
+
+## 2 · Clone yourself virtually (`avatar-create.html`)
+
+1. **Selfie / image** — live camera (`getUserMedia`, mirrored capture) or drag-drop upload.
+   Downscaled to ≤560 px, analysed on-device (brightness, warmth, dominant hue, skin-tone
+   coverage, optional `FaceDetector`), and the palette retints the UI.
+2. **Voice snippet** — `MediaRecorder` with live waveform, 20 s cap; or upload audio.
+   Decoded with Web Audio: fundamental pitch via autocorrelation, RMS loudness, pace →
+   a *voice character* (“High & energetic”). The audio blob is **never persisted**.
+3. **Birthday** — zodiac sign/element/ruler, Chinese zodiac, life-path number (masters
+   11/22 kept), birth weekday, age in days, countdown — blended into a deterministic
+   six-trait personality vector with animated bars.
+4. **Forge the agent** — name, role, voice style, temperature → staged build log
+   (build→train→validate→test→deploy) → live agent + **downloadable standalone agent
+   page** (works offline, has its own persona chat + mic) + **JSON model card**.
+
+**Ready Player Me**: launch the creator in a modal iframe (`frameApi`), the
+`v1.avatar.exported` message is captured into the profile; or paste a `.glb` URL.
+`developers.html` maps every RPM repo (visage, Unity/Unreal SDKs, iframe example…) to
+where it plugs in, with copy-paste render code.
+
+`avatar.html` shows the stored clone (portrait, voice profile, trait bars, agents) and
+chats with your agent; “Delete everything” wipes all `aimv_*` keys.
+
+## 3 · Python backend (optional)
+
+```bash
+pip install -r py/requirements.txt
+python py/main.py                    # Chrome/Edge app window, :8080
+AIMV_LLM=ollama python py/main.py    # local Llama brain instead of the local KB
+```
+`eel.expose`: `user_said()` (brain + pyttsx3 voice + `eel.avatar_say` lip-sync),
+`listen_once()` (desktop mic), `speak_only()`, `capabilities()`. Degrades cleanly when
+espeak/mic/LLM are missing — the browser simply keeps owning that layer.
+
+
+## 5 · The humanoid image, suggestive prompts & ads
+
+- **The face is the hero — inside an orb.** The stage is a circular glass orb: your generated
+  orb art (`assets/face-orb.jpg`) as the base texture on a live `<canvas class="orb-canvas">`
+  (drifting constellation + pulse), a spinning prismatic rim, glass highlight and two dashed
+  orbit rings. The **spatial light-ribbon head floats inside it** by default; a three-button
+  switcher under the hero orb flips to the photoreal portrait (`assets/face-real.jpg`) or the
+  robot head, in sync with the dock. The launcher and dock avatar dot are pocket-orbs of the
+  same art.
+- **The face is the hero.** `index.html` mounts the companion stage directly in the hero:
+  the photoreal portrait (`assets/face-real.jpg`, default face) inside an orbital ring, with
+  its own **CLICK TO TALK** button, joke/trivia/hug buttons, suggestion chips and ad slot.
+  The floating dock on every page carries the same stage in miniature.
+- **Suggestive prompting** — every prompt surface (dock, hero stage, Metabox console,
+  metabox.html) renders ✨ chips drawn from the repo brain; after each reply the chips
+  regenerate into contextual follow-ups ("Make it cyberpunk", "List my reminders"…).
+- **Ad-serve box** — under every prompt box sits a sponsored slot labelled
+  "Sponsored · served by Alibaba & Qwen", rotating six creatives (Model Studio, Qwen-Max,
+  Qwen-VL, PAI-EAS, Qwen-Agent, Tongyi Tingwu) every 9 s with real outbound links and a
+  manual refresh. Swap `ADS` in `assets/humanoid.js` for a live network tag when you have one.
+
+## 6 · APIKonnect (onboarding tab) & DevZone
+
+- `apikonnect.html` — onboarding checklist that ticks itself from local storage;
+  10 enterprise LLM cards (ChatGPT, Gemini, Grok, Blackbox, **Qwen**, Kimi, Muse,
+  Copilot, Vercel, Cloudflare); **299 de-duplicated AI APIs** from the directory with
+  search + category filters; every tick becomes a **connector**: *Sign & generate token*
+  (`ak_live_…`), copy, **upload** (metadata only), **download** (connector JSON bundle),
+  **share**, revoke. Tokens persist under `aimv_apik`.
+- `devzone.html` — in-page terminal (`help ls cd cat connect bridge status apis reminders
+  tasks forge open echo whoami date clear`, history with ↑/↓), `cat spec` prints your live
+  agent model card, `connect termux` copies the phone pairing one-liner, `connect ssh
+  user@host` registers a bridge host, and `bridge` reports whether the Eel backend is live.
+
+## 7 · Agentic & communicative companion
+
+Natural language, anywhere on the site:
+`remind me to ship in 10 minutes` / `at 5pm` / `on friday` → spoken ⏰ toast fires on any
+open page when due · `add task …`, `list tasks`, `complete task …` · `deliver a message to
+Ada: …` → logged delivery in the current persona voice (`delivered messages` to audit) ·
+agentik row in the dock: **Plan my day** (reminders + tasks + birth-chart energy),
+**Art prompt** (persona-driven Craiyon prompt, copied to clipboard), **Remind**, **APIKonnect**.
+
+
+## 9 · FastAPI companion backend (`py/server.py`)
+
+GitHub Pages serves the **static** half (every subpage self-contained, flat + folder
+`index.html`). `py/server.py` is the optional **live** half — one process, no build:
+
+```bash
+pip install -r py/requirements.txt
+uvicorn py.server:app --port 8000        # serves the site AND the APIs below
+```
+
+| Endpoint | Purpose |
+|---|---|
+| `GET /` + static mount | serves the whole site locally (same files Pages hosts) |
+| `POST /api/dial` | Twilio bridge for the CRM "Dial" button — real call when `TWILIO_ACCOUNT_SID/AUTH_TOKEN/FROM` are set, simulated otherwise |
+| `POST /api/v1/outbound/call` · `/handoff` | Commz webhooks from the FastAPI scaffold block |
+| `POST /api/llm` | LLM proxy: Ollama (`OLLAMA_URL`) or OpenAI (`OPENAI_API_KEY`) — keys stay server-side |
+| `GET/POST/DELETE /api/leads` | shared lead store (`py-data/leads.json`) so the CRM survives devices |
+
+Point the CRM's **Integrations → call endpoint** at `http://localhost:8000/api/dial`
+(or the deployed URL) and the Dial buttons place real calls. Without the server every
+embed keeps working on its offline simulations — nothing breaks.
+
+## 8 · Verified headlessly (jsdom)
+
+Zero uncaught JS errors across index, subpages, wizard, dashboard and generated agents.
+Exercised end-to-end: constellation render, dock greet/persona/face switching, STT result
++ permission-denied paths, 220 Hz test tone measured at 220.02 Hz, birthday → Leo/Goat/
+life-path-6 vector, forge → download → standalone agent chat intents (identity, persona,
+voice, role, RPM, privacy, worlds, thanks), schedule + likes memory, metabox page chat,
+dashboard restore, wipe. Regenerate content pages any time with `python3 gen_pages.py`.

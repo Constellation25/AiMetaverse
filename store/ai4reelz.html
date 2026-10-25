@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ai4Reelz | Cinematic AI Video Orchestration by Constellation25</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        c25: {
+                            dark: '#020617',
+                            panel: '#0f172a',
+                            cyan: '#22d3ee',
+                            blue: '#3b82f6',
+                            purple: '#8b5cf6',
+                            gold: '#fbbf24'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #020617; color: #e2e8f0; }
+        .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-hover:hover { background: rgba(30, 41, 59, 0.8); border-color: rgba(34, 211, 238, 0.4); transform: translateY(-2px); transition: all 0.3s ease; }
+        .text-gradient { background: linear-gradient(135deg, #22d3ee 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-grid { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px); }
+        .agent-pulse { animation: pulse-glow 2s infinite; }
+        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 10px rgba(34, 211, 238, 0.2); } 50% { box-shadow: 0 0 25px rgba(34, 211, 238, 0.6); } }
+        .typing-cursor::after { content: '|'; animation: blink 1s step-end infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+    </style>
+</head>
+<body class="bg-grid min-h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 px-6 py-4 glass border-b border-slate-800/50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-c25-cyan to-c25-purple rounded-lg flex items-center justify-center font-bold text-white font-display text-xl">A4</div>
+                <div class="text-sm font-bold tracking-wider text-slate-400">Ai4Reelz <span class="text-c25-cyan">™</span></div>
+            </div>
+            <div class="hidden md:flex gap-8">
+                <a href="#workflow" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Workflow</a>
+                <a href="#agents" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">C25 Agents</a>
+                <a href="#prompting" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Pro Prompting</a>
+                <a href="#compliance" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Compliance</a>
+            </div>
+            <button class="bg-c25-cyan hover:bg-cyan-400 text-slate-900 px-5 py-2 rounded-full text-xs font-bold transition-all uppercase tracking-widest">Launch Studio</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1 pt-24 pb-20 px-6">
+        
+        <!-- Hero Section -->
+        <section class="max-w-5xl mx-auto text-center mb-24">
+            <div class="inline-block px-4 py-1.5 rounded-full glass mb-6 border border-c25-cyan/20">
+                <span class="text-xs font-bold tracking-widest text-c25-cyan">POWERED BY QWEN + OLLAMA</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-display font-black text-white mb-6 leading-tight">
+                Create Cinematic AI Video.<br/>
+                <span class="text-gradient">Zero "AI Slop".</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-3xl mx-auto font-light">
+                In 2026, successful creators use AI strategically. Ai4Reelz orchestrates Constellation25 agents to speed up scripting, editing, and ideation while enforcing strict cinematic prompting rules and platform compliance.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#studio" class="bg-c25-cyan hover:bg-cyan-400 text-slate-900 px-8 py-3 rounded-full text-sm font-bold transition-all uppercase tracking-widest shadow-lg shadow-cyan-500/20">Initialize Workflow</a>
+                <a href="#agents" class="hover:bg-white/10 text-white px-8 py-3 rounded-full text-sm font-bold transition-all uppercase tracking-widest border border-slate-700">View Agent Routing</a>
+            </div>
+        </section>
+
+        <!-- Interactive Studio / Onboarding -->
+        <section id="studio" class="max-w-4xl mx-auto mb-32">
+            <div class="glass rounded-2xl p-8 border border-slate-700/50 shadow-2xl">
+                <h2 class="text-2xl font-display font-bold text-white mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-wand-magic-sparkles text-c25-cyan"></i> Initialize Your Video Workflow
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-400 mb-2">Content Niche / Type</label>
+                        <select id="niche" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-c25-cyan">
+                            <option>Faceless Documentaries</option>
+                            <option>Gaming Clips & Highlights</option>
+                            <option>Talking Head Tutorials</option>
+                            <option>Cinematic B-Roll / Aesthetic</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-400 mb-2">Preferred Format</label>
+                        <select id="format" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-c25-cyan">
+                            <option>Vertical (9:16) - Shorts/Reels/TikTok</option>
+                            <option>Long-form (16:9) - YouTube</option>
+                            <option>Square (1:1) - Instagram/Facebook</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-medium text-slate-400 mb-2">Voice & Likeness Preference</label>
+                        <select id="likeness" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-c25-cyan">
+                            <option>Use my own voice and face (AI enhancement only)</option>
+                            <option>Generate custom AI Avatar & Cloned Voice (HeyGen style)</option>
+                            <option>Fully synthetic / Faceless with AI Voiceover</option>
+                        </select>
+                    </div>
+                </div>
+                <button onclick="simulateRouting()" class="w-full bg-gradient-to-r from-c25-cyan to-c25-purple hover:opacity-90 text-white font-bold py-4 rounded-xl transition-all uppercase tracking-widest flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-route"></i> Route to C25 Agents & Generate
+                </button>
+                
+                <!-- Simulated Terminal Output -->
+                <div id="terminal" class="hidden mt-6 bg-slate-950 rounded-lg p-4 font-mono text-xs text-green-400 border border-slate-800">
+                    <p class="typing-cursor" id="terminal-text"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Workflow & Agent Routing -->
+        <section id="agents" class="max-w-7xl mx-auto mb-32">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">Constellation25 Agent Orchestration</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Your prompt is intelligently parsed and distributed across specialized C25 agents running locally via Ollama/Qwen.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- VENUS -->
+                <div class="glass p-6 rounded-xl glass-hover border-t-4 border-pink-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-white">VENUS</h3>
+                        <i class="fa-solid fa-pen-nib text-pink-500 text-xl"></i>
+                    </div>
+                    <p class="text-sm text-slate-400 mb-4"><strong>Role:</strong> Ideation & Scripting</p>
+                    <ul class="text-sm text-slate-300 space-y-2">
+                        <li>• Blog-to-video script generation</li>
+                        <li>• Hook optimization for retention</li>
+                        <li>• Auto-captioning & B-roll matching</li>
+                    </ul>
+                </div>
+
+                <!-- JUPITER -->
+                <div class="glass p-6 rounded-xl glass-hover border-t-4 border-c25-purple">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-white">JUPITER</h3>
+                        <i class="fa-solid fa-user-astronaut text-c25-purple text-xl"></i>
+                    </div>
+                    <p class="text-sm text-slate-400 mb-4"><strong>Role:</strong> Avatar & Voice Synthesis</p>
+                    <ul class="text-sm text-slate-300 space-y-2">
+                        <li>• Custom AI Avatar generation</li>
+                        <li>• Voice cloning & lip-sync (HeyGen equiv.)</li>
+                        <li>• Text-to-video (Veo 3 / Runway integration)</li>
+                    </ul>
+                </div>
+
+                <!-- MARS -->
+                <div class="glass p-6 rounded-xl glass-hover border-t-4 border-c25-cyan">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-white">MARS</h3>
+                        <i class="fa-solid fa-film text-c25-cyan text-xl"></i>
+                    </div>
+                    <p class="text-sm text-slate-400 mb-4"><strong>Role:</strong> Editing & Upscaling</p>
+                    <ul class="text-sm text-slate-300 space-y-2">
+                        <li>• Auto-cuts raw footage & dead air</li>
+                        <li>• AI Video Upscaling (4K @ 60/120 FPS)</li>
+                        <li>• Dynamic music & SFX layering</li>
+                    </ul>
+                </div>
+
+                <!-- SATURN -->
+                <div class="glass p-6 rounded-xl glass-hover border-t-4 border-c25-gold">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-white">SATURN</h3>
+                        <i class="fa-solid fa-shield-halved text-c25-gold text-xl"></i>
+                    </div>
+                    <p class="text-sm text-slate-400 mb-4"><strong>Role:</strong> Compliance & QA</p>
+                    <ul class="text-sm text-slate-300 space-y-2">
+                        <li>• Enforces YouTube AI disclosure labels</li>
+                        <li>• Filters out "AI slop" artifacts</li>
+                        <li>• Copyright & watermark scanning</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pro Prompting Rules -->
+        <section id="prompting" class="max-w-5xl mx-auto mb-32">
+            <div class="glass rounded-2xl p-8 md:p-12 border border-slate-700/50">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-12 h-12 bg-c25-cyan/10 rounded-full flex items-center justify-center text-c25-cyan text-2xl">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-display font-bold text-white">Pro-Tips for Cinematic AI Video</h2>
+                        <p class="text-slate-400 text-sm">Strict prompting rules to achieve clean, professional results and avoid generation breaks.</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-900/50 p-5 rounded-lg border border-slate-800">
+                        <h4 class="font-bold text-c25-cyan mb-2">1. Bind Actions with Time</h4>
+                        <p class="text-sm text-slate-300">Use the word <span class="text-white font-mono bg-slate-800 px-1 rounded">"while"</span> to specify simultaneous actions so the model parses time correctly. <br><em class="text-slate-500 text-xs">Ex: "A drone flies over a mountain while the sun sets."</em></p>
+                    </div>
+                    <div class="bg-slate-900/50 p-5 rounded-lg border border-slate-800">
+                        <h4 class="font-bold text-c25-cyan mb-2">2. One Verb Per Subject</h4>
+                        <p class="text-sm text-slate-300">Stacking multiple consecutive actions on a single subject breaks the generation. Give every subject one clear action, and split secondary actions into a separate clip.</p>
+                    </div>
+                    <div class="bg-slate-900/50 p-5 rounded-lg border border-slate-800">
+                        <h4 class="font-bold text-c25-cyan mb-2">3. Prioritize Concrete Nouns</h4>
+                        <p class="text-sm text-slate-300">Vague adjectives get poor results. Use highly descriptive, concrete nouns for framing, style, and lighting. <br><em class="text-slate-500 text-xs">Ex: "Anamorphic lens, 35mm, neon-lit cyberpunk alleyway."</em></p>
+                    </div>
+                    <div class="bg-slate-900/50 p-5 rounded-lg border border-slate-800">
+                        <h4 class="font-bold text-c25-cyan mb-2">4. Always Upscale & Enhance</h4>
+                        <p class="text-sm text-slate-300">Most raw AI video exports in low resolution. Agent MARS automatically routes exports through AI video upscalers to boost quality to 4K at 60 or 120 FPS.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compliance Section -->
+        <section id="compliance" class="max-w-5xl mx-auto mb-20">
+            <div class="bg-gradient-to-br from-slate-900 to-slate-950 rounded-2xl p-8 border border-red-500/20">
+                <div class="flex items-center gap-4 mb-6">
+                    <i class="fa-solid fa-triangle-exclamation text-red-400 text-2xl"></i>
+                    <h2 class="text-2xl font-display font-bold text-white">Staying Compliant with Platform Rules</h2>
+                </div>
+                <p class="text-slate-300 mb-6">Platforms have strict guidelines regarding artificial content. Ai4Reelz (Agent SATURN) automatically handles the following for YouTube and social platforms:</p>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div class="w-6 h-6 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center flex-shrink-0 mt-1 text-xs font-bold">!</div>
+                        <div>
+                            <h4 class="font-bold text-white">Mandatory Disclosure</h4>
+                            <p class="text-sm text-slate-400">You must label content if AI was used to generate realistic or photorealistic altered footage. SATURN auto-appends this metadata.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-6 h-6 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center flex-shrink-0 mt-1 text-xs font-bold">!</div>
+                        <div>
+                            <h4 class="font-bold text-white">Automatic Enforcement</h4>
+                            <p class="text-sm text-slate-400">If you fail to disclose the use of altered or synthetic media, YouTube's automated systems may apply the label for you, potentially harming reach.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-6 h-6 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center flex-shrink-0 mt-1 text-xs font-bold">✓</div>
+                        <div>
+                            <h4 class="font-bold text-white">Minor Edits Exempt</h4>
+                            <p class="text-sm text-slate-400">Beauty filters, animated characters, or minor touch-ups only need to be disclosed in the description, not via the strict altered content label.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-10 px-6 border-t border-slate-800/50 bg-slate-950 mt-auto">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-sm text-slate-500">
+                © 2026 Kre8tive Konceptz LTD. All Rights Reserved.<br/>
+                <span class="text-xs">Ai4Reelz is a sovereign module of the Constellation25 Ecosystem.</span>
+            </div>
+            <div class="flex gap-6 text-xs font-bold tracking-widest text-slate-600">
+                <span>CONSTELLATION25</span><span>•</span><span>OLLAMA</span><span>•</span><span>QWEN</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function simulateRouting() {
+            const terminal = document.getElementById('terminal');
+            const textElement = document.getElementById('terminal-text');
+            const niche = document.getElementById('niche').value;
+            const format = document.getElementById('format').value;
+            const likeness = document.getElementById('likeness').value;
+
+            terminal.classList.remove('hidden');
+            textElement.textContent = "";
+            
+            const steps = [
+                `> Initializing Ai4Reelz Workflow...`,
+                `> Parsing User Intent: Niche=[${niche}], Format=[${format}], Likeness=[${likeness}]`,
+                `> [EARTH] Orchestrator: Routing tasks to specialized agents...`,
+                `> [VENUS] Generating optimized script and hook for ${niche}...`,
+                `> [JUPITER] Synthesizing assets: Applying concrete noun prompting rules...`,
+                `> [MARS] Rendering video: Auto-cutting, syncing audio, upscaling to 4K 60FPS...`,
+                `> [SATURN] Compliance Check: Injecting mandatory AI disclosure metadata...`,
+                `> [PLUTO] Forensic Log: SHA-256 hash of prompt and output generated.`,
+                `> ✅ Workflow Complete. Video ready for export.`
+            ];
+
+            let step = 0;
+            const interval = setInterval(() => {
+                if (step < steps.length) {
+                    textElement.textContent += steps[step] + "\n";
+                    terminal.scrollTop = terminal.scrollHeight;
+                    step++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 600);
+        }
+    </script>
+</body>
+</html>

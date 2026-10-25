@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aiEDU | Get Educated with AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        edu: {
+                            dark: '#020617',
+                            panel: '#0f172a',
+                            cyan: '#22d3ee',
+                            purple: '#8b5cf6',
+                            emerald: '#10b981'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #020617; color: #e2e8f0; }
+        .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-hover:hover { background: rgba(30, 41, 59, 0.8); border-color: rgba(34, 211, 238, 0.4); transform: translateY(-2px); transition: all 0.3s ease; }
+        .text-gradient { background: linear-gradient(135deg, #22d3ee 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-grid { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-grid min-h-screen flex flex-col">
+
+    <!-- Top Bar -->
+    <div class="bg-edu-panel border-b border-slate-800 py-2 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center text-xs font-bold tracking-widest text-slate-400">
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-edu-cyan transition-colors">CATALYST</a>
+                <a href="#" class="hover:text-edu-cyan transition-colors">CAREERS</a>
+                <a href="#" class="hover:text-edu-cyan transition-colors">NEWS</a>
+                <a href="#" class="hover:text-edu-cyan transition-colors">FOR BUILDERS</a>
+            </div>
+            <a href="#" class="text-edu-cyan hover:text-cyan-300 transition-colors">DONATE <i class="fa-solid fa-heart ml-1"></i></a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 px-6 py-4 glass border-b border-slate-800/50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-edu-cyan to-edu-purple rounded-lg flex items-center justify-center font-bold text-white font-display text-xl">AI</div>
+                <div class="text-sm font-bold tracking-wider text-slate-400">ai<span class="text-edu-cyan">EDU</span></div>
+            </div>
+            <div class="hidden md:flex gap-8">
+                <a href="#about" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">ABOUT</a>
+                <a href="#administrators" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">ADMINISTRATORS</a>
+                <a href="#curriculum" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">CURRICULUM</a>
+                <a href="#training" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">TRAINING</a>
+                <a href="#ai-mode" class="text-sm font-medium text-edu-cyan hover:text-cyan-300 transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-sparkles"></i> AI Mode Conversation
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+        
+        <!-- Hero Section -->
+        <section class="relative pt-20 pb-24 px-6 overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-edu-purple/20 rounded-full blur-[120px] -z-10"></div>
+            <div class="max-w-5xl mx-auto text-center">
+                <div class="inline-block px-4 py-1.5 rounded-full glass mb-6 border border-edu-cyan/20">
+                    <span class="text-xs font-bold tracking-widest text-edu-cyan">501(c)(3) NON-PROFIT INITIATIVE</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-display font-black text-white mb-6 leading-tight">
+                    Are your students ready for the <br/><span class="text-gradient">age of artificial intelligence?</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-3xl mx-auto font-light">
+                    AI literacy should be a basic component of every student’s education. We work with education systems to advance AI Literacy and AI Readiness, ensuring all students are ready to live, work, and thrive in a world where AI is everywhere.
+            </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#curriculum" class="bg-edu-cyan hover:bg-cyan-400 text-slate-900 px-8 py-3 rounded-full text-sm font-bold transition-all uppercase tracking-widest">Explore Curriculum</a>
+                    <a href="#ai-mode" class="hover:bg-white/10 text-white px-8 py-3 rounded-full text-sm font-bold transition-all uppercase tracking-widest border border-slate-700 flex items-center gap-2">
+                        <i class="fa-solid fa-robot"></i> Get Educated with AI
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Education Paths -->
+        <section id="training" class="py-20 px-6 border-t border-slate-800/50 bg-edu-panel/30">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">🎓 AI Education Paths by Role</h2>
+                    <p class="text-slate-400 max-w-2xl mx-auto">Major technology leaders and institutions now offer comprehensive, specialized training paths tailored to different learning needs.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Students -->
+                    <div class="glass p-8 rounded-2xl glass-hover border-t-4 border-edu-cyan">
+                        <div class="w-12 h-12 bg-edu-cyan/10 rounded-lg flex items-center justify-center mb-6 text-edu-cyan text-2xl">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Students & Lifelong Learners</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Cut your learning time significantly by using a structured framework (Goal, Research, Priming, Comprehension, and Implementation). Tools like <strong>Google NotebookLM</strong> allow you to upload documents, generate instant study guides, and create custom self-quizzes.
+                        </p>
+                    </div>
+
+                    <!-- Educators -->
+                    <div class="glass p-8 rounded-2xl glass-hover border-t-4 border-edu-purple">
+                        <div class="w-12 h-12 bg-edu-purple/10 rounded-lg flex items-center justify-center mb-6 text-edu-purple text-2xl">
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Educators & Teachers</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Programs like the <strong>Google AI for Educators</strong> course and the <strong>Microsoft AI-Powered Teaching</strong> path teach educators how to safely use tools like Gemini and Copilot to design dynamic lesson plans and differentiate reading levels.
+                        </p>
+                    </div>
+
+                    <!-- Professionals -->
+                    <div class="glass p-8 rounded-2xl glass-hover border-t-4 border-edu-emerald">
+                        <div class="w-12 h-12 bg-edu-emerald/10 rounded-lg flex items-center justify-center mb-6 text-edu-emerald text-2xl">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Professionals & Small Business</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            The <strong>Google AI Professional Certificate</strong> and <strong>OpenAI Academy Courses</strong> focus on workflow thinking—breaking large business operations into smaller steps that AI can automate to increase team efficiency.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3-Month Strategic Framework -->
+        <section class="py-20 px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-6">🛠️ Strategic Framework to Learn AI in 3 Months</h2>
+                        <p class="text-slate-400 mb-8">If you want to become fully AI-literate, adopt a phased approach to build your fluency and accelerate your AI journey.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div class="w-10 h-10 rounded-full bg-edu-cyan/20 text-edu-cyan flex items-center justify-center font-bold flex-shrink-0">1</div>
+                                <div>
+                                    <h4 class="font-bold text-white">Phase 1: Foundations (Habit Building)</h4>
+                                    <p class="text-sm text-slate-400 mt-1">Swap your daily search engine queries out for an LLM (like Claude, Gemini, or ChatGPT) to practice natural language prompting.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-10 h-10 rounded-full bg-edu-purple/20 text-edu-purple flex items-center justify-center font-bold flex-shrink-0">2</div>
+                                <div>
+                                    <h4 class="font-bold text-white">Phase 2: Workflow Thinking (Deconstructing Tasks)</h4>
+                                    <p class="text-sm text-slate-400 mt-1">Break large projects down into distinct phases instead of throwing a single, massive prompt at the AI.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-10 h-10 rounded-full bg-edu-emerald/20 text-edu-emerald flex items-center justify-center font-bold flex-shrink-0">3</div>
+                                <div>
+                                    <h4 class="font-bold text-white">Phase 3: Creative Remixing (Tool Integration)</h4>
+                                    <p class="text-sm text-slate-400 mt-1">Combine different generative tools (text, image, data analysis) to discover unique solutions and workflows.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video Reference Card -->
+                    <div class="glass rounded-2xl p-6 border border-slate-700/50">
+                        <div class="aspect-video bg-slate-900 rounded-xl flex items-center justify-center relative overflow-hidden group cursor-pointer mb-4">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent opacity-60"></div>
+                            <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-edu-cyan/90 transition-all duration-300">
+                                <i class="fa-solid fa-play text-white text-xl ml-1"></i>
+                            </div>
+                            <span class="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded">19:56</span>
+                        </div>
+                        <h3 class="font-bold text-white text-lg mb-2">You're Not Behind (Yet): How to Learn AI in 19 Minutes</h3>
+                        <div class="flex items-center gap-2 text-sm text-slate-400 mb-4">
+                            <span>333K views</span>
+                            <span>•</span>
+                            <span>8 months ago</span>
+                            <span>•</span>
+                            <span class="text-edu-cyan">YouTube · Ali Abdaal</span>
+                        </div>
+                        <p class="text-xs text-slate-500">For a deep dive into building these foundational habits and accelerating your AI fluency over a 3-month timeline.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About aiEDU & Mission -->
+        <section id="about" class="py-20 px-6 border-t border-slate-800/50 bg-edu-panel/30">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-6">We’re preparing students to thrive in a world where AI is everywhere.</h2>
+                <p class="text-lg text-slate-300 mb-12 max-w-3xl mx-auto">
+                    We envision a world where our education system evolves to better meet the new demands of a world transformed by AI. This requires a national effort to bring together education partners, school systems, and other stakeholders in the K12 ecosystem to work collaboratively toward a clear, shared goal.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-8 text-left">
+                    <div class="glass p-8 rounded-2xl">
+                        <h3 class="text-xl font-bold text-edu-cyan mb-4">We empower educators and school leaders.</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            aiEDU utilizes research-based strategies and educational psychology frameworks to create equitable training experiences and curriculum for teachers of Computer Science, Math, English, Social Studies, Science, and CTE; a wide range of administrators; and nonprofits. Our trainings are designed to help build AI Readiness and empower students with AI literacy.
+                        </p>
+                    </div>
+                    <div class="glass p-8 rounded-2xl flex flex-col justify-center items-center text-center">
+                        <i class="fa-solid fa-newspaper text-4xl text-edu-purple mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">aiEDU in the News</h3>
+                        <ul class="text-sm text-slate-400 space-y-3 mt-4">
+                            <li class="hover:text-edu-cyan transition-colors cursor-pointer">→ How Schools Can Survive (and Maybe Even Thrive) With A.I. This Fall</li>
+                            <li class="hover:text-edu-cyan transition-colors cursor-pointer">→ Exclusive: Educators divided over AI's impact</li>
+                            <li class="hover:text-edu-cyan transition-colors cursor-pointer">→ Weighing the pros and cons of A.I. in education</li>
+                            <li class="hover:text-edu-cyan transition-colors cursor-pointer">→ Prepping the next generation for the AI future</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners & Newsletter -->
+        <section class="py-20 px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl font-display font-bold text-white mb-4">Our Partners</h2>
+                    <p class="text-slate-400">We collaborate across the ecosystem with a diverse group of partners including leading tech companies, educational institutions, and non-profits.</p>
+                </div>
+                
+                <!-- Partner Logos Placeholder -->
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 mb-20 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                    <div class="text-2xl font-bold text-slate-300 flex items-center gap-2"><i class="fa-brands fa-google"></i> Google</div>
+                    <div class="text-2xl font-bold text-slate-300 flex items-center gap-2"><i class="fa-brands fa-microsoft"></i> Microsoft</div>
+                    <div class="text-2xl font-bold text-slate-300 flex items-center gap-2"><i class="fa-brands fa-openai"></i> OpenAI</div>
+                    <div class="text-2xl font-bold text-slate-300 flex items-center gap-2"><i class="fa-solid fa-graduation-cap"></i> Code.org</div>
+                    <div class="text-2xl font-bold text-slate-300 flex items-center gap-2"><i class="fa-solid fa-school"></i> K12 Alliance</div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="glass rounded-2xl p-8 md:p-12 border border-edu-cyan/20 text-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-edu-cyan/10 rounded-full blur-[80px] -z-10"></div>
+                    <h2 class="text-3xl font-display font-bold text-white mb-4">Get our Educator Newsletter!</h2>
+                    <p class="text-slate-400 mb-8 max-w-xl mx-auto">Stay updated on the latest AI literacy resources, curriculum updates, and training opportunities for your school or district.</p>
+                    <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-3" onsubmit="event.preventDefault(); alert('Thank you for subscribing to the aiEDU newsletter!');">
+                        <input type="email" placeholder="Enter your email address" required class="flex-1 bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-edu-cyan transition-colors">
+                        <button type="submit" class="bg-edu-cyan hover:bg-cyan-400 text-slate-900 px-6 py-3 rounded-lg font-bold transition-colors">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-slate-800/50 bg-slate-950 mt-auto">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-br from-edu-cyan to-edu-purple rounded flex items-center justify-center font-bold text-white font-display text-sm">AI</div>
+                        <div class="text-sm font-bold tracking-wider text-slate-400">ai<span class="text-edu-cyan">EDU</span></div>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        A 501(c)(3) non-profit devoted to ensuring all students are ready to live, work, and thrive in a world where AI is everywhere.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-4 uppercase tracking-wider">About</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#" class="hover:text-edu-cyan transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-edu-cyan transition-colors">Our Team</a></li>
+                        <li><a href="#" class="hover:text-edu-cyan transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-edu-cyan transition-colors">Partners</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-4 uppercase tracking-wider">Resources</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#curriculum" class="hover:text-edu-cyan transition-colors">Curriculum</a></li>
+                        <li><a href="#training" class="hover:text-edu-cyan transition-colors">Training</a></li>
+                        <li><a href="#administrators" class="hover:text-edu-cyan transition-colors">Administrators</a></li>
+                        <li><a href="#" class="hover:text-edu-cyan transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-4 uppercase tracking-wider">Connect</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-edu-cyan hover:text-slate-900 transition-all"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-edu-cyan hover:text-slate-900 transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-edu-cyan hover:text-slate-900 transition-all"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600">
+                <p>&copy; 2026 aiEDU. All Rights Reserved. | 501(c)(3) Non-Profit Organization.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-slate-400">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-400">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

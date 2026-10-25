@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Store Builder | Immersive 3D Retail Environments</title>
+    <meta name="description" content="Create immersive virtual 3D environments that transform online shopping. Boost engagement, visual storytelling, and sales conversion.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #050508;
+            --bg-panel: #0f111a;
+            --bg-hover: #1a1d2d;
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #00d4ff;
+            --text-main: #ffffff;
+            --text-muted: #9ca3af;
+            --border: rgba(255, 255, 255, 0.08);
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .logo { font-family: 'Space Grotesk', sans-serif; }
+
+        a { text-decoration: none; color: inherit; transition: color 0.3s; }
+        ul { list-style: none; }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(5, 5, 8, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: var(--text-muted); font-size: 0.95rem; font-weight: 500; }
+        .nav-links a:hover { color: var(--text-main); }
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            display: inline-block;
+        }
+
+        .btn-primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4); }
+        .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text-main); }
+        .btn-outline:hover { background: var(--glass); border-color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 5% 100px;
+            text-align: center;
+            background: radial-gradient(circle at 50% 0%, rgba(102, 126, 234, 0.15) 0%, transparent 60%);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-actions { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+
+        /* Stats Section */
+        .stats {
+            padding: 60px 5%;
+            background: var(--bg-panel);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p { color: var(--text-muted); font-size: 1rem; max-width: 250px; margin: 0 auto; }
+
+        /* Clients */
+        .clients {
+            padding: 60px 5%;
+            text-align: center;
+        }
+
+        .clients h4 { color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; }
+        
+        .client-logos {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .client-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+
+        .client-logo:hover { opacity: 1; color: var(--text-main); }
+
+        /* Features Section */
+        .section { padding: 100px 5%; max-width: 1200px; margin: 0 auto; }
+        
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 15px; }
+        .section-header p { color: var(--text-muted); max-width: 600px; margin: 0 auto; }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-panel);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .feature-icon { font-size: 2rem; color: var(--accent); margin-bottom: 20px; }
+        .feature-card h3 { font-size: 1.3rem; margin-bottom: 15px; }
+        .feature-card p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* Platform Section */
+        .platform { background: var(--bg-panel); padding: 100px 5%; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .platform-container { max-width: 1200px; margin: 0 auto; }
+
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .platform-card {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .platform-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
+        .platform-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+        .platform-card p { color: var(--text-muted); font-size: 0.9rem; }
+
+        /* Solutions / Industries */
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .solution-tag {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .solution-tag:hover { background: rgba(102, 126, 234, 0.1); border-color: var(--primary); transform: scale(1.05); }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            padding: 100px 5%;
+            border-top: 1px solid var(--border);
+        }
+
+        .contact-container { max-width: 600px; margin: 0 auto; }
+        .contact-container h2 { text-align: center; font-size: 2.5rem; margin-bottom: 15px; }
+        .contact-container > p { text-align: center; color: var(--text-muted); margin-bottom: 40px; }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-muted); }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+
+        .checkbox-group { display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; }
+        .checkbox-group label { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--text-muted); cursor: pointer; }
+
+        .submit-btn { width: 100%; padding: 16px; font-size: 1.1rem; }
+
+        /* Footer */
+        footer {
+            padding: 40px 5%;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--accent);
+            color: var(--bg-dark);
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 3000;
+        }
+        .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .stats-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">VirtualStore Builder</div>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#platform">Platform</a></li>
+            <li><a href="#solutions">Solutions</a></li>
+            <li><a href="#resources">Resources</a></li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Reach Out</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Create Immersive <span>3D Virtual Stores</span> for Global Retail Brands</h1>
+        <p>Develop immersive virtual 3D environments that transform online shopping. These digital spaces allow customers to browse, interact, and purchase products while helping retailers boost engagement, visual storytelling, and sales conversion.</p>
+        <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Start Building</a>
+            <a href="#features" class="btn btn-outline">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>9 MIN</h3>
+                <p>Average time visitors spend interacting with immersive brand environments</p>
+            </div>
+            <div class="stat-item">
+                <h3>+73%</h3>
+                <p>Typical uplift in conversion rate compared with standard e-commerce pages</p>
+            </div>
+            <div class="stat-item">
+                <h3>650%</h3>
+                <p>Average return on investment delivered through virtual retail experiences</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Clients -->
+    <section class="clients">
+        <h4>Built with Creator Tools For</h4>
+        <div class="client-logos">
+            <div class="client-logo">Walmart Realm</div>
+            <div class="client-logo">Tommy Hilfiger</div>
+            <div class="client-logo">Bloomingdale's</div>
+        </div>
+    </section>
+
+    <!-- Core Features -->
+    <section class="section" id="features">
+        <div class="section-header">
+            <h2>How Virtual Stores Enhance Your Online Presence</h2>
+            <p>Transform the way shoppers engage with retail environments.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-globe"></i></div>
+                <h3>Global Reach</h3>
+                <p>Become accessible to customers everywhere. Our 3D retail environments let shoppers interact with your brand online from any location.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-cubes"></i></div>
+                <h3>Interactive Catalogs</h3>
+                <p>Showcase collections in engaging, shoppable 3D spaces where customers can zoom, rotate and explore products in detail.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-shirt"></i></div>
+                <h3>Virtual Try-Ons</h3>
+                <p>Give customers confidence before they buy. Virtual try-on tools allow shoppers to see how products look or fit, creating a personalized experience.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-rotate-left"></i></div>
+                <h3>Reduce Returns</h3>
+                <p>Help customers make informed decisions by providing realistic product visuals. Better understanding leads to fewer returns and increases shopper confidence.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-clock"></i></div>
+                <h3>24/7 Availability</h3>
+                <p>Customers can explore collections, view campaigns and shop whenever it suits them, offering convenience beyond physical retail hours.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Features -->
+    <section class="platform" id="platform">
+        <div class="platform-container">
+            <div class="section-header">
+                <h2>Virtual Store Management Platform</h2>
+                <p>Full control, ease of use, and deep e-commerce integration.</p>
+            </div>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h3>Pre-built 3D Templates</h3>
+                    <p>Launch your store faster with ready-to-use 3D templates. Each layout is designed for retail brands and can be customized to fit your products and style.</p>
+                </div>
+                <div class="platform-card">
+                    <i class="fa-brands fa-shopify"></i>
+                    <h3>E-commerce Integration</h3>
+                    <p>Connect your digital store with major platforms such as Shopify and Magento. Product data and analytics sync automatically.</p>
+                </div>
+                <div class="platform-card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Custom Reports & Dashboards</h3>
+                    <p>Track engagement, visitor behaviour and conversion performance. Our dashboard gives brands measurable insight into customer interactions.</p>
+                </div>
+                <div class="platform-card">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    <h3>Mobile-Friendly Solutions</h3>
+                    <p>Every experience is designed for mobile. Customers can explore collections and shop through responsive 3D environments on any device.</p>
+                </div>
+                <div class="platform-card">
+                    <i class="fa-solid fa-sliders"></i>
+                    <h3>Full Control & Automation</h3>
+                    <p>Rotate products and interior design items. Integrates directly with your product catalogue for seamless Product Information Automation.</p>
+                </div>
+                <div class="platform-card">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <h3>Sales And Curation Tool</h3>
+                    <p>Allows your team to place and preview products before placing them in your virtual store. Simple UI requires no technical skills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions / Industries -->
+    <section class="section" id="solutions">
+        <div class="section-header">
+            <h2>Other Solutions & Industries</h2>
+            <p>Tailored virtual experiences for every sector.</p>
+        </div>
+        <div class="solutions-grid">
+            <div class="solution-tag">Retail</div>
+            <div class="solution-tag">Fashion</div>
+            <div class="solution-tag">Beauty</div>
+            <div class="solution-tag">Automotive</div>
+            <div class="solution-tag">Real Estate</div>
+            <div class="solution-tag">Theme Parks</div>
+            <div class="solution-tag">Hospitality</div>
+            <div class="solution-tag">Art</div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2>Reach Out to Us</h2>
+            <p>Ready to build your immersive retail environment? Let's talk.</p>
+            
+            <form id="contactForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Company</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Work Email</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel">
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea required></textarea>
+                </div>
+                
+                <div class="checkbox-group">
+                    <label><input type="checkbox" required> I agree to the privacy policy</label>
+                    <label><input type="checkbox" required> I agree to receive electronic communication</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Virtual Store Builder. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">Message sent successfully!</div>
+
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+            e.target.reset();
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

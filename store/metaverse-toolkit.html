@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constellation25 | Metaverse Creator Toolkit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        c25: {
+                            dark: '#020617',
+                            panel: '#0f172a',
+                            cyan: '#22d3ee',
+                            purple: '#8b5cf6',
+                            gold: '#fbbf24'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #020617; color: #e2e8f0; }
+        .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-hover:hover { background: rgba(30, 41, 59, 0.8); border-color: rgba(34, 211, 238, 0.4); transform: translateY(-2px); transition: all 0.3s ease; }
+        .text-gradient { background: linear-gradient(135deg, #22d3ee 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-grid { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px); }
+        .glow { box-shadow: 0 0 30px rgba(34, 211, 238, 0.15); }
+        .video-card:hover .play-btn { transform: scale(1.1); background-color: rgba(34, 211, 238, 0.9); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-grid min-h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 px-6 py-4 glass border-b border-slate-800/50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-c25-cyan to-c25-purple rounded-lg flex items-center justify-center font-bold text-white font-display text-xl">C25</div>
+                <div class="text-sm font-bold tracking-wider text-slate-400">METAVERSE<span class="text-c25-cyan">™</span> TOOLKIT</div>
+            </div>
+            <div class="hidden md:flex gap-8">
+                <a href="#prompt" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">AI Blueprint</a>
+                <a href="#components" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Core Components</a>
+                <a href="#workflow" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Workflow</a>
+                <a href="#videos" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">How-To Videos</a>
+            </div>
+            <button class="bg-c25-cyan hover:bg-cyan-400 text-slate-900 px-5 py-2 rounded-full text-xs font-bold transition-all uppercase tracking-widest">Launch Editor</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1 pt-24 pb-20 px-6">
+        
+        <!-- Hero Section -->
+        <section class="max-w-5xl mx-auto text-center mb-20">
+            <div class="inline-block px-4 py-1.5 rounded-full glass mb-6 border border-c25-cyan/20">
+                <span class="text-xs font-bold tracking-widest text-c25-cyan">SPATIAL • META HORIZON • UNITY</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-display font-black text-white mb-6 leading-tight">
+                Build Your Own <span class="text-gradient">Metaverse</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-3xl mx-auto font-light">
+                Utilize standard Web3/3D platform toolkits to design custom 3D environments, script interactive gameplay, and deploy multiplayer virtual spaces accessible via VR, web, and mobile devices.
+            </p>
+        </section>
+
+        <!-- AI Prompt Box Section -->
+        <section id="prompt" class="max-w-4xl mx-auto mb-32">
+            <div class="glass rounded-2xl p-8 border border-slate-700/50 glow">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 bg-c25-purple/20 rounded-full flex items-center justify-center text-c25-purple text-xl">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-display font-bold text-white">AI Metaverse Blueprint Generator</h2>
+                        <p class="text-slate-400 text-sm">Describe your vision, and our AI will generate the exact setup steps, asset requirements, and starter scripts for your chosen platform.</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <select id="platform" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-c25-cyan">
+                            <option value="spatial">Spatial.io (Unity)</option>
+                            <option value="meta">Meta Horizon Worlds</option>
+                            <option value="viverse">Viverse (Vive)</option>
+                            <option value="custom">Custom WebGL/Three.js</option>
+                        </select>
+                        <select id="experience" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-c25-cyan">
+                            <option value="gallery">Virtual Art Gallery</option>
+                            <option value="social">Social Hangout / Club</option>
+                            <option value="game">Interactive Mini-Game</option>
+                            <option value="corporate">Virtual Office / HQ</option>
+                        </select>
+                    </div>
+                    <textarea id="ai-prompt" rows="4" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-4 text-white focus:outline-none focus:border-c25-cyan resize-none" placeholder="e.g., I want to build a cyberpunk-themed virtual art gallery where users can click on paintings to read artist bios and teleport between rooms..."></textarea>
+                    
+                    <button onclick="generateBlueprint()" class="w-full bg-gradient-to-r from-c25-cyan to-c25-purple hover:opacity-90 text-white font-bold py-4 rounded-xl transition-all uppercase tracking-widest flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-bolt"></i> Generate Blueprint
+                    </button>
+                </div>
+
+                <!-- Simulated Output -->
+                <div id="blueprint-output" class="hidden mt-6 bg-slate-950 rounded-lg p-6 border border-c25-cyan/30 font-mono text-sm text-green-400">
+                    <p class="typing-cursor" id="terminal-text"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Components -->
+        <section id="components" class="max-w-7xl mx-auto mb-32">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">Core Components of a Creator Toolkit</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Whether you are using Spatial, Viverse, or Meta Horizon Worlds, creator toolkits combine the power of a standard 3D game engine with specific cloud-hosted multiplayer features.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Component 1 -->
+                <div class="glass p-6 rounded-xl glass-hover border-t-4 border-c25-cyan">
+                    <div class="w-12 h-12 bg-c25-cyan/10 rounded-lg flex items-center justify-center mb-4 text-c25-cyan text-xl"><i class="fa-solid fa-cube"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">3D Scene Editor</h3>
+                    <p class="text-sm text-slate-400">Integrated via Unity Editor or dedicated desktop tools. Lay out 3D models, paint terrain, bake lighting, and configure collision physics.</p>
+                </div>
+                <!-- Component 2 -->
+                <div class="glass p-6 rounded-xl glass-hover border-t-4 border-c25-purple">
+                    <div class="w-12 h-12 bg-c25-purple/10 rounded-lg flex items-center justify-center mb-4 text-c25-purple text-xl"><i class="fa-solid fa-code"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">Interactivity & Scripting</h3>
+                    <p class="text-sm text-slate-400">Visual scripting or standardized languages (TypeScript, C#) to build complex game logic, trigger actions, and handle player events.</p>
+                </div>
+                <!-- Component 3 -->
+                <div class="glass p-6 rounded-xl glass-hover border-t-4 border-c25-gold">
+                    <div class="w-12 h-12 bg-c25-gold/10 rounded-lg flex items-center justify-center mb-4 text-c25-gold text-xl"><i class="fa-solid fa-layer-group"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">Asset Pipelines</h3>
+                    <p class="text-sm text-slate-400">Built-in tools for importing industry-standard 3D formats (FBX, OBJ). Optimize custom assets from Blender or Maya for real-time performance.</p>
+                </div>
+                <!-- Component 4 -->
+                <div class="glass p-6 rounded-xl glass-hover border-t-4 border-emerald-500">
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4 text-emerald-400 text-xl"><i class="fa-solid fa-users"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">Avatar & Networking</h3>
+                    <p class="text-sm text-slate-400">Automatic handling of multiplayer matchmaking, real-time voice/text communication, and customizable avatar systems out of the box.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step-by-Step Workflow -->
+        <section id="workflow" class="max-w-5xl mx-auto mb-32">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">Step-by-Step Workflow</h2>
+                <p class="text-slate-400">A typical setup using a package like the Spatial.io Creator Toolkit follows these sequential milestones.</p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Phase 1 -->
+                <div class="glass p-6 rounded-xl flex flex-col md:flex-row gap-6 items-start border-l-4 border-c25-cyan">
+                    <div class="bg-c25-cyan/10 text-c25-cyan font-bold text-xl w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">01</div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-white mb-2">Setting Up</h3>
+                        <p class="text-slate-400 text-sm mb-3">Initialize the developer environment.</p>
+                        <ul class="text-sm text-slate-300 space-y-2">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-c25-cyan mt-1"></i> Create an account on the target platform (e.g., Spatial.io).</li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-c25-cyan mt-1"></i> Install the designated engine version via Unity Hub.</li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-c25-cyan mt-1"></i> Download and import the platform's official Starter Template SDK.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="glass p-6 rounded-xl flex flex-col md:flex-row gap-6 items-start border-l-4 border-c25-purple">
+                    <div class="bg-c25-purple/10 text-c25-purple font-bold text-xl w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">02</div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-white mb-2">Importing Assets</h3>
+                        <p class="text-slate-400 text-sm mb-3">Bring in the visual elements of your environment.</p>
+                        <ul class="text-sm text-slate-300 space-y-2">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-c25-purple mt-1"></i> Gather 3D geometry in FBX or OBJ formats.</li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-c25-purple mt-1"></i> Rig custom humanoid avatars using Mixamo or AccuRig.</li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-c25-purple mt-1"></i> Organize files into dedicated asset subfolders in your hierarchy.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="glass p-6 rounded-xl flex flex-col md:flex-row gap-6 items-start border-l-4 border-c25-gold">
+                    <div class="bg-c25-gold/10 text-c25-gold font-bold text-xl w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">03</div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-white mb-2">Designing the Logic</h3>
+                        <p class="text-slate-400 text-sm mb-3">Make the virtual space interactive.</p>
+                        <ul class="text-sm text-slate-300 space-y-2">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-c25-gold mt-1"></i> Define spatial components like spawn points, teleport pads, and seating.</li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-c25-gold mt-1"></i> Attach script behaviors to game objects (e.g., opening hyperlinks).</li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-c25-gold mt-1"></i> Configure lights, reflections, and audio settings to optimize performance.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Phase 4 -->
+                <div class="glass p-6 rounded-xl flex flex-col md:flex-row gap-6 items-start border-l-4 border-emerald-500">
+                    <div class="bg-emerald-500/10 text-emerald-400 font-bold text-xl w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">04</div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-white mb-2">Testing & Publishing</h3>
+                        <p class="text-slate-400 text-sm mb-3">Deploy the experience live to your community.</p>
+                        <ul class="text-sm text-slate-300 space-y-2">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Use built-in mobile/web simulation previews to test multiplayer sync.</li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Build and publish directly through the toolkit's configuration window.</li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> Share the resulting cross-platform URL for instant VR/PC/mobile access.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How-To Video Section -->
+        <section id="videos" class="max-w-7xl mx-auto mb-20">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">How-To Video Tutorials</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Master the toolkit with our curated, step-by-step video guides covering everything from initial setup to advanced scripting.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Video 1 -->
+                <div class="video-card glass rounded-xl overflow-hidden cursor-pointer group">
+                    <div class="relative aspect-video bg-slate-800 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
+                        <div class="play-btn w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-c25-cyan/90">
+                            <i class="fa-solid fa-play text-white text-xl ml-1"></i>
+                        </div>
+                        <span class="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded">12:45</span>
+                    </div>
+                    <div class="p-5">
+                        <div class="text-xs font-bold text-c25-cyan mb-2 uppercase tracking-wider">Phase 1: Setup</div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-c25-cyan transition-colors">Installing the Spatial.io Unity SDK</h3>
+                        <p class="text-sm text-slate-400">A complete walkthrough of setting up Unity Hub, importing the starter template, and configuring your first project.</p>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video-card glass rounded-xl overflow-hidden cursor-pointer group">
+                    <div class="relative aspect-video bg-slate-800 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
+                        <div class="play-btn w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-c25-cyan/90">
+                            <i class="fa-solid fa-play text-white text-xl ml-1"></i>
+                        </div>
+                        <span class="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded">18:20</span>
+                    </div>
+                    <div class="p-5">
+                        <div class="text-xs font-bold text-c25-purple mb-2 uppercase tracking-wider">Phase 2: Assets</div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-c25-purple transition-colors">Importing & Optimizing FBX Models</h3>
+                        <p class="text-sm text-slate-400">Learn how to bring in custom Blender assets, rig them with Mixamo, and optimize polygon counts for smooth VR performance.</p>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="video-card glass rounded-xl overflow-hidden cursor-pointer group">
+                    <div class="relative aspect-video bg-slate-800 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
+                        <div class="play-btn w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-c25-cyan/90">
+                            <i class="fa-solid fa-play text-white text-xl ml-1"></i>
+                        </div>
+                        <span class="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded">24:10</span>
+                    </div>
+                    <div class="p-5">
+                        <div class="text-xs font-bold text-c25-gold mb-2 uppercase tracking-wider">Phase 3: Logic</div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-c25-gold transition-colors">Visual Scripting: Teleport Pads & Triggers</h3>
+                        <p class="text-sm text-slate-400">Step-by-step guide to attaching interactive behaviors to game objects without writing a single line of complex code.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="max-w-4xl mx-auto text-center glass rounded-2xl p-10 border border-c25-cyan/20">
+            <h2 class="text-3xl font-display font-bold text-white mb-4">Ready to Build Your World?</h2>
+            <p class="text-slate-400 mb-8 max-w-2xl mx-auto">Are you planning to build this using a specific platform like Spatial, Meta Horizon, or Unity? Let us know your experience level or what type of space you want to make, and we can provide exact code examples or installation steps.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="bg-c25-cyan hover:bg-cyan-400 text-slate-900 px-8 py-3 rounded-full text-sm font-bold transition-all uppercase tracking-widest">Join Discord Community</button>
+                <button class="hover:bg-white/10 text-white px-8 py-3 rounded-full text-sm font-bold transition-all uppercase tracking-widest border border-slate-700">View Documentation</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-10 px-6 border-t border-slate-800/50 bg-slate-950 mt-auto">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-sm text-slate-500">
+                © 2026 Kre8tive Konceptz LTD. All Rights Reserved.<br/>
+                <span class="text-xs">Empowering the next generation of virtual world creators.</span>
+            </div>
+            <div class="flex gap-6 text-xs font-bold tracking-widest text-slate-600">
+                <span>CONSTELLATION25</span><span>•</span><span>SPATIAL</span><span>•</span><span>UNITY</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function generateBlueprint() {
+            const platform = document.getElementById('platform').value;
+            const experience = document.getElementById('experience').value;
+            const prompt = document.getElementById('ai-prompt').value;
+            const outputDiv = document.getElementById('blueprint-output');
+            const textElement = document.getElementById('terminal-text');
+
+            if (!prompt.trim()) {
+                alert("Please describe your metaverse vision first!");
+                return;
+            }
+
+            outputDiv.classList.remove('hidden');
+            textElement.innerText = "";
+            
+            const steps = [
+                `> Analyzing prompt for "${experience}" on ${platform.toUpperCase()}...`,
+                `> [EARTH] Orchestrator: Mapping spatial requirements...`,
+                `> [MERCURY] Asset Pipeline: Recommending optimized FBX/OBJ packages for ${experience}...`,
+                `> [JUPITER] Scripting: Generating starter TypeScript/C# logic for interactive triggers...`,
+                `> [SATURN] Networking: Configuring multiplayer spawn points and avatar sync...`,
+                `> ✅ Blueprint Generated! Check your project folder for 'starter_script.cs' and 'asset_manifest.json'.`
+            ];
+
+            let step = 0;
+            const interval = setInterval(() => {
+                if (step < steps.length) {
+                    textElement.innerText += steps[step] + "\n";
+                    outputDiv.scrollTop = outputDiv.scrollHeight;
+                    step++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 600);
+        }
+    </script>
+</body>
+</html>

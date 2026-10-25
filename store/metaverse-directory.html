@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constellation25 | Metaverse World Directory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        c25: {
+                            dark: '#020617',
+                            panel: '#0f172a',
+                            cyan: '#22d3ee',
+                            purple: '#8b5cf6',
+                            emerald: '#10b981',
+                            gold: '#fbbf24'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #020617; color: #e2e8f0; }
+        .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-hover:hover { background: rgba(30, 41, 59, 0.8); border-color: rgba(34, 211, 238, 0.4); transform: translateY(-2px); transition: all 0.3s ease; }
+        .text-gradient { background: linear-gradient(135deg, #22d3ee 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-grid { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px); }
+        .platform-card { transition: all 0.3s ease; }
+        .platform-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(34, 211, 238, 0.2); }
+        .filter-btn.active { background: #22d3ee; color: #020617; border-color: #22d3ee; }
+        .fade-in { animation: fadeIn 0.4s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-grid min-h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 px-6 py-4 glass border-b border-slate-800/50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-c25-cyan to-c25-purple rounded-lg flex items-center justify-center font-bold text-white font-display text-xl">C25</div>
+                <div class="text-sm font-bold tracking-wider text-slate-400">METAVERSE<span class="text-c25-cyan">™</span> DIRECTORY</div>
+            </div>
+            <div class="hidden md:flex gap-8">
+                <a href="#browser" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Browser-Based</a>
+                <a href="#gaming" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Gaming</a>
+                <a href="#vr" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">VR Social</a>
+                <a href="#blockchain" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Blockchain</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <input type="text" id="searchInput" placeholder="Search platforms..." class="hidden md:block bg-slate-900 border border-slate-700 rounded-full px-4 py-2 text-sm text-white focus:outline-none focus:border-c25-cyan w-64">
+                <button class="bg-c25-cyan hover:bg-cyan-400 text-slate-900 px-5 py-2 rounded-full text-xs font-bold transition-all uppercase tracking-widest">Submit Platform</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1 pt-24 pb-20 px-6">
+        
+        <!-- Hero Section -->
+        <section class="max-w-6xl mx-auto text-center mb-16">
+            <div class="inline-block px-4 py-1.5 rounded-full glass mb-6 border border-c25-cyan/20">
+                <span class="text-xs font-bold tracking-widest text-c25-cyan">100+ VIRTUAL WORLDS</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-display font-black text-white mb-6 leading-tight">
+                Explore the <span class="text-gradient">Metaverse</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-3xl mx-auto font-light">
+                Discover hundreds of unique digital environments spanning social spaces, gaming hubs, virtual offices, and blockchain worlds. Updated for 2026.
+            </p>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
+                <div class="glass p-4 rounded-xl">
+                    <div class="text-3xl font-bold text-c25-cyan mb-1">600M+</div>
+                    <div class="text-xs text-slate-400">Combined MAU</div>
+                </div>
+                <div class="glass p-4 rounded-xl">
+                    <div class="text-3xl font-bold text-c25-purple mb-1">100+</div>
+                    <div class="text-xs text-slate-400">Active Platforms</div>
+                </div>
+                <div class="glass p-4 rounded-xl">
+                    <div class="text-3xl font-bold text-c25-emerald mb-1">$204B</div>
+                    <div class="text-xs text-slate-400">Market Size</div>
+                </div>
+                <div class="glass p-4 rounded-xl">
+                    <div class="text-3xl font-bold text-c25-gold mb-1">24/7</div>
+                    <div class="text-xs text-slate-400">Always Online</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Buttons -->
+        <section class="max-w-7xl mx-auto mb-12">
+            <div class="flex flex-wrap justify-center gap-3" id="filterContainer">
+                <button onclick="filterPlatforms('all')" class="filter-btn active px-6 py-2 rounded-full glass glass-hover text-sm font-bold transition-all border border-slate-700" data-filter="all">All Platforms</button>
+                <button onclick="filterPlatforms('browser')" class="filter-btn px-6 py-2 rounded-full glass glass-hover text-sm font-bold transition-all border border-slate-700" data-filter="browser"> Browser-Based</button>
+                <button onclick="filterPlatforms('gaming')" class="filter-btn px-6 py-2 rounded-full glass glass-hover text-sm font-bold transition-all border border-slate-700" data-filter="gaming">🎮 Gaming</button>
+                <button onclick="filterPlatforms('vr')" class="filter-btn px-6 py-2 rounded-full glass glass-hover text-sm font-bold transition-all border border-slate-700" data-filter="vr">🥽 VR Social</button>
+                <button onclick="filterPlatforms('blockchain')" class="filter-btn px-6 py-2 rounded-full glass glass-hover text-sm font-bold transition-all border border-slate-700" data-filter="blockchain">⛓️ Blockchain</button>
+                <button onclick="filterPlatforms('enterprise')" class="filter-btn px-6 py-2 rounded-full glass glass-hover text-sm font-bold transition-all border border-slate-700" data-filter="enterprise">💼 Enterprise</button>
+                <button onclick="filterPlatforms('japanese')" class="filter-btn px-6 py-2 rounded-full glass glass-hover text-sm font-bold transition-all border border-slate-700" data-filter="japanese">🇯🇵 Japanese</button>
+            </div>
+        </section>
+
+        <!-- Platform Grid -->
+        <section class="max-w-7xl mx-auto">
+            <div id="platformGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Platforms will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Quick Comparison Table -->
+        <section class="max-w-7xl mx-auto mt-20 mb-16">
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-8 text-center">Quick Comparison: Top Platforms</h2>
+            <div class="glass rounded-2xl overflow-hidden border border-slate-700/50">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-900/80 border-b border-slate-700">
+                            <tr>
+                                <th class="px-6 py-4 text-sm font-bold text-slate-300">Platform</th>
+                                <th class="px-6 py-4 text-sm font-bold text-slate-300">Browser</th>
+                                <th class="px-6 py-4 text-sm font-bold text-slate-300">VR Required</th>
+                                <th class="px-6 py-4 text-sm font-bold text-slate-300">Free Tier</th>
+                                <th class="px-6 py-4 text-sm font-bold text-slate-300">Best For</th>
+                                <th class="px-6 py-4 text-sm font-bold text-slate-300">Max Users</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800">
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-6 py-4 font-bold text-c25-cyan">flat.social</td>
+                                <td class="px-6 py-4 text-slate-300"><i class="fa-solid fa-check text-c25-emerald"></i> Yes</td>
+                                <td class="px-6 py-4 text-slate-300"><i class="fa-solid fa-xmark text-slate-500"></i> No</td>
+                                <td class="px-6 py-4 text-slate-300"><i class="fa-solid fa-check text-c25-emerald"></i> Yes</td>
+                                <td class="px-6 py-4 text-slate-300">Teams & Events</td>
+                                <td class="px-6 py-4 text-slate-300">~50</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-6 py-4 font-bold text-c25-cyan">Roblox</td>
+                                <td class="px-6 py-4 text-slate-300"><i class="fa-solid fa-xmark text-slate-500"></i> No</td>
+                                <td class="px-6 py-4 text-slate-300"><i class="fa-solid fa-circle text-c25-gold"></i> Optional</td>
+                                <td class="px-6 py-4 text-slate-300"><i class="fa-solid fa-check text-c25-emerald"></i> Yes</td>
+                                <td class="px-6 py-4 text-slate-300">Gaming</td>
+                                <td class="px-6 py-4 text-slate-300">~100</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-6 py-4 font-bold text-c25-cyan">VRChat</td>
+                                <td class="px-6 py-4 text-slate-300"><i class="fa-solid fa-xmark text-slate-500"></i> No</td>
+                                <td class="px-6 py-4 text-slate-300"><i class="fa-solid fa-check text-c25-emerald"></i> Yes</td>
+                                <td class="px-6 py-4 text-slate-300"><i class="fa-solid fa-check text-c25-emerald"></i> Yes</td>
+                                <td class="px-6 py-4 text-slate-300">VR Socializing</td>
+                                <td class="px-6 py-4 text-slate-300">~80</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-6 py-4 font-bold text-c25-cyan">Decentraland</td>
+                                <td class="px-6 py-4 text-slate-300"><i class="fa-solid fa-check text-c25-emerald"></i> Yes</td>
+                                <td class="px-6 py-4 text-slate-300"><i class="fa-solid fa-xmark text-slate-500"></i> No</td>
+                                <td class="px-6 py-4 text-slate-300"><i class="fa-solid fa-check text-c25-emerald"></i> Explore Free</td>
+                                <td class="px-6 py-4 text-slate-300">Crypto/Events</td>
+                                <td class="px-6 py-4 text-slate-300">~100</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="px-6 py-4 font-bold text-c25-cyan">Second Life</td>
+                                <td class="px-6 py-4 text-slate-300"><i class="fa-solid fa-xmark text-slate-500"></i> No</td>
+                                <td class="px-6 py-4 text-slate-300"><i class="fa-solid fa-xmark text-slate-500"></i> No</td>
+                                <td class="px-6 py-4 text-slate-300"><i class="fa-solid fa-check text-c25-emerald"></i> Yes</td>
+                                <td class="px-6 py-4 text-slate-300">Socializing</td>
+                                <td class="px-6 py-4 text-slate-300">~100</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-10 px-6 border-t border-slate-800/50 bg-slate-950 mt-auto">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-sm text-slate-500">
+                © 2026 Kre8tive Konceptz LTD. All Rights Reserved.<br/>
+                <span class="text-xs">Last updated: July 2026 | 100+ platforms tracked</span>
+            </div>
+            <div class="flex gap-6 text-xs font-bold tracking-widest text-slate-600">
+                <span>CONSTELLATION25</span><span>•</span><span>METAVERSE</span><span>•</span><span>WEB3</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const platforms = [
+            // Browser-Based
+            { name: "flat.social", category: "browser", icon: "fa-desktop", badge: "Free Tier", badgeColor: "bg-c25-emerald", desc: "Spatial meeting platform with proximity audio/video. No download required.", features: ["No Download", "Spatial Audio", "Customizable"], link: "https://flat.social", users: "~50" },
+            { name: "Gather", category: "browser", icon: "fa-building", badge: "Paid", badgeColor: "bg-c25-gold", desc: "2D pixel-art virtual office. Supports up to 500 users per space.", features: ["Virtual Office", "Persistent Spaces", "500 Users"], link: "https://gather.town", users: "~500" },
+            { name: "SpatialChat", category: "browser", icon: "fa-comments", badge: "Freemium", badgeColor: "bg-c25-cyan", desc: "Spatial video conversations with movable video bubbles. Up to 10,000 users.", features: ["10K Users", "Video Bubbles", "Events"], link: "https://spatial.chat", users: "~10,000" },
+            { name: "Kumospace", category: "browser", icon: "fa-briefcase", badge: "Freemium", badgeColor: "bg-c25-cyan", desc: "Virtual office with spatial audio. 20,000+ teams use it.", features: ["Spatial Audio", "Office Layout", "Integrations"], link: "https://kumospace.com", users: "~100" },
+            { name: "WorkAdventure", category: "browser", icon: "fa-code", badge: "Open Source", badgeColor: "bg-c25-purple", desc: "Open-source 16-bit RPG style virtual office. GDPR compliant.", features: ["Open Source", "16-bit RPG", "Self-Host"], link: "https://workadventu.re", users: "~600" },
+            { name: "SoWork", category: "browser", icon: "fa-robot", badge: "Free", badgeColor: "bg-c25-emerald", desc: "AI-powered virtual office with AI assistant 'Sophia' for meeting notes.", features: ["AI Assistant", "200 Users", "Async Work"], link: "https://sowork.com", users: "~200" },
+            { name: "Remo", category: "browser", icon: "fa-table", badge: "Freemium", badgeColor: "bg-c25-cyan", desc: "Table-based layout for networking events. Up to 1,000 users.", features: ["Table Layout", "Networking", "1K Users"], link: "https://remo.co", users: "~1,000" },
+            { name: "oVice", category: "browser", icon: "fa-building", badge: "Free", badgeColor: "bg-c25-emerald", desc: "Japanese virtual office used by Toyota and Panasonic. Free for 5 users.", features: ["Proximity Audio", "Enterprise", "Japan"], link: "https://ovice.com", users: "~500" },
+            { name: "Topia", category: "browser", icon: "fa-globe", badge: "Free", badgeColor: "bg-c25-emerald", desc: "Accessible 2D virtual worlds for events and education.", features: ["2D Worlds", "Events", "Education"], link: "https://topia.io", users: "~2,000" },
+            { name: "Zep", category: "browser", icon: "fa-gamepad", badge: "Free", badgeColor: "bg-c25-emerald", desc: "Korean 2D metaverse platform popular in Asia.", features: ["2D Platform", "Asia", "Corporate"], link: "https://zep.us", users: "~500" },
+            
+            // Gaming
+            { name: "Roblox", category: "gaming", icon: "fa-gamepad", badge: "214M MAU", badgeColor: "bg-c25-purple", desc: "Largest UGC gaming platform. 214M monthly active users.", features: ["UGC", "Lua Scripting", "VR Optional"], link: "https://roblox.com", users: "214M" },
+            { name: "Fortnite", category: "gaming", icon: "fa-trophy", badge: "236M MAU", badgeColor: "bg-c25-purple", desc: "Battle royale turned metaverse hub with virtual concerts.", features: ["UEFN", "Concerts", "Brand Exp"], link: "https://fortnite.com", users: "236M" },
+            { name: "Minecraft", category: "gaming", icon: "fa-cube", badge: "166M MAU", badgeColor: "bg-c25-purple", desc: "Original sandbox virtual world. 166M monthly users.", features: ["Sandbox", "Modding", "Education"], link: "https://minecraft.net", users: "166M" },
+            { name: "Spatial.io", category: "gaming", icon: "fa-vr-cardboard", badge: "Free", badgeColor: "bg-c25-emerald", desc: "Unity-powered UGC gaming platform. 500K+ creators.", features: ["Unity", "Multiplayer", "Cross-Platform"], link: "https://spatial.io", users: "2M" },
+            { name: "Rec Room", category: "gaming", icon: "fa-dice", badge: "Free", badgeColor: "bg-c25-emerald", desc: "Cross-platform social gaming. 75%+ play without VR.", features: ["Cross-Platform", "Creator Economy", "Games"], link: "https://recroom.com", users: "3M VR" },
+            
+            // VR Social
+            { name: "VRChat", category: "vr", icon: "fa-vr-cardboard", badge: "136K Peak", badgeColor: "bg-c25-cyan", desc: "Largest social VR platform. Custom worlds and avatars via Unity.", features: ["Unity SDK", "Custom Avatars", "Events"], link: "https://vrchat.com", users: "136K" },
+            { name: "Horizon Worlds", category: "vr", icon: "fa-vr-cardboard", badge: "Meta", badgeColor: "bg-c25-purple", desc: "Meta's flagship social platform. Mobile-first in 2026.", features: ["Meta Quest", "Mobile", "Social"], link: "https://horizon.meta.com", users: "N/A" },
+            { name: "Resonite", category: "vr", icon: "fa-code", badge: "Free", badgeColor: "bg-c25-emerald", desc: "Spiritual successor to NeosVR. Deep creation tools.", features: ["In-World Programming", "Collaborative", "Technical"], link: "https://resonite.com", users: "~10K" },
+            { name: "ENGAGE XR", category: "vr", icon: "fa-graduation-cap", badge: "Enterprise", badgeColor: "bg-c25-gold", desc: "Enterprise/education VR platform. Publicly traded.", features: ["Training", "Events", "Enterprise"], link: "https://engagevr.io", users: "~5K" },
+            { name: "Overte", category: "vr", icon: "fa-users", badge: "Open Source", badgeColor: "bg-c25-purple", desc: "Free, open-source social VR by German nonprofit.", features: ["Open Source", "Nonprofit", "Free"], link: "https://overte.org", users: "~5K" },
+            
+            // Blockchain
+            { name: "Decentraland", category: "blockchain", icon: "fa-ethereum", badge: "Ethereum", badgeColor: "bg-c25-purple", desc: "Ethereum-based virtual world. Buy, develop, monetize land.", features: ["DAO Governance", "Land NFTs", "Events"], link: "https://decentraland.org", users: "8K DAU" },
+            { name: "The Sandbox", category: "blockchain", icon: "fa-cubes", badge: "SAND Token", badgeColor: "bg-c25-purple", desc: "Voxel-based blockchain gaming metaverse. 5.8M accounts.", features: ["VoxEdit", "Game Maker", "SAND Token"], link: "https://sandbox.game", users: "5.8M" },
+            { name: "Somnium Space", category: "blockchain", icon: "fa-vr-cardboard", badge: "VR-First", badgeColor: "bg-c25-cyan", desc: "VR-first blockchain world with persistent land.", features: ["VR-First", "Persistent", "AI Features"], link: "https://somniumspace.com", users: "~2K" },
+            { name: "Voxels", category: "blockchain", icon: "fa-cube", badge: "Ethereum", badgeColor: "bg-c25-purple", desc: "Browser-based voxel world. Known for NFT galleries.", features: ["NFT Galleries", "Browser", "Voxel"], link: "https://voxels.com", users: "~1K" },
+            
+            // Enterprise
+            { name: "Microsoft Mesh", category: "enterprise", icon: "fa-microsoft", badge: "Teams", badgeColor: "bg-c25-cyan", desc: "3D collaborative experiences in Microsoft Teams.", features: ["Teams Integration", "Avatars", "Immersive"], link: "https://mesh.microsoft.com", users: "~16" },
+            { name: "Virbela", category: "enterprise", icon: "fa-building", badge: "Enterprise", badgeColor: "bg-c25-gold", desc: "Enterprise-grade 3D virtual campus. 5,000+ users.", features: ["Virtual Campus", "5K Users", "Enterprise"], link: "https://virbela.com", users: "5K+" },
+            { name: "Breakroom", category: "enterprise", icon: "fa-robot", badge: "AI-Powered", badgeColor: "bg-c25-cyan", desc: "AI-powered virtual training and simulation platform.", features: ["AI Training", "VR Interface", "Simulation"], link: "https://breakroom.net", users: "~2K" },
+            
+            // Japanese
+            { name: "Cluster", category: "japanese", icon: "fa-users", badge: "2M Downloads", badgeColor: "bg-c25-purple", desc: "Japan's largest homegrown metaverse. 2,000+ games.", features: ["Events", "Cross-Play", "Social"], link: "https://cluster.mu", users: "2M" },
+            { name: "Virtual Market (Vket)", category: "japanese", icon: "fa-shopping-bag", badge: "Guinness Record", badgeColor: "bg-c25-gold", desc: "World's largest VR shopping event. 10M+ visitors.", features: ["Shopping", "Avatars", "VR Event"], link: "https://vket.com", users: "10M+" },
+            { name: "REALITY", category: "japanese", icon: "fa-mobile-alt", badge: "17M Downloads", badgeColor: "bg-c25-purple", desc: "Mobile-first avatar live-streaming with face-tracking.", features: ["Live Streaming", "Face Tracking", "Mobile"], link: "https://reality.gg", users: "17M" },
+            { name: "STYLY", category: "japanese", icon: "fa-vr-cardboard", badge: "AR/VR", badgeColor: "bg-c25-cyan", desc: "Spatial computing platform for AR/VR art installations.", features: ["AR/VR Art", "Location-Based", "6 Cities"], link: "https://styly.cc", users: "100K" },
+            { name: "VARK", category: "japanese", icon: "fa-music", badge: "Concerts", badgeColor: "bg-c25-purple", desc: "VR concert platform for VTuber performances.", features: ["VTuber", "Concerts", "VR/Mobile"], link: "https://vark.co.jp", users: "~50K" }
+        ];
+
+        function renderPlatforms(filter = 'all', searchTerm = '') {
+            const grid = document.getElementById('platformGrid');
+            grid.innerHTML = '';
+            
+            const filtered = platforms.filter(p => {
+                const matchesFilter = filter === 'all' || p.category === filter;
+                const matchesSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                                    p.desc.toLowerCase().includes(searchTerm.toLowerCase());
+                return matchesFilter && matchesSearch;
+            });
+            
+            filtered.forEach((platform, index) => {
+                const card = document.createElement('div');
+                card.className = 'platform-card glass rounded-xl p-6 glass-hover fade-in';
+                card.style.animationDelay = `${index * 0.05}s`;
+                card.innerHTML = `
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-gradient-to-br from-c25-cyan to-c25-purple rounded-lg flex items-center justify-center text-white text-xl">
+                                <i class="fa-solid ${platform.icon}"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white">${platform.name}</h3>
+                                <span class="text-xs text-slate-400">${platform.users} users</span>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-bold ${platform.badgeColor} text-slate-900">${platform.badge}</span>
+                    </div>
+                    <p class="text-sm text-slate-300 mb-4">${platform.desc}</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        ${platform.features.map(f => `<span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-400">${f}</span>`).join('')}
+                    </div>
+                    <a href="${platform.link}" target="_blank" class="inline-flex items-center gap-2 text-c25-cyan hover:text-c25-cyan/80 text-sm font-bold transition-colors">
+                        Visit Platform <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterPlatforms(category) {
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.filter === category);
+            });
+            
+            const searchTerm = document.getElementById('searchInput').value;
+            renderPlatforms(category, searchTerm);
+        }
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+            renderPlatforms(activeFilter, e.target.value);
+        });
+
+        // Initial render
+        renderPlatforms();
+    </script>
+</body>
+</html>

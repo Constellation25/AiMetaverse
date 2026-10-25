@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constellation25 | VR Access & Hardware Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        c25: {
+                            dark: '#020617',
+                            panel: '#0f172a',
+                            cyan: '#22d3ee',
+                            purple: '#8b5cf6',
+                            emerald: '#10b981'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #020617; color: #e2e8f0; }
+        .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-hover:hover { background: rgba(30, 41, 59, 0.8); border-color: rgba(34, 211, 238, 0.4); transform: translateY(-2px); transition: all 0.3s ease; }
+        .text-gradient { background: linear-gradient(135deg, #22d3ee 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-grid { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px); }
+        .tab-active { border-bottom: 2px solid #22d3ee; color: #22d3ee; background: rgba(34, 211, 238, 0.1); }
+        .fade-in { animation: fadeIn 0.4s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-grid min-h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 px-6 py-4 glass border-b border-slate-800/50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-c25-cyan to-c25-purple rounded-lg flex items-center justify-center font-bold text-white font-display text-xl">C25</div>
+                <div class="text-sm font-bold tracking-wider text-slate-400">VR HARDWARE<span class="text-c25-cyan">™</span> HUB</div>
+            </div>
+            <div class="hidden md:flex gap-8">
+                <a href="#spectrum" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Hardware Spectrum</a>
+                <a href="#setup" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Setup Guides</a>
+                <a href="#store" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Headset Store</a>
+            </div>
+            <button class="bg-c25-cyan hover:bg-cyan-400 text-slate-900 px-5 py-2 rounded-full text-xs font-bold transition-all uppercase tracking-widest">Get Support</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1 pt-24 pb-20 px-6">
+        
+        <!-- Hero Section -->
+        <section class="max-w-5xl mx-auto text-center mb-20">
+            <div class="inline-block px-4 py-1.5 rounded-full glass mb-6 border border-c25-cyan/20">
+                <span class="text-xs font-bold tracking-widest text-c25-cyan">FROM CARDBOARD TO MIXED REALITY</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-display font-black text-white mb-6 leading-tight">
+                Access the <span class="text-gradient">Metaverse</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-3xl mx-auto font-light">
+                Virtual reality has evolved significantly. Whether you are using a smartphone-powered viewer or a premium standalone HMD, we provide the setup guides, store links, and support you need to step inside.
+            </p>
+        </section>
+
+        <!-- Interactive Hardware Spectrum -->
+        <section id="spectrum" class="max-w-6xl mx-auto mb-32">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">The VR Hardware Spectrum</h2>
+                <p class="text-slate-400">Select your current setup level to see tailored access instructions and recommendations.</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <button onclick="showTab('mobile')" id="tab-mobile" class="tab-btn px-6 py-3 rounded-full glass glass-hover text-sm font-bold transition-all flex items-center gap-2 tab-active">
+                    <i class="fa-solid fa-mobile-screen"></i> Entry-Level (Mobile)
+                </button>
+                <button onclick="showTab('tethered')" id="tab-tethered" class="tab-btn px-6 py-3 rounded-full glass glass-hover text-sm font-bold transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-gamepad"></i> Mid-Range (Tethered)
+                </button>
+                <button onclick="showTab('standalone')" id="tab-standalone" class="tab-btn px-6 py-3 rounded-full glass glass-hover text-sm font-bold transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-vr-cardboard"></i> Premium (Standalone)
+                </button>
+            </div>
+
+            <!-- Tab Content: Mobile -->
+            <div id="content-mobile" class="tab-content fade-in glass rounded-2xl p-8 border border-slate-700/50">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-display font-bold text-c25-cyan mb-4">📱 Google Cardboard & Mobile VR</h3>
+                        <ul class="space-y-4 text-slate-300">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-c25-cyan mt-1"></i> <span><strong>The Setup:</strong> Slide a compatible smartphone into a low-cost cardboard or plastic shell equipped with focal lenses.</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-c25-cyan mt-1"></i> <span><strong>How to Access:</strong> Download VR-enabled apps (like YouTube VR or Google Arts & Culture) from the Apple App Store or Google Play Store.</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-c25-cyan mt-1"></i> <span><strong>The Experience:</strong> Best for 360-degree videos and basic, stationary 3DoF (Three Degrees of Freedom) experiences.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-900/50 rounded-xl p-6 border border-slate-800">
+                        <h4 class="font-bold text-white mb-4">Recommended Apps</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-3 bg-slate-800 rounded-lg">
+                                <span class="text-sm">YouTube VR</span>
+                                <button class="text-xs bg-c25-cyan text-slate-900 px-3 py-1 rounded font-bold">Get App</button>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-slate-800 rounded-lg">
+                                <span class="text-sm">Google Arts & Culture</span>
+                                <button class="text-xs bg-c25-cyan text-slate-900 px-3 py-1 rounded font-bold">Get App</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Tethered -->
+            <div id="content-tethered" class="tab-content hidden fade-in glass rounded-2xl p-8 border border-slate-700/50">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-display font-bold text-c25-purple mb-4">🎮 Tethered Console & PC VR</h3>
+                        <ul class="space-y-4 text-slate-300">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-c25-purple mt-1"></i> <span><strong>The Setup:</strong> HMDs like the PlayStation VR2 or older PC headsets (HTC Vive, Oculus Rift) connect directly to a gaming console or powerful PC via cables or dedicated wireless links.</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-c25-purple mt-1"></i> <span><strong>How to Access:</strong> Launch VR platforms directly on your system, such as SteamVR, PlayStation Store, or the Oculus PC App.</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-c25-purple mt-1"></i> <span><strong>The Experience:</strong> High-fidelity graphics, low latency, and full 6DoF (Six Degrees of Freedom) motion tracking for complex gaming and simulations.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-900/50 rounded-xl p-6 border border-slate-800">
+                        <h4 class="font-bold text-white mb-4">Platform Launchers</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-3 bg-slate-800 rounded-lg">
+                                <span class="text-sm">SteamVR</span>
+                                <button onclick="showSetupGuide('steamvr')" class="text-xs bg-c25-purple text-white px-3 py-1 rounded font-bold hover:bg-purple-500 transition-colors">Setup Guide</button>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-slate-800 rounded-lg">
+                                <span class="text-sm">PlayStation Store</span>
+                                <button class="text-xs bg-slate-700 text-slate-300 px-3 py-1 rounded font-bold cursor-not-allowed">Console Native</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Standalone -->
+            <div id="content-standalone" class="tab-content hidden fade-in glass rounded-2xl p-8 border border-slate-700/50">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-display font-bold text-c25-emerald mb-4">🥽 Premium & Modern Standard</h3>
+                        <ul class="space-y-4 text-slate-300">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-c25-emerald mt-1"></i> <span><strong>The Setup:</strong> All-in-one headsets like the Meta Quest 3, Pico 4, or Apple Vision Pro operate completely wirelessly with built-in processors and tracking cameras.</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-c25-emerald mt-1"></i> <span><strong>How to Access:</strong> Turn on the device and browse the integrated onboard storefronts (Meta Horizon Store, Pico Store, visionOS App Store) directly inside the headset.</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-c25-emerald mt-1"></i> <span><strong>The Experience:</strong> Maximum freedom of movement, seamless mixed reality (MR) capabilities, and optional flexibility to connect to a PC for high-end VR gaming.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-900/50 rounded-xl p-6 border border-slate-800">
+                        <h4 class="font-bold text-white mb-4">Top Standalone Headsets</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-3 bg-slate-800 rounded-lg">
+                                <span class="text-sm">Meta Quest 3</span>
+                                <button class="text-xs bg-c25-emerald text-slate-900 px-3 py-1 rounded font-bold">View Store</button>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-slate-800 rounded-lg">
+                                <span class="text-sm">Apple Vision Pro</span>
+                                <button class="text-xs bg-slate-700 text-slate-300 px-3 py-1 rounded font-bold">View Store</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SteamVR Setup Guide (Hidden by default, shown via JS) -->
+        <section id="setup" class="max-w-4xl mx-auto mb-32 hidden">
+            <div class="glass rounded-2xl p-8 border border-c25-purple/30">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-display font-bold text-white flex items-center gap-3">
+                        <i class="fa-brands fa-steam text-c25-purple text-3xl"></i> SteamVR Setup Guide
+                    </h2>
+                    <button onclick="hideSetupGuide()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+                </div>
+                <div class="space-y-6 text-slate-300">
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 rounded-full bg-c25-purple/20 text-c25-purple flex items-center justify-center font-bold flex-shrink-0">1</div>
+                        <div>
+                            <h4 class="font-bold text-white mb-1">Install Steam & SteamVR</h4>
+                            <p class="text-sm">Download the Steam client from store.steampowered.com. Once installed, go to your Library, search for "SteamVR", and click Install.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 rounded-full bg-c25-purple/20 text-c25-purple flex items-center justify-center font-bold flex-shrink-0">2</div>
+                        <div>
+                            <h4 class="font-bold text-white mb-1">Connect Your Headset</h4>
+                            <p class="text-sm">Plug your HMD (e.g., HTC Vive, Valve Index, or older Rift) into your PC's USB and DisplayPort/HDMI connections. Ensure base stations are powered on.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 rounded-full bg-c25-purple/20 text-c25-purple flex items-center justify-center font-bold flex-shrink-0">3</div>
+                        <div>
+                            <h4 class="font-bold text-white mb-1">Run Room Setup</h4>
+                            <p class="text-sm">Launch SteamVR. Click the hamburger menu (☰) in the top left of the SteamVR window and select "Run Room Setup". Follow the on-screen prompts to define your play area.</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-900/50 p-4 rounded-lg border border-slate-800 mt-4">
+                        <p class="text-sm text-c25-purple font-bold mb-2"><i class="fa-solid fa-triangle-exclamation mr-2"></i>Troubleshooting Tip:</p>
+                        <p class="text-xs">If your headset displays a "Headset Disconnected" error, try unplugging and replugging the link box, or restart the SteamVR service via the Steam settings menu.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section id="store" class="max-w-4xl mx-auto text-center glass rounded-2xl p-10 border border-c25-cyan/20">
+            <h2 class="text-3xl font-display font-bold text-white mb-4">Need Help Choosing or Setting Up?</h2>
+            <p class="text-slate-400 mb-8 max-w-2xl mx-auto">Are you looking to buy a specific headset, browse our curated headset store, or do you need help setting up a platform like SteamVR on your current device? Let us know!</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="bg-c25-cyan hover:bg-cyan-400 text-slate-900 px-8 py-3 rounded-full text-sm font-bold transition-all uppercase tracking-widest">Browse Headset Store</button>
+                <button class="hover:bg-white/10 text-white px-8 py-3 rounded-full text-sm font-bold transition-all uppercase tracking-widest border border-slate-700">Contact VR Support</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-10 px-6 border-t border-slate-800/50 bg-slate-950 mt-auto">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-sm text-slate-500">
+                © 2026 Kre8tive Konceptz LTD. All Rights Reserved.<br/>
+                <span class="text-xs">Empowering the next generation of virtual reality access.</span>
+            </div>
+            <div class="flex gap-6 text-xs font-bold tracking-widest text-slate-600">
+                <span>CONSTELLATION25</span><span>•</span><span>VR HUB</span><span>•</span><span>METAVERSE</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all content
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('tab-active'));
+            
+            // Show selected content and activate tab
+            document.getElementById('content-' + tabName).classList.remove('hidden');
+            document.getElementById('tab-' + tabName).classList.add('tab-active');
+        }
+
+        function showSetupGuide(platform) {
+            if (platform === 'steamvr') {
+                document.getElementById('setup').classList.remove('hidden');
+                document.getElementById('setup').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function hideSetupGuide() {
+            document.getElementById('setup').classList.add('hidden');
+            document.getElementById('spectrum').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ai.RECORDS | Mixer Dashboard & Open Source Label</title>
+    <meta name="description" content="Ai.RECORDS is an open source record label and AI music production dashboard. Unleash your inner music lover.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050508;
+            --bg-panel: #0f0f16;
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #00d4ff;
+            --text-main: #ffffff;
+            --text-muted: #a0a0b0;
+            --border-color: rgba(102, 126, 234, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(102, 126, 234, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 212, 255, 0.08) 0%, transparent 40%);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(5, 5, 8, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px 60px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            margin-left: 10px;
+        }
+
+        /* MIXER DASHBOARD */
+        .mixer-dashboard {
+            background: var(--bg-panel);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .mixer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .mixer-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            color: var(--accent);
+        }
+
+        .mixer-controls {
+            display: flex;
+            gap: 15px;
+        }
+
+        .control-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            background: rgba(255,255,255,0.05);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .control-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .mixer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .track-info {
+            background: rgba(0,0,0,0.3);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .track-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .track-artist {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .waveform {
+            height: 60px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 8px;
+            opacity: 0.6;
+            margin-bottom: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .waveform::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30%;
+            height: 100%;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .sliders {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .slider-group {
+            text-align: center;
+        }
+
+        .slider-group label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 8px;
+            height: 100px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+
+        .ai-generator {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--primary);
+        }
+
+        .ai-generator h3 {
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .ai-input {
+            width: 100%;
+            padding: 12px;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 15px;
+            resize: none;
+        }
+
+        .ai-input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        /* Vision Section */
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .vision-card {
+            background: var(--bg-panel);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s;
+        }
+
+        .vision-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .vision-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* Talents & Tools Grid */
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            text-align: center;
+            margin: 60px 0 30px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            padding: 20px;
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Video Section */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            margin: 40px 0;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Newsletter & Contact */
+        .newsletter {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 60px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+            margin: 20px auto 0;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 20px;
+            border-radius: 50px;
+            border: 1px solid var(--border-color);
+            background: rgba(0,0,0,0.3);
+            color: white;
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 40px 5%;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .mixer-grid, .contact-section {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Ai.RECORDS</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#how-it-works">How it works</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#subscribe">Subscribe</a></li>
+        </ul>
+        <a href="#subscribe" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">Get 10% Off</a>
+    </nav>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <h1>Unleash Your Inner Music Lover</h1>
+            <p>Find your rhythm with the diverse selection of albums from Ai.RECORDS. An open source record label at the forefront of AI research, revolutionizing music for creators and listeners.</p>
+            <a href="#mixer" class="btn">Browse Music</a>
+            <a href="#vision" class="btn btn-outline">Learn More</a>
+        </section>
+
+        <!-- MIXER DASHBOARD -->
+        <section id="mixer" class="mixer-dashboard">
+            <div class="mixer-header">
+                <div class="mixer-title">🎛️ Ai.RECORDS Studio Mixer</div>
+                <div class="mixer-controls">
+                    <button class="control-btn">⏮</button>
+                    <button class="control-btn">▶</button>
+                    <button class="control-btn">⏸</button>
+                    <button class="control-btn">⏹</button>
+                    <button class="control-btn">⏭</button>
+                </div>
+            </div>
+            
+            <div class="mixer-grid">
+                <!-- Track Info & Sliders -->
+                <div class="track-info">
+                    <div class="track-name">People Are Strange (The Doors)</div>
+                    <div class="track-artist">Kurt Cobain (AI) • #aimusic #grunge #nirvana</div>
+                    <div class="waveform"></div>
+                    
+                    <div class="sliders">
+                        <div class="slider-group">
+                            <label>Bass</label>
+                            <input type="range" min="0" max="100" value="70" orient="vertical">
+                        </div>
+                        <div class="slider-group">
+                            <label>Mid</label>
+                            <input type="range" min="0" max="100" value="85" orient="vertical">
+                        </div>
+                        <div class="slider-group">
+                            <label>Treble</label>
+                            <input type="range" min="0" max="100" value="60" orient="vertical">
+                        </div>
+                        <div class="slider-group">
+                            <label>AI FX</label>
+                            <input type="range" min="0" max="100" value="90" orient="vertical">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Generator -->
+                <div class="ai-generator">
+                    <h3>🧠 New Experimental AI Tool</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 15px; font-size: 0.9rem;">
+                        Experiment today by describing a musical idea and hearing it come to life.
+                    </p>
+                    <textarea class="ai-input" rows="4" placeholder="e.g., A lo-fi hip hop beat with jazz piano and a grunge vocal style..."></textarea>
+                    <button class="btn" style="width: 100%;">Generate Track</button>
+                    
+                    <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-color);">
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">
+                            🎧 <strong>Audio:</strong> Stream music and playlists with SoundCloud and wow your visitors with your tunes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Vision -->
+        <section id="vision">
+            <h2 class="section-title">Our Vision</h2>
+            <div class="vision-grid">
+                <div class="vision-card">
+                    <h3>Innovation</h3>
+                    <p>At Ai.RECORDS, we believe that innovation is the key to creating music that stands the test of time. Our team is constantly pushing the boundaries of what is possible, experimenting with new sounds, genres, and technologies.</p>
+                </div>
+                <div class="vision-card">
+                    <h3>Collaboration</h3>
+                    <p>We believe that the best music is created through collaboration. We work closely with our artists to bring their vision to life, bringing a wealth of experience and expertise to every project.</p>
+                </div>
+                <div class="vision-card">
+                    <h3>Diversity</h3>
+                    <p>Music has the power to bring people together, regardless of their background. We are committed to creating music that reflects the diversity of our world, working with artists from all corners of the globe.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Talents & Behind the Scenes -->
+        <section id="talents">
+            <h2 class="section-title">Featured Ai Radio Talents & Behind the Scenes</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://img1.wsimg.com/isteam/ip/085c13d2-3792-4975-b17a-04c0ce04a23a/Screenshot%202023-09-16%20at%209.03.52%20AM.png/:/rs=w:1300,h:800" alt="Behind the Scenes">
+                    <div class="gallery-caption">Behind the Scenes: A Photo Journey</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://img1.wsimg.com/isteam/ip/085c13d2-3792-4975-b17a-04c0ce04a23a/Screenshot%202024-01-12%20at%2012.28.57%20AM.png/:/rs=w:1300,h:800" alt="Collab">
+                    <div class="gallery-caption">CoLab With Ai.RECORDS</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://img1.wsimg.com/isteam/ip/085c13d2-3792-4975-b17a-04c0ce04a23a/Screenshot%202024-01-11%20at%2011.49.47%20PM.png/:/rs=w:1300,h:800" alt="Studio">
+                    <div class="gallery-caption">Visualizing Sound: Artist Exhibition</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://img1.wsimg.com/isteam/ip/085c13d2-3792-4975-b17a-04c0ce04a23a/Screenshot%202024-01-12%20at%2012.15.01%20AM.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1300,h:800" alt="Production">
+                    <div class="gallery-caption">AI Music Production Tools</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section>
+            <h2 class="section-title">Don't Just Take Our Word! Listen For Yourself</h2>
+            <div class="video-container">
+                <!-- Placeholder for YouTube Embed -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=placeholder" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <p style="text-align: center; color: var(--text-muted); margin-top: 15px;">
+                Kurt Cobain (AI) - People Are Strange (The Doors) [Request] #ai #aimusic #grunge #nirvana #thewho
+            </p>
+        </section>
+
+        <!-- Tools Section -->
+        <section id="tools">
+            <h2 class="section-title">Put The Right Tools In Your Tool Box!</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">Score that record deal you have always dreamed of.</p>
+            <div class="vision-grid">
+                <div class="vision-card">
+                    <h3>AI for Music Production</h3>
+                    <p>10 Tools to Produce Like a Pro. Discover the latest software and plugins that are revolutionizing the way beats are made.</p>
+                    <a href="#" class="btn" style="margin-top: 15px; font-size: 0.9rem; padding: 8px 20px;">Learn More</a>
+                </div>
+                <div class="vision-card">
+                    <h3>Open Source Record Label</h3>
+                    <p>Releases music under a copyleft license, allowing free redistribution and modification. Enabling true innovative music through open collaboration.</p>
+                    <a href="#" class="btn" style="margin-top: 15px; font-size: 0.9rem; padding: 8px 20px;">Find Out More</a>
+                </div>
+                <div class="vision-card">
+                    <h3>Unique Music Generation</h3>
+                    <p>Our AI combines advanced music theory and production concepts to deliver truly unique, copyright-free music for your projects.</p>
+                    <a href="#" class="btn" style="margin-top: 15px; font-size: 0.9rem; padding: 8px 20px;">Try It Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section id="subscribe" class="newsletter">
+            <h2 style="font-family: 'Space Grotesk', sans-serif; margin-bottom: 10px;">Subscribe to Ai.RECORDS</h2>
+            <p style="color: var(--text-muted);">Get 10% off your first purchase when you sign up for our newsletter!</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit" class="btn">Sign Up</button>
+            </form>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div>
+                <h2 style="font-family: 'Space Grotesk', sans-serif; margin-bottom: 20px;">Connect With Us</h2>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">
+                    We love meeting artists in every stage of their music careers. Reach out to see what we can do for you.
+                </p>
+                <div style="background: var(--bg-panel); padding: 20px; border-radius: 12px; border: 1px solid var(--border-color);">
+                    <h3 style="margin-bottom: 10px;">Ai.RECORDS Headquarters</h3>
+                    <p style="color: var(--text-muted);">Hours: Today - Closed</p>
+                    <p style="color: var(--text-muted); margin-top: 10px;">Email: contact@airecords.com</p>
+                </div>
+            </div>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent!');">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Tell us about your music career..." required></textarea>
+                <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright © 2024 Ai.RECORDS - All Rights Reserved.</p>
+        <div style="margin-top: 15px;">
+            <a href="#how-it-works">How it works</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms and Conditions</a>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">Powered by Titan.ai</p>
+    </footer>
+
+    <script>
+        // Simple interactive feedback for mixer buttons
+        document.querySelectorAll('.control-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.style.background = 'var(--accent)';
+                setTimeout(() => {
+                    this.style.background = 'rgba(255,255,255,0.05)';
+                }, 200);
+            });
+        });
+
+        console.log('Ai.RECORDS Mixer Dashboard Loaded Successfully');
+    </script>
+</body>
+</html>

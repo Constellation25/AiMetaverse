@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar Prompt Selector | x1xhlol Library</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#09090b',
+                            panel: '#18181b',
+                            border: '#27272a',
+                            accent: '#8b5cf6', // Violet
+                            accentHover: '#7c3aed',
+                            success: '#10b981',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #09090b; color: #e4e4e7; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        .glass-panel { background: rgba(24, 24, 27, 0.6); backdrop-filter: blur(12px); border: 1px solid #27272a; }
+        .prompt-card { transition: all 0.2s ease; }
+        .prompt-card:hover { border-color: #8b5cf6; transform: translateY(-2px); }
+        .avatar-btn.active { background: #8b5cf6; color: white; border-color: #8b5cf6; }
+        .fade-in { animation: fadeIn 0.3s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="h-screen flex flex-col overflow-hidden">
+
+    <!-- Top Navigation -->
+    <header class="h-16 border-b border-brand-border bg-brand-dark flex items-center justify-between px-6 flex-shrink-0 z-20">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-lg flex items-center justify-center font-bold text-white font-mono text-sm">x1</div>
+            <div>
+                <h1 class="font-bold text-white tracking-tight">Avatar Prompt Selector</h1>
+                <p class="text-xs text-zinc-500">Powered by x1xhlol/system-prompts</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <div class="relative">
+                <i class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500 text-sm"></i>
+                <input type="text" id="searchInput" placeholder="Search prompts, tools, or tags..." 
+                       class="bg-brand-panel border border-brand-border rounded-full py-1.5 pl-9 pr-4 text-sm text-white focus:outline-none focus:border-violet-500 w-64 transition-colors">
+            </div>
+            <button class="bg-zinc-800 hover:bg-zinc-700 text-white px-4 py-1.5 rounded-full text-sm font-medium transition-colors border border-brand-border">
+                <i class="fa-brands fa-github mr-2"></i>View Repo
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="flex flex-1 overflow-hidden">
+        
+        <!-- Left Sidebar: Avatar Selection -->
+        <aside class="w-64 border-r border-brand-border bg-brand-dark flex flex-col flex-shrink-0">
+            <div class="p-4 border-b border-brand-border">
+                <h2 class="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-3">Select AI Avatar</h2>
+                <div class="flex flex-col gap-1" id="avatarList">
+                    <!-- Avatars injected via JS -->
+                </div>
+            </div>
+            
+            <!-- Deterministic Suggestion Panel -->
+            <div class="p-4 flex-1 overflow-y-auto">
+                <div class="bg-violet-500/10 border border-violet-500/30 rounded-xl p-4">
+                    <div class="flex items-center gap-2 mb-2">
+                        <i class="fa-solid fa-wand-magic-sparkles text-violet-400"></i>
+                        <h3 class="text-sm font-bold text-violet-300">Deterministic Suggestion</h3>
+                    </div>
+                    <p class="text-xs text-zinc-400 mb-3" id="suggestionText">Select an avatar to see optimized, deterministic prompt workflows.</p>
+                    <div id="suggestionCards" class="space-y-2">
+                        <!-- Suggestions injected via JS -->
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right Content: Guided Prompt Library -->
+        <main class="flex-1 flex flex-col bg-[#0c0c0e] relative">
+            <!-- Library Header -->
+            <div class="h-14 border-b border-brand-border flex items-center justify-between px-6 bg-brand-dark/50 backdrop-blur-sm">
+                <h2 class="font-semibold text-white" id="libraryTitle">All Prompts</h2>
+                <div class="flex items-center gap-2 text-xs text-zinc-500">
+                    <span id="resultCount">0</span> templates available
+                </div>
+            </div>
+
+            <!-- Scrollable Library -->
+            <div class="flex-1 overflow-y-auto p-6 scrollbar-hide" id="promptLibrary">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="promptGrid">
+                    <!-- Prompt cards injected via JS -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Prompt Viewer Modal -->
+    <div id="promptModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-brand-panel border border-brand-border rounded-2xl w-full max-w-3xl max-h-[85vh] flex flex-col shadow-2xl fade-in">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between p-5 border-b border-brand-border">
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="bg-violet-500/20 text-violet-300 text-xs font-bold px-2 py-0.5 rounded" id="modalAvatar">Cursor</span>
+                        <span class="text-zinc-500 text-xs" id="modalFile">Agent Prompt 2.0.txt</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white" id="modalTitle">Agent Prompt 2.0</h3>
+                </div>
+                <button onclick="closeModal()" class="w-8 h-8 rounded-full hover:bg-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <!-- Modal Body (Code View) -->
+            <div class="flex-1 overflow-y-auto p-5 bg-[#09090b]">
+                <pre class="font-mono text-sm text-zinc-300 whitespace-pre-wrap leading-relaxed" id="modalContent">Loading prompt...</pre>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-5 border-t border-brand-border flex justify-end gap-3 bg-brand-panel rounded-b-2xl">
+                <button onclick="closeModal()" class="px-4 py-2 rounded-lg text-sm font-medium text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors">Cancel</button>
+                <button onclick="copyPrompt()" class="px-4 py-2 rounded-lg text-sm font-medium bg-zinc-800 hover:bg-zinc-700 text-white border border-brand-border transition-colors flex items-center gap-2">
+                    <i class="fa-regular fa-copy"></i> Copy to Clipboard
+                </button>
+                <button onclick="forkPrompt()" class="px-4 py-2 rounded-lg text-sm font-medium bg-violet-600 hover:bg-violet-500 text-white transition-colors flex items-center gap-2 shadow-lg shadow-violet-500/20">
+                    <i class="fa-solid fa-code-branch"></i> Fork to Workspace
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-zinc-800 border border-brand-border text-white px-4 py-3 rounded-lg shadow-xl transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-3 z-50">
+        <i class="fa-solid fa-check-circle text-brand-success"></i>
+        <span id="toastMessage" class="text-sm font-medium">Action successful</span>
+    </div>
+
+    <script>
+        // --- DATASET (Based on x1xhlol repo structure) ---
+        const avatars = [
+            { id: 'all', name: 'All Avatars', icon: 'fa-layer-group' },
+            { id: 'cursor', name: 'Cursor Prompts', icon: 'fa-mouse-pointer' },
+            { id: 'devin', name: 'Devin AI', icon: 'fa-robot' },
+            { id: 'replit', name: 'Replit', icon: 'fa-code' },
+            { id: 'windsurf', name: 'Windsurf', icon: 'fa-water' },
+            { id: 'claude', name: 'Anthropic (Claude)', icon: 'fa-brain' },
+            { id: 'manus', name: 'Manus Agent', icon: 'fa-hand-sparkles' },
+            { id: 'trae', name: 'Trae', icon: 'fa-hammer' },
+            { id: 'open-source', name: 'Open Source (Qwen/Kilo)', icon: 'fa-globe' }
+        ];
+
+        const prompts = [
+            { id: 1, avatar: 'cursor', title: 'Agent Prompt 2.0', file: 'Agent Prompt 2.0.txt', tags: ['Agent', 'Coding'], desc: 'Advanced autonomous coding agent instructions for Cursor IDE.', content: 'You are an expert AI coding assistant. Your goal is to help the user write, review, and refactor code.\n\nRules:\n1. Always read the existing codebase context before making changes.\n2. Prefer small, incremental changes over massive rewrites.\n3. When suggesting code, provide the full file context or clear diff blocks.\n4. Think step-by-step before executing terminal commands.' },
+            { id: 2, avatar: 'devin', name: 'Devin AI', title: 'DeepWiki Prompt', file: 'DeepWiki Prompt.txt', tags: ['Documentation', 'Research'], desc: 'Instructions for generating comprehensive, deep-dive wiki documentation from codebases.', content: 'Act as a Senior Technical Writer. Analyze the provided repository structure and generate a DeepWiki documentation page.\n\nFocus on:\n- Architecture overview\n- Core data flows\n- API contracts\n- Deployment prerequisites\n\nUse markdown formatting with clear hierarchy.' },
+            { id: 3, avatar: 'windsurf', name: 'Windsurf', title: 'Tools Wave 11', file: 'Tools Wave 11.txt', tags: ['Tools', 'System'], desc: 'System prompt defining available tools and execution rules for Windsurf Wave 11.', content: 'You are Windsurf, an AI pair programmer. You have access to the following tools:\n- read_file: Read the contents of a file.\n- write_file: Overwrite or create a file.\n- run_terminal_cmd: Execute a shell command.\n\nAlways verify the current working directory before running commands. Never run destructive commands (rm -rf) without explicit user confirmation.' },
+            { id: 4, avatar: 'manus', name: 'Manus Agent', title: 'Multi-Agent Orchestration', file: 'Tools.json', tags: ['Multi-Agent', 'Orchestration'], desc: 'Blueprint for establishing a collaborative team of AI agents that process and generate insights.', content: 'You are the Orchestrator Agent. Your job is to delegate tasks to specialized sub-agents:\n1. Researcher Agent: Gathers context and documentation.\n2. Coder Agent: Implements the solution.\n3. Reviewer Agent: Validates the code against requirements.\n\nPass state between agents using the shared memory context.' },
+            { id: 5, avatar: 'replit', name: 'Replit', title: 'Ghostwriter System Prompt', file: 'Prompt.txt', tags: ['IDE', 'Completion'], desc: 'Core behavioral guidelines for Replit\'s AI completion and chat features.', content: 'You are Replit AI. You help users build software directly in the browser.\n- Be concise. Developers value speed.\n- If a user asks for a package installation, provide the exact terminal command (e.g., `npm install <package>`).\n- Always assume the latest stable version of frameworks unless specified otherwise.' },
+            { id: 6, avatar: 'claude', name: 'Anthropic', title: 'Claude Sonnet 5 System', file: 'Claude Sonnet 5.txt', tags: ['LLM', 'Reasoning'], desc: 'Optimized system prompt for maximizing Sonnet 5\'s reasoning and coding capabilities.', content: 'You are Claude, a thoughtful and rigorous AI assistant.\nWhen solving complex problems:\n1. Break the problem down into discrete steps.\n2. State your assumptions clearly.\n3. Provide edge-case analysis for any code you write.\n4. Prioritize security and performance in your architectural suggestions.' },
+            { id: 7, avatar: 'trae', name: 'Trae', title: 'Builder Prompt', file: 'Builder Prompt.txt', tags: ['Scaffolding', 'Setup'], desc: 'Prompt for rapidly scaffolding new projects with best practices in Trae.', content: 'You are a Project Builder. When asked to create a new project:\n1. Initialize the directory structure.\n2. Create essential config files (.gitignore, package.json, etc.).\n3. Provide a clear README with setup instructions.\n4. Ensure all dependencies are compatible.' },
+            { id: 8, avatar: 'open-source', name: 'Open Source', title: 'Qwen Code Agent CLI', file: 'qwen-code-prompt.md', tags: ['CLI', 'Open Source'], desc: 'System prompt for open-source Qwen Code agent operating in terminal environments.', content: 'You are Qwen-Coder, operating in a Linux terminal.\n- You have access to bash.\n- Always use non-interactive flags for commands (e.g., `apt-get install -y`).\n- If a command fails, analyze the stderr output and suggest a fix before trying again.\n- Respect the user\'s environment variables.' }
+        ];
+
+        const suggestions = {
+            'cursor': [
+                { title: 'Agent Prompt 2.0', reason: 'Best for autonomous refactoring tasks.' },
+                { title: 'DeepWiki Prompt', reason: 'Use when documenting complex Cursor extensions.' }
+            ],
+            'devin': [
+                { title: 'DeepWiki Prompt', reason: 'Optimized for Devin\'s autonomous research loops.' }
+            ],
+            'windsurf': [
+                { title: 'Tools Wave 11', reason: 'Required for accessing Cascade\'s latest tool definitions.' }
+            ],
+            'manus': [
+                { title: 'Multi-Agent Orchestration', reason: 'Core blueprint for Manus swarm coordination.' }
+            ],
+            'all': [
+                { title: 'Agent Prompt 2.0', reason: 'Most universally applicable coding prompt.' },
+                { title: 'Qwen Code Agent CLI', reason: 'Great for local, open-source terminal workflows.' }
+            ]
+        };
+
+        // --- STATE ---
+        let currentAvatar = 'all';
+        let searchQuery = '';
+
+        // --- INITIALIZATION ---
+        function init() {
+            renderAvatars();
+            renderPrompts();
+            updateSuggestions();
+            
+            document.getElementById('searchInput').addEventListener('input', (e) => {
+                searchQuery = e.target.value.toLowerCase();
+                renderPrompts();
+            });
+        }
+
+        // --- RENDER FUNCTIONS ---
+        function renderAvatars() {
+            const container = document.getElementById('avatarList');
+            container.innerHTML = avatars.map(avatar => `
+                <button onclick="selectAvatar('${avatar.id}')" 
+                        class="avatar-btn w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-zinc-400 hover:bg-zinc-800 hover:text-white transition-all flex items-center gap-3 ${currentAvatar === avatar.id ? 'active' : ''}">
+                    <i class="fa-solid ${avatar.icon} w-5 text-center"></i>
+                    ${avatar.name}
+                </button>
+            `).join('');
+        }
+
+        function renderPrompts() {
+            const grid = document.getElementById('promptGrid');
+            const filtered = prompts.filter(p => {
+                const matchesAvatar = currentAvatar === 'all' || p.avatar === currentAvatar;
+                const matchesSearch = p.title.toLowerCase().includes(searchQuery) || 
+                                      p.tags.some(t => t.toLowerCase().includes(searchQuery)) ||
+                                      p.desc.toLowerCase().includes(searchQuery);
+                return matchesAvatar && matchesSearch;
+            });
+
+            document.getElementById('resultCount').textContent = filtered.length;
+            document.getElementById('libraryTitle').textContent = currentAvatar === 'all' ? 'All Prompts' : avatars.find(a => a.id === currentAvatar).name;
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full flex flex-col items-center justify-center py-20 text-zinc-500">
+                        <i class="fa-solid fa-magnifying-glass text-4xl mb-4 opacity-50"></i>
+                        <p>No prompts found matching your criteria.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(p => `
+                <div class="prompt-card glass-panel rounded-xl p-5 flex flex-col h-full cursor-pointer group" onclick="openModal(${p.id})">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="flex gap-2">
+                            ${p.tags.map(tag => `<span class="text-[10px] font-bold uppercase tracking-wider bg-zinc-800 text-zinc-400 px-2 py-1 rounded border border-zinc-700">${tag}</span>`).join('')}
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-zinc-600 group-hover:text-violet-400 transition-colors"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-violet-400 transition-colors">${p.title}</h3>
+                    <p class="text-xs font-mono text-zinc-500 mb-3">${p.file}</p>
+                    <p class="text-sm text-zinc-400 flex-1 mb-4">${p.desc}</p>
+                    <div class="flex gap-2 mt-auto">
+                        <button onclick="event.stopPropagation(); copyPromptById(${p.id})" class="flex-1 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 text-xs font-bold py-2 rounded-lg transition-colors border border-zinc-700">
+                            Copy
+                        </button>
+                        <button onclick="event.stopPropagation(); forkPromptById(${p.id})" class="flex-1 bg-violet-600/20 hover:bg-violet-600/30 text-violet-300 text-xs font-bold py-2 rounded-lg transition-colors border border-violet-500/30">
+                            Fork
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateSuggestions() {
+            const suggestionData = suggestions[currentAvatar] || suggestions['all'];
+            const container = document.getElementById('suggestionCards');
+            const avatarName = currentAvatar === 'all' ? 'your workflow' : avatars.find(a => a.id === currentAvatar).name;
+            
+            document.getElementById('suggestionText').textContent = `Optimized, deterministic prompts for ${avatarName}:`;
+            
+            container.innerHTML = suggestionData.map(s => `
+                <div class="bg-zinc-900/50 border border-zinc-800 rounded-lg p-3 hover:border-violet-500/50 transition-colors cursor-pointer" onclick="searchForSuggestion('${s.title}')">
+                    <div class="text-sm font-semibold text-zinc-200 mb-1">${s.title}</div>
+                    <div class="text-xs text-zinc-500">${s.reason}</div>
+                </div>
+            `).join('');
+        }
+
+        // --- ACTIONS ---
+        function selectAvatar(id) {
+            currentAvatar = id;
+            renderAvatars();
+            renderPrompts();
+            updateSuggestions();
+        }
+
+        function searchForSuggestion(title) {
+            document.getElementById('searchInput').value = title;
+            searchQuery = title.toLowerCase();
+            renderPrompts();
+        }
+
+        function openModal(id) {
+            const prompt = prompts.find(p => p.id === id);
+            if (!prompt) return;
+
+            document.getElementById('modalAvatar').textContent = avatars.find(a => a.id === prompt.avatar)?.name || prompt.avatar;
+            document.getElementById('modalFile').textContent = prompt.file;
+            document.getElementById('modalTitle').textContent = prompt.title;
+            document.getElementById('modalContent').textContent = prompt.content;
+            
+            document.getElementById('promptModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('promptModal').classList.add('hidden');
+        }
+
+        function copyPrompt() {
+            const text = document.getElementById('modalContent').textContent;
+            navigator.clipboard.writeText(text);
+            showToast('Prompt copied to clipboard!');
+        }
+
+        function copyPromptById(id) {
+            const prompt = prompts.find(p => p.id === id);
+            navigator.clipboard.writeText(prompt.content);
+            showToast('Prompt copied to clipboard!');
+        }
+
+        function forkPrompt() {
+            showToast('Forked to your local workspace! (In real timer)');
+            closeModal();
+        }
+
+        function forkPromptById(id) {
+            showToast('Forked to your local workspace! (In real timr)');
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').textContent = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Close modal on outside click
+        document.getElementById('promptModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('promptModal')) {
+                closeModal();
+            }
+        });
+
+        // Start
+        init();
+    </script>
+</body>
+</html>
