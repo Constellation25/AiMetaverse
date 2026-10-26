@@ -10,7 +10,7 @@ Constellation25 | AI Education & Prompt Hub — the subpage the
    `ai-education-hub/index.html`) — fully self-contained (inlined Tailwind runtime with
    the `c25` palette, scoped CSS, clipboard polyfill; FA icons optional via CDN).
 2. **Open in browser:** double-click the file, or visit
-   `https://constillation25.github.io/AiMetaverse/ai-education-hub/` once deployed, to
+   `https:///ai-education-hub/` once deployed, to
    launch the interactive dashboard.
 3. **Explore the 4 modules** (tab bar relocated from the stripped nav to the page top):
    - **Quiz Cards:** click any flashcard to flip it and reveal the answer; use the top

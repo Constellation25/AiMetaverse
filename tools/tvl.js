@@ -5,7 +5,7 @@ const errors = [];
 const downloads = [];
 const dom = new JSDOM(html, {
   runScripts: 'dangerously', pretendToBeVisual: true,
-  url: 'https://constillation25.github.io/AiMetaverse/voice-lipsync/index.html',
+  url: 'https:///voice-lipsync/index.html',
   beforeParse(w) {
     w.matchMedia = () => ({ matches: false, addListener(){}, removeListener(){}, addEventListener(){}, removeEventListener(){} });
     w.scrollTo = () => {};

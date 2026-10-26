@@ -10,7 +10,7 @@ Constellation25 | VR Access & Hardware Hub — the subpage that the
    self-contained (inlined Tailwind runtime with the `c25` palette, scoped CSS, no
    external assets required beyond optional Font Awesome icons).
 2. **Open in browser:** double-click `vr-hub.html`, or visit
-   `https://constillation25.github.io/AiMetaverse/vr-hub/` once deployed.
+   `https:///vr-hub/` once deployed.
 3. **Test the interactivity:**
    - Click the **Entry-Level (Mobile)**, **Mid-Range (Tethered)** and **Premium
      (Standalone)** tabs to see the dynamic content change (setup, access path,

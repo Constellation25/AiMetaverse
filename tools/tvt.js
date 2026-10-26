@@ -5,7 +5,7 @@ const errors = [];
 let spoke = 0, listened = 0;
 const dom = new JSDOM(html, {
   runScripts: 'dangerously', pretendToBeVisual: true,
-  url: 'https://constillation25.github.io/AiMetaverse/twin-studio/index.html',
+  url: 'https:///twin-studio/index.html',
   beforeParse(w) {
     w.matchMedia = () => ({ matches: false, addListener(){}, removeListener(){}, addEventListener(){}, removeEventListener(){} });
     w.scrollTo = () => {};

@@ -116,7 +116,7 @@ regen will overwrite your edits.
 
 ## Recovery note (2026-10-25): "subpages 404 / update failed"
 
-**What happened:** the live repo at `constillation25.github.io/AiMetaverse/` contained only
+**What happened:** the live repo at `/` contained only
 `index.html` + `.nojekyll` — every subpage and the whole `assets/` folder returned 404,
 because the previous update pushed a single file.
 
@@ -137,9 +137,9 @@ The `assets/` folder remains only as the maintained source for the generators.
 
 **Verify:**
 ```
-https://constillation25.github.io/AiMetaverse/why-ai.html        -> 200
-https://constillation25.github.io/AiMetaverse/avatar-create.html -> 200
-https://constillation25.github.io/AiMetaverse/apikonnect.html    -> 200
+https:///why-ai.html        -> 200
+https:///avatar-create.html -> 200
+https:///apikonnect.html    -> 200
 ```
 If a page still 404s after a successful push: Settings → Pages → confirm **Source**
 branch matches the branch you pushed (`main` vs `master`), folder `/ (root)`.

@@ -10,7 +10,7 @@ Constellation25 | Metaverse World Directory — the subpage the
    `metaverse-directory/index.html`) — fully self-contained (inlined Tailwind runtime
    with the `c25` palette, scoped CSS, no external assets beyond optional FA icons).
 2. **Open in browser:** double-click the file, or visit
-   `https://constillation25.github.io/AiMetaverse/metaverse-directory/` once deployed,
+   `https:///metaverse-directory/` once deployed,
    to explore all 100+ platforms.
 3. **Use filters** to browse by category — All, Browser-Based, Gaming, VR Social,
    Blockchain, Enterprise, Japanese.

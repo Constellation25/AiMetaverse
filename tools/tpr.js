@@ -5,7 +5,7 @@ const errors = [];
 let copied = null;
 const dom = new JSDOM(html, {
   runScripts: 'dangerously', pretendToBeVisual: true,
-  url: 'https://constillation25.github.io/AiMetaverse/prompter/index.html',
+  url: 'https:///prompter/index.html',
   beforeParse(w) {
     w.matchMedia = () => ({ matches: false, addListener(){}, removeListener(){}, addEventListener(){}, removeEventListener(){} });
     w.scrollTo = () => {};

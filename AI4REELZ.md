@@ -8,7 +8,7 @@ Official Ai4Reelz portal notes: how to use it, and what ships inside the embed.
    site-integrated page is `ai4reelz.html` (+ folder copy `ai4reelz/index.html`).
 2. **Open in browser:** double-click `ai4reelz.html` (fully self-contained — inlined
    Tailwind runtime, scoped CSS, no external assets required) or visit
-   `https://constillation25.github.io/AiMetaverse/ai4reelz/` once deployed.
+   `https:///ai4reelz/` once deployed.
 3. **Test the workflow:** scroll to **“Initialize Your Video Workflow”**, select your
    preferences (niche, format, voice/likeness), and click **“Route to C25 Agents &
    Generate”**. Watch the simulated terminal output show exactly how **EARTH, VENUS,
