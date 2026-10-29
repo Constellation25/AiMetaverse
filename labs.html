@@ -12,15 +12,317 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23070312'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%2300f0ff' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23ff2fb9'/%3E%3C/svg%3E">
 <style>
-  .page-hero .wrap, .page-hero h1, .page-hero p { text-align: center !important; }
-  .page-hero p { font-size: clamp(1rem, 1.7vw, 1.15rem) !important; margin: 0 auto; max-width: 720px; }
-  .cta-group, .page-hero .btn-group { display: flex !important; justify-content: center !important; align-items: center !important; gap: 12px; margin-top: 24px; }
-  .tools-directory-card { display: block !important; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px; margin: 30px auto; max-width: 800px; text-align: center; backdrop-filter: blur(10px); }
-  .tools-directory-card h3 { color: var(--txt, #fff); margin-bottom: 8px; font-size: 1.25rem; }
-  .btn, button, .action-btn { padding: 8px 18px !important; font-size: 0.9rem !important; }
+  :root {
+    --bg: #070312;
+    --txt: #ffffff;
+    --muted: #aaa;
+    --primary: #9945ff;
+    --accent: #00f0ff;
+    --pink: #ff2fb9;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --border: rgba(255, 255, 255, 0.1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--txt);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  #bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+  }
+
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    z-index: 9999;
+    transition: width 0.1s ease;
+  }
+
+  .wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .page-hero {
+    padding: 120px 0 80px;
+    text-align: center;
+  }
+
+  .page-hero .wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .crumbs {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .crumbs a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .crumbs a:hover { opacity: 0.7; }
+  .crumbs .sep { margin: 0 8px; }
+  .crumbs .current { color: var(--txt); }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+  }
+
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: var(--txt);
+  }
+
+  .grad-text {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .prose {
+    font-size: clamp(1rem, 1.7vw, 1.15rem);
+    color: var(--muted);
+    max-width: 720px;
+    margin: 0 auto 32px;
+  }
+
+  .cta-group, .btn-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .action-btn {
+    background: linear-gradient(135deg, var(--primary), var(--pink));
+    color: var(--txt);
+    animation: btnPulse 3s ease-in-out infinite;
+  }
+
+  @keyframes btnPulse {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(153, 69, 255, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(153, 69, 255, 0.5), 0 0 40px rgba(255, 47, 185, 0.3);
+    }
+  }
+
+  .action-btn:hover {
+    transform: translateY(-2px);
+    animation: none;
+    box-shadow: 0 8px 24px rgba(153, 69, 255, 0.4);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--txt);
+    border: 1px solid var(--border);
+  }
+
+  .btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+  }
+
+  .btn-sm {
+    padding: 8px 18px;
+    font-size: 0.85rem;
+  }
+
+  .tools-directory-card {
+    display: block;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    margin: 40px auto;
+    max-width: 800px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+  }
+
+  .tools-directory-card h3 {
+    color: var(--txt);
+    margin-bottom: 12px;
+    font-size: 1.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .sec {
+    padding: 80px 0;
+  }
+
+  .sec-head {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .sec-head.center {
+    text-align: center;
+  }
+
+  .h-lg {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 8px 32px rgba(0, 240, 255, 0.1);
+  }
+
+  .card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    color: var(--txt);
+  }
+
+  .card p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .callout {
+    padding: 24px;
+    border-radius: 12px;
+    margin-top: 24px;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .callout.good {
+    background: rgba(0, 240, 255, 0.1);
+    border: 1px solid var(--accent);
+    color: var(--txt);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    .page-hero { padding: 80px 0 60px; }
+    .sec { padding: 60px 0; }
+    .grid-4, .grid-3 { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
+<canvas id="bg-canvas"></canvas>
 <div class="scroll-progress" id="scroll-progress"></div>
 <main>
 <section class="page-hero">
@@ -39,35 +341,126 @@
 <div class="wrap">
   <div class="tools-directory-card">
     <h3>Browse the Tools Directory</h3>
-    <p style="font-size:0.95rem; margin-bottom:16px; color:var(--muted, #aaa);">Explore our comprehensive catalog of free AI tools, text processors, and media generators.</p>
+    <p style="font-size:0.95rem; margin-bottom:16px; color:var(--muted);">Explore our comprehensive catalog of free AI tools, text processors, and media generators.</p>
     <a href="tools/index.html" class="btn action-btn">Browse Tools</a>
   </div>
 </div>
 
-<section class="sec" id="modes"><div class="wrap"><div class="sec-head center reveal">
+<section class="sec" id="modes">
+  <div class="wrap">
+    <div class="sec-head center reveal">
       <span class="eyebrow"><span class="dot"></span> Generation modes</span>
       <h2 class="h-lg">Four ways to <span class="grad-text">make something</span></h2>
       <p class="lead">Pick a mode, prompt it, iterate. Your companion can prompt with you.</p>
     </div>
-<div class="grid-4 reveal">
- <article class="card"><h3>Text</h3><p>Copy, scripts, code and translation with models tuned for your brand voice.</p></article>
- <article class="card"><h3>Image</h3><p>“If you can dream it, Craiyon can draw it.” Nine royalty-free variants per prompt.</p></article>
- <article class="card"><h3>Video</h3><p>Short-form video, face swaps and social clips ready for YouTube, TikTok and Reels.</p></article>
- <article class="card"><h3>Object</h3><p>3D objects and scanned real-world assets you can drop straight into a world.</p></article>
-</div>
-<div class="callout good reveal" style="margin-top:24px"><b>Royalty-free by default.</b> Everything you kre8te here is yours to keep and sell — no watermark, no licence maze.</div>
-</div></section>
-<section class="sec" id="sandbox"><div class="wrap"><div class="sec-head center reveal">
+    <div class="grid-4 reveal">
+      <article class="card"><h3>Text</h3><p>Copy, scripts, code and translation with models tuned for your brand voice.</p></article>
+      <article class="card"><h3>Image</h3><p>"If you can dream it, Craiyon can draw it." Nine royalty-free variants per prompt.</p></article>
+      <article class="card"><h3>Video</h3><p>Short-form video, face swaps and social clips ready for YouTube, TikTok and Reels.</p></article>
+      <article class="card"><h3>Object</h3><p>3D objects and scanned real-world assets you can drop straight into a world.</p></article>
+    </div>
+    <div class="callout good reveal" style="margin-top:24px"><b>Royalty-free by default.</b> Everything you kre8te here is yours to keep and sell — no watermark, no licence maze.</div>
+  </div>
+</section>
+
+<section class="sec" id="sandbox">
+  <div class="wrap">
+    <div class="sec-head center reveal">
       <span class="eyebrow"><span class="dot"></span> The sandbox</span>
       <h2 class="h-lg">Build, train, validate, test, <span class="grad-text">deploy</span></h2>
       <p class="lead">A hosted sandbox with supercomputing behind it — the same pipeline enterprise uses.</p>
     </div>
-<div class="grid-3 reveal">
- <article class="card"><h3>Notebooks</h3><p>Starter agents, model cards and deployment templates from our certification track.</p><a class="btn btn-sm btn-ghost" style="margin-top:14px" href="education/index.html">Certification track</a></article>
- <article class="card"><h3>Model zoo</h3><p>20,000+ models for NLP, vision, speech and recommendation — filter by task and size.</p><a class="btn btn-sm btn-ghost" style="margin-top:14px" href="why-ai/index.html">See pillars</a></article>
- <article class="card"><h3>Prompt library</h3><p>Tested prompts for art, video, lyrics and retail copy, sorted by mode.</p><a class="btn btn-sm btn-ghost" style="margin-top:14px" href="metabox/index.html">Ask the Metabox</a></article>
-</div>
-</div></section>
+    <div class="grid-3 reveal">
+      <article class="card"><h3>Notebooks</h3><p>Starter agents, model cards and deployment templates from our certification track.</p><a class="btn btn-sm btn-ghost" style="margin-top:14px" href="education/index.html">Certification track</a></article>
+      <article class="card"><h3>Model zoo</h3><p>20,000+ models for NLP, vision, speech and recommendation — filter by task and size.</p><a class="btn btn-sm btn-ghost" style="margin-top:14px" href="why-ai/index.html">See pillars</a></article>
+      <article class="card"><h3>Prompt library</h3><p>Tested prompts for art, video, lyrics and retail copy, sorted by mode.</p><a class="btn btn-sm btn-ghost" style="margin-top:14px" href="metabox/index.html">Ask the Metabox</a></article>
+    </div>
+  </div>
+</section>
 </main>
+
+<script>
+  // Moving lines background
+  const canvas = document.getElementById('bg-canvas');
+  const ctx = canvas.getContext('2d');
+  
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  class Line {
+    constructor() {
+      this.reset();
+    }
+    
+    reset() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.length = Math.random() * 100 + 50;
+      this.speed = Math.random() * 2 + 0.5;
+      this.angle = Math.random() * Math.PI * 2;
+      this.opacity = Math.random() * 0.5 + 0.2;
+      this.color = Math.random() > 0.5 ? '#9945ff' : '#00f0ff';
+    }
+    
+    update() {
+      this.x += Math.cos(this.angle) * this.speed;
+      this.y += Math.sin(this.angle) * this.speed;
+      
+      if (this.x < -this.length || this.x > canvas.width + this.length ||
+          this.y < -this.length || this.y > canvas.height + this.length) {
+        this.reset();
+      }
+    }
+    
+    draw() {
+      ctx.strokeStyle = this.color;
+      ctx.globalAlpha = this.opacity;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(this.x, this.y);
+      ctx.lineTo(
+        this.x + Math.cos(this.angle) * this.length,
+        this.y + Math.sin(this.angle) * this.length
+      );
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+    }
+  }
+
+  const lines = Array.from({ length: 30 }, () => new Line());
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    lines.forEach(line => {
+      line.update();
+      line.draw();
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  // Scroll progress bar
+  window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.getElementById('scroll-progress').style.width = scrolled + '%';
+  });
+
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
