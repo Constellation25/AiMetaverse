@@ -861,6 +861,12 @@ details.acc .acc-b li b{color:var(--txt);font-weight:600}
 <div class="scroll-progress" id="scroll-progress"></div>
 <main>
 <section class="page-hero">
+<style>
+  .hero-content, .hero h1, .hero p { text-align: center !important; font-size: 1.2rem !important; }
+  .cta-group, .hero .btn-group { display: flex !important; justify-content: flex-start !important; align-items: flex-start !important; }
+  .tools-directory-card { display: block !important; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; margin: 20px 0; }
+  .btn, button, .action-btn { padding: 6px 14px !important; font-size: 0.85rem !important; }
+</style>
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span class="current">DevZone</span></nav>
     <span class="eyebrow"><span class="dot"></span> DevZone</span>
@@ -872,7 +878,7 @@ details.acc .acc-b li b{color:var(--txt);font-weight:600}
 <section class="sec-tight"><div class="wrap">
   <div class="grid-2" style="grid-template-columns:1.5fr .9fr;align-items:start">
     <div class="term reveal">
-      <div class="tbar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i> aimv@metaverse — devzone — 80×24</div>
+      <div class="tbar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i> aimv@metaverse — devzone — 8024</div>
       <div class="tout" id="tout" aria-live="polite"></div>
       <form class="tin" id="tform" autocomplete="off"><span>❯</span><label for="tin" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">terminal input</label><input id="tin" spellcheck="false" placeholder="type `help` …" /></form>
     </div>
@@ -1610,7 +1616,7 @@ window.AIMV_FACES={real:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBD
           '<div><b>VERSED&rsquo;ai <span style="color:var(--hm-accent)" id="hm-persname">ARIA</span></b>' +
           '<span class="st" id="hm-status"><i></i><span id="hm-statustext">Online</span></span></div>' +
         '</div>' +
-        '<button class="hm-close" id="hm-close" aria-label="Close companion">✕</button>' +
+        '' +
       '</div>' +
       '<div class="hm-body">' +
         '<div class="hm-stage" id="hm-stage"><canvas class="orb-canvas" id="hm-orb"></canvas><span class="hm-orb-ring"></span><span class="hm-orb-ring r2"></span><span class="aura"></span><div class="hm-face" id="hm-face"></div></div>' +

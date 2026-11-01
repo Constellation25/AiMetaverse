@@ -16,6 +16,12 @@
 <div class="scroll-progress" id="scroll-progress"></div>
 <main>
 <section class="page-hero">
+<style>
+  .hero-content, .hero h1, .hero p { text-align: center !important; font-size: 1.2rem !important; }
+  .cta-group, .hero .btn-group { display: flex !important; justify-content: flex-start !important; align-items: flex-start !important; }
+  .tools-directory-card { display: block !important; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; margin: 20px 0; }
+  .btn, button, .action-btn { padding: 6px 14px !important; font-size: 0.85rem !important; }
+</style>
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span class="current">My Avatar & Agent</span></nav>
     <span class="eyebrow"><span class="dot"></span> Dashboard</span>
@@ -742,7 +748,7 @@ window.AIMV_FACES={real:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBD
           '<div><b>VERSED&rsquo;ai <span style="color:var(--hm-accent)" id="hm-persname">ARIA</span></b>' +
           '<span class="st" id="hm-status"><i></i><span id="hm-statustext">Online</span></span></div>' +
         '</div>' +
-        '<button class="hm-close" id="hm-close" aria-label="Close companion">✕</button>' +
+        '' +
       '</div>' +
       '<div class="hm-body">' +
         '<div class="hm-stage" id="hm-stage"><canvas class="orb-canvas" id="hm-orb"></canvas><span class="hm-orb-ring"></span><span class="hm-orb-ring r2"></span><span class="aura"></span><div class="hm-face" id="hm-face"></div></div>' +
@@ -1817,7 +1823,7 @@ window.AIMV_FACES={real:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBD
       if (ph) ph.style.display = 'none';
       var badge = $('#shot-badge');
       if (badge && profile.imageMeta) {
-        badge.textContent = (profile.imageMeta.label || 'image') + ' · ' + profile.imageMeta.w + '×' + profile.imageMeta.h;
+        badge.textContent = (profile.imageMeta.label || 'image') + ' · ' + profile.imageMeta.w + '' + profile.imageMeta.h;
       }
       var m = profile.imageMeta;
       var rows = $('#img-analysis');
@@ -2263,7 +2269,7 @@ window.AIMV_FACES={real:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBD
           '<div class="preview-frame" style="aspect-ratio:1/1;max-width:220px;margin-bottom:14px">' + img + '</div>' +
           '<div class="kv" style="font-size:13px">' +
             row('Name', $('#name-input') && $('#name-input').value ? escapeHtml($('#name-input').value) : 'not set') +
-            row('Image', profile.imageMeta ? profile.imageMeta.w + '×' + profile.imageMeta.h + ' · ' + (profile.imageMeta.label || '') : 'none') +
+            row('Image', profile.imageMeta ? profile.imageMeta.w + '' + profile.imageMeta.h + ' · ' + (profile.imageMeta.label || '') : 'none') +
             row('Ready Player Me', profile.rpm ? profile.rpm.id || 'linked' : 'not linked') +
           '</div>' +
         '</div>' +
@@ -2362,7 +2368,7 @@ window.AIMV_FACES={real:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBD
 
     var v = profile.voice || profile.voiceMeta || {};
     var tokens = {
-      IMG: profile.imageMeta ? profile.imageMeta.w + '×' + profile.imageMeta.h : 'no image',
+      IMG: profile.imageMeta ? profile.imageMeta.w + '' + profile.imageMeta.h : 'no image',
       BRT: profile.imageMeta ? Math.round(profile.imageMeta.brightness * 100) + '%' : 'n/a',
       HUE: profile.imageMeta ? profile.imageMeta.hue : '—',
       CHAR: v.character || 'no voice sample',
@@ -2891,7 +2897,7 @@ document.addEventListener('DOMContentLoaded', function(){
   } else {
     var im = P.imageMeta || {};
     $('#dash-identity').innerHTML = '<h3>Identity</h3>' + (P.image ? '<img src="'+P.image+'" alt="stored selfie" style="width:150px;height:150px;object-fit:cover;border-radius:18px;border:1px solid var(--stroke-2);margin-bottom:14px">' : '') +
-      '<div class="kv">' + row('Name', P.name||'—') + row('Image', im.w? im.w+'×'+im.h+' · '+im.label : '—') + row('RPM body', P.rpm? (P.rpm.id||'linked') : 'not linked') + row('Saved', P.updatedAt? new Date(P.updatedAt).toLocaleString() : '—') + '</div>';
+      '<div class="kv">' + row('Name', P.name||'—') + row('Image', im.w? im.w+''+im.h+' · '+im.label : '—') + row('RPM body', P.rpm? (P.rpm.id||'linked') : 'not linked') + row('Saved', P.updatedAt? new Date(P.updatedAt).toLocaleString() : '—') + '</div>';
     var v = P.voiceMeta || {};
     $('#dash-voice').innerHTML = '<h3>Voice profile</h3><div class="kv">' + row('Character', v.character||'—') + row('Pitch', v.freq? Math.round(v.freq)+' Hz':'—') + row('Loudness', v.loudness? v.loudness.toFixed(3):'—') + row('Pace', v.pace||'—') + row('Clip', v.duration? v.duration.toFixed(1)+'s (not stored)':'—') + '</div>';
     var pe = P.persona || {};

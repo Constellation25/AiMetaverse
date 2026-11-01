@@ -16,6 +16,12 @@
 <div class="scroll-progress" id="scroll-progress"></div>
 <main>
 <section class="page-hero">
+<style>
+  .hero-content, .hero h1, .hero p { text-align: center !important; font-size: 1.2rem !important; }
+  .cta-group, .hero .btn-group { display: flex !important; justify-content: flex-start !important; align-items: flex-start !important; }
+  .tools-directory-card { display: block !important; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; margin: 20px 0; }
+  .btn, button, .action-btn { padding: 6px 14px !important; font-size: 0.85rem !important; }
+</style>
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span class="current">Why AI</span></nav>
     <span class="eyebrow"><span class="dot"></span> Why AI</span>
@@ -784,7 +790,7 @@ window.AIMV_FACES={real:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBD
           '<div><b>VERSED&rsquo;ai <span style="color:var(--hm-accent)" id="hm-persname">ARIA</span></b>' +
           '<span class="st" id="hm-status"><i></i><span id="hm-statustext">Online</span></span></div>' +
         '</div>' +
-        '<button class="hm-close" id="hm-close" aria-label="Close companion">✕</button>' +
+        '' +
       '</div>' +
       '<div class="hm-body">' +
         '<div class="hm-stage" id="hm-stage"><canvas class="orb-canvas" id="hm-orb"></canvas><span class="hm-orb-ring"></span><span class="hm-orb-ring r2"></span><span class="aura"></span><div class="hm-face" id="hm-face"></div></div>' +
