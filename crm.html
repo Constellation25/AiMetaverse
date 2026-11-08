@@ -2441,12 +2441,12 @@ window.AIMV_FACES={real:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBD
           '<p style="font-size:.8rem;color:var(--text-muted)">“Import Sheets” then fetches real rows via the Sheets API (or the public CSV endpoint).</p>' +
         '</div>' +
         '<div class="stat-card"><h3><i class="fa-solid fa-phone-volume"></i> Twilio auto-dialer</h3>' +
-          '<div class="form-group"><label>Call endpoint (POST {to,name}) — local FastAPI: http://localhost:8000/api/dial</label><input id="int-twilio" placeholder="http://localhost:8000/api/dial  (or https://your-app.vercel.app/api/dial)"></div>' +
-          '<p style="font-size:.8rem;color:var(--text-muted)">Keep Twilio credentials server-side. py/server.py already implements this endpoint (/api/dial) — run <code>uvicorn py.server:app</code> and paste http://localhost:8000/api/dial, or deploy it to Vercel/Railway and use that URL. “Dial” then queues real calls.</p>' +
+          '<div class="form-group"><label>Call endpoint (POST {to,name}) — local FastAPI: https://localhost:8000/api/dial</label><input id="int-twilio" placeholder="https://localhost:8000/api/dial  (or https://your-app.vercel.app/api/dial)"></div>' +
+          '<p style="font-size:.8rem;color:var(--text-muted)">Keep Twilio credentials server-side. py/server.py already implements this endpoint (/api/dial) — run <code>uvicorn py.server:app</code> and paste https://localhost:8000/api/dial, or deploy it to Vercel/Railway and use that URL. “Dial” then queues real calls.</p>' +
         '</div>' +
         '<div class="stat-card"><h3><i class="fa-solid fa-brain"></i> Real AI for the assistant</h3>' +
           '<div class="form-group"><label>Provider</label><select id="int-ai"><option value="mock">Offline brain (default)</option><option value="ollama">Ollama (local)</option><option value="openai">OpenAI</option></select></div>' +
-          '<div class="form-group"><label>Ollama URL</label><input id="int-ollama" placeholder="http://localhost:11434"></div>' +
+          '<div class="form-group"><label>Ollama URL</label><input id="int-ollama" placeholder="https://localhost:11434"></div>' +
           '<div class="form-group"><label>Ollama model</label><input id="int-ollama-model" placeholder="llama3.1"></div>' +
           '<div class="form-group"><label>OpenAI API key (browser-side — use at your own risk)</label><input id="int-openai-key" type="password" placeholder="sk-…"></div>' +
           '<div class="form-group"><label>OpenAI model</label><input id="int-openai-model" placeholder="gpt-4o-mini"></div>' +
