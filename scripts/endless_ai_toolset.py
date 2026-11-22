@@ -300,6 +300,91 @@ sandbox.self = sandbox;
 sandbox.module = { exports: {} };
 sandbox.exports = sandbox.module.exports;
 
+// C25_HEADLESS_SANDBOX_SHIM
+const __noop = () => {};
+const __makeEl = (tag = "div") => ({
+  tagName: String(tag).toUpperCase(),
+  style: {},
+  classList: {
+    add: __noop,
+    remove: __noop,
+    toggle: __noop,
+    contains: () => false,
+  },
+  dataset: {},
+  children: [],
+  childNodes: [],
+  attributes: {},
+  innerHTML: "",
+  textContent: "",
+  value: "",
+  addEventListener: __noop,
+  removeEventListener: __noop,
+  dispatchEvent: () => true,
+  setAttribute: __noop,
+  getAttribute: () => null,
+  appendChild: (el) => el,
+  removeChild: (el) => el,
+  closest: () => null,
+  querySelector: () => null,
+  querySelectorAll: () => [],
+});
+
+if (typeof sandbox.addEventListener !== "function") sandbox.addEventListener = __noop;
+if (typeof sandbox.removeEventListener !== "function") sandbox.removeEventListener = __noop;
+if (typeof sandbox.dispatchEvent !== "function") sandbox.dispatchEvent = () => true;
+
+if (!sandbox.document || typeof sandbox.document !== "object") {
+  sandbox.document = {
+    body: __makeEl("body"),
+    head: __makeEl("head"),
+    documentElement: __makeEl("html"),
+    addEventListener: __noop,
+    removeEventListener: __noop,
+    dispatchEvent: () => true,
+    createElement: __makeEl,
+    getElementById: () => null,
+    querySelector: () => null,
+    querySelectorAll: () => [],
+  };
+}
+
+if (!sandbox.localStorage || typeof sandbox.localStorage.getItem !== "function") {
+  const __store = new Map();
+  sandbox.localStorage = {
+    getItem: (k) => (__store.has(String(k)) ? __store.get(String(k)) : null),
+    setItem: (k, v) => { __store.set(String(k), String(v)); },
+    removeItem: (k) => { __store.delete(String(k)); },
+    clear: () => { __store.clear(); },
+    key: (i) => Array.from(__store.keys())[i] ?? null,
+    get length() { return __store.size; },
+  };
+}
+
+if (!sandbox.navigator || typeof sandbox.navigator !== "object") {
+  sandbox.navigator = {
+    userAgent: "HeadlessSandbox/1.0",
+    language: "en-US",
+    mediaDevices: {
+      getUserMedia: async () => ({ getTracks: () => [] }),
+      enumerateDevices: async () => [],
+    },
+  };
+}
+
+let __rafId = 0;
+if (typeof sandbox.requestAnimationFrame !== "function") {
+  sandbox.requestAnimationFrame = (_cb) => ++__rafId;
+}
+if (typeof sandbox.cancelAnimationFrame !== "function") {
+  sandbox.cancelAnimationFrame = __noop;
+}
+if (typeof sandbox.setTimeout !== "function") {
+  sandbox.setTimeout = (_cb, _ms = 0) => ++__rafId;
+}
+if (typeof sandbox.clearTimeout !== "function") {
+  sandbox.clearTimeout = __noop;
+}
 const ctx = vm.createContext(sandbox);
 
 function findFunctionInScope(context, targetName) {

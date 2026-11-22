@@ -1,0 +1,58 @@
+name: Deploy AiMetaverse Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Stage static portal & catalog site
+        run: |
+          rm -rf _pages_dist
+          mkdir -p _pages_dist/store _pages_dist/data
+
+          if [ -f "apk/index.html" ]; then
+            cp apk/index.html _pages_dist/index.html
+          elif [ -f "index.html" ]; then
+            cp index.html _pages_dist/index.html
+          else
+            echo "<h1>AiMetaverse Portal</h1>" > _pages_dist/index.html
+          fi
+
+          if [ -d "store" ]; then
+            cp -r store/. _pages_dist/store/
+          fi
+
+          if [ -f "data/endless-ai-toolset.json" ]; then
+            cp data/endless-ai-toolset.json _pages_dist/data/endless-ai-toolset.json
+          fi
+
+          touch _pages_dist/.nojekyll
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _pages_dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

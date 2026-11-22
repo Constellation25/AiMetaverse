@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AiMetaverse — APK &amp; Toolset Gateway</title>
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --panel: #131a26;
+      --border: #243044;
+      --text: #e6edf7;
+      --muted: #93a4bc;
+      --accent: #38bdf8;
+      --ok: #22c55e;
+      --warn: #f59e0b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 24px;
+    }
+    .wrap { max-width: 820px; margin: 0 auto; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    h1 { margin: 8px 0 8px; font-size: 1.5rem; }
+    .muted { color: var(--muted); font-size: 0.92rem; }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: rgba(56, 189, 248, 0.14);
+      color: var(--accent);
+    }
+    .badge.live {
+      background: rgba(34, 197, 94, 0.14);
+      color: var(--ok);
+    }
+    .badge.static {
+      background: rgba(245, 158, 11, 0.14);
+      color: var(--warn);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .stat {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+    }
+    .stat .val { font-size: 1.35rem; font-weight: 700; color: var(--accent); margin-top: 4px; }
+    .btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #061018;
+      font-weight: 700;
+      text-decoration: none;
+      border: 0;
+      cursor: pointer;
+    }
+    code {
+      display: block;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-top: 8px;
+      overflow-x: auto;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <span class="badge" id="mode-badge">DETECTING MODE...</span>
+      <h1>AiMetaverse Build &amp; APK Portal</h1>
+      <p class="muted" id="mode-desc">Checking runtime environment for live API endpoints or static GitHub Pages assets.</p>
+
+      <div class="grid">
+        <div class="stat">
+          <div class="muted">Total Tools</div>
+          <div class="val" id="total-tools">—</div>
+        </div>
+        <div class="stat">
+          <div class="muted">AI-Focused</div>
+          <div class="val" id="ai-tools">—</div>
+        </div>
+        <div class="stat">
+          <div class="muted">Latest APK</div>
+          <div class="val" id="apk-name">None</div>
+        </div>
+      </div>
+
+      <div id="apk-details" style="margin-top:14px;"></div>
+    </div>
+
+    <div class="card">
+      <strong>Runtime &amp; Deployment Endpoints</strong>
+      <code>GET /health                 (live API on port 8000)
+GET /api/tools?ai_only=true (live API on port 8000)
+GET /api/apk/latest         (live API on port 8000)
+./data/endless-ai-toolset.json (optional static catalog on GitHub Pages)</code>
+    </div>
+  </div>
+
+  <script>
+    const isGitHubPages = window.location.hostname.endsWith('.github.io');
+
+    function setBadge(text, cls) {
+      const el = document.getElementById('mode-badge');
+      el.textContent = text;
+      el.className = `badge ${cls}`;
+    }
+
+    async function loadStaticCatalogFallback() {
+      try {
+        const res = await fetch('./data/endless-ai-toolset.json', { cache: 'no-store' });
+        if (!res.ok) return;
+        const data = await res.json();
+        const list = Array.isArray(data) ? data : (Array.isArray(data.tools) ? data.tools : []);
+        if (list.length > 0) {
+          document.getElementById('total-tools').textContent = list.length;
+          document.getElementById('ai-tools').textContent = list.filter((t) => t && t.aiFocused).length;
+        }
+      } catch (_) {}
+    }
+
+    async function loadLiveApi() {
+      const hRes = await fetch('/health', { cache: 'no-store' });
+      if (!hRes.ok) throw new Error(`HTTP ${hRes.status}`);
+      const h = await hRes.json();
+      if (typeof h.tools_total !== 'number') throw new Error('Non-API response');
+
+      setBadge('LIVE API (PORT 8000 / GATEWAY)', 'live');
+      document.getElementById('mode-desc').textContent =
+        'Connected to live API gateway: tool counts, APK checksums, and probe triggers are active.';
+      document.getElementById('total-tools').textContent = h.tools_total;
+      document.getElementById('ai-tools').textContent = h.ai_focused_total ?? '—';
+
+      const apkBox = document.getElementById('apk-details');
+      try {
+        const aRes = await fetch('/api/apk/latest', { cache: 'no-store' });
+        const a = await aRes.json();
+        if (a && a.available) {
+          document.getElementById('apk-name').textContent = a.filename;
+          const mb = (a.size_bytes / (1024 * 1024)).toFixed(2);
+          apkBox.innerHTML = `
+            <p class="muted">Size: <strong>${mb} MB</strong></p>
+            <p class="muted">SHA-256:</p>
+            <code>${a.sha256}</code>
+            <a class="btn" href="${a.download_url}" download>Download ${a.filename}</a>
+          `;
+        } else {
+          apkBox.innerHTML =
+            '<p class="muted">No <code>.apk</code> found in <code>~/AiMetaverse/apk/</code>. Place an APK there and refresh to publish its download link and SHA-256.</p>';
+        }
+      } catch (_) {
+        apkBox.innerHTML = '<p class="muted">APK metadata endpoint unavailable.</p>';
+      }
+    }
+
+    async function init() {
+      if (isGitHubPages) {
+        setBadge('STATIC GITHUB PAGES', 'static');
+        document.getElementById('mode-desc').textContent =
+          'Hosted as a static site on GitHub Pages. Dynamic /api/* routes require a running local or tunneled gateway.';
+        document.getElementById('apk-details').innerHTML =
+          '<p class="muted">Static hosting mode: attach release APKs via GitHub Releases or connect a live gateway for <code>/api/apk/latest</code> and <code>/api/probe/run</code>.</p>';
+        await loadStaticCatalogFallback();
+        return;
+      }
+
+      try {
+        await loadLiveApi();
+      } catch (_) {
+        setBadge('STATIC / OFFLINE API', 'static');
+        document.getElementById('mode-desc').textContent =
+          'Live /health endpoint was not detected on this origin; running in static/fallback mode.';
+        document.getElementById('apk-details').innerHTML =
+          '<p class="muted">Start the API server on port <code>8000</code> to enable live APK metadata and checksum verification.</p>';
+        await loadStaticCatalogFallback();
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
