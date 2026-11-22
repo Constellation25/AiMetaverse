@@ -1,0 +1,586 @@
+{
+  "generated_at": "2026-11-22T15:21:30.914012+00:00",
+  "repo": "/data/data/com.termux/files/home/AiMetaverse",
+  "module_count": 38,
+  "modules": [
+    {
+      "id": "store_agentik_crm",
+      "path": "store/agentik-crm.html",
+      "type": "html",
+      "bytes": 36501,
+      "symbols": [
+        "switchView",
+        "renderKanban",
+        "allowDrop",
+        "drag",
+        "drop",
+        "renderContacts",
+        "updateStats",
+        "saveLeads",
+        "openModal",
+        "closeModal",
+        "addLead",
+        "simulateScrape",
+        "simulateSheetImport",
+        "simulateDial",
+        "logActivity",
+        "toggleChat",
+        "handleChatEnter",
+        "sendMessage",
+        "showToast"
+      ]
+    },
+    {
+      "id": "store_ai_education_hub",
+      "path": "store/ai-education-hub.html",
+      "type": "html",
+      "bytes": 30776,
+      "symbols": [
+        "renderQuiz",
+        "renderPrompts",
+        "switchTab",
+        "filterQuiz",
+        "filterPrompts",
+        "copyPrompt"
+      ]
+    },
+    {
+      "id": "store_ai_education",
+      "path": "store/ai-education.html",
+      "type": "html",
+      "bytes": 23117,
+      "symbols": []
+    },
+    {
+      "id": "store_ai4reelz",
+      "path": "store/ai4reelz.html",
+      "type": "html",
+      "bytes": 20348,
+      "symbols": [
+        "simulateRouting"
+      ]
+    },
+    {
+      "id": "store_aig_store",
+      "path": "store/aig-store.html",
+      "type": "html",
+      "bytes": 18344,
+      "symbols": [
+        "aigOpenCheckout",
+        "aigCloseModal",
+        "aigSelectPayment",
+        "aigCompleteOrder"
+      ]
+    },
+    {
+      "id": "store_air_lyrics",
+      "path": "store/air-lyrics.js",
+      "type": "js",
+      "bytes": 1991,
+      "symbols": [
+        "boot"
+      ]
+    },
+    {
+      "id": "store_airecords",
+      "path": "store/airecords.html",
+      "type": "html",
+      "bytes": 25024,
+      "symbols": []
+    },
+    {
+      "id": "store_app_builder",
+      "path": "store/app-builder.html",
+      "type": "html",
+      "bytes": 15413,
+      "symbols": [
+        "handleFiles",
+        "renderFile",
+        "removeFile",
+        "toggleChip",
+        "startBuilding",
+        "showToast"
+      ]
+    },
+    {
+      "id": "store_bitbucks",
+      "path": "store/bitbucks.html",
+      "type": "html",
+      "bytes": 25412,
+      "symbols": [
+        "copyReferral",
+        "openModal",
+        "closeModal",
+        "simulateCompletion"
+      ]
+    },
+    {
+      "id": "store_communities",
+      "path": "store/communities.html",
+      "type": "html",
+      "bytes": 10632,
+      "symbols": []
+    },
+    {
+      "id": "store_commz",
+      "path": "store/commz.html",
+      "type": "html",
+      "bytes": 29970,
+      "symbols": [
+        "trigger_outbound_call",
+        "human_handoff",
+        "handleDemoSubmit",
+        "copyCode",
+        "showToast"
+      ]
+    },
+    {
+      "id": "store_crm_integrations",
+      "path": "store/crm-integrations.js",
+      "type": "js",
+      "bytes": 14488,
+      "symbols": [
+        "cfg",
+        "saveCfg",
+        "parseCsv",
+        "normApiRows",
+        "canned",
+        "askRealAI",
+        "buildUI",
+        "val",
+        "set"
+      ]
+    },
+    {
+      "id": "store_exploremars",
+      "path": "store/exploremars.html",
+      "type": "html",
+      "bytes": 22077,
+      "symbols": [
+        "dropPin",
+        "closeModal",
+        "connectWallet"
+      ]
+    },
+    {
+      "id": "store_faceforge",
+      "path": "store/faceforge.html",
+      "type": "html",
+      "bytes": 10163,
+      "symbols": [
+        "setupDropZone",
+        "handleFile"
+      ]
+    },
+    {
+      "id": "store_metaverse_directory",
+      "path": "store/metaverse-directory.html",
+      "type": "html",
+      "bytes": 27016,
+      "symbols": [
+        "renderPlatforms",
+        "filterPlatforms"
+      ]
+    },
+    {
+      "id": "store_metaverse_toolkit",
+      "path": "store/metaverse-toolkit.html",
+      "type": "html",
+      "bytes": 24741,
+      "symbols": [
+        "generateBlueprint"
+      ]
+    },
+    {
+      "id": "store_prompter",
+      "path": "store/prompter.html",
+      "type": "html",
+      "bytes": 22595,
+      "symbols": [
+        "init",
+        "renderAvatars",
+        "renderPrompts",
+        "updateSuggestions",
+        "selectAvatar",
+        "searchForSuggestion",
+        "openModal",
+        "closeModal",
+        "copyPrompt",
+        "copyPromptById",
+        "forkPrompt",
+        "forkPromptById",
+        "showToast"
+      ]
+    },
+    {
+      "id": "store_tailwindcdn",
+      "path": "store/tailwindcdn.js",
+      "type": "js",
+      "bytes": 451145,
+      "symbols": [
+        "_",
+        "v",
+        "un",
+        "At",
+        "oc",
+        "ca",
+        "pa",
+        "Vr",
+        "da",
+        "Ct",
+        "we",
+        "mc",
+        "gc",
+        "yc",
+        "r",
+        "Se",
+        "dn",
+        "Yt",
+        "Hr",
+        "ma",
+        "et",
+        "Ce",
+        "ve",
+        "gn",
+        "Sc"
+      ]
+    },
+    {
+      "id": "store_virtualstore",
+      "path": "store/virtualstore.html",
+      "type": "html",
+      "bytes": 20713,
+      "symbols": [
+        "handleSubmit"
+      ]
+    },
+    {
+      "id": "store_voicelip",
+      "path": "store/voicelip.html",
+      "type": "html",
+      "bytes": 25654,
+      "symbols": [
+        "setAvatarType",
+        "handleAvatarUpload",
+        "handleVoiceUpload",
+        "showToast",
+        "startRendering",
+        "generateVisualizer",
+        "simulateTalking",
+        "resetStudio"
+      ]
+    },
+    {
+      "id": "store_vr_hub",
+      "path": "store/vr-hub.html",
+      "type": "html",
+      "bytes": 19179,
+      "symbols": [
+        "showTab",
+        "showSetupGuide",
+        "hideSetupGuide"
+      ]
+    },
+    {
+      "id": "store_vtwin",
+      "path": "store/vtwin.html",
+      "type": "html",
+      "bytes": 22427,
+      "symbols": [
+        "handleImageUpload",
+        "handleVoiceUpload",
+        "showToast",
+        "startRendering",
+        "generateVisualizer",
+        "resetStudio"
+      ]
+    },
+    {
+      "id": "store_webstudio",
+      "path": "store/webstudio.html",
+      "type": "html",
+      "bytes": 22286,
+      "symbols": [
+        "simulateGeneration"
+      ]
+    },
+    {
+      "id": "tools_audit",
+      "path": "tools/audit.py",
+      "type": "py",
+      "bytes": 3359,
+      "symbols": [
+        "pages",
+        "audit",
+        "coverage",
+        "main"
+      ]
+    },
+    {
+      "id": "tools_index",
+      "path": "tools/index.html",
+      "type": "html",
+      "bytes": 112270,
+      "symbols": [
+        "canon",
+        "isCurrent",
+        "buildHeader",
+        "buildTopStrip",
+        "buildFooter",
+        "buildCookies",
+        "buildProgress",
+        "constellation",
+        "seed",
+        "frame",
+        "start",
+        "stop",
+        "buildAmbient",
+        "reveals",
+        "counters",
+        "run",
+        "step",
+        "buildToTop",
+        "injectHumanoid",
+        "boot",
+        "lsGet",
+        "lsSet",
+        "lsJson",
+        "lsSave",
+        "brain"
+      ]
+    },
+    {
+      "id": "tools_tpr",
+      "path": "tools/tpr.js",
+      "type": "js",
+      "bytes": 6735,
+      "symbols": [
+        "C"
+      ]
+    },
+    {
+      "id": "tools_tvl",
+      "path": "tools/tvl.js",
+      "type": "js",
+      "bytes": 10001,
+      "symbols": [
+        "C"
+      ]
+    },
+    {
+      "id": "tools_tvt",
+      "path": "tools/tvt.js",
+      "type": "js",
+      "bytes": 7936,
+      "symbols": [
+        "C"
+      ]
+    },
+    {
+      "id": "tools_education_index",
+      "path": "tools/education/index.html",
+      "type": "html",
+      "bytes": 3719,
+      "symbols": []
+    },
+    {
+      "id": "tools_enterprise_index",
+      "path": "tools/enterprise/index.html",
+      "type": "html",
+      "bytes": 3726,
+      "symbols": []
+    },
+    {
+      "id": "tools_labs_index",
+      "path": "tools/labs/index.html",
+      "type": "html",
+      "bytes": 3684,
+      "symbols": []
+    },
+    {
+      "id": "agents_agent",
+      "path": "agents/agent.html",
+      "type": "html",
+      "bytes": 185056,
+      "symbols": [
+        "canon",
+        "isCurrent",
+        "buildHeader",
+        "buildTopStrip",
+        "buildFooter",
+        "buildCookies",
+        "buildProgress",
+        "constellation",
+        "seed",
+        "frame",
+        "start",
+        "stop",
+        "buildAmbient",
+        "reveals",
+        "counters",
+        "run",
+        "step",
+        "buildToTop",
+        "injectHumanoid",
+        "boot",
+        "lsGet",
+        "lsSet",
+        "lsJson",
+        "lsSave",
+        "brain"
+      ]
+    },
+    {
+      "id": "agents_agent_index",
+      "path": "agents/agent/index.html",
+      "type": "html",
+      "bytes": 184955,
+      "symbols": [
+        "canon",
+        "isCurrent",
+        "buildHeader",
+        "buildTopStrip",
+        "buildFooter",
+        "buildCookies",
+        "buildProgress",
+        "constellation",
+        "seed",
+        "frame",
+        "start",
+        "stop",
+        "buildAmbient",
+        "reveals",
+        "counters",
+        "run",
+        "step",
+        "buildToTop",
+        "injectHumanoid",
+        "boot",
+        "lsGet",
+        "lsSet",
+        "lsJson",
+        "lsSave",
+        "brain"
+      ]
+    },
+    {
+      "id": "assets_avatar",
+      "path": "assets/avatar.js",
+      "type": "js",
+      "bytes": 76930,
+      "symbols": [
+        "save",
+        "load",
+        "toast",
+        "gotoStep",
+        "refreshGates",
+        "hasCam",
+        "startCamera",
+        "stopCamera",
+        "setCamStatus",
+        "captureFromVideo",
+        "acceptFile",
+        "acceptImageCanvas",
+        "analyseImage",
+        "runFaceDetection",
+        "setFaceNote",
+        "applyPalette",
+        "paintImageStep",
+        "row",
+        "canRecord",
+        "startRecording",
+        "stopRecording",
+        "pickMime",
+        "micIcon",
+        "setRecStatus",
+        "startWave"
+      ]
+    },
+    {
+      "id": "assets_c25_live_system",
+      "path": "assets/c25-live-system.js",
+      "type": "js",
+      "bytes": 3612,
+      "symbols": [
+        "nowIso",
+        "loadActivity",
+        "recordActivity",
+        "formatResultEnvelope",
+        "renderToEndUser",
+        "fetchSystemState",
+        "deliverCall"
+      ]
+    },
+    {
+      "id": "assets_c25_route_heal",
+      "path": "assets/c25-route-heal.js",
+      "type": "js",
+      "bytes": 2364,
+      "symbols": [
+        "c25NormalizeHref",
+        "healAnchors"
+      ]
+    },
+    {
+      "id": "assets_humanoid",
+      "path": "assets/humanoid.js",
+      "type": "js",
+      "bytes": 61850,
+      "symbols": [
+        "lsGet",
+        "lsSet",
+        "lsJson",
+        "lsSave",
+        "brain",
+        "spatialFace",
+        "robotFace",
+        "assetBase",
+        "realFaceSrc",
+        "realFace",
+        "faceMarkup",
+        "build",
+        "micSvg",
+        "spkSvg",
+        "waveSvg",
+        "userSvg",
+        "botSvg",
+        "renderPersonas",
+        "renderFace",
+        "applyAccent",
+        "syncControls",
+        "open",
+        "close",
+        "setState",
+        "setStatus"
+      ]
+    },
+    {
+      "id": "assets_site",
+      "path": "assets/site.js",
+      "type": "js",
+      "bytes": 20959,
+      "symbols": [
+        "canon",
+        "isCurrent",
+        "buildHeader",
+        "buildTopStrip",
+        "buildFooter",
+        "buildCookies",
+        "buildProgress",
+        "constellation",
+        "seed",
+        "frame",
+        "start",
+        "stop",
+        "buildAmbient",
+        "reveals",
+        "counters",
+        "run",
+        "step",
+        "buildToTop",
+        "injectHumanoid",
+        "boot"
+      ]
+    }
+  ]
+}

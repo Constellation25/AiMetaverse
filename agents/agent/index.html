@@ -210,7 +210,7 @@
             '<p style="margin-top:12px;font-size:13px;color:var(--dim)">1007 Yanceyville Street, Greensboro, NC 27405 · <a href="tel:+13368050229" style="color:var(--muted)">336-805-0229</a></p>' +
             '<div class="socials">' +
               '<a href="news.html" aria-label="News"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg></a>' +
-              '<a href="developers.html" aria-label="Developers"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></a>' +
+              '<a href="../../developers.html" aria-label="Developers"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></a>' +
               '<a href="labs.html" aria-label="Ai-Labs"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6L5 19a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 19l-5-10V3"/></svg></a>' +
               '<a href="contact.html" aria-label="Contact"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v14H5.5L4 19.5z"/><path d="M8 9h8M8 13h5"/></svg></a>' +
             '</div>' +
@@ -2473,7 +2473,10 @@ window.AIMV_FACES={real:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBD
       '<form id="f"><input id="q" placeholder="Ask your agent…" autocomplete="off"><button>Send</button></form></section>\n' +
       '</main>\n<footer class="w"><span>© 2023–2026 Ai Metaverse · Powered by Kre8Tive Koncepts</span>' +
       '<span>This agent page is fully self-contained and works offline.</span></footer>\n' +
-      '<script>\nvar SPEC=' + JSON.stringify(spec) + ';\nvar KB=' + JSON.stringify(kb) + ';\n' + AGENT_JS + '\n</' + 'script>\n</body>\n</html>';
+      '<script>\nvar SPEC=' + JSON.stringify(spec) + ';\nvar KB=' + JSON.stringify(kb) + ';\n' + AGENT_JS + '\n</' + 'script>\n<script src="../../assets/c25-live-system.js" defer></script>
+<script src="../../assets/c25-module-runtime.js" defer></script>
+<script src="../../assets/c25-platform-bus.js" defer></script>
+</body>\n</html>';
   }
   function chip(t) { return t ? '<span class="ch">' + escapeHtml(t) + '</span>' : ''; }
 
@@ -2611,7 +2614,7 @@ window.AIMV_FACES={real:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBD
         '<div class="btn-row" style="margin-top:12px">' +
           '<button class="btn btn-sm btn-ghost" id="rpm-copy" type="button">Copy GLB URL</button>' +
           '<button class="btn btn-sm btn-ghost" id="rpm-clear" type="button">Unlink</button>' +
-          '<a class="btn btn-sm btn-ghost" href="developers.html">How to render it</a>' +
+          '<a class="btn btn-sm btn-ghost" href="../../developers.html">How to render it</a>' +
         '</div>' +
         '<div id="rpm-viewer" style="margin-top:16px"></div>';
       var c = $('#rpm-copy');
@@ -2649,7 +2652,7 @@ window.AIMV_FACES={real:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBD
   }
   function visageFallback() {
     return '<div class="callout warn">The 3D viewer needs a network connection. Your avatar URL is saved and can be loaded with ' +
-           '<code>@readyplayerme/visage</code>, the Unity SDK or the Unreal SDK — see <a href="developers.html" style="color:var(--cyan)">Developers</a>.</div>';
+           '<code>@readyplayerme/visage</code>, the Unity SDK or the Unreal SDK — see <a href="../../developers.html" style="color:var(--cyan)">Developers</a>.</div>';
   }
 
   /* ==========================================================

@@ -1,0 +1,4738 @@
+{
+  "generated_at": "2026-11-22T15:25:49.416876+00:00",
+  "platform_token": "plt_5e6094d306e3",
+  "summary": {
+    "total_nodes": 189,
+    "route_tokens": 45,
+    "load_order_count": 189,
+    "cycle_warnings": 5
+  },
+  "load_order": [
+    "404.html",
+    "AI4REELZ.md",
+    "AIEDU.md",
+    "DEPLOY.md",
+    "EDUHUB.md",
+    "FACEFORGE.md",
+    "INDEX_DISCOVERY.md",
+    "METADIR.md",
+    "PROMPTER.md",
+    "README.md",
+    "TWINSTUDIO.md",
+    "VOICELIP.md",
+    "VRHUB.md",
+    "agents/agent.html",
+    "agents/agent/index.html",
+    "ai-education-hub.html",
+    "ai-education-hub/index.html",
+    "ai-education.html",
+    "ai-education/ai-education.html",
+    "ai-education/index.html",
+    "ai4reelz.html",
+    "ai4reelz/ai4reelz.html",
+    "ai4reelz/index.html",
+    "apikonnect.html",
+    "apikonnect/index.html",
+    "app-builder.html",
+    "app-builder/index.html",
+    "assets/avatar.js",
+    "assets/c25-live-system.js",
+    "assets/c25-module-runtime.js",
+    "assets/c25-platform-bus.js",
+    "assets/c25-route-heal.js",
+    "assets/humanoid.js",
+    "assets/site.js",
+    "avatar-create.html",
+    "avatar-create/avatar-create.html",
+    "avatar-create/avatar/index.html",
+    "avatar-create/developers/index.html",
+    "avatar-create/enterprise/index.html",
+    "avatar-create/index.html",
+    "avatar-create/metabox/index.html",
+    "avatar-create/twin-studio/index.html",
+    "avatar-create/voice-lipsync/index.html",
+    "avatar-create/worlds/index.html",
+    "avatar.html",
+    "avatar/avatar-create/index.html",
+    "avatar/index.html",
+    "bitbucks.html",
+    "bitbucks/bitbucks.html",
+    "bitbucks/index.html",
+    "communities.html",
+    "communities/avatar-create/index.html",
+    "communities/index.html",
+    "communities/worlds/index.html",
+    "commz.html",
+    "commz/commz.html",
+    "commz/index.html",
+    "contact.html",
+    "contact/index.html",
+    "crm.html",
+    "crm/index.html",
+    "data/module-runtime-manifest.json",
+    "data/platform-token-graph.json",
+    "data/system-state.json",
+    "deploy.sh",
+    "deploy_forge.sh",
+    "developers.html",
+    "developers/contact/index.html",
+    "developers/education/index.html",
+    "developers/enterprise/index.html",
+    "developers/index.html",
+    "devzone.html",
+    "devzone/index.html",
+    "education.html",
+    "education/avatar-create/index.html",
+    "education/developers/index.html",
+    "education/index.html",
+    "education/labs/index.html",
+    "education/signup/index.html",
+    "enterprise.html",
+    "enterprise/avatar-create/index.html",
+    "enterprise/contact/index.html",
+    "enterprise/index.html",
+    "faceforge.html",
+    "faceforge/app.py",
+    "faceforge/index.html",
+    "faceforge/setup-termux.sh",
+    "feed_database.json",
+    "gen_extra.py",
+    "gen_pages.py",
+    "index.html",
+    "labs.html",
+    "labs/education/index.html",
+    "labs/index.html",
+    "labs/metabox/index.html",
+    "labs/why-ai/index.html",
+    "main.py",
+    "mars.html",
+    "mars/index.html",
+    "mars/mars.html",
+    "metabox.html",
+    "metabox/index.html",
+    "metaverse-directory.html",
+    "metaverse-directory/index.html",
+    "metaverse-toolkit.html",
+    "metaverse-toolkit/index.html",
+    "news.html",
+    "news/index.html",
+    "package.json",
+    "privacy.html",
+    "privacy/contact/index.html",
+    "privacy/index.html",
+    "privacy/news/index.html",
+    "prompter.html",
+    "prompter/avatar-create/index.html",
+    "prompter/index.html",
+    "py/main.py",
+    "py/server.py",
+    "records.html",
+    "records/index.html",
+    "records/records.html",
+    "setup_deployment_template.sh",
+    "shop.html",
+    "shop/index.html",
+    "signin.html",
+    "signin/contact/index.html",
+    "signin/index.html",
+    "signin/signup/index.html",
+    "signup.html",
+    "signup/index.html",
+    "signup/signin/index.html",
+    "store/agentik-crm.html",
+    "store/ai-education-hub.html",
+    "store/ai-education.html",
+    "store/ai4reelz.html",
+    "store/aig-store.html",
+    "store/air-lyrics.js",
+    "store/airecords.html",
+    "store/app-builder.html",
+    "store/bitbucks.html",
+    "store/communities.html",
+    "store/commz.html",
+    "store/crm-integrations.js",
+    "store/exploremars.html",
+    "store/faceforge.html",
+    "store/metaverse-directory.html",
+    "store/metaverse-toolkit.html",
+    "store/prompter.html",
+    "store/tailwindcdn.js",
+    "store/virtualstore.html",
+    "store/voicelip.html",
+    "store/vr-hub.html",
+    "store/vtwin.html",
+    "store/webstudio.html",
+    "terms.html",
+    "terms/index.html",
+    "tools.html",
+    "tools/audit.py",
+    "tools/education/index.html",
+    "tools/enterprise/index.html",
+    "tools/index.html",
+    "tools/labs/index.html",
+    "tools/tpr.js",
+    "tools/tvl.js",
+    "tools/tvt.js",
+    "twin-studio.html",
+    "twin-studio/avatar-create/index.html",
+    "twin-studio/index.html",
+    "vercel.json",
+    "vercel_deploy_manager.sh",
+    "vercel_projects.json",
+    "voice-lipsync.html",
+    "voice-lipsync/avatar-create/index.html",
+    "voice-lipsync/index.html",
+    "voice-lipsync/twin-studio/index.html",
+    "vr-hub.html",
+    "vr-hub/index.html",
+    "vstore.html",
+    "vstore/index.html",
+    "vstore/vstore.html",
+    "webstudio.html",
+    "webstudio/index.html",
+    "webstudio/webstudio.html",
+    "why-ai.html",
+    "why-ai/avatar-create/index.html",
+    "why-ai/index.html",
+    "worlds.html",
+    "worlds/index.html",
+    "worlds/metabox/index.html"
+  ],
+  "cycles": [
+    "avatar-create.html",
+    "avatar.html",
+    "signin/index.html",
+    "index.html",
+    "avatar-create.html"
+  ],
+  "nodes": {
+    "404.html": {
+      "path": "404.html",
+      "token": "mod_128cc35baaf4",
+      "bytes": 507,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ]
+    },
+    "AI4REELZ.md": {
+      "path": "AI4REELZ.md",
+      "token": "mod_29a6d61a3082",
+      "bytes": 2946,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "AIEDU.md": {
+      "path": "AIEDU.md",
+      "token": "mod_ee4d926ac3d2",
+      "bytes": 1628,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "DEPLOY.md": {
+      "path": "DEPLOY.md",
+      "token": "mod_678a061dc14f",
+      "bytes": 8360,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "EDUHUB.md": {
+      "path": "EDUHUB.md",
+      "token": "mod_8c7813059d56",
+      "bytes": 2768,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "FACEFORGE.md": {
+      "path": "FACEFORGE.md",
+      "token": "mod_641dac1b28c9",
+      "bytes": 4388,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "INDEX_DISCOVERY.md": {
+      "path": "INDEX_DISCOVERY.md",
+      "token": "mod_0bcdf7150ab9",
+      "bytes": 1096,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "METADIR.md": {
+      "path": "METADIR.md",
+      "token": "mod_6e2cc1097a8f",
+      "bytes": 2310,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "PROMPTER.md": {
+      "path": "PROMPTER.md",
+      "token": "mod_c591a4345e15",
+      "bytes": 3556,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "README.md": {
+      "path": "README.md",
+      "token": "mod_b33563055168",
+      "bytes": 11239,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "TWINSTUDIO.md": {
+      "path": "TWINSTUDIO.md",
+      "token": "mod_d1302a94a721",
+      "bytes": 3980,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "VOICELIP.md": {
+      "path": "VOICELIP.md",
+      "token": "mod_3196b6f5c703",
+      "bytes": 4605,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "VRHUB.md": {
+      "path": "VRHUB.md",
+      "token": "mod_8975bf651c65",
+      "bytes": 2478,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "ai-education-hub.html": {
+      "path": "ai-education-hub.html",
+      "token": "mod_97f1715b10bd",
+      "bytes": 585341,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "ai-education.html": {
+      "path": "ai-education.html",
+      "token": "mod_badbffb5a58f",
+      "bytes": 572567,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "ai4reelz.html": {
+      "path": "ai4reelz.html",
+      "token": "mod_0867d2bb7ae9",
+      "bytes": 573545,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "apikonnect.html": {
+      "path": "apikonnect.html",
+      "token": "mod_6da09991b066",
+      "bytes": 297422,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "app-builder.html": {
+      "path": "app-builder.html",
+      "token": "mod_8b89e0b8cdd6",
+      "bytes": 119694,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "avatar-create.html": {
+      "path": "avatar-create.html",
+      "token": "mod_acd866c892d0",
+      "bytes": 371284,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create/index.html",
+        "avatar/index.html",
+        "contact/index.html",
+        "developers/index.html",
+        "eel.js",
+        "enterprise/index.html",
+        "index.html",
+        "labs/index.html",
+        "metabox/index.html",
+        "news/index.html",
+        "privacy/index.html",
+        "tel:+13368050229",
+        "twin-studio/index.html",
+        "voice-lipsync/index.html",
+        "worlds/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create/index.html",
+        "avatar/index.html",
+        "contact/index.html",
+        "developers/index.html",
+        "enterprise/index.html",
+        "index.html",
+        "labs/index.html",
+        "metabox/index.html",
+        "news/index.html",
+        "privacy/index.html",
+        "twin-studio/index.html",
+        "voice-lipsync/index.html",
+        "worlds/index.html"
+      ]
+    },
+    "avatar.html": {
+      "path": "avatar.html",
+      "token": "mod_f359ccfb2cb5",
+      "bytes": 188313,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "bitbucks.html": {
+      "path": "bitbucks.html",
+      "token": "mod_4d545710c0cb",
+      "bytes": 126342,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "communities.html": {
+      "path": "communities.html",
+      "token": "mod_73b9ba463d43",
+      "bytes": 114700,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229",
+        "worlds/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "worlds/index.html"
+      ]
+    },
+    "commz.html": {
+      "path": "commz.html",
+      "token": "mod_5881461753ff",
+      "bytes": 134340,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "contact.html": {
+      "path": "contact.html",
+      "token": "mod_eb5639ef0321",
+      "bytes": 109238,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "crm.html": {
+      "path": "crm.html",
+      "token": "mod_e58233f26198",
+      "bytes": 155748,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "https://api.openai.com/v1/chat/completions",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "deploy.sh": {
+      "path": "deploy.sh",
+      "token": "mod_30883d1df2fc",
+      "bytes": 1064,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "deploy_forge.sh": {
+      "path": "deploy_forge.sh",
+      "token": "mod_3bb79c121a84",
+      "bytes": 4630,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "developers.html": {
+      "path": "developers.html",
+      "token": "mod_1b256221406c",
+      "bytes": 111642,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "contact/index.html",
+        "education/index.html",
+        "enterprise/index.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "contact/index.html",
+        "education/index.html",
+        "enterprise/index.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "devzone.html": {
+      "path": "devzone.html",
+      "token": "mod_38f2657de7ea",
+      "bytes": 279186,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "education.html": {
+      "path": "education.html",
+      "token": "mod_eca15de5127f",
+      "bytes": 107689,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "developers/index.html",
+        "index.html",
+        "labs.html",
+        "labs/index.html",
+        "news.html",
+        "privacy.html",
+        "signup/index.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "developers/index.html",
+        "index.html",
+        "labs.html",
+        "labs/index.html",
+        "news.html",
+        "privacy.html",
+        "signup/index.html"
+      ]
+    },
+    "enterprise.html": {
+      "path": "enterprise.html",
+      "token": "mod_b1b1257b39b5",
+      "bytes": 107947,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "contact/index.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "contact/index.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "faceforge.html": {
+      "path": "faceforge.html",
+      "token": "mod_a3c9c64baca3",
+      "bytes": 565750,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "feed_database.json": {
+      "path": "feed_database.json",
+      "token": "mod_cfca8fcb154f",
+      "bytes": 125601,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "gen_extra.py": {
+      "path": "gen_extra.py",
+      "token": "mod_63b3a4552ac0",
+      "bytes": 36170,
+      "depends_on": [
+        "%s",
+        "avatar-create.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "avatar-create.html",
+        "index.html"
+      ]
+    },
+    "gen_pages.py": {
+      "path": "gen_pages.py",
+      "token": "mod_aa803fd02294",
+      "bytes": 125877,
+      "depends_on": [
+        "%s",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "avatar.html",
+        "avatar/index.html",
+        "contact.html",
+        "developers.html",
+        "education.html",
+        "enterprise.html",
+        "index.html",
+        "labs.html",
+        "metabox.html",
+        "news.html",
+        "signin.html",
+        "signup.html",
+        "tel:+13368050229",
+        "twin-studio.html",
+        "why-ai.html",
+        "worlds.html",
+        "{FAV}",
+        "{href}"
+      ],
+      "resolved_depends_on": [
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "avatar.html",
+        "avatar/index.html",
+        "contact.html",
+        "developers.html",
+        "education.html",
+        "enterprise.html",
+        "index.html",
+        "labs.html",
+        "metabox.html",
+        "news.html",
+        "signin.html",
+        "signup.html",
+        "twin-studio.html",
+        "why-ai.html",
+        "worlds.html"
+      ]
+    },
+    "index.html": {
+      "path": "index.html",
+      "token": "mod_0eb547304658",
+      "bytes": 389099,
+      "depends_on": [
+        "agents/agent/index.html",
+        "ai-education-hub/index.html",
+        "ai-education/index.html",
+        "ai4reelz/index.html",
+        "apikonnect/index.html",
+        "app-builder/index.html",
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create/index.html",
+        "avatar/index.html",
+        "bitbucks/index.html",
+        "communities/index.html",
+        "commz/index.html",
+        "contact/index.html",
+        "crm/index.html",
+        "developers/index.html",
+        "devzone/index.html",
+        "education/index.html",
+        "eel.js",
+        "enterprise/index.html",
+        "faceforge/index.html",
+        "labs/index.html",
+        "mars/index.html",
+        "metabox/index.html",
+        "metaverse-directory/index.html",
+        "metaverse-toolkit/index.html",
+        "news/index.html",
+        "privacy/index.html",
+        "prompter/index.html",
+        "records/index.html",
+        "shop/index.html",
+        "signin/index.html",
+        "signup/index.html",
+        "tel:+13368050229",
+        "terms/index.html",
+        "tools/index.html",
+        "twin-studio/index.html",
+        "voice-lipsync/index.html",
+        "vr-hub/index.html",
+        "vstore/index.html",
+        "webstudio/index.html",
+        "why-ai/index.html",
+        "worlds/index.html"
+      ],
+      "resolved_depends_on": [
+        "agents/agent/index.html",
+        "ai-education-hub/index.html",
+        "ai-education/index.html",
+        "ai4reelz/index.html",
+        "apikonnect/index.html",
+        "app-builder/index.html",
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create/index.html",
+        "avatar/index.html",
+        "bitbucks/index.html",
+        "communities/index.html",
+        "commz/index.html",
+        "contact/index.html",
+        "crm/index.html",
+        "developers/index.html",
+        "devzone/index.html",
+        "education/index.html",
+        "enterprise/index.html",
+        "faceforge/index.html",
+        "labs/index.html",
+        "mars/index.html",
+        "metabox/index.html",
+        "metaverse-directory/index.html",
+        "metaverse-toolkit/index.html",
+        "news/index.html",
+        "privacy/index.html",
+        "prompter/index.html",
+        "records/index.html",
+        "shop/index.html",
+        "signin/index.html",
+        "signup/index.html",
+        "terms/index.html",
+        "tools/index.html",
+        "twin-studio/index.html",
+        "voice-lipsync/index.html",
+        "vr-hub/index.html",
+        "vstore/index.html",
+        "webstudio/index.html",
+        "why-ai/index.html",
+        "worlds/index.html"
+      ]
+    },
+    "labs.html": {
+      "path": "labs.html",
+      "token": "mod_bf2d31c4f49d",
+      "bytes": 13883,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "education/index.html",
+        "index.html",
+        "metabox/index.html",
+        "tools/index.html",
+        "why-ai/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "education/index.html",
+        "index.html",
+        "metabox/index.html",
+        "tools/index.html",
+        "why-ai/index.html"
+      ]
+    },
+    "main.py": {
+      "path": "main.py",
+      "token": "mod_b10564ab7d2c",
+      "bytes": 678,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "mars.html": {
+      "path": "mars.html",
+      "token": "mod_cd1bb5c3cf90",
+      "bytes": 125511,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "metabox.html": {
+      "path": "metabox.html",
+      "token": "mod_ccdb53aaca96",
+      "bytes": 108340,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "metaverse-directory.html": {
+      "path": "metaverse-directory.html",
+      "token": "mod_09839d596eee",
+      "bytes": 580161,
+      "depends_on": [
+        "${platform.link}",
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "metaverse-toolkit.html": {
+      "path": "metaverse-toolkit.html",
+      "token": "mod_c6a0dbf8f942",
+      "bytes": 577932,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "news.html": {
+      "path": "news.html",
+      "token": "mod_70a9b3e015aa",
+      "bytes": 107181,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "privacy.html"
+      ]
+    },
+    "package.json": {
+      "path": "package.json",
+      "token": "mod_7ae45ad102ea",
+      "bytes": 283,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "privacy.html": {
+      "path": "privacy.html",
+      "token": "mod_2bf02a33e2f1",
+      "bytes": 107616,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "contact/index.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "news/index.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "contact/index.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "news/index.html"
+      ]
+    },
+    "prompter.html": {
+      "path": "prompter.html",
+      "token": "mod_cab4110a3a88",
+      "bytes": 579142,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "records.html": {
+      "path": "records.html",
+      "token": "mod_0993c88e10d8",
+      "bytes": 130685,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "setup_deployment_template.sh": {
+      "path": "setup_deployment_template.sh",
+      "token": "mod_f2c618a040f0",
+      "bytes": 3718,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "shop.html": {
+      "path": "shop.html",
+      "token": "mod_8ca3c5a0cf86",
+      "bytes": 126023,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "signin.html": {
+      "path": "signin.html",
+      "token": "mod_1dd4f1841c93",
+      "bytes": 106793,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "avatar.html",
+        "contact.html",
+        "contact/index.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "signup/index.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "avatar.html",
+        "contact.html",
+        "contact/index.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "signup/index.html"
+      ]
+    },
+    "signup.html": {
+      "path": "signup.html",
+      "token": "mod_da20ec0a0ca5",
+      "bytes": 107761,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "signin/index.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "signin/index.html"
+      ]
+    },
+    "terms.html": {
+      "path": "terms.html",
+      "token": "mod_5ef98a1f2481",
+      "bytes": 107081,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "tools.html": {
+      "path": "tools.html",
+      "token": "mod_f37f2754d2dc",
+      "bytes": 112813,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "education/index.html",
+        "enterprise/index.html",
+        "index.html",
+        "labs.html",
+        "labs/index.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "education/index.html",
+        "enterprise/index.html",
+        "index.html",
+        "labs.html",
+        "labs/index.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "twin-studio.html": {
+      "path": "twin-studio.html",
+      "token": "mod_a4121a73dc85",
+      "bytes": 579510,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "vercel.json": {
+      "path": "vercel.json",
+      "token": "mod_a3265310f552",
+      "bytes": 248,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "vercel_deploy_manager.sh": {
+      "path": "vercel_deploy_manager.sh",
+      "token": "mod_383351c9346f",
+      "bytes": 4501,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "vercel_projects.json": {
+      "path": "vercel_projects.json",
+      "token": "mod_d5998c4d9030",
+      "bytes": 120448,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "voice-lipsync.html": {
+      "path": "voice-lipsync.html",
+      "token": "mod_7f0c01b7467a",
+      "bytes": 581539,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229",
+        "twin-studio/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "twin-studio/index.html"
+      ]
+    },
+    "vr-hub.html": {
+      "path": "vr-hub.html",
+      "token": "mod_a3d9387241cd",
+      "bytes": 572474,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "vstore.html": {
+      "path": "vstore.html",
+      "token": "mod_66f424a7db9f",
+      "bytes": 124859,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "webstudio.html": {
+      "path": "webstudio.html",
+      "token": "mod_fa5dbb47282e",
+      "bytes": 576128,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "why-ai.html": {
+      "path": "why-ai.html",
+      "token": "mod_29fa7d12fa6e",
+      "bytes": 110769,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "worlds.html": {
+      "path": "worlds.html",
+      "token": "mod_e90e691a3283",
+      "bytes": 114010,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "metabox/index.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "metabox/index.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "agents/agent.html": {
+      "path": "agents/agent.html",
+      "token": "mod_0bcf860b3289",
+      "bytes": 185237,
+      "depends_on": [
+        "agents/agent/index.html",
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "avatar/index.html",
+        "contact.html",
+        "developers.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "agents/agent/index.html",
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "avatar/index.html",
+        "contact.html",
+        "developers.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "agents/agent/index.html": {
+      "path": "agents/agent/index.html",
+      "token": "mod_371a7ec857da",
+      "bytes": 185145,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "avatar/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "avatar/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "ai-education/ai-education.html": {
+      "path": "ai-education/ai-education.html",
+      "token": "mod_a7e2758cfd50",
+      "bytes": 3928,
+      "depends_on": [
+        "ai-education/index.html",
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "ai-education/index.html",
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html"
+      ]
+    },
+    "ai-education/index.html": {
+      "path": "ai-education/index.html",
+      "token": "mod_1334df6f711f",
+      "bytes": 572670,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "ai-education-hub/index.html": {
+      "path": "ai-education-hub/index.html",
+      "token": "mod_6384b26c3397",
+      "bytes": 585425,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "ai4reelz/ai4reelz.html": {
+      "path": "ai4reelz/ai4reelz.html",
+      "token": "mod_5c13a35d5ae4",
+      "bytes": 3880,
+      "depends_on": [
+        "ai4reelz/index.html",
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "ai4reelz/index.html",
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html"
+      ]
+    },
+    "ai4reelz/index.html": {
+      "path": "ai4reelz/index.html",
+      "token": "mod_178cf5c17d7f",
+      "bytes": 573653,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "apikonnect/index.html": {
+      "path": "apikonnect/index.html",
+      "token": "mod_af1c10902b4f",
+      "bytes": 296982,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "app-builder/index.html": {
+      "path": "app-builder/index.html",
+      "token": "mod_217d3e73a9f8",
+      "bytes": 119778,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "assets/avatar.js": {
+      "path": "assets/avatar.js",
+      "token": "mod_f6e9d045d55f",
+      "bytes": 76930,
+      "depends_on": [
+        "developers.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "developers.html",
+        "index.html"
+      ]
+    },
+    "assets/c25-live-system.js": {
+      "path": "assets/c25-live-system.js",
+      "token": "mod_2d704bc71ced",
+      "bytes": 3612,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "assets/c25-module-runtime.js": {
+      "path": "assets/c25-module-runtime.js",
+      "token": "mod_180c94ebfd05",
+      "bytes": 4090,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "assets/c25-platform-bus.js": {
+      "path": "assets/c25-platform-bus.js",
+      "token": "mod_3d711459990a",
+      "bytes": 6696,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "assets/c25-route-heal.js": {
+      "path": "assets/c25-route-heal.js",
+      "token": "mod_bb963802fdb9",
+      "bytes": 2364,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "assets/humanoid.js": {
+      "path": "assets/humanoid.js",
+      "token": "mod_5a76d3835bc8",
+      "bytes": 61850,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "assets/site.js": {
+      "path": "assets/site.js",
+      "token": "mod_ab1b87133569",
+      "bytes": 20959,
+      "depends_on": [
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "avatar/index.html": {
+      "path": "avatar/index.html",
+      "token": "mod_f53841c745f0",
+      "bytes": 187920,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "avatar/avatar-create/index.html": {
+      "path": "avatar/avatar-create/index.html",
+      "token": "mod_11e243599ae6",
+      "bytes": 3942,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create/index.html",
+        "index.html"
+      ]
+    },
+    "avatar-create/avatar-create.html": {
+      "path": "avatar-create/avatar-create.html",
+      "token": "mod_69286b18073d",
+      "bytes": 3940,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create/index.html",
+        "index.html"
+      ]
+    },
+    "avatar-create/index.html": {
+      "path": "avatar-create/index.html",
+      "token": "mod_3a53adc30ff8",
+      "bytes": 371105,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar/index.html",
+        "contact/index.html",
+        "developers/index.html",
+        "eel.js",
+        "enterprise/index.html",
+        "index.html",
+        "labs/index.html",
+        "metabox/index.html",
+        "news/index.html",
+        "privacy/index.html",
+        "tel:+13368050229",
+        "twin-studio/index.html",
+        "voice-lipsync/index.html",
+        "worlds/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar/index.html",
+        "contact/index.html",
+        "developers/index.html",
+        "enterprise/index.html",
+        "index.html",
+        "labs/index.html",
+        "metabox/index.html",
+        "news/index.html",
+        "privacy/index.html",
+        "twin-studio/index.html",
+        "voice-lipsync/index.html",
+        "worlds/index.html"
+      ]
+    },
+    "avatar-create/avatar/index.html": {
+      "path": "avatar-create/avatar/index.html",
+      "token": "mod_2105028bf6ba",
+      "bytes": 3928,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar/index.html",
+        "index.html"
+      ]
+    },
+    "avatar-create/developers/index.html": {
+      "path": "avatar-create/developers/index.html",
+      "token": "mod_dd4e58c4ee7f",
+      "bytes": 3956,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "developers/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "developers/index.html",
+        "index.html"
+      ]
+    },
+    "avatar-create/enterprise/index.html": {
+      "path": "avatar-create/enterprise/index.html",
+      "token": "mod_4ef279c3a2d1",
+      "bytes": 3956,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "enterprise/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "enterprise/index.html",
+        "index.html"
+      ]
+    },
+    "avatar-create/metabox/index.html": {
+      "path": "avatar-create/metabox/index.html",
+      "token": "mod_b90e79439d48",
+      "bytes": 3935,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "metabox/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "metabox/index.html"
+      ]
+    },
+    "avatar-create/twin-studio/index.html": {
+      "path": "avatar-create/twin-studio/index.html",
+      "token": "mod_4ced427e1228",
+      "bytes": 3963,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "twin-studio/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "twin-studio/index.html"
+      ]
+    },
+    "avatar-create/voice-lipsync/index.html": {
+      "path": "avatar-create/voice-lipsync/index.html",
+      "token": "mod_1b9b4f6e0b91",
+      "bytes": 3977,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "voice-lipsync/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "voice-lipsync/index.html"
+      ]
+    },
+    "avatar-create/worlds/index.html": {
+      "path": "avatar-create/worlds/index.html",
+      "token": "mod_0906e9c5f254",
+      "bytes": 3928,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "worlds/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "worlds/index.html"
+      ]
+    },
+    "bitbucks/bitbucks.html": {
+      "path": "bitbucks/bitbucks.html",
+      "token": "mod_ec6a8c3b0246",
+      "bytes": 3880,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "bitbucks/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "bitbucks/index.html",
+        "index.html"
+      ]
+    },
+    "bitbucks/index.html": {
+      "path": "bitbucks/index.html",
+      "token": "mod_1240d821d5e1",
+      "bytes": 125928,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "communities/index.html": {
+      "path": "communities/index.html",
+      "token": "mod_55315ce5ff74",
+      "bytes": 114862,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229",
+        "worlds/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "worlds/index.html"
+      ]
+    },
+    "communities/avatar-create/index.html": {
+      "path": "communities/avatar-create/index.html",
+      "token": "mod_1ff293ed46c9",
+      "bytes": 3967,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create/index.html",
+        "index.html"
+      ]
+    },
+    "communities/worlds/index.html": {
+      "path": "communities/worlds/index.html",
+      "token": "mod_e826fb2791fd",
+      "bytes": 3918,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "worlds/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "worlds/index.html"
+      ]
+    },
+    "commz/commz.html": {
+      "path": "commz/commz.html",
+      "token": "mod_0e2ccfd42c2e",
+      "bytes": 3844,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "commz/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "commz/index.html",
+        "index.html"
+      ]
+    },
+    "commz/index.html": {
+      "path": "commz/index.html",
+      "token": "mod_8863adce695b",
+      "bytes": 133934,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "contact/index.html": {
+      "path": "contact/index.html",
+      "token": "mod_4891d1e78f26",
+      "bytes": 108798,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "crm/index.html": {
+      "path": "crm/index.html",
+      "token": "mod_f7af4789aa8e",
+      "bytes": 155717,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "https://api.openai.com/v1/chat/completions",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "data/module-runtime-manifest.json": {
+      "path": "data/module-runtime-manifest.json",
+      "token": "mod_444ecb539e35",
+      "bytes": 11765,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "data/platform-token-graph.json": {
+      "path": "data/platform-token-graph.json",
+      "token": "mod_3d16d74ee97f",
+      "bytes": 61994,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "data/system-state.json": {
+      "path": "data/system-state.json",
+      "token": "mod_57f3151a7213",
+      "bytes": 7472,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "developers/index.html": {
+      "path": "developers/index.html",
+      "token": "mod_c52a92c48f23",
+      "bytes": 111241,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "contact/index.html",
+        "developers.html",
+        "education/index.html",
+        "enterprise/index.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "contact/index.html",
+        "developers.html",
+        "education/index.html",
+        "enterprise/index.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "developers/contact/index.html": {
+      "path": "developers/contact/index.html",
+      "token": "mod_9dc1b1f8711f",
+      "bytes": 3920,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "contact/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "contact/index.html",
+        "index.html"
+      ]
+    },
+    "developers/education/index.html": {
+      "path": "developers/education/index.html",
+      "token": "mod_796dbcca634e",
+      "bytes": 3934,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "education/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "education/index.html",
+        "index.html"
+      ]
+    },
+    "developers/enterprise/index.html": {
+      "path": "developers/enterprise/index.html",
+      "token": "mod_d193c8120573",
+      "bytes": 3941,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "enterprise/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "enterprise/index.html",
+        "index.html"
+      ]
+    },
+    "devzone/index.html": {
+      "path": "devzone/index.html",
+      "token": "mod_d76cee66d6f7",
+      "bytes": 278748,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "education/index.html": {
+      "path": "education/index.html",
+      "token": "mod_95740b2cdbda",
+      "bytes": 107314,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "developers/index.html",
+        "index.html",
+        "labs.html",
+        "labs/index.html",
+        "news.html",
+        "privacy.html",
+        "signup/index.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "developers/index.html",
+        "index.html",
+        "labs.html",
+        "labs/index.html",
+        "news.html",
+        "privacy.html",
+        "signup/index.html"
+      ]
+    },
+    "education/avatar-create/index.html": {
+      "path": "education/avatar-create/index.html",
+      "token": "mod_aabdbdde8e4e",
+      "bytes": 3957,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create/index.html",
+        "index.html"
+      ]
+    },
+    "education/developers/index.html": {
+      "path": "education/developers/index.html",
+      "token": "mod_eafe1201898d",
+      "bytes": 3936,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "developers/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "developers/index.html",
+        "index.html"
+      ]
+    },
+    "education/labs/index.html": {
+      "path": "education/labs/index.html",
+      "token": "mod_7bc1974677e7",
+      "bytes": 3894,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "labs/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "labs/index.html"
+      ]
+    },
+    "education/signup/index.html": {
+      "path": "education/signup/index.html",
+      "token": "mod_d613bb9449f3",
+      "bytes": 3908,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "signup/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "signup/index.html"
+      ]
+    },
+    "enterprise/index.html": {
+      "path": "enterprise/index.html",
+      "token": "mod_481061ca7770",
+      "bytes": 107546,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "contact/index.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "contact/index.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "enterprise/avatar-create/index.html": {
+      "path": "enterprise/avatar-create/index.html",
+      "token": "mod_2a511d0905c0",
+      "bytes": 3962,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create/index.html",
+        "index.html"
+      ]
+    },
+    "enterprise/contact/index.html": {
+      "path": "enterprise/contact/index.html",
+      "token": "mod_78e1ac8fa8d1",
+      "bytes": 3920,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "contact/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "contact/index.html",
+        "index.html"
+      ]
+    },
+    "faceforge/app.py": {
+      "path": "faceforge/app.py",
+      "token": "mod_3e25ed16e7a9",
+      "bytes": 3246,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "faceforge/index.html": {
+      "path": "faceforge/index.html",
+      "token": "mod_898a27c70689",
+      "bytes": 565805,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "faceforge/setup-termux.sh": {
+      "path": "faceforge/setup-termux.sh",
+      "token": "mod_c2c772ea7a76",
+      "bytes": 879,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "labs/index.html": {
+      "path": "labs/index.html",
+      "token": "mod_9e2c8be6823c",
+      "bytes": 107455,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "education/index.html",
+        "index.html",
+        "labs.html",
+        "metabox/index.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229",
+        "why-ai/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "education/index.html",
+        "index.html",
+        "labs.html",
+        "metabox/index.html",
+        "news.html",
+        "privacy.html",
+        "why-ai/index.html"
+      ]
+    },
+    "labs/education/index.html": {
+      "path": "labs/education/index.html",
+      "token": "mod_a9c796039c3b",
+      "bytes": 3904,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "education/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "education/index.html",
+        "index.html"
+      ]
+    },
+    "labs/metabox/index.html": {
+      "path": "labs/metabox/index.html",
+      "token": "mod_16401a28def3",
+      "bytes": 3890,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "metabox/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "metabox/index.html"
+      ]
+    },
+    "labs/why-ai/index.html": {
+      "path": "labs/why-ai/index.html",
+      "token": "mod_9a87b234e6aa",
+      "bytes": 3883,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "why-ai/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "why-ai/index.html"
+      ]
+    },
+    "mars/index.html": {
+      "path": "mars/index.html",
+      "token": "mod_5b05fc055412",
+      "bytes": 125099,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "mars/mars.html": {
+      "path": "mars/mars.html",
+      "token": "mod_9f40030ab68c",
+      "bytes": 3832,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "mars/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "mars/index.html"
+      ]
+    },
+    "metabox/index.html": {
+      "path": "metabox/index.html",
+      "token": "mod_462ed02e009c",
+      "bytes": 107900,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "metaverse-directory/index.html": {
+      "path": "metaverse-directory/index.html",
+      "token": "mod_e3e892968520",
+      "bytes": 580245,
+      "depends_on": [
+        "${platform.link}",
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "metaverse-toolkit/index.html": {
+      "path": "metaverse-toolkit/index.html",
+      "token": "mod_009641bb889b",
+      "bytes": 578016,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "news/index.html": {
+      "path": "news/index.html",
+      "token": "mod_0121188d1734",
+      "bytes": 106741,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "privacy/index.html": {
+      "path": "privacy/index.html",
+      "token": "mod_e2f1a2b78ae2",
+      "bytes": 107202,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "contact/index.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "news/index.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "contact/index.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "news/index.html",
+        "privacy.html"
+      ]
+    },
+    "privacy/contact/index.html": {
+      "path": "privacy/contact/index.html",
+      "token": "mod_0f51aa4a4952",
+      "bytes": 3905,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "contact/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "contact/index.html",
+        "index.html"
+      ]
+    },
+    "privacy/news/index.html": {
+      "path": "privacy/news/index.html",
+      "token": "mod_080899e2513c",
+      "bytes": 3884,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "news/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "news/index.html"
+      ]
+    },
+    "prompter/index.html": {
+      "path": "prompter/index.html",
+      "token": "mod_877cfc8110ea",
+      "bytes": 579252,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "prompter/avatar-create/index.html": {
+      "path": "prompter/avatar-create/index.html",
+      "token": "mod_5200765b5a23",
+      "bytes": 3952,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create/index.html",
+        "index.html"
+      ]
+    },
+    "py/main.py": {
+      "path": "py/main.py",
+      "token": "mod_2b03d95f31b6",
+      "bytes": 15061,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "py/server.py": {
+      "path": "py/server.py",
+      "token": "mod_6609f77e8a0b",
+      "bytes": 9753,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "records/index.html": {
+      "path": "records/index.html",
+      "token": "mod_22e740a3b6e1",
+      "bytes": 130270,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "records/records.html": {
+      "path": "records/records.html",
+      "token": "mod_2d24f6108db8",
+      "bytes": 3868,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "records/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "records/index.html"
+      ]
+    },
+    "shop/index.html": {
+      "path": "shop/index.html",
+      "token": "mod_4a624990082f",
+      "bytes": 125583,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "signin/index.html": {
+      "path": "signin/index.html",
+      "token": "mod_3fbcf4127b3a",
+      "bytes": 106379,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "avatar.html",
+        "contact.html",
+        "contact/index.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "signup/index.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "avatar.html",
+        "contact.html",
+        "contact/index.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "signup/index.html"
+      ]
+    },
+    "signin/contact/index.html": {
+      "path": "signin/contact/index.html",
+      "token": "mod_1145999aaa92",
+      "bytes": 3900,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "contact/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "contact/index.html",
+        "index.html"
+      ]
+    },
+    "signin/signup/index.html": {
+      "path": "signin/signup/index.html",
+      "token": "mod_69166b9fae62",
+      "bytes": 3893,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "signup/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "signup/index.html"
+      ]
+    },
+    "signup/index.html": {
+      "path": "signup/index.html",
+      "token": "mod_9865ed1830ab",
+      "bytes": 107334,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "signin/index.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "signin/index.html"
+      ]
+    },
+    "signup/signin/index.html": {
+      "path": "signup/signin/index.html",
+      "token": "mod_062ef669cfb4",
+      "bytes": 3893,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "signin/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "signin/index.html"
+      ]
+    },
+    "store/agentik-crm.html": {
+      "path": "store/agentik-crm.html",
+      "token": "mod_f7483b8fef5c",
+      "bytes": 36682,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ]
+    },
+    "store/ai-education-hub.html": {
+      "path": "store/ai-education-hub.html",
+      "token": "mod_7cd2483d2556",
+      "bytes": 30957,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ]
+    },
+    "store/ai-education.html": {
+      "path": "store/ai-education.html",
+      "token": "mod_ba51e542f64a",
+      "bytes": 23298,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ]
+    },
+    "store/ai4reelz.html": {
+      "path": "store/ai4reelz.html",
+      "token": "mod_16a188991c00",
+      "bytes": 20529,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ]
+    },
+    "store/aig-store.html": {
+      "path": "store/aig-store.html",
+      "token": "mod_e37856f3c774",
+      "bytes": 18525,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ]
+    },
+    "store/air-lyrics.js": {
+      "path": "store/air-lyrics.js",
+      "token": "mod_286f75fb7cbd",
+      "bytes": 1991,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "store/airecords.html": {
+      "path": "store/airecords.html",
+      "token": "mod_c0add88fc425",
+      "bytes": 25205,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ]
+    },
+    "store/app-builder.html": {
+      "path": "store/app-builder.html",
+      "token": "mod_8df66b26489e",
+      "bytes": 15594,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ]
+    },
+    "store/bitbucks.html": {
+      "path": "store/bitbucks.html",
+      "token": "mod_cfaf13528b4d",
+      "bytes": 25593,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ]
+    },
+    "store/communities.html": {
+      "path": "store/communities.html",
+      "token": "mod_e053a45741fc",
+      "bytes": 10813,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ]
+    },
+    "store/commz.html": {
+      "path": "store/commz.html",
+      "token": "mod_499335e16f08",
+      "bytes": 30151,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ]
+    },
+    "store/crm-integrations.js": {
+      "path": "store/crm-integrations.js",
+      "token": "mod_4cd0fe9a7861",
+      "bytes": 14488,
+      "depends_on": [
+        "https://api.openai.com/v1/chat/completions"
+      ],
+      "resolved_depends_on": []
+    },
+    "store/exploremars.html": {
+      "path": "store/exploremars.html",
+      "token": "mod_e1a895629c20",
+      "bytes": 22258,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ]
+    },
+    "store/faceforge.html": {
+      "path": "store/faceforge.html",
+      "token": "mod_4ec0e3acbf0e",
+      "bytes": 10344,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ]
+    },
+    "store/metaverse-directory.html": {
+      "path": "store/metaverse-directory.html",
+      "token": "mod_a9ca9e0151fc",
+      "bytes": 27197,
+      "depends_on": [
+        "${platform.link}",
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ]
+    },
+    "store/metaverse-toolkit.html": {
+      "path": "store/metaverse-toolkit.html",
+      "token": "mod_6cdfe92674f1",
+      "bytes": 24922,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ]
+    },
+    "store/prompter.html": {
+      "path": "store/prompter.html",
+      "token": "mod_29f8ca88c995",
+      "bytes": 22776,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ]
+    },
+    "store/tailwindcdn.js": {
+      "path": "store/tailwindcdn.js",
+      "token": "mod_3a8fd1b0f3ed",
+      "bytes": 451145,
+      "depends_on": [],
+      "resolved_depends_on": []
+    },
+    "store/virtualstore.html": {
+      "path": "store/virtualstore.html",
+      "token": "mod_37e1a8a37d94",
+      "bytes": 20894,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ]
+    },
+    "store/voicelip.html": {
+      "path": "store/voicelip.html",
+      "token": "mod_efbb58e6ddf0",
+      "bytes": 25835,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ]
+    },
+    "store/vr-hub.html": {
+      "path": "store/vr-hub.html",
+      "token": "mod_0d28cb9fad30",
+      "bytes": 19360,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ]
+    },
+    "store/vtwin.html": {
+      "path": "store/vtwin.html",
+      "token": "mod_4d8d43d8d836",
+      "bytes": 22608,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ]
+    },
+    "store/webstudio.html": {
+      "path": "store/webstudio.html",
+      "token": "mod_e5fc44050f32",
+      "bytes": 22467,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js"
+      ]
+    },
+    "terms/index.html": {
+      "path": "terms/index.html",
+      "token": "mod_ed7065644180",
+      "bytes": 106641,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "tools/audit.py": {
+      "path": "tools/audit.py",
+      "token": "mod_839cb636c37a",
+      "bytes": 3359,
+      "depends_on": [
+        "([^"
+      ],
+      "resolved_depends_on": []
+    },
+    "tools/index.html": {
+      "path": "tools/index.html",
+      "token": "mod_90765ae044b1",
+      "bytes": 112451,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "education/index.html",
+        "enterprise/index.html",
+        "index.html",
+        "labs.html",
+        "labs/index.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "education/index.html",
+        "enterprise/index.html",
+        "index.html",
+        "labs.html",
+        "labs/index.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "tools/tpr.js": {
+      "path": "tools/tpr.js",
+      "token": "mod_4a1ea7567d51",
+      "bytes": 6735,
+      "depends_on": [
+        "avatar-create/index.html"
+      ],
+      "resolved_depends_on": [
+        "avatar-create/index.html"
+      ]
+    },
+    "tools/tvl.js": {
+      "path": "tools/tvl.js",
+      "token": "mod_d06ec5fd2141",
+      "bytes": 10001,
+      "depends_on": [
+        "avatar-create/index.html",
+        "https:\\/\\/cdn\\.tailwindcss\\.com/.test(html));\n  C(",
+        "twin-studio/index.html"
+      ],
+      "resolved_depends_on": [
+        "avatar-create/index.html",
+        "twin-studio/index.html"
+      ]
+    },
+    "tools/tvt.js": {
+      "path": "tools/tvt.js",
+      "token": "mod_e0241c038225",
+      "bytes": 7936,
+      "depends_on": [
+        "avatar-create/index.html"
+      ],
+      "resolved_depends_on": [
+        "avatar-create/index.html"
+      ]
+    },
+    "tools/education/index.html": {
+      "path": "tools/education/index.html",
+      "token": "mod_173c7b5a440c",
+      "bytes": 3909,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "education/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "education/index.html",
+        "index.html"
+      ]
+    },
+    "tools/enterprise/index.html": {
+      "path": "tools/enterprise/index.html",
+      "token": "mod_d1a08350c588",
+      "bytes": 3916,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "enterprise/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "enterprise/index.html",
+        "index.html"
+      ]
+    },
+    "tools/labs/index.html": {
+      "path": "tools/labs/index.html",
+      "token": "mod_fe3ad8a5057d",
+      "bytes": 3874,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "labs/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "labs/index.html"
+      ]
+    },
+    "twin-studio/index.html": {
+      "path": "twin-studio/index.html",
+      "token": "mod_6663ad8708b1",
+      "bytes": 579620,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "twin-studio/avatar-create/index.html": {
+      "path": "twin-studio/avatar-create/index.html",
+      "token": "mod_f68be6430bcc",
+      "bytes": 3967,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create/index.html",
+        "index.html"
+      ]
+    },
+    "voice-lipsync/index.html": {
+      "path": "voice-lipsync/index.html",
+      "token": "mod_1f270241d6ea",
+      "bytes": 581662,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229",
+        "twin-studio/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "twin-studio/index.html"
+      ]
+    },
+    "voice-lipsync/avatar-create/index.html": {
+      "path": "voice-lipsync/avatar-create/index.html",
+      "token": "mod_98e232312dae",
+      "bytes": 3977,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create/index.html",
+        "index.html"
+      ]
+    },
+    "voice-lipsync/twin-studio/index.html": {
+      "path": "voice-lipsync/twin-studio/index.html",
+      "token": "mod_a7710027f3fe",
+      "bytes": 3963,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "twin-studio/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "twin-studio/index.html"
+      ]
+    },
+    "vr-hub/index.html": {
+      "path": "vr-hub/index.html",
+      "token": "mod_33f0c8ebdb26",
+      "bytes": 572558,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "vstore/index.html": {
+      "path": "vstore/index.html",
+      "token": "mod_303432e0c6d4",
+      "bytes": 124440,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "vstore/vstore.html": {
+      "path": "vstore/vstore.html",
+      "token": "mod_eeebe922a179",
+      "bytes": 3856,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "vstore/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "vstore/index.html"
+      ]
+    },
+    "webstudio/index.html": {
+      "path": "webstudio/index.html",
+      "token": "mod_702ad38131f6",
+      "bytes": 576233,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "webstudio/webstudio.html": {
+      "path": "webstudio/webstudio.html",
+      "token": "mod_7bd988a5de91",
+      "bytes": 3892,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "webstudio/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "webstudio/index.html"
+      ]
+    },
+    "why-ai/index.html": {
+      "path": "why-ai/index.html",
+      "token": "mod_ef1c30491687",
+      "bytes": 110355,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "why-ai/avatar-create/index.html": {
+      "path": "why-ai/avatar-create/index.html",
+      "token": "mod_6d5026813fb4",
+      "bytes": 3942,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create/index.html",
+        "index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create/index.html",
+        "index.html"
+      ]
+    },
+    "worlds/index.html": {
+      "path": "worlds/index.html",
+      "token": "mod_a117546160c6",
+      "bytes": 114220,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "metabox/index.html",
+        "news.html",
+        "privacy.html",
+        "tel:+13368050229"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "avatar-create.html",
+        "avatar-create/index.html",
+        "contact.html",
+        "developers.html",
+        "index.html",
+        "labs.html",
+        "metabox/index.html",
+        "news.html",
+        "privacy.html"
+      ]
+    },
+    "worlds/metabox/index.html": {
+      "path": "worlds/metabox/index.html",
+      "token": "mod_961dddf73713",
+      "bytes": 3900,
+      "depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "metabox/index.html"
+      ],
+      "resolved_depends_on": [
+        "assets/c25-live-system.js",
+        "assets/c25-module-runtime.js",
+        "assets/c25-platform-bus.js",
+        "index.html",
+        "metabox/index.html"
+      ]
+    }
+  },
+  "routes": [
+    {
+      "token": "rte_10f7cf5edc2c",
+      "broken_path": "/AiMetaverse/why-ai/avatar-create/index.html",
+      "target_path": "/AiMetaverse/avatar-create/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_26db69b83d91",
+      "broken_path": "/AiMetaverse/enterprise/contact/index.html",
+      "target_path": "/AiMetaverse/contact/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_ad6e8bb1ef18",
+      "broken_path": "/AiMetaverse/enterprise/avatar-create/index.html",
+      "target_path": "/AiMetaverse/avatar-create/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_82173f6d25aa",
+      "broken_path": "/AiMetaverse/tools/labs/index.html",
+      "target_path": "/AiMetaverse/labs/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_4af53e99ace3",
+      "broken_path": "/AiMetaverse/tools/enterprise/index.html",
+      "target_path": "/AiMetaverse/enterprise/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_167ebee2b69f",
+      "broken_path": "/AiMetaverse/tools/education/index.html",
+      "target_path": "/AiMetaverse/education/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_3b4121866e36",
+      "broken_path": "/AiMetaverse/labs/education/index.html",
+      "target_path": "/AiMetaverse/education/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_3932038738ce",
+      "broken_path": "/AiMetaverse/labs/why-ai/index.html",
+      "target_path": "/AiMetaverse/why-ai/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_96cb3bc8cd00",
+      "broken_path": "/AiMetaverse/labs/metabox/index.html",
+      "target_path": "/AiMetaverse/metabox/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_c4930edb0c10",
+      "broken_path": "/AiMetaverse/education/labs/index.html",
+      "target_path": "/AiMetaverse/labs/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_18829f9db085",
+      "broken_path": "/AiMetaverse/education/developers/index.html",
+      "target_path": "/AiMetaverse/developers/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_339d5e018d7f",
+      "broken_path": "/AiMetaverse/education/signup/index.html",
+      "target_path": "/AiMetaverse/signup/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_091ffd0ed750",
+      "broken_path": "/AiMetaverse/education/avatar-create/index.html",
+      "target_path": "/AiMetaverse/avatar-create/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_a361f0341a2b",
+      "broken_path": "/AiMetaverse/worlds/metabox/index.html",
+      "target_path": "/AiMetaverse/metabox/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_37cff72f0578",
+      "broken_path": "/AiMetaverse/voice-lipsync/twin-studio/index.html",
+      "target_path": "/AiMetaverse/twin-studio/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_330462ee392f",
+      "broken_path": "/AiMetaverse/voice-lipsync/avatar-create/index.html",
+      "target_path": "/AiMetaverse/avatar-create/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_7ab984981b1a",
+      "broken_path": "/AiMetaverse/avatar-create/avatar-create.html",
+      "target_path": "/AiMetaverse/avatar-create/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_604b6aa6c5d1",
+      "broken_path": "/AiMetaverse/avatar-create/avatar/index.html",
+      "target_path": "/AiMetaverse/avatar/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_774b3b389adb",
+      "broken_path": "/AiMetaverse/avatar-create/metabox/index.html",
+      "target_path": "/AiMetaverse/metabox/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_7a4e163ff15a",
+      "broken_path": "/AiMetaverse/avatar-create/developers/index.html",
+      "target_path": "/AiMetaverse/developers/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_86d6b96e7418",
+      "broken_path": "/AiMetaverse/avatar-create/worlds/index.html",
+      "target_path": "/AiMetaverse/worlds/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_d712a18cf9f5",
+      "broken_path": "/AiMetaverse/avatar-create/enterprise/index.html",
+      "target_path": "/AiMetaverse/enterprise/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_5841ccefb7e3",
+      "broken_path": "/AiMetaverse/avatar-create/twin-studio/index.html",
+      "target_path": "/AiMetaverse/twin-studio/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_92d3dfa60532",
+      "broken_path": "/AiMetaverse/avatar-create/voice-lipsync/index.html",
+      "target_path": "/AiMetaverse/voice-lipsync/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_c83c2352a92f",
+      "broken_path": "/AiMetaverse/twin-studio/avatar-create/index.html",
+      "target_path": "/AiMetaverse/avatar-create/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_6a91c097381a",
+      "broken_path": "/AiMetaverse/prompter/avatar-create/index.html",
+      "target_path": "/AiMetaverse/avatar-create/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_666a1c7e4489",
+      "broken_path": "/AiMetaverse/ai-education/ai-education.html",
+      "target_path": "/AiMetaverse/ai-education/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_f927cc5e8d31",
+      "broken_path": "/AiMetaverse/ai4reelz/ai4reelz.html",
+      "target_path": "/AiMetaverse/ai4reelz/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_38a59600a258",
+      "broken_path": "/AiMetaverse/webstudio/webstudio.html",
+      "target_path": "/AiMetaverse/webstudio/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_3e62c3bc23b0",
+      "broken_path": "/AiMetaverse/commz/commz.html",
+      "target_path": "/AiMetaverse/commz/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_d22088f4b35a",
+      "broken_path": "/AiMetaverse/vstore/vstore.html",
+      "target_path": "/AiMetaverse/vstore/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_115ee11fb613",
+      "broken_path": "/AiMetaverse/bitbucks/bitbucks.html",
+      "target_path": "/AiMetaverse/bitbucks/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_4aa8cf80a854",
+      "broken_path": "/AiMetaverse/mars/mars.html",
+      "target_path": "/AiMetaverse/mars/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_8f43bee8a637",
+      "broken_path": "/AiMetaverse/records/records.html",
+      "target_path": "/AiMetaverse/records/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_53c62f97dd6a",
+      "broken_path": "/AiMetaverse/avatar/avatar-create/index.html",
+      "target_path": "/AiMetaverse/avatar-create/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_7886aa88269b",
+      "broken_path": "/AiMetaverse/developers/education/index.html",
+      "target_path": "/AiMetaverse/education/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_25197faad088",
+      "broken_path": "/AiMetaverse/developers/enterprise/index.html",
+      "target_path": "/AiMetaverse/enterprise/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_0398c631a952",
+      "broken_path": "/AiMetaverse/developers/contact/index.html",
+      "target_path": "/AiMetaverse/contact/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_c90a598955e8",
+      "broken_path": "/AiMetaverse/communities/worlds/index.html",
+      "target_path": "/AiMetaverse/worlds/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_f2d6bcc28e37",
+      "broken_path": "/AiMetaverse/communities/avatar-create/index.html",
+      "target_path": "/AiMetaverse/avatar-create/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_d323ecfff355",
+      "broken_path": "/AiMetaverse/signup/signin/index.html",
+      "target_path": "/AiMetaverse/signin/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_e7d44629d9ca",
+      "broken_path": "/AiMetaverse/signin/signup/index.html",
+      "target_path": "/AiMetaverse/signup/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_744cf46eb885",
+      "broken_path": "/AiMetaverse/signin/contact/index.html",
+      "target_path": "/AiMetaverse/contact/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_1da82c406039",
+      "broken_path": "/AiMetaverse/privacy/news/index.html",
+      "target_path": "/AiMetaverse/news/index.html",
+      "target_url": null
+    },
+    {
+      "token": "rte_061bd1520204",
+      "broken_path": "/AiMetaverse/privacy/contact/index.html",
+      "target_path": "/AiMetaverse/contact/index.html",
+      "target_url": null
+    }
+  ]
+}

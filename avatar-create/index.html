@@ -3630,7 +3630,10 @@ window.AIMV_FACES={real:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBD
       '<form id="f"><input id="q" placeholder="Ask your agent…" autocomplete="off"><button>Send</button></form></section>\n' +
       '</main>\n<footer class="w"><span>© 2023–2026 Ai Metaverse · Powered by Kre8Tive Koncepts</span>' +
       '<span>This agent page is fully self-contained and works offline.</span></footer>\n' +
-      '<script>\nvar SPEC=' + JSON.stringify(spec) + ';\nvar KB=' + JSON.stringify(kb) + ';\n' + AGENT_JS + '\n</' + 'script>\n</body>\n</html>';
+      '<script>\nvar SPEC=' + JSON.stringify(spec) + ';\nvar KB=' + JSON.stringify(kb) + ';\n' + AGENT_JS + '\n</' + 'script>\n<script src="../assets/c25-live-system.js" defer></script>
+<script src="../assets/c25-module-runtime.js" defer></script>
+<script src="../assets/c25-platform-bus.js" defer></script>
+</body>\n</html>';
   }
   function chip(t) { return t ? '<span class="ch">' + escapeHtml(t) + '</span>' : ''; }
 

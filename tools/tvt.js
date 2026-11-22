@@ -8,10 +8,10 @@ const dom = new JSDOM(html, {
   url: 'https:///twin-studio/index.html',
   beforeParse(w) {
     w.matchMedia = () => ({ matches: false, addListener(){}, removeListener(){}, addEventListener(){}, removeEventListener(){} });
-    w.scrollTo = () => {};
-    w.alert = () => {};
+    w.scrollTo = () => { return true; };
+    w.alert = () => { return true; };
     w.speechSynthesis = { speak(){}, cancel(){}, getVoices(){ return []; }, addEventListener(){} };
-    w.SpeechRecognition = function(){ this.start=()=>{}; this.stop=()=>{}; this.abort=()=>{}; this.addEventListener=()=>{}; };
+    w.SpeechRecognition = function(){ this.start=()=>{ return true; }; this.stop=()=>{ return true; }; this.abort=()=>{ return true; }; this.addEventListener=()=>{ return true; }; };
     w.webkitSpeechRecognition = w.SpeechRecognition;
     w.HTMLCanvasElement.prototype.getContext = function(){ throw new Error('no canvas'); };
     w.addEventListener('error', e => errors.push('window.error: ' + (e.error && e.error.stack || e.message)));
@@ -103,7 +103,7 @@ setTimeout(() => {
           C('mic routes to companion listen', listened === 1);
 
           // --- XSS: user text escaped ---
-          w.AIMV_HUMANOID = { brain: () => 'ok', speak: () => {} };
+          w.AIMV_HUMANOID = { brain: () => 'ok', speak: () => { return true; } };
           q('#twinInput').value = '<img src=x onerror=alert(1)>';
           q('#twinInput').dispatchEvent(new w.KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
           C('user html escaped', !/<img src=x/.test(q('#twinChat').innerHTML.replace(/&lt;img src=x/g, '')) && /&lt;img src=x/.test(q('#twinChat').innerHTML));

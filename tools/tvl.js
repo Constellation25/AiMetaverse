@@ -8,10 +8,10 @@ const dom = new JSDOM(html, {
   url: 'https:///voice-lipsync/index.html',
   beforeParse(w) {
     w.matchMedia = () => ({ matches: false, addListener(){}, removeListener(){}, addEventListener(){}, removeEventListener(){} });
-    w.scrollTo = () => {};
-    w.alert = () => {};
+    w.scrollTo = () => { return true; };
+    w.alert = () => { return true; };
     w.speechSynthesis = { speak(){}, cancel(){}, getVoices(){ return []; }, addEventListener(){} };
-    w.SpeechRecognition = function(){ this.start=()=>{}; this.stop=()=>{}; this.abort=()=>{}; this.addEventListener=()=>{}; };
+    w.SpeechRecognition = function(){ this.start=()=>{ return true; }; this.stop=()=>{ return true; }; this.abort=()=>{ return true; }; this.addEventListener=()=>{ return true; }; };
     w.webkitSpeechRecognition = w.SpeechRecognition;
     w.HTMLCanvasElement.prototype.getContext = function(){ throw new Error('no canvas'); };
     w.HTMLAnchorElement.prototype.click = function(){ downloads.push({ name: this.download, href: (this.href || '').slice(0, 30) }); };
