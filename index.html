@@ -14,7 +14,16 @@
 <meta property="og:url" content="https://sovereign-architect.cloud/" />
 <!-- Present only when this page is served by py/main.py (Eel injects its RPC bridge).
      A 404 here is expected and harmless when the file is opened standalone. -->
-<script defer src="/eel.js" onerror="window.__eelMissing=true"></script>
+<script defer src="/eel.js" onerror="window.__eelMissing=true">// C25_CARD_BADGE_HOOK_START
+function c25RenderProjectBadge(project, feedList = [], vercelList = []) {
+  if (typeof window.c25CombinedBadgeHtml !== "function") return "";
+  const combinedSet = typeof window.c25GetCombinedNameSet === "function"
+    ? window.c25GetCombinedNameSet(feedList, vercelList)
+    : undefined;
+  return window.c25CombinedBadgeHtml(project, combinedSet);
+}
+// C25_CARD_BADGE_HOOK_END
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -3779,5 +3788,82 @@ renderHubFeedsUI = async function() {
   }
 };
 </script>
+<!-- C25_COMBINED_BADGE_START -->
+<style>
+  .c25-combined-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.18), rgba(168, 85, 247, 0.22));
+    color: #e2e8f0;
+    border: 1px solid rgba(125, 211, 252, 0.45);
+    vertical-align: middle;
+  }
+</style>
+<script>
+(() => {
+  const C25_PRECOMPUTED_OVERLAP = new Set([".agent-engine", ".c25", ".c25_backend", ".c25_bridge", ".c25_connector", ".c25_db", ".c25_debug", ".c25_deploy_fix", ".c25_deps", ".c25_diag", ".c25_emergency_quarantine", ".c25_integrity", ".c25_mcp", ".c25_mesh", ".c25_migrations", ".c25_rss", ".c25_upgrade", "agentik", "agents", "ai-kre8tive-sovereign-genesis", "aikre8tive", "aikre8tive-", "aikre8tive-sovereign-genesis", "aimeta", "aimetaverse", "aimetaverse-demo", "aimetaverse-orgin", "apple", "build-agentic-software-w-coral-os-agents", "c25-1basher", "c25-agent-api", "c25-agent-automation", "c25-agent-core", "c25-agent-dashboard", "c25-agent-deploy", "c25-agent-integrations", "c25-agent-pipeline", "c25-agent-starter", "c25-agents", "c25-arcai-copy-1", "c25-arcai-copy-2", "c25-arcai-copy-3", "c25-arcai-copy-4", "c25-arcai-deploy", "c25-arcai-original", "c25-arcai-original-oldest", "c25-archive-agentik", "c25-backfill-artifacts-from-done", "c25-bio-push", "c25-bioauth", "c25-blackbox-github-update", "c25-broadcast-whisper-echo", "c25-build", "c25-build-bash", "c25-build-broccoli", "c25-build-fixer-agent", "c25-build-memoria", "c25-build-precedence-dossier", "c25-buzzblast", "c25-c25-mirror-push", "c25-c25-ranger", "c25-check-status", "c25-check-todo", "c25-cleanup-failed", "c25-consolidate-obsidian", "c25-constellation", "c25-constellation-25", "c25-constellation25", "c25-constellation25-swarm", "c25-create-home-symlinks", "c25-dashboard", "c25-demo-teaser", "c25-deploy", "c25-deploy-agents", "c25-deploy-all", "c25-deploy-linked2", "c25-deploy-log-dialog", "c25-deploy-sovereign", "c25-deploy-to-github", "c25-deploy-universe", "c25-deploy-v3-0", "c25-direct-agent-activation", "c25-do", "c25-final-sync", "c25-find-and-run-everything", "c25-find-videocourts", "c25-fix-everything", "c25-forensic-scan-365d", "c25-fp-clean-forks", "c25-fp-code-audit", "c25-fp-consolidate", "c25-generate-qr-affiliate", "c25-git-autocommit", "c25-graph-viewer", "c25-inject-versedna", "c25-install", "c25-install-qrencode", "c25-integrity-run", "c25-key-rotate", "c25-kre8tive-portfolio-build", "c25-launch", "c25-launch-agents", "c25-launch-presskit", "c25-launch-tunnel", "c25-link-github", "c25-live", "c25-mars-sharecrop", "c25-meaningful-inventory", "c25-meaningful-inventory-fixed", "c25-mono", "c25-package-portfolio", "c25-parasol-termux", "c25-ping-agents", "c25-planetary-crawl-inject-loop", "c25-pypi", "c25-quick-deploy", "c25-reactivate-planetary-agents", "c25-rebuild-percellify", "c25-recloak", "c25-run", "c25-run-all-apps", "c25-run-all-home", "c25-run-all-tasks", "c25-run-monorepo", "c25-run-stack", "c25-secure-github-auth", "c25-send-echo-trace", "c25-setup", "c25-setup-multi-repo", "c25-setup-pingpang-demo", "c25-setup-shizuku", "c25-setup-single-repo", "c25-setup-ssh", "c25-setup-termux-obsidian-sync", "c25-setup-vscode", "c25-sovereign-auto-start", "c25-sovereign-deployer", "c25-sovereign-launch", "c25-sovereign-product", "c25-sovereign-push-everywhere", "c25-sovereign-unified-launch", "c25-sovereigngtp", "c25-start-stack", "c25-sync-obsidian-cloud", "c25-sync-to-obsidian", "c25-tailwind-view", "c25-test-agents", "c25-test-project", "c25-throne", "c25-totalrecall-audit", "c25-vercel-deploy", "c25-vercel-secrets-sync", "c25-whisper-auto-loop", "c25-whisper-holiday-bash", "c25-yesquid-task-worker", "c25_aios", "c25_monorepo", "c25_static_master", "camel-search-maths", "ci", "constellation-25", "constellation25-adserver", "constellation25-mono", "constellation25-mvp", "constellation25-recon", "constellation25.v1", "coral-server", "devcurity", "docs", "downloads", "examples", "gguf-split", "home", "https-github-com-faceprintpay-portaled-", "kre8tive-konceptz", "linked2-platform", "linked2-platform-salvage-1779151043", "llama.cpp", "marsfiat", "master", "mtmd", "neptune-agent", "obsidian-vault-bare", "planetaryagents", "public", "quantize", "recon-agent", "server", "sovereign", "src", "sycl", "tests", "versed-ai", "versed_ai"]);
+
+  function c25NormName(entry) {
+    if (!entry) return "";
+    if (typeof entry === "string") return entry.trim().toLowerCase();
+    return String(entry.name || entry.title || entry.id || "").trim().toLowerCase();
+  }
+
+  window.c25GetCombinedNameSet = function(feedList = [], vercelList = []) {
+    const fSet = new Set(Array.isArray(feedList) ? feedList.map(c25NormName).filter(Boolean) : []);
+    const vSet = new Set(Array.isArray(vercelList) ? vercelList.map(c25NormName).filter(Boolean) : []);
+    const combined = new Set(C25_PRECOMPUTED_OVERLAP);
+    if (fSet.size && vSet.size) {
+      for (const n of fSet) {
+        if (vSet.has(n)) combined.add(n);
+      }
+    }
+    return combined;
+  };
+
+  window.c25CombinedBadgeHtml = function(projectOrName, combinedSet = C25_PRECOMPUTED_OVERLAP) {
+    const key = c25NormName(projectOrName);
+    if (!key || !combinedSet.has(key)) return "";
+    return '<span class="c25-combined-badge" title="Present in both feed_database.json and vercel_projects.json">feed + vercel</span>';
+  };
+
+  function decorateDomCards() {
+    const cards = document.querySelectorAll("[data-project-name], .project-card, .hub-card, article");
+    cards.forEach((card) => {
+      if (card.querySelector(".c25-combined-badge")) return;
+      const attrName = card.getAttribute("data-project-name") || "";
+      const heading = card.querySelector("h1, h2, h3, h4, .project-title, .card-title");
+      const rawName = attrName || (heading ? heading.textContent : "");
+      const key = c25NormName(rawName);
+      if (!key || !C25_PRECOMPUTED_OVERLAP.has(key)) return;
+      const badge = document.createElement("span");
+      badge.className = "c25-combined-badge";
+      badge.title = "Present in both feed_database.json and vercel_projects.json";
+      badge.textContent = "feed + vercel";
+      if (heading) {
+        heading.appendChild(document.createTextNode(" "));
+        heading.appendChild(badge);
+      } else {
+        card.prepend(badge);
+      }
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", decorateDomCards, { once: true });
+  } else {
+    decorateDomCards();
+  }
+  const observer = new MutationObserver(() => decorateDomCards());
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
+<!-- C25_COMBINED_BADGE_END -->
 </body>
 </html>
