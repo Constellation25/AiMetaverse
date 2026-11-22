@@ -3564,7 +3564,13 @@ async function loadHubFeeds() {
 }
 </script>
 <section id="hub-feeds-mount" data-hub-feeds="true" style="margin:1.5rem 0;">
-  <div id="vercel-projects-status"></div>
+  <div id="hub-filter-bar" style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;">
+  <input id="hub-search-input" type="search" placeholder="Search name, description, or URL..." aria-label="Search hub projects" style="flex:1 1 220px;padding:0.45rem 0.65rem;" />
+  <select id="hub-tag-select" aria-label="Filter by source or tag" style="padding:0.45rem 0.65rem;">
+    <option value="all">All sources &amp; tags</option>
+  </select>
+</div>
+<div id="vercel-projects-status"></div>
   <div id="vercel-projects-grid"></div>
   <div id="feed-projects-status"></div>
   <div id="feed-projects-grid"></div>
@@ -3649,6 +3655,129 @@ if (document.readyState === "loading") {
 } else {
   renderHubFeedsUI();
 }
+</script>
+<script>
+const __hubFeedCache = { feedProjects: [], vercelProjects: [] };
+
+function collectHubTags(items, fallbackLabel) {
+  const tags = new Set();
+  if (fallbackLabel) tags.add(String(fallbackLabel).toLowerCase());
+  (items || []).forEach((proj) => {
+    if (!proj) return;
+    if (proj.source_type) tags.add(String(proj.source_type).trim().toLowerCase());
+    if (Array.isArray(proj.tags)) {
+      proj.tags.forEach((t) => t && tags.add(String(t).trim().toLowerCase()));
+    }
+    if (typeof proj.tag === "string" && proj.tag.trim()) {
+      tags.add(proj.tag.trim().toLowerCase());
+    }
+  });
+  return Array.from(tags).sort();
+}
+
+function populateHubTagSelect(allTags) {
+  const select = document.getElementById("hub-tag-select");
+  if (!select) return;
+  const current = select.value || "all";
+  select.textContent = "";
+
+  const allOpt = document.createElement("option");
+  allOpt.value = "all";
+  allOpt.textContent = "All sources & tags";
+  select.appendChild(allOpt);
+
+  allTags.forEach((tag) => {
+    const opt = document.createElement("option");
+    opt.value = tag;
+    opt.textContent = tag;
+    select.appendChild(opt);
+  });
+
+  if (current === "all" || allTags.includes(current)) {
+    select.value = current;
+  }
+}
+
+function matchesHubFilter(proj, queryLower, selectedTag, fallbackLabel) {
+  if (!proj) return false;
+  if (selectedTag && selectedTag !== "all") {
+    const itemTags = new Set(collectHubTags([proj], fallbackLabel));
+    if (!itemTags.has(selectedTag)) return false;
+  }
+  if (!queryLower) return true;
+  const hay = [
+    proj.name || "",
+    proj.description || "",
+    proj.source_type || fallbackLabel || "",
+    proj.github_url || "",
+    proj.deploy_url || "",
+    Array.isArray(proj.tags) ? proj.tags.join(" ") : (proj.tag || "")
+  ].join(" ").toLowerCase();
+  return hay.includes(queryLower);
+}
+
+function applyHubFeedFilters() {
+  const input = document.getElementById("hub-search-input");
+  const select = document.getElementById("hub-tag-select");
+  const vercelGrid = document.getElementById("vercel-projects-grid") || document.querySelector("[data-vercel-projects]");
+  const feedGrid = document.getElementById("feed-projects-grid") || document.querySelector("[data-feed-projects]");
+  const vercelStatus = document.getElementById("vercel-projects-status");
+  const feedStatus = document.getElementById("feed-projects-status");
+
+  const q = input ? input.value.trim().toLowerCase() : "";
+  const tag = select ? select.value : "all";
+
+  const filteredVercel = __hubFeedCache.vercelProjects.filter((p) => matchesHubFilter(p, q, tag, "vercel"));
+  const filteredFeed = __hubFeedCache.feedProjects.filter((p) => matchesHubFilter(p, q, tag, "feed"));
+
+  if (vercelStatus) {
+    vercelStatus.textContent = `Normalized Vercel / Hub Projects (${filteredVercel.length} / ${__hubFeedCache.vercelProjects.length})`;
+  }
+  if (feedStatus) {
+    feedStatus.textContent = `Feed Database Projects (${filteredFeed.length} / ${__hubFeedCache.feedProjects.length})`;
+  }
+
+  if (typeof renderHubCards === "function") {
+    renderHubCards(vercelGrid, filteredVercel, "vercel");
+    renderHubCards(feedGrid, filteredFeed, "feed");
+  }
+}
+
+const __origRenderHubFeedsUI = typeof renderHubFeedsUI === "function" ? renderHubFeedsUI : null;
+renderHubFeedsUI = async function() {
+  if (typeof loadHubFeeds !== "function") return;
+  const vercelStatus = document.getElementById("vercel-projects-status");
+  const feedStatus = document.getElementById("feed-projects-status");
+  try {
+    const { feedProjects, vercelProjects } = await loadHubFeeds();
+    __hubFeedCache.feedProjects = Array.isArray(feedProjects) ? feedProjects : [];
+    __hubFeedCache.vercelProjects = Array.isArray(vercelProjects) ? vercelProjects : [];
+
+    const combinedTags = Array.from(new Set([
+      ...collectHubTags(__hubFeedCache.vercelProjects, "vercel"),
+      ...collectHubTags(__hubFeedCache.feedProjects, "feed")
+    ])).sort();
+    populateHubTagSelect(combinedTags);
+
+    const input = document.getElementById("hub-search-input");
+    const select = document.getElementById("hub-tag-select");
+    if (input && !input.dataset.hubBound) {
+      input.dataset.hubBound = "true";
+      input.addEventListener("input", applyHubFeedFilters);
+    }
+    if (select && !select.dataset.hubBound) {
+      select.dataset.hubBound = "true";
+      select.addEventListener("change", applyHubFeedFilters);
+    }
+
+    applyHubFeedFilters();
+  } catch (err) {
+    const msg = err && err.message ? err.message : String(err);
+    if (vercelStatus) vercelStatus.textContent = `Feed load error: ${msg}`;
+    if (feedStatus) feedStatus.textContent = `Feed load error: ${msg}`;
+    console.error("renderHubFeedsUI failed:", err);
+  }
+};
 </script>
 </body>
 </html>
