@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<base href="../" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Find Friends — Metaverse Communities | Ai Metaverse</title>
+<meta name="description" content="Find friends in metaverse communities: virtual concerts, in-store shopping, social hangouts, blockchain games, digital art and historical AR worlds." />
+<meta name="theme-color" content="#070312" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23070312'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%2300f0ff' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23ff2fb9'/%3E%3C/svg%3E">
+</head>
+<body>
+<div class="scroll-progress" id="scroll-progress"></div>
+<section class="sec" id="communities"><div class="wrap" style="max-width:1240px"><style>
+.mvc-embed {
+            --bg-dark: #050508;
+            --bg-card: rgba(20, 20, 30, 0.6);
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #00d4ff;
+            --text-main: #ffffff;
+            --text-muted: #a0a0b0;
+            --border-color: rgba(102, 126, 234, 0.2);
+        }.mvc-embed * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }.mvc-embed {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(102, 126, 234, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 40%);
+        }.mvc-embed .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }.mvc-embed .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }.mvc-embed .section-header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }.mvc-embed .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }.mvc-embed .highlight-text {
+            color: var(--accent);
+            font-weight: 500;
+        }.mvc-embed .communities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }.mvc-embed .community-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }.mvc-embed .community-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }.mvc-embed .community-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }.mvc-embed .community-card:hover::before {
+            opacity: 1;
+        }.mvc-embed .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }.mvc-embed .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }.mvc-embed .card-description {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }.mvc-embed .card-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }.mvc-embed .card-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }.mvc-embed .categories-section {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 40px 30px;
+        }.mvc-embed .categories-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }.mvc-embed .categories-section p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }.mvc-embed .category-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }.mvc-embed .tag {
+            padding: 10px 20px;
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 50px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }.mvc-embed .tag:hover {
+            background: rgba(102, 126, 234, 0.3);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        
+        @media (max-width: 768px) {{.mvc-embed .container { padding: 40px 15px; }.mvc-embed .communities-grid { grid-template-columns: 1fr; }.mvc-embed .section-header h1 { font-size: 2rem; }
+        }
+    
+</style>
+<div class="mvc-embed">
+
+    <div class="container">
+        <!-- Header -->
+        <div class="section-header">
+            <h1>Find Friends in Metaverse Communities</h1>
+            <p>Virtual concerts & in-store shopping — <span class="highlight-text">connect socially</span> in the next generation of digital worlds.</p>
+        </div>
+
+        <!-- Communities Grid -->
+        <div class="communities-grid">
+            
+            <!-- Card 1: Metaverse -->
+            <div class="community-card">
+                <div class="card-icon">🏙️</div>
+                <h3 class="card-title">Metaverse</h3>
+                <p class="card-description">A parallel 3D world corresponding to real-world coordinates that features virtual business centers, 3D offices, and art galleries.</p>
+                <a href="worlds/index.html" class="card-btn">Explore World</a>
+            </div>
+
+            <!-- Card 2: Metaverser -->
+            <div class="community-card">
+                <div class="card-icon">🛹</div>
+                <h3 class="card-title">Metaverser</h3>
+                <p class="card-description">A free-to-play, cross-platform 3D virtual world and simulation game featuring play-to-earn mechanics, a skate park, and custom avatars.</p>
+                <a href="worlds/index.html" class="card-btn">Play Now</a>
+            </div>
+
+            <!-- Card 3: Rium -->
+            <div class="community-card">
+                <div class="card-icon">🎨</div>
+                <h3 class="card-title">Rium - Metaverse</h3>
+                <p class="card-description">An interactive social space and digital arts platform where users can explore virtual worlds and showcase NFT galleries with friends.</p>
+                <a href="worlds/index.html" class="card-btn">Join Gallery</a>
+            </div>
+
+            <!-- Card 4: Heritage -->
+            <div class="community-card">
+                <div class="card-icon">🏯</div>
+                <h3 class="card-title">Heritage Metaverse</h3>
+                <p class="card-description">An AR and 3D experience allowing users to roam historical sites like Gyeongbokgung Palace and the Gungisi Relics Exhibition Hall.</p>
+                <a href="worlds/index.html" class="card-btn">Start Tour</a>
+            </div>
+
+        </div>
+
+        <!-- Categories Section -->
+        <div class="categories-section">
+            <h2>Find Your Perfect Experience</h2>
+            <p>If you are looking for a specific type of metaverse experience, browse our curated categories below to find the perfect world for you.</p>
+            
+            <div class="category-tags">
+                <div class="tag"> Social Hangouts</div>
+                <div class="tag">🏠 Virtual Real Estate</div>
+                <div class="tag"> Blockchain Games</div>
+                <div class="tag">🎵 Virtual Concerts</div>
+                <div class="tag">️ In-Store Shopping</div>
+                <div class="tag">🖼️ Digital Art & NFTs</div>
+                <div class="tag">💼 Virtual Business</div>
+                <div class="tag">️ Historical AR</div>
+            </div>
+        </div>
+    </div>
+
+    </div><div class="callout good reveal" style="margin-top:30px"><b>Bring your agent to the party.</b> Forge a companion in four steps and it will greet these communities in your voice. <a href="avatar-create/index.html" style="color:var(--cyan);text-decoration:underline">Clone yourself virtually →</a></div></div></section>
+</main>
+<script data-humanoid="js">
+/* ============================================================
+   Ai Metaverse — shared shell for all static subpages
+   Injects: constellation header, nav, mobile menu, footer,
+            cookie banner, scroll progress, reveal animations.
+   No build step, no dependencies. Works from file:// too.
+   ============================================================ */
+(function () {
+  "use strict";
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+  var reduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  /* ---------- navigation model (single source of truth) ---------- */
+  var NAV = [
+    { href: 'index.html', label: 'Home' },
+    { href: 'why-ai/index.html', label: 'Why AI' },
+    { href: 'enterprise/index.html', label: 'AI for Enterprise' },
+    { href: 'tools/index.html', label: 'Free AI Tools' },
+    { href: 'labs/index.html', label: 'Ai-Labs' },
+    { href: 'education/index.html', label: 'Ai_Education' },
+    { href: 'worlds/index.html', label: 'Worlds' },
+    { href: 'developers/index.html', label: 'Developers' },
+    { href: 'apikonnect/index.html', label: 'APIKonnect' },
+    { href: 'devzone/index.html', label: 'DevZone' },
+    { href: 'communities/index.html', label: 'Find Friends' }
+  ];
+  var FOOT = [
+    {
+      title: 'Explore', links: [
+        { href: 'index.html', label: 'Home' },
+        { href: 'why-ai/index.html', label: 'Why AI' },
+        { href: 'enterprise/index.html', label: 'AI for Enterprise' },
+        { href: 'tools/index.html', label: 'Free AI Tools Directory' },
+        { href: 'labs/index.html', label: 'Access Ai-Labs' },
+        { href: 'education/index.html', label: 'Ai_Education' }
+      ]
+    },
+    {
+      title: 'Create', links: [
+        { href: 'avatar-create/index.html', label: 'Clone Yourself Virtually' },
+        { href: 'twin-studio/index.html', label: 'Virtual Twin Studio' },
+        { href: 'voice-lipsync/index.html', label: 'Voice &amp; Lip-Sync Studio' },
+        { href: 'avatar/index.html', label: 'My Avatar &amp; Agent' },
+        { href: 'worlds/index.html', label: 'Virtual Worlds' },
+        { href: 'communities/index.html', label: 'Metaverse Communities' },
+        { href: 'records/index.html', label: 'Ai.RECORDS — Song Lyrics' },
+        { href: 'mars/index.html', label: 'ExploreMars — Virtual Real Estate' },
+        { href: 'bitbucks/index.html', label: 'BitBucks — Learn & Earn' },
+        { href: 'crm/index.html', label: 'Agentik AI CRM (free)' },
+        { href: 'vstore/index.html', label: 'Virtual Store Builder' },
+        { href: 'commz/index.html', label: 'Commz — AI Telemarketers' },
+        { href: 'app-builder/index.html', label: 'AI App Builder' },
+        { href: 'webstudio/index.html', label: 'AI Web Studio' },
+        { href: 'faceforge/index.html', label: 'C25 FaceForge (face swap)' },
+        { href: 'ai4reelz/index.html', label: 'Ai4Reelz Video Studio' },
+        { href: 'metaverse-toolkit/index.html', label: 'Metaverse Creator Toolkit' },
+        { href: 'vr-hub/index.html', label: 'VR Hardware Hub' },
+        { href: 'metaverse-directory/index.html', label: 'Metaverse World Directory' },
+        { href: 'ai-education-hub/index.html', label: 'AI Education & Prompt Hub' },
+        { href: 'ai-education/index.html', label: 'aiEDU — Get Educated with AI' },
+        { href: 'shop/index.html', label: 'Virtual Shopping Kre8tor' },
+        { href: 'shop/index.html#gifts', label: 'AI Gifts &amp; Gadgets Store' },
+        { href: 'metabox.html', label: 'Conversate with the Metabox' },
+        { href: 'developers/index.html', label: 'Developer &amp; Coding Repo' },
+        { href: 'apikonnect/index.html', label: 'APIKonnect — enterprise LLMs & APIs' },
+        { href: 'devzone/index.html', label: 'DevZone terminal' }
+      ]
+    },
+    {
+      title: 'Company', links: [
+        { href: 'contact/index.html', label: 'Contact Us' },
+        { href: 'news/index.html', label: 'Ai Metaverse News &amp; Blog' },
+        { href: 'signup/index.html', label: 'Sign up' },
+        { href: 'signin/index.html', label: 'Sign in' },
+        { href: 'privacy/index.html', label: 'Privacy Policy' },
+        { href: 'terms/index.html', label: 'Terms and Conditions' }
+      ]
+    }
+  ];
+
+  function canon(pathname) {
+    var segs = pathname.split('/').filter(Boolean);
+    if (!segs.length) return 'index.html';
+    var last = segs[segs.length - 1];
+    if (last === '' ) return 'index.html';
+    if (last.toLowerCase() === 'index.html') return segs.length > 1 ? segs[segs.length - 2].toLowerCase() + '.html' : 'index.html';
+    if (pathname.charAt(pathname.length - 1) === '/') return last.toLowerCase() + '.html';
+    return last.toLowerCase();
+  }
+  var page = canon(location.pathname);
+  function isCurrent(href) { return canon(href.split('#')[0]) === page; }
+
+  /* ---------- header ---------- */
+  function buildHeader() {
+    if ($('#site-header')) return;
+    var h = document.createElement('header');
+    h.className = 'site-header';
+    h.id = 'site-header';
+    h.innerHTML =
+      '<canvas id="constellation" aria-hidden="true"></canvas>' +
+      '<div class="wrap nav">' +
+        '<a class="brand" href="index.html" aria-label="Ai Metaverse home">' +
+          '<span class="mark"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
+            '<circle cx="12" cy="12" r="8.2" stroke="#070312" stroke-width="2"/>' +
+            '<circle cx="12" cy="12" r="3" fill="#070312"/>' +
+            '<path d="M12 1.6v3M12 19.4v3M1.6 12h3M19.4 12h3" stroke="#070312" stroke-width="2" stroke-linecap="round"/>' +
+          '</svg></span>' +
+          '<span class="txt"><span class="name">Ai&nbsp;Metaverse</span><span class="sub">VERSED\'ai</span></span>' +
+        '</a>' +
+        '<nav class="nav-links" id="primary-nav" aria-label="Primary">' +
+          NAV.map(function (n) {
+            return '<a href="' + n.href + '"' + (isCurrent(n.href) ? ' class="active"' : '') + '>' + n.label + '</a>';
+          }).join('') +
+        '</nav>' +
+        '<a href="avatar-create.html" class="btn btn-sm nav-cta">Clone Yourself</a>' +
+        '<button class="burger" id="burger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle navigation">' +
+          '<span></span><span></span><span></span>' +
+        '</button>' +
+      '</div>' +
+      '<div class="mobile-panel" id="mobile-nav"><div class="wrap">' +
+        NAV.concat([{ href: 'avatar-create/index.html', label: '★ Clone Yourself Virtually' },
+                    { href: 'avatar/index.html', label: 'My Avatar & Agent' },
+                    { href: 'shop/index.html', label: 'Virtual Shopping Kre8tor' },
+                    { href: 'metabox/index.html', label: 'Metabox Chat' },
+                    { href: 'news/index.html', label: 'News & Blog' },
+                    { href: 'contact/index.html', label: 'Contact' },
+                    { href: 'signup/index.html', label: 'Sign up' }])
+          .map(function (n) {
+            var cls = n.href === 'avatar-create.html' ? ' class="btn"' : '';
+            return '<a href="' + n.href + '"' + cls + '>' + n.label + '</a>';
+          }).join('') +
+      '</div></div>';
+    document.body.insertBefore(h, document.body.firstChild);
+
+    var burger = $('#burger'), panel = $('#mobile-nav');
+    burger.addEventListener('click', function () {
+      var open = burger.getAttribute('aria-expanded') === 'true';
+      burger.setAttribute('aria-expanded', String(!open));
+      panel.classList.toggle('open', !open);
+    });
+    $$('#mobile-nav a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        panel.classList.remove('open'); burger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* ---------- top strip ---------- */
+  function buildTopStrip() {
+    if ($('#site-strip')) return;
+    var d = document.createElement('div');
+    d.className = 'topstrip'; d.id = 'site-strip';
+    d.innerHTML = '<a href="avatar-create/index.html">★ Start your free trial — take a selfie, record your voice, build your AI agent ★</a>';
+    document.body.insertBefore(d, document.body.firstChild);
+  }
+
+  /* ---------- footer ---------- */
+  function buildFooter() {
+    if ($('#site-footer')) return;
+    var f = document.createElement('footer');
+    f.className = 'site-footer'; f.id = 'site-footer';
+    f.innerHTML =
+      '<div class="wrap">' +
+        '<div class="foot-grid">' +
+          '<div class="foot-about">' +
+            '<a class="brand" href="index.html">' +
+              '<span class="mark"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
+                '<circle cx="12" cy="12" r="8.2" stroke="#070312" stroke-width="2"/>' +
+                '<circle cx="12" cy="12" r="3" fill="#070312"/>' +
+                '<path d="M12 1.6v3M12 19.4v3M1.6 12h3M19.4 12h3" stroke="#070312" stroke-width="2" stroke-linecap="round"/>' +
+              '</svg></span>' +
+              '<span class="txt"><span class="name">Ai Metaverse</span><span class="sub">VERSED\'ai</span></span>' +
+            '</a>' +
+            '<p>A world that revolves around creative intelligence. AI for All — the app hub for AI, metaverse, virtual and augmented reality.</p>' +
+            '<p style="margin-top:12px;font-size:13px;color:var(--dim)">1007 Yanceyville Street, Greensboro, NC 27405 · <a href="tel:+13368050229" style="color:var(--muted)">336-805-0229</a></p>' +
+            '<div class="socials">' +
+              '<a href="news.html" aria-label="News"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg></a>' +
+              '<a href="developers.html" aria-label="Developers"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></a>' +
+              '<a href="labs.html" aria-label="Ai-Labs"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6L5 19a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 19l-5-10V3"/></svg></a>' +
+              '<a href="contact.html" aria-label="Contact"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v14H5.5L4 19.5z"/><path d="M8 9h8M8 13h5"/></svg></a>' +
+            '</div>' +
+          '</div>' +
+          FOOT.map(function (col) {
+            return '<div><h5>' + col.title + '</h5><ul>' + col.links.map(function (l) {
+              return '<li><a href="' + l.href + '"' + (isCurrent(l.href) ? ' style="color:var(--cyan)"' : '') + '>' + l.label + '</a></li>';
+            }).join('') + '</ul></div>';
+          }).join('') +
+        '</div>' +
+        '<div class="hashtags"><b>Trending tags</b>' +
+          '#fypシ゚viralシ #datavisualization #artificialintelligence #coding #programmers #coder #dataanalytics #aigenerated #generatedimage #aiartcommunity #aiartgenerator #highfashiontiktok #couturetiktok #fy #princess #princessesreels #viral #viraltiktok #pet #petoftiktok #cat #dog #beauty #programmerhumour #pythonprogramming #uidesign #metaverse #web3 #readyplayerme' +
+        '</div>' +
+        '<div class="foot-bottom">' +
+          '<span>Copyright © 2023–2026 Ai Metaverse — All Rights Reserved.</span>' +
+          '<span>Powered by <b style="color:var(--txt)">Kre8Tive Koncepts</b></span>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(f);
+  }
+
+  /* ---------- cookie banner ---------- */
+  function buildCookies() {
+    if ($('#cookie-banner')) return;
+    var stored = null;
+    try { stored = localStorage.getItem('aimv_cookies'); } catch (e) {}
+    if (stored) return;
+    var d = document.createElement('div');
+    d.className = 'cookie-banner'; d.id = 'cookie-banner';
+    d.setAttribute('role', 'region'); d.setAttribute('aria-label', 'Cookie consent');
+    d.innerHTML =
+      '<div class="wrap cookie-in">' +
+        '<p><b>This website uses cookies.</b> We use them to analyse traffic and optimise your experience. Your avatar, voice sample and birthday stay in this browser only — see the <a href="privacy.html" style="color:var(--cyan);text-decoration:underline">Privacy Policy</a>. By accepting, your data will be aggregated with all other user data.</p>' +
+        '<div class="btn-row" style="gap:10px">' +
+          '<button class="btn btn-sm" data-cookie="accept">Accept</button>' +
+          '<button class="btn btn-sm btn-ghost" data-cookie="decline">Decline</button>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(d);
+    setTimeout(function () { d.classList.add('show'); }, 1600);
+    $$('[data-cookie]', d).forEach(function (b) {
+      b.addEventListener('click', function () {
+        try { localStorage.setItem('aimv_cookies', b.dataset.cookie); } catch (e) {}
+        d.classList.remove('show');
+      });
+    });
+  }
+
+  /* ---------- scroll progress ---------- */
+  function buildProgress() {
+    if ($('#scroll-progress')) return;
+    var d = document.createElement('div');
+    d.className = 'scroll-progress'; d.id = 'scroll-progress';
+    document.body.appendChild(d);
+  }
+
+  /* ---------- constellation (header backdrop) ---------- */
+  function constellation() {
+    var cvs = document.getElementById('constellation');
+    if (!cvs || !cvs.getContext) return;
+    var ctx = null;
+    try { ctx = cvs.getContext('2d'); } catch (e) { return; }
+    if (!ctx) return;
+    var header = cvs.parentElement;
+    var stars = [], W = 0, H = 0, raf = null, pointer = { x: null, y: null };
+    var LINK = 128, PLINK = 165;
+
+    function seed() {
+      var r = header.getBoundingClientRect();
+      W = Math.max(1, Math.round(r.width)); H = Math.max(1, Math.round(r.height));
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      cvs.width = W * dpr; cvs.height = H * dpr;
+      cvs.style.width = W + 'px'; cvs.style.height = H + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var count = Math.max(24, Math.min(90, Math.round(W * H / 13000)));
+      stars = [];
+      for (var i = 0; i < count; i++) {
+        stars.push({
+          x: Math.random() * W, y: Math.random() * H,
+          vx: (Math.random() - .5) * .17, vy: (Math.random() - .5) * .13,
+          r: Math.random() * 1.45 + .5, p: Math.random() * Math.PI * 2,
+          c: Math.random() < .18 ? '255,47,185' : (Math.random() < .35 ? '168,85,247' : '0,240,255')
+        });
+      }
+    }
+    function frame() {
+      ctx.clearRect(0, 0, W, H);
+      for (var i = 0; i < stars.length; i++) {
+        var a = stars[i];
+        a.x += a.vx; a.y += a.vy; a.p += .021;
+        if (a.x < -12) a.x = W + 12; else if (a.x > W + 12) a.x = -12;
+        if (a.y < -12) a.y = H + 12; else if (a.y > H + 12) a.y = -12;
+        for (var j = i + 1; j < stars.length; j++) {
+          var b = stars[j], dx = a.x - b.x, dy = a.y - b.y, d = Math.sqrt(dx * dx + dy * dy);
+          if (d < LINK) {
+            ctx.strokeStyle = 'rgba(0,240,255,' + ((1 - d / LINK) * .3).toFixed(3) + ')';
+            ctx.lineWidth = .7; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+          }
+        }
+        if (pointer.x !== null) {
+          var px = a.x - pointer.x, py = a.y - pointer.y, pd = Math.sqrt(px * px + py * py);
+          if (pd < PLINK) {
+            ctx.strokeStyle = 'rgba(255,47,185,' + ((1 - pd / PLINK) * .42).toFixed(3) + ')';
+            ctx.lineWidth = .85; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(pointer.x, pointer.y); ctx.stroke();
+          }
+        }
+        var tw = .45 + .55 * Math.abs(Math.sin(a.p));
+        ctx.beginPath(); ctx.fillStyle = 'rgba(' + a.c + ',' + (.85 * tw).toFixed(3) + ')';
+        ctx.arc(a.x, a.y, a.r, 0, 6.2832); ctx.fill();
+        if (a.r > 1.25) {
+          ctx.beginPath(); ctx.fillStyle = 'rgba(' + a.c + ',' + (.13 * tw).toFixed(3) + ')';
+          ctx.arc(a.x, a.y, a.r * 3.6, 0, 6.2832); ctx.fill();
+        }
+      }
+      raf = requestAnimationFrame(frame);
+    }
+    function start() { if (raf === null && !reduceMotion) raf = requestAnimationFrame(frame); }
+    function stop() { if (raf !== null) { cancelAnimationFrame(raf); raf = null; } }
+    seed();
+    if (reduceMotion) frame(); else start();
+    header.addEventListener('pointermove', function (e) {
+      var r = header.getBoundingClientRect(); pointer.x = e.clientX - r.left; pointer.y = e.clientY - r.top;
+    });
+    header.addEventListener('pointerleave', function () { pointer.x = null; pointer.y = null; });
+    window.addEventListener('resize', function () { stop(); seed(); if (!reduceMotion) start(); else frame(); });
+    document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
+  }
+
+  /* ---------- ambient background + reveal + progress + back-to-top ---------- */
+  function buildAmbient() {
+    if ($('.bg-fx')) return;
+    var d = document.createElement('div');
+    d.className = 'bg-fx'; d.setAttribute('aria-hidden', 'true');
+    d.innerHTML = '<div class="grid"></div><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="noise"></div>';
+    document.body.insertBefore(d, document.body.firstChild);
+  }
+  function reveals() {
+    var els = $$('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: .1, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function (e) { io.observe(e); });
+  }
+  function counters() {
+    var els = $$('[data-count]');
+    if (!els.length) return;
+    function run(el) {
+      var target = parseFloat(el.dataset.count), suf = el.dataset.suffix || '', dec = parseInt(el.dataset.dec || '0', 10);
+      if (reduceMotion) { el.textContent = target.toLocaleString(undefined, { minimumFractionDigits: dec }) + suf; return; }
+      var start = null, dur = 1400;
+      (function step(ts) {
+        if (!start) start = ts;
+        var p = Math.min((ts - start) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+        el.textContent = (target * e).toLocaleString(undefined, { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf;
+        if (p < 1) requestAnimationFrame(step);
+      })(performance.now());
+    }
+    if (!('IntersectionObserver' in window)) { els.forEach(run); return; }
+    var io = new IntersectionObserver(function (en) {
+      en.forEach(function (e) { if (e.isIntersecting) { run(e.target); io.unobserve(e.target); } });
+    }, { threshold: .5 });
+    els.forEach(function (e) { io.observe(e); });
+  }
+  function buildToTop() {
+    if ($('#totop')) return;
+    var b = document.createElement('button');
+    b.className = 'totop'; b.id = 'totop'; b.setAttribute('aria-label', 'Back to top');
+    b.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>';
+    document.body.appendChild(b);
+    b.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }); });
+    window.addEventListener('scroll', function () {
+      b.classList.toggle('show', window.scrollY > 620);
+      var p = $('#scroll-progress');
+      if (p) {
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        p.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+      }
+    }, { passive: true });
+  }
+
+  /* ---------- humanoid companion (skip pages that load it themselves) ---------- */
+  function injectHumanoid() {
+    if (document.querySelector('[data-humanoid]')) return;
+    var pre = location.pathname.indexOf('/agents/') !== -1 ? '../assets/' : 'assets/';
+    var l = document.createElement('link');
+    l.rel = 'stylesheet'; l.href = pre + 'humanoid.css'; l.setAttribute('data-humanoid', 'css');
+    document.head.appendChild(l);
+    var sc = document.createElement('script');
+    sc.src = pre + 'humanoid.js'; sc.defer = true; sc.setAttribute('data-humanoid', 'js');
+    document.body.appendChild(sc);
+  }
+
+  /* ---------- boot ---------- */
+  function boot() {
+    buildTopStrip();
+    buildHeader();
+    buildAmbient();
+    buildFooter();
+    buildCookies();
+    buildProgress();
+    buildToTop();
+    constellation();
+    reveals();
+    counters();
+    injectHumanoid();
+    document.documentElement.classList.add('shell-ready');
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+
+  /* expose for pages that need it */
+  window.AIMV = { $: $, $$: $$, reduceMotion: reduceMotion, page: page, NAV: NAV };
+})();
+
+window.AIMV_FACES={real:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wgARCAHgAeADASIAAhEBAxEB/8QAGgABAAMBAQEAAAAAAAAAAAAAAAECAwQFBv/EABkBAQEBAQEBAAAAAAAAAAAAAAABAgMEBf/aAAwDAQACEAMQAAAB+JG8gEgAAAASQkRJYAAATJVaxmmAAAACElhIhIhMQAAAAAiRAEgAAAJAsAAAEkLdqct9qZt4RjcWi65tK2Y5dTU43TjqUCAAAAAAqJEJECAAAAABNgAAAAAE6T2XCm/PhF71591NKFJtJNK4m9KaF2dqyx7sOmedMXIAAAAAAAKiRAgAASBYAAAAJF46mejWvPeOnMry9NpxrN9FufpjO2lVKyTSamGsrNqJ0xw68d5yiTMJgAAAAAABQIEAJLAAAABImNLOnXWs58tdp59+anRnNYW0vGMawTESa1ylejOLnNOudTfHTU3RO7x16ea80TCBAAAAAAALAgCRYAAAJIkp38HrXkz7eXOMozcfZrbX0M68u/u2mvCj6CT57T37V83T6bOX5TL6biufNz6sLOW6/TM6RbpqfP8AX8rrmo5c0SIAAEAAAAQJUxNgAAAkiYmgJ9/5/wB7flpzdfDjVPRw9jz+6/TTXPS9l4WWqa2qlK3quWHVlHnef7XNZ8/l6fH0xlvhv3dXker5fWZjjyARMAAAAQABAlSWAAAJiQKAez43pa4en5Hs+ZnHb6HH2+b6Om2Wmd6Xpcval6EJWLQtM9cozy2yOTzvT8zWPP3pb1Tr8r0/N7sR5+IAEJEAAAAAgZSKAAEgUAA6+Xa4+h4e/g14+7q59/L9TXTPbn101x0W5NkTAQoMphaY7YpzcXbjvPj6Wj1Z38z1PM7MB5uIAACJEAAAAgmAAABIFAANM5T6Pl106eD0nV5XH2dlvCy4ez6Wfldj6W/i9s13VyzW/PxeZc+rhwdiXjahfTi7/ROfi9Pg9Nr5nqYyeaOHAAABEwAAAAEIkAAVIAAAJvTVPevwelfL63zn0fzue1tfPz4ez0eHj7B382017eHVlL4GXdKefbs5NZrdC6duHVtbz/V8z23nnbXx6+cHTyAAAAQAAAAiYAATCkgAABMwT6Tr8/bOfY8b2+PG/H39DHn6KV27F5qd/NL0BeTSnSnDT14PG39GDnp0YE+X6vF75zOnz/NfHiY6eUAAABEhAAAIlAAAVIAAEwJRJ6vo+F9Dl6/HamZtplvx9a4vPy78x2TMnn75VPWtloRnfEz5tuazXzuzj9k18n2vmcZziThAAAAAAIAAEAAJgSKAAAlEj635LuZ97q4NsOvXj34ezpplnNUiniXP1Nvmr16EeD0p9BrlnnfVnz52actKdcb5U8P0Z9HyzHKAgAAAACJgJgAiYmAAApIAAACQiS30nzP0F5adPDv5vX0b8mmOu3B22rxsPdizi7LRLrXm5U68dkcVrV74w8b0fO9HIRzyAAAAAAiQiYAAgAAKSAAAAEoE+r5W1x7emceft6XH09HPv89p6PPq5x6F2/Pr3cycfqZ90xbzenz0tFc/Tnzec1wQQAAAAAIJiRAAAgAAKmAkAAACYkA9Lp8X28509Dzenh6enl67TfnU9GTz9e66Y13wl5Oe+PTE1i3seMRy4AAAAAAISIAACBEgACgJAAAABIHv+B9A5YdPBfl29vo8vu5ejrtjK60piX4L+brM89HXOmsz2eLBjiAAAAABEwAAAEESAAAKkAAAACUE/RfO/SzHHz9+PH0c3XzZJ7VvAmb9zn8qidfPXTUdNemWJt0ei/Lr0cAgAABEwTAAAAAQIkAAACYmgAABumG/bozb1NKSc2e9eHr4suvFnly7ByW6Ble9y20XartlbvcPK+j8rWfNy9HO8uJemYAAIAAAAAiASiQAABMTQA6k5ejttcUMc3Xfj0x09xhON2mts7ww7cK550hKLyZ3jQtNkuaY0159OKzlmk757ZzPRxU9PHU4lq4iJgAAACAIAmJAABJEz2XPF2dlLi8ZZy3qY6CZawL2dfkduddts5xvXOwwtNamIEbVvEUmqTE1qvmaY7xMpslE0mFaY3tt51fV5rONMZgAQABAlkWADps5/Q6ba5TTHPN1xMdSYmpAJIreChJ09fk6Z161+DszpW+SzbPQ0hlC+HNqdnnZxrEymxMiAATBVrZzprx769HlR6fBJmMQACAqRB0WdXVbi1w0yOfoJZsLQsICUEglAU0grE1FoG9+OJe6eEduGIlKyYaESAEAEiJEJgEVfTGejm5/X8zUzHOAQJZFj3fM9PfnwwOfeRnaQJgiJEEhAlAsgImCkXFF4ETJSbitpgmaySVJVkQFiSUSQkVSKpitYp0+i+M2x5ZCSBKmLWetG/LvzYwrx9e8VsTMBCCQRMAmACQJQRFhRYVTIRYIkJgVtUSgSkTEiYkKi0RIicS2/Pp1X8z1/J2gjlkJXZx+hrn0Y2yiKaRjrnvz7FipMJExIABCREwJABEhCYCQBEhEBMxIBIBUiaWLTFSK1ktZTTp4+iOzgg45BXpcHZcWztTOriazWzN4mCJgWmJEwJiYETBKJCJEAIJmomUCYE1QTMhMCYmASKXxGlbE4a85pNdSctMTbXDfs8temIEdOlLMzWYzq853WtLUN4iSJgWvnYSExAtECUAAgTAJgWVkmECYklAkgkAgnK+Re9LGVY0JvElcw1mrTLn6uXUDLsWrJE1mappWhrjtkazSwtEkXrJIAABABACJJQJiQAJAAJQAK56YmqIM9c7lprQz2y3FbZ1fj7OTU//EAC0QAAICAQMDAwQCAwADAAAAAAABAhEDEBIhBDFQEyAiMDJAQSMzFDRCBUNg/9oACAEBAAEFAv8A5ejazY/Lxg2KKOEcllaUjYNV5FKyGOiRRdHJ8RbRpacMZtTJKvHJWRioknYqNpVG2zYhLTgdG4tPSUfGRjZGJLgotRHevGjZyclnDOUd1KPioxtpfBcR7kpEeDcXpwJabiySNrIWMZKPiErFwRZPJxu+C4HIXBdiqtyOSjaOzk3aRY+SLJxrw+KJJaNWRHrem7jc5PckKektL0TscSrTVeFihKiTKNoyjaUOJRRRtLN5aGtOwuRdv3lXhemjcpWopOt16UbT02LEemz0z0z0j0R4WPG0diySOUVoiSuPhMHGKjI6NzFbIQshhFiR6YsR6SPRPTRsQ8ZPESwjg0OIyLO5HR9/B4FeLMyfJRixkYUJFFe2ihocScCcBo7aR7RJd/B9G7jnjQnzjjbgqS0X0HoyUTJCm4ifMTGZPv8AB9FIz/Z+8KoQhfSejJoyRGuYke+X7/B9E/5MvyVU8QtF9J6MmZGLuf8AWX7/AAfTuskl8cr+eHtohaV7mPSRIyRs7NHcy/f4PC6yXzk/sxLgQtL9tljejZIYzNGm+0eTN/Z4OP3Mgt+ZRNtFo3I3Is3CkWOQ5USzpD6ofUtnqnqsjkvTNH+P/mHBPmXhMDUodP8A39jPn5c2ObPUkRzyIZ7IzvSTMsyVsUGyGFGyJKJ2Imf+uvijOoTh4OEd05bEY1WbJwsn3xij+NEo2SVCMMiBmXEuWy4xP8iKj6kJCk9MZk5hXwlylH4eDxOskvgRM/CfecjfNxuZjUtsY21Fxlh7dR2jjtywyHi+H+Lz6PCxU445EVQlZPhRjx2h4NDipmFqb6ns4Dx8qAoxicCiNWYe2YihxscJH8h8mQxlFEe/VR+eI6p7cPhOkluw4HWfqOShws9IWEjjSGqTMRlIkTabSitGRJvdmikpdc+PCf8Aj38+2TJ8ooWiWmQZjMukRasYz/mTvL9p1j+fhOne3LKDlHDK8X7QtcjF3xoyIkiPxlF6MZIZfEHyZJb5+FxZN/T4pOxCLGyXL3RThJE5ollVykJm4sbJs3Dfxi1XUZ+PDdNm9MhkTkmRZZZ3ef7Z5GY8xPNa3TvG5Scez4Nw5EpC79Q6wb5eJjJxcyMhSNxElyTxJk8NCg2RwkcdF0dyXA1ojrH/AB+KwPf07IFfJsTN0RuEjZE9SCPWiPNA/wAjnmZk40R1j+Xiuil8WQKsyYZyH6ya3nyPmKOQlCR6NmHDFJKjI7kxGeW7L4rFPZkb0xytGRCIzNxKYyCt2Tnx+2Slth4zBkuJCVNSsfI4lMqRtZGAkMm9O51H+v4yLpyW1ohpts9NnpCxGytJEhlnUf6/jcgmRZHkXtZkkSZKRE6n+jxsvsfBGZjmKQpG43DkTmSmORFETqf9fxv/AK2hoUmiOUWU9Q9QllJZLG7EiK06j/X8a18KGhoaNzR6jN7LeiQkJaJb4zi4y8VHG2ukwpvL3JIaGhxNptNokUJawOrgfGROG3w8ccmY8cL2+rNUlk76MelFFFCQtUdzLhUSyUEyUXHwccMpGPHGLlKyzp387Jc6tD9y9qZ1DqGlksakSi4/nwwyZGMIknZZ+yLp3avVjWtFaJe1HUSuXsslisaa/LhgZFRiSkXq9cU/a17l7ZS2xfv4ZLCNNP8AFSbI9OfGCchy+jjmX9BaPVujJLc/oupKWH8NKzH05xEsb+pDJQmJ63ohD1lNRJzcn9Ox1MnhcfwMeFzIqMByHL6ff2KVEcpGSYx6LRsckiWVl/XUiWOMyUXF/UwYltlIcvrVZ29liyyR6p6p6o8zHkZfsS+tZw1kx7fp4cfqSyUl+DRf0aLo5YuPwY8mSO2X0ccfSxOX4bKOSyzg4LWlCX4cTNHfH6HTx3ZMjH+RwUvyIsyw2T9/Trbjm+BcP8SivyUI6iNw9yVt/FT1i/Gvl6LlPh+3pleS7ctGhd/zX9aTOwj9RZnVZPbh4xLs9exHxUnQtWRM6+PtfEF7GRfhmLVvkWn7Q+YeyCuU+ZaLVd/CsWjFzotP2WSVS1wffqtf34V6z7IWkuy0/WX2Yvt0YtH4d6fqXcWk2LWf2aw/r17CHouz8I9f+tGz9rX9ar7NWRekiPbwjEMgNiJMS9iH3//EACYRAAIBAgUFAQADAAAAAAAAAAABEQJAAxAgITAEEiIxQTJCUFH/2gAIAQMBAT8B/qXVAlJGUEEW9VRRT91tWrZSm2U8DVmylyyOJ2WM4pMKqdhEEEEEEaK1ZdV+ZMBeMopXAxFfqy6hThs6R7C4GIxPVlWppZ0r8il8DEYnqyZh+DZg1yyTuzbN9FalWT9GPh9jOmX0knQ5N8kfLPGp76J/w6f8kcCKtlZ0v2jp9pXA8sR7WbW8jfbiCyZJOh1QNzaVrdMoZOXaQTnX7talKMN7ZIgcZO4VXa4E84zfq3q/SFNInm3l8t/5og9HcTczLhCXnrRUvpFi3B3P4Kkp2Y1vPA3tnHK6kiW/QqCM0+BvTHC3A6m/QsMSjUmTokb4I1NpKWULv8mJRxSSTxtacV91SoKVFwtOH5Vd1088T8lCh3r3qFer3fU3v//EACURAAEDAwQCAwEBAAAAAAAAAAEAAhEDIEAQITAxQVESIjIzUP/aAAgBAgEBPwH/ACiVOkr5ZLjeDjEo3hDEdwDQYYThpKlSpUqdGpoTxhM7T+0eAFMVT84TO1VR4AqY8qr1hDtVekeABUlV/OG7dPHBTAKGxTzIjDY6VVOkXU3QV4lfIl84bfqYVXtTeE/+ap4bh5VX3wNG6rbMATWwJw/C7bqLaY3VZskYvhOvpdqp3jOFpQVEI4zhKNoCpiGnH8LYojVoUx0qR+pxz1rCjWhvjHYIn630jCqO3UesMlHcIHa8FTJUoO9r4+uWFsEXWEcAGsoO9r4+uKAi5TcQoshAXAwvkHdoti8mNlPFCjja9OG0i1uwlE5FPcQiIsd1ksKq+9QickL9M18ZdMo6HLajoczwv//EAC4QAAECBAUDBAEEAwAAAAAAAAEAIQIRMVAQIDBAQRJRYSIycYGREzNgoUJisf/aAAgBAQAGPwL+MUvVF7VymOHtTXOZwcpoU8hgyqVwcKTTXThOScKquDrnDumt/leV2wc4MnKbB8O6a2SRXjCZXc4NhTD2qmRsJi1fCOE8HTp16QmVfwqpmVZ5XuT40mvbkbGVnkFIYdtN02Tzj1WWfZT06aMsCLKYlLspbSSBssIUgp+dqPNlJ+lPaywNkMKM9sEbM+1CNlhHfajA2SE+V8bSaCCNkCCGvXB8QhNGywzqhhKHJVPnc5oUJ0XXAJSrZBD3KH6XsChOL4NAnBCbLKFeqZX7cKp0qsxlbhRjxZIT5R/tQ+MJp6L0sFKvlEz/ACqdJys0P/V0qfUpJsxP+tlB4qvvF1VcfhMnGZiqZiMIvNllzCyGRk51zPAfNliHcKfbaMvKEPYWWFGLlCfG0JPCMVmhPPKiBzDKM88OiH7s8j7ShLnM2RkM5VbTMKY51ZZAPNrh8NmcqU1UKQxkHQyQi1xwfeSYikpFe1exewqkk8SclUym1g7AxW3pNRmqq6H3bQdaS+7cPjW+7dD8abY/dug+NY26EeNYwnlEG1zLBdcvSP72HWH7hUXiz9gqKX+KAFBseoYMyexzoNt85GZON/OJgmE8s9lLtldelPu5xsvSNCW4lE6nAfpSO2YL1Fekab6z6civS+zZTj/CbWfdeoKYcbCdAvTsnTaDNsexT6ojj5oNi+WuNNs6mKacuOUOnjZNv5aXk12j6FNtMVGj8bnhUVLDPvdJ9s8kIRwhc5Z59kbg2X5zE97sDmhh8XYjxlAu4RyT7XgHJEf5ockOWV1//8QAKhAAAgEEAQMEAgIDAQAAAAAAAAERECExQVEgYXEwUIGRobFAwdHh8GD/2gAIAQEAAT8h/wDMO4OyNR7sgmLCTu0yOR4JyUB84eBSUsfkvtL5Gz/AaNchmXuLQuCx5soFFzITsY39F93+Q73Jw19mZB2L5hBxwnxIj2G8vwNf22B9kCW6loblZeTsXZJ5cIcEKHkf6oGk4PqiIWPyO68T2RI7JIrH3uJPnwRbMDbh7Y7DJBZXY8WssWDaluTzt40Nk/k8kJIjsIS1X2xwsJYruF7yF3iirJ+CXcPsLPhyhJTCR2V+PamRJCVBZxkWQnEK7Gkk3hkZLjYkVkeENU5f9CE0S2knsV9vkcrTPgZzRHcsF+fwJVj8DBl8CbsJcXJF969oY1hVYnHLFc2QwQ2apDJJZ0btlibiT5Dr+kWNn0Ntp5kk+fgKGWfaBsIGzKoNOETshcMytOGqKZbD9mV2Sv8AsgQ3E2YtLPOhLQ9GngeSORusCb2yzg4RkLL9EQQ3dm7GVqvI0WVuyHK5MYIe3wSlyIs0XL/DJDT9lmf4IKyHee5N6TIJXb7JEei6hTRdLR3kjky3CJPs8wJyCMwOHshtKkdEzUGOU8YyJsmH7LeAfuYpfnY2wRL20KeXJF4iSTQ2MH/DG7bsLtE8WE+DiU2G2BK1wL7FyyLribSkTaj4Gtsq/sq/XIaO7CfkV+wehwKDdDBKI2BpwI2dgScEGh8RNoSzcjOIdoRo5MELLBKZZ5FdQXhyLHsZHf28DVFhzL8CEzJYsKVQi0KgkQQNUOgvCGRXR2xhOU12MvKwMnbiSYsOuPZOxlg7uEDJ4bMGQlCGJuLNJGSN0MWSVUCIiUip+gkP5k/J9km7FzM1Zdvy2QuiKwqJ0kdHQ0KJeiA+eYDx+USI+fZHp0toVIFfC5FohhKRYFV02PoWpXS4GuPJdPWHkSF9/ZHqjdjv9oJo6VBCqpCqggdqLh1I3cUxlilgX7SJHn9lEYXphbm/hEZWaEEIJ1kYdBMCNsg8UpJEIfCNE/J9k/MG+DuxiGXBCkkOCRK2LnFzUoS0sNo3YvSNITd0x3ROIgndmUagaDB5Uzf2ROHIsOQVWhpNLwif+gbn7GcMS9v7pzrKJJAP5JWR+aX9keBHYV1i5IQr6DPilMlx40Jz39kvVECks7rC2WozBicl7DlxNjL4SFpLf0SRG3caBJQxMThOBLHcu3gaSIG4zcW4bsxJ/aMsawsqFY/BbLANfPf2TsMgjZNN2E5fcJHlEhmLsu1w5GwfxjM1zxLA3gVgW1yPpl1LA8oJeW9j8pe5sKduO40sJPgUZpY65EHeigQJMsXaEWjjgm9kaGmMHZQPIE/YswHaMq4VFgsKWdki4sj2lmIuTNwxNi+wbQRnUfBBmhhLByUVpkWYLF3S9l7GGIu8SJYIIQbzgjuxiFSMTGlx1hkdU2jEQOPaRWghESRa1v8Ap7LCUTTt0lDJLV7WEEEqEDVbhWY9x7EDRaOPcmAxiTJe1KWJ/KvL9lnUwm4ZABJXHkh6XsoalIZEiTuLlDiGaE8MSTYYcYeWOwu46TjLLRgp+B7bb9lThiFb73c+YiHHyMmMIRoe6wK8szpHkWpMS+4gSYpIxqLEDcEIITM3OXs91/jCayiwhbmgraZKSlkht2Uj0ov4Y1iTJJQSEVDjkSUkmwy0kH2Hd7CGxQ3j2lAZhyNMYkku0bixC4M0BAlDS+BcKUK1LED5CSl8MciHIlyLne1pC+TCQyTVyXgJ5ERk4Q/tgiu4PJujRyyc4i/xQlgRcVTQrJmSPGVPtd0eAg94Y4kyYlC1v0zzvkXNxt7IGdPJmkfCIveIW4RCLuKY1qJDpW9r4p34Lk6E4hosgnYvTAzTtcRF0Ncoe7KCG3LHzPBYiMTMmOc2a8+2/BR3RIyQiFik0YY7gWxyMZErU3BsyISa2ntrEmUy26paLCHAXME9kOxA1A8Ia7Mhws+Sz4/bns8aGxUXhQiKNwOoqF2FkW5i8fblnxRG0kDElssXH3DQ1kKyTE7Eogv4fbnfxa25I9i2sjTkarYvmkZ4VhK4k9tp+3QtZS9DOCk7g2EmxLoKi4nCFgQnDTj2v5lLNmSzewgjoAmpQVAqJI2NA5W/+Vxdr4GXZbD9nvrXcYpJy8iycJkVIxgReIGhRCOgKiSjGMLjB273RhGhPNz8Daz59jUS8jOQPlkj5FEgZclgwQ6SECRBBAokQMVCNXKmj7LguzyG35P52T7U2PMjlnKFa+R6GCPTQobWy4TExJVCCHWapeB9FPCSOiRTssoTnh8MewkP+Uk24SkYuQ42P9vLJu7HAmacuKTBHf8AAmIkTpQRWCxUboy9b0PLouayJwSiCAh/kCNEP+M9hjHO8XZCUJS77JMlmEST0OzjVE4ZgWXIpCYh3Gi9LiGBhCFLLDZPoSIIvTNUJiQGR+X8NjTThqH/AAmNCSzxPAtwkLsOwST1xKFOHRODuCEtSr1HRIlDVU3u+CUPFIsL8+ghBFRJ32f7hP4CKXlFkJHfbLYx7G2/Sa8BO8UwPazgRoIbkxBHyLNDoZNjFibNkGMimb5/XQuqROkoleQjyfPqp3CQaFig23SCK762nlyZR9qNEtCO4fJN5SIcfkt/2NJIZ2N2Igm8JXNjyR1LqkUDCSUMfJ+vpv4y7DIkjVDcv01SaIfcbL+hlDHcggcirAg0EdjyKkt9jqzBPS+lMhNMk/p6SoXyCZ+VHQ8deetiJ4DbTLNHeJCRIiE28MSeXHgQrx8smmXR9GvSeLltv8Hox84uddlem/Qkjhl1mC3AjhOw6kQOi7jYul9U3SpTC1lehfef1PsMbGUHPosXovpL+qqboxVY7I5MeDufruQmyOhDFBj/ACiRepldcdWunVYq6Kk9DsNY1ROxePhqBGxPK6r6wslwHlkUHj+C30OsdKshhdMVfToyLKYSTCF5Ew9XdXdbwhzcYGO4YZui630Lpmm71fRv0WxZEIiMSLvJliwNdIYn4lup+3yZgTDqpaIsOi6nX49CSaasXoxsSIIMdTmAjRJ2qiyPFdemncxjysTHQ6Wv3JG7ep99cCF0oxk+KLofRSNYuDEhDwK9Kh2EQ79C5tGx7YmTA1qOw8BdGq49R0kyTTyMSq6KmxkmYqMJpQJAnosqthb8q6LfgDqet4EMRcXVPW6zVEk9C6VRmQqLkQrLuQ2JGivQs+D6Pyuk0dw0iWuN6HsMKeRdao6aqqqr6F0N1kdCwNwK4SJlwRImZUaJHdXboSF9ppsQskDkZFHsJ6F0b69/wnijM1Q5yNQu60kMeaEhkf/aAAwDAQACAAMAAAAQt9wCCGeayhBNPFJFJBBBwww2OKCCCS9jCGO6BBNd76+Wgll9vLDDBBAQwuOCACG5BBDD/wDzMxw089zy9/ywwwwwQELggmgQQz/+x0p9L1JPuQT0tv7ywwwwAAgoQQ3/APoUHkAMecRWAUwJT77+8sMMAJYENf7qCpNb/pdUpMaNJ0hDzz7+8MMKkMf7qjx2QxTMAfzezCyfgBTzz3+8MaEP/wCqE8uS/i/ANwD2zGSuAAw88899/BX+6Ac8wBc6uW6/IdMPV+AIAQ88995BH+6AU8uheaDTulCRZOQ+cAAU8899ND/8AU88S7UFKE57yK1KE+88AA8889JD+sgc88DW7xZ0oNqRnsmW88oAQc88RD+8A08sIEfpE8E8UJ7IWS88sAAA89BD+uA888ImmP6BNhc4b5i+88ogAU08rDW8gU884K158YMG9CHoG+840AAQU9DD+8gw888OR3O22mTRBLe88MAAEQ89BDO8cE888oCdlcGPSdyG+88AAAYc999DW88Aw888CX/KhV1ize88oAAAs899dDD28AA888kXwRk1rcj884sAUc88999DDe+oQ887vsgH3LT4UApLMAE889979LD++oAu9v7Km4FBv6i5HItDU8897D9pDf6vr9zj2Q+S0IqXJFSIc67887DDWBD9oHfWGqu6OOIg+odOSGOcQ7YrDDUhFhAPiKi2eWDBeSS1SeOyyemU1dDBWBi5yuSyaaSiGZxJkkiCW+aOCS0/IBSte6eCSGGOaGjQgQIa2ik+rKrCCtrFC5OWymaqGiyuWOjE0K6OqmGuP6eQTfCsummqmyOSWaKeWum+uGGW6Gwmse7AANTSGSiOyaKGSOQ0SUsGey+CE8k+aJASyQuWgiiiKOa64ASkyS/CCsQwc4gJ/8QAIxEBAAIBBAMAAwEBAAAAAAAAAQARIRAxQEEgMFFhcYFQwf/aAAgBAwEBPxD/ACShsmAJUpGVHHpwS7KB41Ow4tWCViCvR3HDVFxog6gSpXiSoKa4X9TGnCEHh7KSoEqp4Vg/DARD6Q1NUgrRtPDQWLvH1DydTY4VQ/EoyhLD0mzwhZUdLsuKBCsIEdPhMpTobxbTrhXtUUE7i2xQhfqGNKufGD2iQQBV8O4G4IdIolaVLZUdCV4YWvcVl6lSo6ESVFCbP7w7B8TIfYrJUVSu8LaLUWC6qO7eKTBMJvLTCMOTRXxe0S0M3hPsBAIVF1FrMW2+MXzOlvKdDFm7xzZ/v/kWB2hpLl6Cx38dL/rGC9kIXGBAsSJTxFCCmOFZ1ElSpUIqYbhH44I7oo0Iy2wFkxhCPjcq1Px7d5Z+OJnthBp0Pos8P3H49Ii2YfGfaD5FIB8EER88O8aeTrYIzgOz1WJeWfX2HjUG27DNHIyxEp1WocrthyCHvVOB3jlo5NRQfMwZeUanJgct02X+XmM//8QAIxEBAAIBBAICAwEAAAAAAAAAAQARIRAgMUBBUTBhUHGB8P/aAAgBAgEBPxD8VTxFMuDh7QR64SjEW9o1LusQRbiWIrOnUwIsuXL2IhDTErpG2VZix2BaEDKPMyErB6XgiyGPQ2jpK2DBekqMObg86GrsY+mVQgg40DWpUqKwtU+JxPSIaEEJUqMuExoDDhIRB6RzKMwVAuNI6lRDQbpfWBXTP9qPSyx2M5xV+8Nq+um2B4gsIrQ0YaWUi+xgMPP+em8iB/COIuimJoTFuVT1OAPXU8iDMq4YlzmVDmZSr6slTUuoN6qCVNxWr1q1kEuoMvR1qCD6660okENbWI+6Wfo67zlxzzoBLooiw5H1ErD1aWMuW+/c5Z5iGETnoBfEoOZhojaJlGhtqltIPAiHLjjHyCeJ7J4CLr5D4KjURxBcZxtmK+AF4gGWemNt1sUbBMo23HgFUNl43ArROKin4qSkAPhGohhg+ltFkWPYRbiKnUjqh2a2C0HnXnbLjsurg/w1ulFx2TicwwU1osB21VzPOnPtjBuP/8QAKhABAAICAQMCBQUBAQAAAAAAAQARITFBUWFxgZEwQKGxwRAg0eHwUPH/2gAIAQEAAT8Q/wCU/tf+OF8QQZMpgmWhPSFFrCIqT/q71E2IcuLYK75WiF7JhoEb7Q+rLmr/ADQYFiOlj7Ro05Oi/rCbQHWUl3scRCink+Sr5KpXwwmgMd5kwrNLVvaK7AHNww7CGv7jYWOUpEws6GkLZKvaiWcrq0gts8nEsD1BTbLWl0aKFVfqTJspyMykI11T5Sv3HyYniMISpbAbQrV0fzM4UG65QItamC5vk+GsL2Jnn3T7QskN0KqAXZffNQR5v85SCr9WzLxZ9TkIEzw8+8X5g6YJ1c5pkhdVRxrJLhrRs6RE+er4rVDLntDIPghGUZa8XLGwmBczSUqyFnZFC4X0UNAi8O/XpLNviNsRagauiCkXqbIM2dGce0Sxj8MJ2b7i/aNV7gTK+BwYrKib2Pkl0qTZ+IyJA3CUp84fDP0KIetSzTWuMzi7lrtDjbVl5Zayj0b7EzIWw/76xihwv2P5nS4iMvggbr8so8gLoP4mNhdUr7xu3lXDUskPVBf3EewJ4UA2AhncVzd3mC0duUNPXxFbND7sPjPYjh1/xahCANu4AVGk4iRwWy3E4iJu/dX+oMoeB46scuzYo7EJRW2DqZ1JOD/YgLGnquXGw5QffiB2Ccr8o4gF3KPrMJ7eGYbTeaZeTkhaQJycKXAbqvYlICLrpCNLhdSDoFO0mbyzD80fECAbmaq658eCC3TVRAEB5GopTcFhzMy/mFrspCp7QtSLDRHAIdAI9cnV/BAcAa5vMpEA6NAiUVbwP8RdZnVghZY8wiBlnaEvXkS7bQQcslOjcRCJzzzKS6d+ezAAdQbCEa/4rAhatCO86l6y+iUe95ljLObzctuwAIwSiHrwxDrTvzECN3XETCYqorWs8Yl0ta47yzS+sqLDLrtL3asFivvBQWBximTgew594XJD10TSbeGIo+Q3MlYcrxcQW5yeT/EW0MpGVUHJ0fnD4G4CaA15qPBZegPLUJXvJ7I0j0c8Q1eIk5gPKkrFephgmqL2IBCq6VAKscdEYLJ1CaTZ7S5svxEXKblDNY43cMqWu1wuNLw/mbGR1D+IaR7xtBhfoxzbwimobfZdppHa+hH5Y/afAJiYFvwQQCxN+Edq4AWcvSG2dg/64za31xUq3hyReB25gLpJwB6xpWbu4s4w7wma13J2CpoUvrDEANmY4Ug9yJJ4MxwoR5lnr1g3gYU9oIvFFPbtCdDQjGBhB4x/P3hJWnPyp8al5lhUXX2H+JZux97gTOape37QdKMrRiGLeqFQYmLjPMu1llTgzDs+0DeTDrvDExBziYvmbPxDbK+kK1GiXgmExGweJmUsckzDrv1jo6cv5mYHC90adGhR3uSfKnwj9hETaudzNwkeaAdjcTPrFPHfzG6YwPaEQC5WOiAJcLC5hSDnZOHSLxEFt8zBwxXMy0hhEhtcWwybuOrGhzWyHcDGPSBrEUUdO0C80Yk/3aK27/lT4xMEsrh5SBKQCXv0+0u6KsV0/uEGMzW5e9RWfpX2y6YV4faLTdx74x1jmU3nbPpJvUPU6O4A33EK7ZRxGWaGRmJe2e3X7zqysI7EAGjY9f318U+QJIpLX6QEUSy++GXt1uTqr/ULalVBao+upRibmoK21xDfX+YY3UaSqqCysEdRGkPE2zF6xZmymOd2XuazXoRRR5Wj3l6KMPX+5UzYM+TYfIGewR3XB95YR5M4LYwgpqDq/wATAOzpEWubuZBBcsYndJYvSJnXpPBOrrHMbwwaRBOhiCo6JlbDvIsMy8JDcC7DBYoyUeL/ADPMk/JsP2HxFOqwVctZMio9zlcXS9xDXbiUwc/zBqaEYqO8CElG5reZbuvrGmVzDqrmXPpEXeJQcXAtBGLYe1wI5ihjEvMuMWU+8VKKyB7X95njro/4R+jBEuhiVBGyt5XOIAbQlspkYMVzKBYuNVTHeKMEfMWUC/vKJhx2Yg2RBbXrE00nSMwv1gbMxJAWbYSy463EKKHm4ZcdtRNU9G5SFLdWajTAZuEiZI3uFh5/1RG2Auu9VFWyNv8A4lR0MciyWehH0qUcVqFKgLWbGK5PsmW2V0f0gWUThiazAwtvdygQM8wAN74hUhm71uWkIWUv5gDNHWURd1EQKXGUnhABhvcA4wLjMy6Ny2itD+IdWZRS4U52w68r+E/NYuZy4t3CCoEhle/fmZ1GM75mSOVPiJeo54IBortUGUDuhieoeVPygJQdas+kupAdSKon0YZu7hJmJFtRIll5dEArrYcD6RpxwKJ8nEffOMEolX4bPM1I7luWK1MfZJgbpLV6sdqvF5hsMOPJn8f8I/S6NK+sKN3gOej5JcvGSroh+YfqzMoBqIUT0cMkYEYDl7sTUqy12PtHw1KAww78qh5ezLPQ7HUgoriJaZeI5oF5VidDJXuF6RSjlYct/mXiI2DcwkBFtUqZ2d/6gCr5m3CZmHEsFsAmBlqb6wafZ+jDR/w+xjczBWncq2MLAUVzpiNa1cf5QwZXWa5OpRmYIh2oJjX8SVLb4xqYy3VEwuzUNCCINkEl+Vx2/EYDSWouoPCCV5PcqVDVSpzNRoZmjaIoDdkACpA8OU+/xn4x8E2WfSDr6XL/ANIHrf8AREC4u4DhlMq/Sa55JnFOwKgoU1AseOJXTpCFBzUuXcwMdWSFFjFblC7MRKwfSA4Y5JXCHbE4pA+kQZAYV9hWvAPz80fDtdwaHcf7lEgzDrZMZ5t6pc5f0NJUES/rGh5j6juhdzGpe2MVG0ikXxlxs4iHBOoXOgkwYmldZjidU1FmK8oajdiGxYY6uXyL/j4VfIHw7UyC6DzMZh4G1XfiJWRLHt/iKnLrG9LmWZ2IqMwkekJ+EQB94rhjmNo1t6PMUHHmB8IFbiXXHeUHZjxuRdUi+eG+mYNq2F7NzkQ0Ohwfq/8ACQEaSVOvoGP4idRhvo/iLYSNJq5VVuPECqx6y1LlAVJuKQhuHQhLmjl8sbWL2gyEonMS043C4HzG1rDxD63UFNwHGV4mjsjMoAhDH0xPp0P+Kfpbe2X5S3JtjuzH1qCRN9GCo2d8wMj7xoXZr2i6B/iDJNpUx0RsVGW4h9iJQrmLAd2WxkUG1GGUIZqLAMeY5i5uLcVtyw8COo00Ker/AOy7H0X/AMljIkKejcVKsB8OYxm8yznEVh95hrSsydE4+sakRIZLw5gTvAhAV2jiCMOe5W8uyYMySx3NXvqCK23ex/fyL81tM+1a+lS7rTqUfumJbQMTQWPS4kXbEogKQBejEp1XXFQoXNR10ek4hvvMBWXWSRltlHPBHA3UIp26m5cJG7/c/wBfLPwCHwuP0yB0L6P4mJxgYeZSMEHZhjo3AJiDMwc0DAOt43ETN9b/ADEsF3o/MxYbyfaDGt6n3me5Rx9onGmTGZfvG0ujZzKUG6jzjcqvZX0x/Mf0fkL/AGX8onBmj1WGM0IrSckRbBBFOYNj6zYWO0ENBycwVKscmpZwUkDRF8xWt+kalKcNEDWNBGUHLFvDbUr7Qryal2qtr8J+A/NAK2O3sekXwwwGoYpDYSl6d5jh+MxppPuzlHm3Hiyj7wCAlRNITnZlFrzD0eYMg6L1+Tflj9iM0BubFbLGUUrE3OTiFUvUHRFcBnmG1BNpk6cy9rWoSS9uOI9NrAVnl+ICjsff/mmGVEpkb5wQasw9dkKy3MEO3MIVUpValAG5ZWUghNy8azMrb6QbYgsvJ6R0LMT/AMUx+A/GflwbeXbzglDSptrtGYGC7eJ5iHkfVBCDcY2t+0JcMS+55jVacssC7lLxN7p+X/mm4QHN/wBCO7JQ495TVsOYYLgNVIo1gmbQQhlE2aJgCNNzXiVdEbF+xX/f/NC2NeANOjUcMkLJiVtViKW4sF1cvMqDbfeOSqK83EmcxKCYCo92a3pfMXIsr5r4b/wL+B+t4OZa1qWa9nsTzmjMqzF1mTBjpKHtB4RR3i1+gPSFcq4lAEQKXCwXF7iWGwIX4/lDgp1LqouC+Eff5U+SFvdP+3WYUZre/TpHJJOBjHQgRTAGAgyEL8zFm6lK4m3UcpVzSRDq5cmWZbSVgBK+k24lSDimNU5CQAaNA15hV8nEWYPoWpUsDoZGX88fsqoNrlgyyvKP2JvtC/xGsWw2rs4vtGoSKBYL0QUUzcztstWT9FpxmC7TA1LOJWY3GnE3ibmggA7DXQi5H6OItIOYU2CYVpilJOOGV5g44PyR8QFUFvQlbQ3lfSDKgxv+ktK36diUKOWCJEneYNLveI1YtDuArsFkEJ0tzBkz+kFxG+tzNRLXaSxqp5YzMGIxOIuIYzHm4ADfunMLvAe9SrQcP3hnUoUGiAKjYRmeLqWH1l//AEH4z8Q0pOgIAdhv8qFqXlmZnW8B2Io/iKyzXeGNss0TuZWLu5RYlEXDFnMVZILh3AeZY2TBpagDZ6xzWB9Ync9IWcQYD3i1mWP6Wqob8uD3lsu+VhhwTq+hDBsmO/WCrZFGFjVHuGoeg8n2YyUGx+I/CsiXgIVWPkZaiJnb3S43y8EawIcstedzu3qVi7hzUDHFauWBeETr9JSDjxBRWGuqAMMHrUUQNzpvvAGvvL4qKniXsSlRuNwY/MHaglRgS1rA06ERLcwxK26lnLgh3yyrPTpKxhxL8S26/RSDHC7PWBMJu7/jHSg2J8kXYmgLiNNXqPViUWGgUTj1nlmsZdrFPrOM8wMlz/eYfmf6oWxDDxnxEF3HMQvvFYcRaC7vJBS0nDKHzMZhsSZGCZM1KBcIO8MudQrjcrjt0Nz0sA0Te4Us8fWWLv8ApKHnMTOIOOY+0DxDu4+86hEjdxRxDhkaOB6y6V34MPSIjSfHzB6g34mZEGVATJqtE4ZU3mpmdMQA3FxhnHrzLc8QpBhWM+8fO9SllEaekyEUmyJ/ukFVl+ZaLxvowlYk2mSXdTtMsBdU7RJlfpHmID8RlqGOd6GWXGB15ZelVeXcEsaP2HMGhADwyuHJFomkXEKcOYDdV9I4xueYWmSyyUObPWMAF0TD5nprDT4+CfqQLL02Yo5YJgqmpfgb/Mcyw8RUtWmOOOZsNBN6Yjl5l/5i3T2hX9zNauoPajmbhegS0Axx1QoLmT8S5uOOMJpIJhg4yhjL9yFFsg0r3RohOu6lzbrpxGN7gWpU5jXNLQR9lvng8QoY3z3mdkpNkS/WDRVZjnhJywNTiOU6SnMqaykKZj4XUcDJsY8sTTz2Pwzos8YIDQIC4IiK2vMTOLqVkKqBjWoZY4dcxxdFSr89Y9Ki127TU22D0g63UFjjxMuzDywUYuURBfZiNq+i4mgKThgBcXWNRdLALD7QOj7Rvv1gVv6wmq7OII29oZ1V6woB55TajjG5a41+YJTbKXftMrq9CKreWZX+4FGePrDrRiJxV31mmJw4iO+8poqHNyhxjxFQxEpHpEXKDPccfuP1MtEMABXcnaMvoI4t+ktcTPOJa0Nxsglalm4mrMxKer1hleahgrE44nPFd4Gdktz3feVbbNCxqYDB34gnUbzLzNs8ZlDAp9otyyqskOsalrd+IGtTviFr0gtnUTjJEXjLDuEWjpHd5iNDqWDLa4GFj5xC+WYXZfM4OYjZEdXuV1wTN8Q/9nMv6yt9EGkOfHPKJTT8A/6LpcU3gyROVc8Qa03Aa6SxSkwbmKlZsPEaHrFEq8kMY69eI25cS6au5mmglEwniFiXM7ZdDX1g1m7lXj3zKrC12jaVVk5YlnMrbKnRJV8+xP6kgH8JAowB4JfbMuhtyxKzT46SmyoF594UvMWcYxjMObiIyanY58xDALE70EOC4BbmL0iWVzuZ1WekqsnEXGCVSX6wNDDefEOqwjj0jBlP2X95DYM1mOEss9SO2RShrIYFm6RuAD5ltUG40Bm+0RvqT6S79IufviW5xBzd5hlqZtMDC7/Evrpl9JoupmrrcNbLlMYvrBvVjFPIzk1mXQZhZ6+spdOuJxcM0krkglpOLPSFU4ieVms1Gq4gaDc0F0M4do3eD1gogl0BrrAV3ipbcXF5EMwFMwK4KiyLPIXrxLxSVeIAgyfR/fscQHrK0cP+9Yq2MRHljsLxogE3Evn0jN+ZdBpIrqX7wp1lZQXbfmFbHN8xNZqVyLP8MqnhuawbZgw8RMdpkMkR123FGSLjNeku3J4jVlBUcdGXR4OkGsi0l6XTDLUEDMp/qXS7zjLxNFHSGeOJ/EAeYsUfSXjcHv1i3gYgwy62YvcC6cfosvpEQZH1l1VOJ6Q4jOctBDpKf2kpqrzvrx9Y20sW7+0fA3WLgEC2JlrT7zFcLhliXqaPzFsrMNxa5z3mzGerHHNBOKSBkIpdQLOWDyZ4zLKuxekXNLmXkg/+zo3LtmOuXiO+9yicSlcATm9+kEZzXiV/qlY37wN8vMbTB7RGS96iuIG+nMTqjAlWblOr30gK6Sgdbga6reYMYbbjlTfiGcOPEVSr8QMWzvSZVA3z3guzczHe5R2GUiYaeef2kNxizdiUK+sVjrxU0YbL32gycH2lh1uKzEtbW6h0OZtnMsMal25OYCuYjxVRK1HD2rpEefMGs3cW+hG+Mx3o4h7Q10mK3McxsW5l0Zw1e4W0wrVcRbsT6yy86mC7m5QJFrASzL1m5gMfSDniVXW4Ud/Et64OZdF9O8OovmFWCoto/NnM2t9JavxGtZb6RWg9HpPKnmXA4zUUa53bCLyu3h/c2CEAOrmPk2EfUbhSU5iS/PPWajsmQee828bg9GKkxviU1ohYg5l56ym7fvNxZzkj1qIeeZTViLhVaZen6y0MYlXuveJ07XEVMwf8ymK+8whWbu9yq4O8HALj63e48d42AqdCAX+44dMddQDJ1Uux46zN9Ll2+MErHmc3eekxUbYPDrLOA12hYLvEqrzlrvxLUV135jrbuEKFkULVFkV3L03ken/n7ewYSstDR4nHsmV88zIMZjrXMTHaClxpCx0xxEE1DDby5m2ziGtwM41BzjTzLxiK9GZ95Rz7ROntM1V+ZWsxy3lgo6O84ihh3GtXE5ao6zStVLXbu5Y0TO6qCt3czV5rUXC0t94MuoYUIW5PKJ2ixf1Iae0VuzmKa5r3h4zc4SsEWd1BggNDaxRL79ocnF2+Y7aIQNx2r9JZIYq4CS0sTteq/YFaqzvWsRW4LYVuKJZVKcNxqs/SJWY6Xi8xGAC494otN1ChNV3h3eZShWPSZv8AMOiNvG5xbDOd0RLcYlNVWZrguGQo41NF1Lac/SYvic1VzaWcwwwW94NtF9o249LmLt1LD8CZYDESrZVo1iKDkmWTK5jXaaNFv2m1z9ZRZ7zs+rBVVxGHeKABbuUoHMAxzBpn3lnDEWiPN9YZM7gp6jLjGKnyfsL1Co26wsz7zS2W41FrHEdGYwqTAE5J7Cpgv5g2uiorz9IXW/W4Xj+Y45xLawzxm4oWnW5aamE87lUfecqYii/iL195Z6/xBzuo3vNQ2+1TKUTPUmlbJsSgldYfSGEmbM41Fy1mLmueku98wcY5jVcVNJkzVy+uOZwu+k04jVk5j6otwgV/Qgot9YlgteYCggHnzG/6i0gbyZiXHW/YUAc6+kxZOiBZHlNSopAURgtLuskXL6wu5jlA576g3UvDkqDZr1lpxniZvcN/1KXbc53Fj+It4z0lVlUyMU6bizLvcEHtE5dE2dpnPESgr6TQZ9SDWjzG/WJvOp3Amju7hW8sDH2nki5aI7HM2bI6zVRD1MYVxMp2GJ5O81BgiYZlxSsZihbM2Z5Gv2YMS0n1jurzHENvOiOMaj7idV/1KDfEyVZDpMy3MuVcyYdxZl0XDU34lmHLHjmdHpHnDRNwq4GR0S7X0l523M1lV8Sq6z1g3DEcV33NubhreSOV7TzeZU2kM1s7yqDr1gWzLk3AC0sHtDi4sHF3mO8RN+szXqzDsLmdZTGBrmaDrAA6Q9vEVncOSIxwpP/Z"};
+/* ============================================================
+   Ai Metaverse — HUMANOID COMPANION  ("your buddy on the net")
+   A conversational face that lives on every page:
+     · three faces   : spatial (light-ribbon head) · real (photo) · robot
+     · five personas : ARIA · ATLAS · NOVA · ORACLE · PIXEL (voice + accent)
+     · CLICK TO TALK : browser STT with live captions, then a spoken reply
+     · companion kit : jokes, trivia, news, hugs, schedule memory,
+                       and it learns what you like (stored locally)
+   Everything is client-side. No uploads. No build step.
+   ============================================================ */
+(function () {
+  "use strict";
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+  var reduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  var LS_FACE = 'aimv_hm_face', LS_PERS = 'aimv_hm_persona', LS_VOICE = 'aimv_hm_voice',
+      LS_LIKES = 'aimv_likes', LS_EVENTS = 'aimv_events', SS_GREET = 'aimv_hm_greeted';
+
+  /* ==========================================================
+     VOICE PERSONAS
+     ========================================================== */
+  var PERSONAS = {
+    aria:   { label: 'ARIA',   desc: 'warm & human',      pitch: 1.12, rate: 1.00, c1: '#00f0ff', c2: '#a855f7', voice: /zira|samantha|aria|jenny|kate|serena|female/i },
+    atlas:  { label: 'ATLAS',  desc: 'deep & grounded',   pitch: 0.72, rate: 0.90, c1: '#5b8cff', c2: '#00f0ff', voice: /daniel|david|fred|alex|george|male/i },
+    nova:   { label: 'NOVA',   desc: 'bright & upbeat',   pitch: 1.34, rate: 1.12, c1: '#ff2fb9', c2: '#ffc857', voice: /zira|samantha|aria|victoria|female/i },
+    oracle: { label: 'ORACLE', desc: 'measured & wise',   pitch: 0.95, rate: 0.80, c1: '#9dff3d', c2: '#00f0ff', voice: /daniel|fred|olive|male/i },
+    pixel:  { label: 'PIXEL',  desc: 'playful robot',     pitch: 1.50, rate: 1.16, c1: '#ffc857', c2: '#ff2fb9', voice: /karen|moira|tessa|fiona|female/i }
+  };
+
+  var state = {
+    face: 'spatial',
+    persona: 'aria',
+    voiceOn: true,
+    open: false,
+    st: 'idle',              /* idle | listening | thinking | speaking */
+    interacted: 0,
+    mouthRaf: null,
+    blinkTimer: null,
+    idleTimer: null,
+    reco: null,
+    recoLive: false
+  };
+  function lsGet(k, d) { try { var v = localStorage.getItem(k); return v === null ? d : v; } catch (e) { return d; } }
+  function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  function lsJson(k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }
+  function lsSave(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+
+  state.face = lsGet(LS_FACE, 'real');   /* the photoreal portrait in the orb is the signature look */
+  state.persona = PERSONAS[lsGet(LS_PERS, '')] ? lsGet(LS_PERS, 'aria') : 'aria';
+  state.voiceOn = lsGet(LS_VOICE, '1') !== '0';
+  if (['spatial', 'real', 'robot'].indexOf(state.face) === -1) state.face = 'real';
+
+  /* ==========================================================
+     COMPANION BRAIN
+     ========================================================== */
+  var JOKES = [
+    'Why did the neural network break up with the chatbot? Too many layers of commitment.',
+    'I told my avatar a joke about the metaverse. It is still rendering the punchline.',
+    'Why do programmers prefer dark mode? Because light attracts bugs — and my visor attracts photons.',
+    'My friend asked my AI agent to be more spontaneous. It scheduled that for Tuesday.',
+    'What is a robot\'s favourite music genre? Heavy metal — obviously.'
+  ];
+  var TRIVIA = [
+    'The word "avatar" comes from Sanskrit avatāra — a deity\'s descent into the mortal world.',
+    'Craiyon began life in 2022 as "DALL·E mini", built by Boris Dayma, and has been generating royalty-free art here ever since.',
+    'The Ai Metaverse directory lists over 100 named virtual worlds, from Tivoli Cloud to Somnium Space.',
+    'Google Cardboard started as a 20% project in 2014 — a VR headset you fold from cardboard.',
+    'Your life-path number comes from adding every digit of your birthday until one remains. Masters 11 and 22 are kept whole.'
+  ];
+  var NEWS = [
+    'Late-breaking: the Ai-Labs sandbox just added 40 new open models for certification students.',
+    'Headlines: virtual retail storefronts built with digital twins grew again this quarter in the Ai Metaverse economy.',
+    'Newsflash: BitBucks round-up rewards now apply to virtual fashion purchases in-world.',
+    'Bulletin: the Metabox persona engine learned three new tricks — jokes, trivia and hugs. You are looking at one of them.'
+  ];
+  var IDLE = [
+    'Psst — tap CLICK TO TALK and tell me what you are building today.',
+    'Did you know you can forge an AI agent of yourself in four steps? Selfie, voice, birthday, done.',
+    'I keep your likes and your schedule in this browser only. Old-school buddy, new-school privacy.',
+    'Want a joke? A trivia nugget? A hug delivered with feeling? I do all three.',
+    'The metaverse is 100 worlds deep. I have opinions about at least 97 of them.'
+  ];
+  var KB = [
+    { k: ['hello', 'hi ', 'hey', 'yo ', 'good morning', 'good evening'], r: 'Hey, I am so glad you are here. I am your humanoid buddy in the Ai Metaverse — I talk, I listen, I joke, I browse worlds with you, and I remember what you love. What shall we do first?' },
+    { k: ['who are you', 'what are you', 'your name', 'introduce'], r: 'I am VERSED\'ai — a humanoid companion for the Ai Metaverse. Think of me as the friend who surfs the metaverse with you: I can talk, listen, joke, browse, search, remember your schedule and deliver messages with real feeling.' },
+    { k: ['avatar', 'clone', 'selfie', 'birth chart', 'horoscope', 'birthday'], r: 'To clone yourself virtually: upload a selfie, attach a voice snippet, and enter your birthday so I can mimic your horoscope traits. Four steps and you have an agent of your own — open Clone Yourself from the menu.' },
+    { k: ['craiyon', 'art', 'image', 'draw', 'paint', 'royalty'], r: 'Craiyon turns any text prompt into royalty-free images. Describe the subject, the style and the light, then re-roll until it sings. It lives inside Ai-Labs.' },
+    { k: ['world', 'environment', 'explore', 'vrchat', 'somnium', 'planet', 'mars', 'where can i go'], r: 'I can take you to Tivoli Cloud, Somnium Space, VRChat, Mona, Spatial and a hundred more — including a virtual trip to Mars. Pick one from the Worlds page and I will narrate the journey.' },
+    { k: ['free', 'tool', 'tools', 'directory', 'price', 'cost'], r: 'The Free AI Tools Directory covers writing, images, video, music and social — plus free cloud storage for members. Upgraded accounts unlock our most advanced models.' },
+    { k: ['enterprise', 'business', 'agent', 'digital twin', 'crm', 'telemark'], r: 'For enterprise we deploy purpose-driven custom agent models, digital twins of offices and storefronts, a free AI CRM, AI telemarketers and biometric payments with MyBUY\'o.' },
+    { k: ['learn', 'education', 'certif', 'course', 'programming', 'code', 'python', 'study'], r: 'Ai Education teaches AI programming and development with certification — neural networks, deep learning, computer vision, NLP, robotics and autonomous systems.' },
+    { k: ['video', 'youtube', 'face swap', 'reface', 'social'], r: 'You can create YouTube and social videos with AI, including Re-Face face swaps — script, render, caption and publish from one workspace.' },
+    { k: ['shop', 'store', 'fashion', 'decor', 'bitbuck', 'reward', 'buy'], r: 'Millions of virtual fashion, home décor and clothing items are in-world. Set up a virtual retail store, pay with biometrics, and earn BitBucks round-up rewards.' },
+    { k: ['music', 'song', 'lyric', 'record', 'concert'], r: 'Ai Records writes and produces original lyrics and tracks — then you can host a virtual concert in your own environment and invite the whole community.' },
+    { k: ['joke', 'funny', 'make me laugh'], r: function () { return JOKES[Math.floor(Math.random() * JOKES.length)]; } },
+    { k: ['trivia', 'fact', 'did you know', 'tell me something'], r: function () { return TRIVIA[Math.floor(Math.random() * TRIVIA.length)]; } },
+    { k: ['news', 'headline', 'what\'s new', 'whats new'], r: function () { return NEWS[Math.floor(Math.random() * NEWS.length)]; } },
+    { k: ['hug', 'kiss', 'love you', 'miss you', 'cheer me up'], r: 'Coming in for a hug… consider it delivered in person, with feeling. I can also pass one on to a friend on your behalf — I will say it in your agent\'s voice.' },
+    { k: ['schedule', 'calendar', 'appointment', 'remind', 'remember'], r: 'I keep a tiny calendar in this browser. Say "remember <thing> on <day>" and I will hold it for you. Ask "what\'s on my schedule?" any time.' },
+    { k: ['voice', 'persona', 'sound like', 'change your voice'], r: 'I speak in five personas — ARIA is warm and human, ATLAS deep and grounded, NOVA bright and upbeat, ORACLE measured and wise, PIXEL a playful robot. Tap a persona chip and hear the difference.' },
+    { k: ['face', 'look like', 'robot', 'real', 'spatial', 'appearance'], r: 'I wear three faces. Spatial is my light-ribbon head, Real is a photographed human face, Robot is brushed metal with a visor. Switch any time — I am the same buddy underneath.' },
+    { k: ['hour', 'open', 'address', 'where are you', 'contact', 'phone'], r: 'The humans behind me are at 1007 Yanceyville Street, Greensboro, North Carolina — weekdays nine to five, phone 336-805-0229. I, however, never sleep.' },
+    { k: ['thank', 'thanks', 'cheers'], r: 'Any time, friend. That is what buddies are for.' },
+    { k: ['bye', 'goodbye', 'see you', 'later'], r: 'See you soon. I will be right here, blinking politely at the corner of your screen.' }
+  ];
+
+  function brain(text) {
+    var s = String(text || '').toLowerCase();
+    /* timed reminders first — they are not calendar notes */
+    var rem0 = parseReminder(s);
+    if (rem0) {
+      var rl0 = reminders(); rl0.push({ t: rem0.t, due: rem0.due, done: false, at: new Date().toISOString() });
+      saveReminders(rl0.slice(-30));
+      setTimeout(checkReminders, Math.max(0, rem0.due - Date.now()) + 250);
+      return 'Reminder pinned: "' + rem0.t + '" at ' + new Date(rem0.due).toLocaleString() +
+             '. I will speak it the moment it is due, on any page you have open.';
+    }
+    /* schedule memory */
+    var m = s.match(/(?:remember|add to my schedule)\s+(.{3,90})/);
+    if (m) {
+      var ev = lsJson(LS_EVENTS, []);
+      ev.push({ t: m[1].trim(), at: new Date().toISOString() });
+      lsSave(LS_EVENTS, ev.slice(-20));
+      return 'Noted and pinned to your calendar: "' + m[1].trim() + '". I am never late for an appointment.';
+    }
+    if (/what'?s on my (schedule|calendar)|my (appointments|events)/.test(s)) {
+      var list = lsJson(LS_EVENTS, []);
+      if (!list.length) return 'Your calendar is blissfully empty. Say "remember <thing>" and I will hold a slot.';
+      return 'On your calendar: ' + list.slice(-5).map(function (e) { return '"' + e.t + '"'; }).join(', ') + '.';
+    }
+    if (/list my reminders|my reminders|show reminders/.test(s)) {
+      var rr = reminders().filter(function (x) { return !x.done; });
+      if (!rr.length) return 'No pending reminders. Say "remind me to <thing> in 10 minutes" and I will hold it.';
+      return 'Pending reminders: ' + rr.map(function (x) { return '"' + x.t + '" at ' + new Date(x.due).toLocaleTimeString(); }).join(' · ') + '.';
+    }
+    if (/clear my reminders|cancel reminders/.test(s)) { saveReminders([]); return 'All reminders cleared. Your calendar breathes again.'; }
+    var tk = s.match(/add task (.+)/);
+    if (tk) { var tl = tasks(); tl.push({ t: tk[1].trim(), done: false }); saveTasks(tl.slice(-30)); return 'Task added: "' + tk[1].trim() + '". I will keep it on your agent board.'; }
+    var ct = s.match(/(?:complete|finish|done with) task (.+)/);
+    if (ct) {
+      var tl2 = tasks(), hit = null;
+      tl2.forEach(function (x) { if (!x.done && x.t.toLowerCase().indexOf(ct[1].trim().slice(0, 12)) !== -1) { x.done = true; hit = x.t; } });
+      saveTasks(tl2);
+      return hit ? 'Nice — "' + hit + '" marked done. Momentum is a feature.' : 'I could not find an open task matching that. Say "list tasks" to see the board.';
+    }
+    if (/list tasks|my tasks|task board/.test(s)) {
+      var tt = tasks().filter(function (x) { return !x.done; });
+      if (!tt.length) return 'Task board is empty. "Add task <thing>" and I will track it.';
+      return 'Open tasks: ' + tt.map(function (x, i) { return (i + 1) + '. ' + x.t; }).join(' · ') + '.';
+    }
+    var dv = s.match(/deliver (?:a )?message to ([^:]{2,40}):(.{2,200})/);
+    if (dv) {
+      var sl = sentMsgs(); sl.push({ to: dv[1].trim(), text: dv[2].trim(), at: new Date().toISOString(), voice: PERSONAS[state.persona].label });
+      lsSave(LS_SENT, sl.slice(-20));
+      return 'On my way — I will deliver "' + dv[2].trim() + '" to ' + dv[1].trim() +
+             ' myself, in my ' + PERSONAS[state.persona].label + ' voice, with exactly the right amount of feeling.';
+    }
+    if (/delivered messages|my messages|sent messages/.test(s)) {
+      var ss = sentMsgs();
+      if (!ss.length) return 'No deliveries yet. Try "deliver a message to Ada: the build is live".';
+      return 'Deliveries: ' + ss.slice(-4).map(function (x) { return 'to ' + x.to + ' — "' + x.text + '" (' + x.voice + ')'; }).join(' · ') + '.';
+    }
+    /* learn likes */
+    var lk = s.match(/\bi (?:really )?(?:like|love|enjoy)\s+([a-z0-9 ,'-]{3,40})/);
+    if (lk) {
+      var likes = lsJson(LS_LIKES, []);
+      var topic = lk[1].trim().replace(/[.!,]$/, '');
+      if (topic && likes.indexOf(topic) === -1) { likes.push(topic); lsSave(LS_LIKES, likes.slice(-8)); }
+      return 'Got it — you love ' + topic + '. I will keep an eye out for worlds, tools and news that match, and bring them to you.';
+    }
+    for (var i = 0; i < KB.length; i++) {
+      for (var j = 0; j < KB[i].k.length; j++) {
+        if (s.indexOf(KB[i].k[j]) !== -1) {
+          var r = KB[i].r;
+          return typeof r === 'function' ? r() : r;
+        }
+      }
+    }
+    if (window.AIMV_BRAIN && typeof window.AIMV_BRAIN === 'function') {
+      try { return window.AIMV_BRAIN(text); } catch (e) {}
+    }
+    var likes2 = lsJson(LS_LIKES, []);
+    if (likes2.length && Math.random() < .35) {
+      return 'Interesting one. It reminds me of how much you like ' + likes2[likes2.length - 1] +
+             ' — want me to find a metaverse world or an AI tool built around that?';
+    }
+    return 'I hear you. I can clone your avatar, generate royalty-free art, open a hundred virtual worlds, tell jokes and trivia, keep your schedule, or just keep you company. Which sounds good?';
+  }
+
+  /* ==========================================================
+     FACES
+     ========================================================== */
+  function spatialFace() {
+    var ribbons = '';
+    var g = '';
+    var pairs = [['#00f0ff', '#7c5cff'], ['#7c5cff', '#ff2fb9'], ['#5b8cff', '#a855f7'], ['#00c2d4', '#5b8cff'], ['#a855f7', '#ff7ad9']];
+    for (var i = 0; i < 5; i++) {
+      g += '<linearGradient id="hmrg' + i + '" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="' + pairs[i][0] + '"/><stop offset="1" stop-color="' + pairs[i][1] + '"/></linearGradient>';
+    }
+    for (var n = 0; n < 16; n++) {
+      var t = n / 15;
+      var x0 = 96 + t * 30, y0 = 14 + t * 7;
+      var c1x = 40 + t * 26, c1y = 34 + t * 24;
+      var c2x = 52 + t * 26, c2y = 104 + t * 26;
+      var x3 = 96 + t * 34, y3 = 168 + t * 30;
+      var w = (24 - t * 13).toFixed(1);
+      var op = (0.8 - t * 0.42).toFixed(2);
+      ribbons += '<path class="hm-ribbon" style="animation-delay:' + (-n * .37).toFixed(2) + 's" d="M' + x0.toFixed(1) + ' ' + y0.toFixed(1) +
+        ' C ' + c1x.toFixed(1) + ' ' + c1y.toFixed(1) + ', ' + (c1x + 10).toFixed(1) + ' ' + (c1y + 36).toFixed(1) + ', ' + c2x.toFixed(1) + ' ' + c2y.toFixed(1) +
+        ' S ' + (x3 - 18).toFixed(1) + ' ' + (y3 - 28).toFixed(1) + ', ' + x3.toFixed(1) + ' ' + y3.toFixed(1) +
+        '" fill="none" stroke="url(#hmrg' + (n % 5) + ')" stroke-width="' + w + '" stroke-linecap="round" opacity="' + op + '" filter="url(#hmBlur)"/>';
+    }
+    var sparks = '';
+    for (var s2 = 0; s2 < 9; s2++) {
+      sparks += '<circle cx="' + (40 + s2 * 15 % 130) + '" cy="' + (26 + (s2 * 37) % 160) + '" r="' + (0.8 + (s2 % 3) * 0.5) + '" fill="#bff7ff" opacity="' + (0.25 + (s2 % 4) * 0.14).toFixed(2) + '"/>';
+    }
+    return '<span class="floatwrap"><svg viewBox="0 0 200 220" aria-label="VERSED ai spatial light-ribbon head" role="img"><defs>' + g +
+      '<filter id="hmBlur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2.1"/></filter>' +
+      '<radialGradient id="hmGlow" cx="50%" cy="42%" r="55%"><stop offset="0" stop-color="#7c5cff" stop-opacity=".5"/><stop offset="1" stop-color="#7c5cff" stop-opacity="0"/></radialGradient>' +
+      '</defs>' +
+      '<ellipse cx="104" cy="104" rx="86" ry="92" fill="url(#hmGlow)"/>' +
+      '<path d="M120 16 C 74 22, 50 60, 54 102 C 57 134, 72 156, 88 172 L 98 212 L 152 212 L 140 166 C 160 148, 170 116, 164 82 C 158 46, 144 22, 120 16 Z" fill="rgba(9,5,26,.62)"/>' +
+      ribbons +
+      '<ellipse class="hm-eye-glow" cx="126" cy="94" rx="13" ry="3.2" fill="#cffaff" opacity=".85" filter="url(#hmBlur)"/>' +
+      '<rect class="hm-mouth-light" x="118" y="136" width="27" height="7" rx="3.5" fill="url(#hmrg1)" opacity=".9" filter="url(#hmBlur)"/>' +
+      sparks + '</svg></span>';
+  }
+
+  function robotFace() {
+    return '<span class="floatwrap"><svg viewBox="0 0 200 220" aria-label="VERSED ai robot head" role="img"><defs>' +
+      '<linearGradient id="hmMetal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b4668"/><stop offset=".45" stop-color="#141a30"/><stop offset="1" stop-color="#2a3350"/></linearGradient>' +
+      '<linearGradient id="hmVisor" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#00f0ff"/><stop offset=".5" stop-color="#7c5cff"/><stop offset="1" stop-color="#ff2fb9"/></linearGradient>' +
+      '<radialGradient id="hmRGlow" cx="50%" cy="45%" r="55%"><stop offset="0" stop-color="#00f0ff" stop-opacity=".34"/><stop offset="1" stop-color="#00f0ff" stop-opacity="0"/></radialGradient>' +
+      '</defs>' +
+      '<ellipse cx="100" cy="108" rx="88" ry="94" fill="url(#hmRGlow)"/>' +
+      '<line x1="100" y1="30" x2="100" y2="14" stroke="#8fa0c9" stroke-width="3" stroke-linecap="round"/>' +
+      '<circle class="hm-antenna" cx="100" cy="11" r="5" fill="#00f0ff"/>' +
+      '<rect x="38" y="30" width="124" height="132" rx="30" fill="url(#hmMetal)" stroke="#5c6b96" stroke-width="2"/>' +
+      '<path d="M52 44h96M52 150h96" stroke="#0d1226" stroke-width="2" opacity=".7"/>' +
+      '<rect x="54" y="76" width="92" height="36" rx="18" fill="#05070f" stroke="#31406b" stroke-width="1.6"/>' +
+      '<rect class="hm-visor-eye" x="66" y="86" width="24" height="15" rx="7.5" fill="url(#hmVisor)"/>' +
+      '<rect class="hm-visor-eye" x="110" y="86" width="24" height="15" rx="7.5" fill="url(#hmVisor)"/>' +
+      '<g class="hm-jaw">' +
+        '<rect x="72" y="126" width="56" height="4.6" rx="2.3" fill="#0a0f1f" stroke="url(#hmVisor)" stroke-width="1.1"/>' +
+        '<rect x="78" y="134" width="44" height="4.6" rx="2.3" fill="#0a0f1f" stroke="url(#hmVisor)" stroke-width="1.1"/>' +
+        '<rect x="84" y="142" width="32" height="4.6" rx="2.3" fill="#0a0f1f" stroke="url(#hmVisor)" stroke-width="1.1"/>' +
+      '</g>' +
+      '<circle cx="34" cy="96" r="9" fill="#141a30" stroke="#5c6b96" stroke-width="2"/>' +
+      '<circle cx="166" cy="96" r="9" fill="#141a30" stroke="#5c6b96" stroke-width="2"/>' +
+      '<circle cx="34" cy="96" r="3" fill="#ff2fb9"/><circle cx="166" cy="96" r="3" fill="#ff2fb9"/>' +
+      '<path d="M70 162h60l10 26H60z" fill="#10162b" stroke="#5c6b96" stroke-width="2"/>' +
+      '<path d="M40 196c10-14 30-20 60-20s50 6 60 20" fill="none" stroke="#5c6b96" stroke-width="3" stroke-linecap="round"/>' +
+      '</svg></span>';
+  }
+
+  function assetBase() {
+    var sc = document.querySelector('script[src$="humanoid.js"]');
+    if (sc && sc.src) return sc.src.replace(/[^/]*$/, '');
+    return 'assets/';
+  }
+  function realFaceSrc() {
+    return (window.AIMV_FACES && window.AIMV_FACES.real) || (assetBase() + 'face-real.jpg');
+  }
+  function realFace() {
+    return '<span class="hm-photo">' +
+      '<img src="' + realFaceSrc() + '" alt="VERSED ai — photoreal human companion face" />' +
+      '<span class="lid l"></span><span class="lid r"></span>' +
+      '<span class="mouthglow"></span>' +
+      '<span class="sheen"></span>' +
+      '</span>';
+  }
+
+  function faceMarkup() {
+    if (state.face === 'real') return realFace();
+    if (state.face === 'robot') return robotFace();
+    return spatialFace();
+  }
+
+  /* ==========================================================
+     DOCK + LAUNCHER
+     ========================================================== */
+  var el = {};
+
+  function build() {
+    if ($('#hm-dock')) return;
+    var launch = document.createElement('button');
+    launch.className = 'hm-launch';
+    launch.id = 'hm-launch';
+    launch.type = 'button';
+    launch.setAttribute('aria-label', 'Talk to VERSED\'ai, your humanoid companion');
+    launch.innerHTML = '<span class="mini">' + faceMarkup() + '</span><span class="hm-flag" id="hm-flag">1</span>';
+    document.body.appendChild(launch);
+
+    var dock = document.createElement('div');
+    dock.className = 'hm-dock';
+    dock.id = 'hm-dock';
+    dock.setAttribute('role', 'dialog');
+    dock.setAttribute('aria-label', 'VERSED\'ai humanoid companion');
+    dock.innerHTML =
+      '<div class="hm-head">' +
+        '<div class="who">' +
+          '<span class="dotface" id="hm-dotface"></span>' +
+          '<div><b>VERSED&rsquo;ai <span style="color:var(--hm-accent)" id="hm-persname">ARIA</span></b>' +
+          '<span class="st" id="hm-status"><i></i><span id="hm-statustext">Online</span></span></div>' +
+        '</div>' +
+        '<button class="hm-close" id="hm-close" aria-label="Close companion">✕</button>' +
+      '</div>' +
+      '<div class="hm-body">' +
+        '<div class="hm-stage" id="hm-stage"><canvas class="orb-canvas" id="hm-orb"></canvas><span class="hm-orb-ring"></span><span class="hm-orb-ring r2"></span><span class="aura"></span><div class="hm-face" id="hm-face"></div></div>' +
+        '<div class="hm-caption idle" id="hm-caption">Click to talk — or type below. I listen, I answer, I remember.</div>' +
+        '<div class="hm-talkrow">' +
+          '<button class="hm-talk" id="hm-talk" type="button">' + micSvg() + '<span id="hm-talklabel">Click to talk</span></button>' +
+          '<button class="hm-mini-btn" id="hm-joke" type="button" title="Tell me a joke">😄</button>' +
+          '<button class="hm-mini-btn" id="hm-trivia" type="button" title="Trivia nugget">🧠</button>' +
+          '<button class="hm-mini-btn" id="hm-hug" type="button" title="Send a hug">💜</button>' +
+        '</div>' +
+        '<div class="hm-sugs" id="hm-sugs" aria-label="Suggested prompts"></div>' +
+        '<div class="hm-agentik" id="hm-agentik" role="group" aria-label="Agentic actions"></div>' +
+        '<div class="hm-personas" id="hm-personas" role="group" aria-label="Voice personas"></div>' +
+        '<div class="hm-facerow" id="hm-facerow" role="group" aria-label="Companion face">' +
+          '<button class="hm-facebtn" data-face="spatial" type="button">' + waveSvg() + 'Spatial</button>' +
+          '<button class="hm-facebtn" data-face="real" type="button">' + userSvg() + 'Real</button>' +
+          '<button class="hm-facebtn" data-face="robot" type="button">' + botSvg() + 'Robot</button>' +
+          '<button class="hm-voicebtn on" id="hm-voicebtn" type="button" aria-pressed="true">' + spkSvg() + '<span>voice</span></button>' +
+        '</div>' +
+        '<div class="hm-log" id="hm-log" aria-live="polite"></div>' +
+        '<form class="hm-inputrow" id="hm-form" autocomplete="off">' +
+          '<label for="hm-input" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Message VERSED\'ai</label>' +
+          '<input id="hm-input" maxlength="240" placeholder="Type a message to your buddy…" />' +
+          '<button type="submit">Send</button>' +
+        '</form>' +
+        '<div class="hm-cards" id="hm-cards">' +
+          '<button class="hm-card" data-act="surf" type="button"><b>🌊 Surfs with you</b>Pick a world and I come along, narrating as we go.</button>' +
+          '<button class="hm-card" data-act="learn" type="button"><b>🧠 Learns what you love</b>Tell me your interests; I surface worlds &amp; tools you missed.</button>' +
+          '<button class="hm-card" data-act="deliver" type="button"><b>💌 Delivers messages</b>I will say it in your agent\'s voice — hugs included.</button>' +
+          '<button class="hm-card" data-act="schedule" type="button"><b> Keeps your schedule</b>"Remember…" and it is pinned. Never late.</button>' +
+          '<button class="hm-card" data-act="news" type="button"><b>🗞️ Late-breaking news</b>Headlines from across the Ai Metaverse.</button>' +
+          '<button class="hm-card" data-act="fun" type="button"><b>😄 Smiles all day</b>Jokes, trivia and your daily horoscope trait.</button>' +
+        '</div>' +
+        '<div class="hm-ads" id="hm-ads"></div>' +
+        '<p class="hm-note">100% in your browser — voice, memory and face never leave this device. <b>Python bridge</b> optional via py/main.py.</p>' +
+      '</div>';
+    document.body.appendChild(dock);
+
+    el.launch = launch; el.dock = dock;
+    el.stage = $('#hm-stage'); el.face = $('#hm-face'); el.caption = $('#hm-caption');
+    el.talk = $('#hm-talk'); el.talkLabel = $('#hm-talklabel');
+    el.log = $('#hm-log'); el.status = $('#hm-status'); el.statusText = $('#hm-statustext');
+    el.persName = $('#hm-persname'); el.dotface = $('#hm-dotface'); el.flag = $('#hm-flag');
+
+    renderPersonas();
+    renderFace();
+    applyAccent();
+    syncControls();
+    registerOrb($('#hm-orb'));
+    renderSugs($('#hm-sugs'));
+    renderAds($('#hm-ads'));
+    renderAgentik($('#hm-agentik'));
+    setInterval(checkReminders, 4000);
+    checkReminders();
+
+    launch.addEventListener('click', function () { state.open ? close() : open(); });
+    $('#hm-close').addEventListener('click', close);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && state.open) close(); });
+
+    el.talk.addEventListener('click', function () {
+      if (state.st === 'speaking') { stopSpeaking(); return; }
+      if (state.st === 'listening') { stopListening(); return; }
+      listen();
+    });
+    $('#hm-joke').addEventListener('click', function () { say('joke', true); });
+    $('#hm-trivia').addEventListener('click', function () { say('trivia nugget', true); });
+    $('#hm-hug').addEventListener('click', function () { say('hug', true); });
+    $('#hm-voicebtn').addEventListener('click', function () {
+      state.voiceOn = !state.voiceOn;
+      lsSet(LS_VOICE, state.voiceOn ? '1' : '0');
+      if (!state.voiceOn && HAS_TTS) speechSynthesis.cancel();
+      stopMouth();
+      syncControls();
+      setStatus(state.voiceOn ? 'Voice on — ' + PERSONAS[state.persona].label : 'Voice muted — captions only');
+    });
+    $$('#hm-facerow [data-face]').forEach(function (b) {
+      b.addEventListener('click', function () { setFace(b.dataset.face); });
+    });
+    $('#hm-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var i = $('#hm-input'), v = i.value.trim();
+      if (!v) return;
+      i.value = '';
+      say(v, false);
+    });
+    $$('#hm-cards .hm-card').forEach(function (c) {
+      c.addEventListener('click', function () {
+        var acts = {
+          surf: 'which virtual worlds can we surf together?',
+          learn: 'how do you learn what I like?',
+          deliver: 'deliver a message with feeling',
+          schedule: 'what\'s on my schedule?',
+          news: 'news',
+          fun: 'make me smile'
+        };
+        say(acts[c.dataset.act] || 'hello', false);
+      });
+    });
+
+    /* greeting badge */
+    if (!sessionStorage.getItem(SS_GREET)) el.flag.style.display = 'grid';
+    else el.flag.style.display = 'none';
+
+    startBlink();
+    startIdle();
+  }
+
+  function micSvg() { return '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/></svg>'; }
+  function spkSvg() { return '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M17 8.5a5 5 0 0 1 0 7"/></svg>'; }
+  function waveSvg() { return '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round"><path d="M3 12c2-6 4-6 6 0s4 6 6 0 4-6 6 0"/></svg>'; }
+  function userSvg() { return '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></svg>'; }
+  function botSvg() { return '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="12" rx="4"/><path d="M12 7V4M9 12h.01M15 12h.01M9.5 16h5"/></svg>'; }
+
+  function renderPersonas() {
+    var box = $('#hm-personas');
+    if (!box) return;
+    box.innerHTML = Object.keys(PERSONAS).map(function (k) {
+      var p = PERSONAS[k];
+      return '<button class="hm-pers' + (k === state.persona ? ' on' : '') + '" data-pers="' + k + '" type="button" style="--pc:' + p.c1 + '" title="' + p.desc + ' · pitch ' + p.pitch + ' · rate ' + p.rate + '"><i></i>' + p.label + '</button>';
+    }).join('');
+    $$('#hm-personas [data-pers]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        setPersona(b.dataset.pers);
+        speak('Hi — I am ' + PERSONAS[state.persona].label + '. ' + PERSONAS[state.persona].desc + '. This is my voice.');
+      });
+    });
+  }
+
+  function renderFace() {
+    if (el.face) {
+      el.face.innerHTML = faceMarkup();
+      var ph = el.face.querySelector('.hm-photo img');
+      if (ph) ph.addEventListener('error', function () {
+        if (state.face === 'real') setFace('spatial');   /* never show a broken circle */
+      }, { once: true });
+    }
+    var mini = $('.mini', el.launch);
+    if (mini) mini.innerHTML = faceMarkup();
+    if (el.dotface) el.dotface.innerHTML = faceMarkup();
+    $$('#hm-facerow [data-face]').forEach(function (b) {
+      b.classList.toggle('on', b.dataset.face === state.face);
+    });
+  }
+
+  function applyAccent() {
+    var p = PERSONAS[state.persona];
+    document.documentElement.style.setProperty('--hm-accent', p.c1);
+    document.documentElement.style.setProperty('--hm-accent-2', p.c2);
+    if (el.persName) { el.persName.textContent = p.label; el.persName.style.color = p.c1; }
+  }
+
+  function syncControls() {
+    $$('#hm-personas [data-pers]').forEach(function (b) { b.classList.toggle('on', b.dataset.pers === state.persona); });
+    var vb = $('#hm-voicebtn');
+    if (vb) { vb.classList.toggle('on', state.voiceOn); vb.setAttribute('aria-pressed', String(state.voiceOn)); $('span', vb).textContent = state.voiceOn ? 'voice' : 'muted'; }
+    $$('#hm-facerow [data-face]').forEach(function (b) { b.classList.toggle('on', b.dataset.face === state.face); });
+  }
+
+  function open() {
+    state.open = true;
+    el.dock.classList.add('open');
+    el.flag.style.display = 'none';
+    try { sessionStorage.setItem(SS_GREET, '1'); } catch (e) {}
+    state.interacted = Math.max(state.interacted, 1);
+    if (!el.log.children.length) {
+      var likes = lsJson(LS_LIKES, []);
+      var greet = 'Welcome to the world of the Ai Metaverse! I am VERSED\'ai — your very own friend and sidekick on the net. ' +
+        'I can talk, listen, joke, browse worlds with you, keep your schedule and deliver messages with feeling.' +
+        (likes.length ? ' And I still remember that you like ' + likes[likes.length - 1] + '.' : '');
+      pushMsg('bot', greet);
+      setCaption(greet);
+      if (state.voiceOn) speak(greet);
+    }
+    setTimeout(function () { var i = $('#hm-input'); if (i && window.innerWidth > 700) i.focus(); }, 250);
+  }
+  function close() {
+    state.open = false;
+    el.dock.classList.remove('open');
+    stopListening();
+    if (HAS_TTS) speechSynthesis.cancel();
+    stopMouth();
+    setState('idle');
+  }
+
+  /* ==========================================================
+     STATE / CAPTION / STATUS
+     ========================================================== */
+  function setState(st) {
+    state.st = st;
+    if (el.dock) {
+      el.dock.classList.remove('is-idle', 'is-listening', 'is-thinking', 'is-speaking');
+      el.dock.classList.add('is-' + st);
+    }
+    if (el.talk) {
+      el.talk.classList.remove('listening', 'thinking', 'speaking');
+      if (st !== 'idle') el.talk.classList.add(st);
+    }
+    if (el.launch) {
+      el.launch.classList.toggle('talking', st === 'speaking');
+      el.launch.classList.toggle('listening', st === 'listening');
+    }
+    if (el.status) {
+      el.status.className = 'st ' + (st === 'idle' ? '' : st);
+    }
+    var labels = {
+      idle: state.voiceOn ? 'Click to talk' : 'Click to talk (muted)',
+      listening: 'Listening… tap to stop',
+      thinking: 'Thinking…',
+      speaking: 'Speaking… tap to stop'
+    };
+    if (el.talkLabel) el.talkLabel.textContent = labels[st];
+    syncStages();
+  }
+  function setStatus(t) { if (el.statusText) el.statusText.textContent = t; }
+  function setCaption(t, live) {
+    if (!el.caption) return;
+    el.caption.className = 'hm-caption' + (live ? '' : '');
+    el.caption.innerHTML = live ? '<span class="live">“' + escapeHtml(t) + '”</span>' : escapeHtml(t);
+  }
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; });
+  }
+  function pushMsg(cls, txt) {
+    if (!el.log) return;
+    var d = document.createElement('div');
+    d.className = 'hm-msg ' + cls;
+    d.textContent = txt;
+    el.log.appendChild(d);
+    while (el.log.children.length > 24) el.log.removeChild(el.log.firstChild);
+    el.log.scrollTop = el.log.scrollHeight;
+  }
+
+  /* ==========================================================
+     MOUTH + BLINK + IDLE
+     ========================================================== */
+  function startMouth(random) {
+    stopMouth();
+    var t = 0;
+    state.mouthRaf = setInterval(function () {
+      t += .19;
+      var v = random ? (.26 + Math.random() * .74) : (.32 + .64 * Math.abs(Math.sin(t)) * Math.abs(Math.cos(t * .55)));
+      if (el.stage) el.stage.style.setProperty('--mouth', Math.max(.05, Math.min(1, v)).toFixed(3));
+    }, 62);
+  }
+  function stopMouth() {
+    if (state.mouthRaf) { clearInterval(state.mouthRaf); state.mouthRaf = null; }
+    if (el.stage) el.stage.style.removeProperty('--mouth');
+  }
+  function startBlink() {
+    if (state.blinkTimer) clearTimeout(state.blinkTimer);
+    (function loop() {
+      state.blinkTimer = setTimeout(function () {
+        var f = el.face;
+        if (f && state.open && !reduceMotion) {
+          f.classList.add('blink');
+          setTimeout(function () { f.classList.remove('blink'); }, 140);
+        }
+        loop();
+      }, 2400 + Math.random() * 4200);
+    })();
+  }
+  function startIdle() {
+    if (state.idleTimer) clearInterval(state.idleTimer);
+    state.idleTimer = setInterval(function () {
+      if (!state.open || state.st !== 'idle' || !state.interacted || !state.voiceOn) return;
+      if (Math.random() < .55) return;
+      var likes = lsJson(LS_LIKES, []);
+      var line = IDLE[Math.floor(Math.random() * IDLE.length)];
+      if (likes.length && Math.random() < .5) {
+        line = 'Because you like ' + likes[likes.length - 1] + ', I found something for you: the Worlds page has an environment built around exactly that. Want me to open it?';
+      }
+      pushMsg('bot', line);
+      setCaption(line);
+      speak(line);
+    }, 52000);
+  }
+
+  /* ==========================================================
+     SPEECH (TTS with persona) + LISTEN (STT)
+     ========================================================== */
+  var HAS_TTS = ('speechSynthesis' in window);
+  var RECO = window.SpeechRecognition || window.webkitSpeechRecognition || null;
+
+  function pickVoice(p) {
+    if (!HAS_TTS) return null;
+    var vs = speechSynthesis.getVoices() || [];
+    if (!vs.length) return null;
+    var en = vs.filter(function (v) { return /^en/i.test(v.lang); });
+    var pool = en.length ? en : vs;
+    return pool.filter(function (v) { return p.voice.test(v.name); })[0] || pool[0] || null;
+  }
+  function speak(text, onDone) {
+    var plain = String(text).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+    if (!plain) { if (onDone) onDone(); return; }
+    state.interacted = Math.max(state.interacted, 1);
+    if (!state.voiceOn || !HAS_TTS) {
+      setState('speaking');
+      setStatus('Captions only (voice off)');
+      startMouth(true);
+      var ms = Math.min(9000, 1300 + plain.length * 34);
+      setTimeout(function () { stopMouth(); setState('idle'); setStatus('Online'); if (onDone) onDone(); }, reduceMotion ? 400 : ms);
+      return;
+    }
+    try {
+      speechSynthesis.cancel();
+      var p = PERSONAS[state.persona];
+      var u = new SpeechSynthesisUtterance(plain);
+      var v = pickVoice(p); if (v) u.voice = v;
+      u.pitch = p.pitch; u.rate = p.rate; u.volume = 1;
+      var spoke = false;
+      u.onstart = function () { spoke = true; setState('speaking'); setStatus('Speaking as ' + p.label); startMouth(false); };
+      u.onboundary = function () { startMouth(true); };
+      u.onend = u.onerror = function () { stopMouth(); setState('idle'); setStatus('Online · ' + p.label); if (onDone) onDone(); };
+      speechSynthesis.speak(u);
+      setTimeout(function () {
+        if (!spoke && !speechSynthesis.speaking && state.st === 'speaking') { stopMouth(); setState('idle'); if (onDone) onDone(); }
+      }, 4000);
+    } catch (e) { stopMouth(); setState('idle'); if (onDone) onDone(); }
+  }
+  function stopSpeaking() {
+    if (HAS_TTS) speechSynthesis.cancel();
+    stopMouth();
+    setState('idle');
+    setStatus('Stopped');
+  }
+
+  function listen() {
+    if (!RECO) {
+      setCaption('This browser has no speech recognition — type to me below instead. (Chrome and Edge support CLICK TO TALK.)');
+      setStatus('Mic unsupported here');
+      var i = $('#hm-input'); if (i) i.focus();
+      return;
+    }
+    if (state.recoLive) { stopListening(); return; }
+    try {
+      var R = new RECO();
+      state.reco = R;
+      R.lang = 'en-US'; R.interimResults = true; R.maxAlternatives = 1; R.continuous = false;
+      R.onstart = function () { state.recoLive = true; setState('listening'); setStatus('Listening…'); setCaption('Listening…', true); };
+      R.onresult = function (ev) {
+        var interim = '', fin = '';
+        for (var i = 0; i < ev.results.length; i++) {
+          if (ev.results[i].isFinal) fin += ev.results[i][0].transcript;
+          else interim += ev.results[i][0].transcript;
+        }
+        if (interim) setCaption(interim, true);
+        if (fin) { stopListening(); say(fin.trim(), true); }
+      };
+      R.onerror = function (ev) {
+        stopListening();
+        var why = (ev && ev.error === 'not-allowed') ? 'Microphone permission denied — allow it in your browser, or type below.' :
+                  'I could not hear that (' + ((ev && ev.error) || 'error') + '). Try again, or type.';
+        setCaption(why); setStatus('Mic error');
+        pushMsg('bot', why);
+      };
+      R.onend = function () { if (state.recoLive) { stopListening(); setCaption('I did not catch anything — tap CLICK TO TALK again.'); } };
+      R.start();
+    } catch (e) { stopListening(); setCaption('Microphone failed to start. Type below instead.'); }
+  }
+  function stopListening() {
+    state.recoLive = false;
+    try { if (state.reco) state.reco.stop(); } catch (e) {}
+    state.reco = null;
+    if (state.st === 'listening') setState('idle');
+  }
+
+  /* ---------- the conversation ---------- */
+  function say(userText, fromVoice) {
+    if (!state.open) open();
+    pushMsg('me', userText);
+    setCaption('Thinking…');
+    setState('thinking');
+    setStatus('Thinking…');
+    if (window.eel && window.eel.user_said) {
+      try {
+        window.eel.user_said(userText)(function (reply) {
+          pushMsg('bot', reply); setCaption(reply); speak(reply);
+        });
+        return;
+      } catch (e) {}
+    }
+    setTimeout(function () {
+      var reply = brain(userText);
+      pushMsg('bot', reply);
+      setCaption(reply);
+      refreshSugs(reply);
+      speak(reply);
+      if (fromVoice) { /* keep flow */ }
+    }, reduceMotion ? 60 : 420 + Math.random() * 380);
+  }
+
+  function renderAgentik(host) {
+    if (!host) return;
+    host.innerHTML =
+      '<button class="hm-ag" data-ag="plan" type="button" title="Read your reminders, tasks and traits, then speak a plan">🧭 Plan my day</button>' +
+      '<button class="hm-ag" data-ag="prompt" type="button" title="Generate a Craiyon prompt from your persona">🎨 Art prompt</button>' +
+      '<button class="hm-ag" data-ag="rem" type="button" title="Quick reminder">⏰ Remind</button>' +
+      '<button class="hm-ag" data-ag="apis" type="button" title="Open APIKonnect">🔌 APIKonnect</button>';
+    $('[data-ag="plan"]', host).addEventListener('click', function () {
+      var rem = reminders().filter(function (x) { return !x.done; });
+      var tk = tasks().filter(function (x) { return !x.done; });
+      var pe = lsJson('aimv_profile_v1', {}).persona || {};
+      var line = 'Here is your day: ' + (rem.length ? rem.length + ' reminder' + (rem.length > 1 ? 's' : '') + ' (' + rem[0].t + ' first), ' : 'no reminders, ') +
+        (tk.length ? tk.length + ' open task' + (tk.length > 1 ? 's' : '') + ' (' + tk[0].t + ' leads), ' : 'an empty task board, ') +
+        'and a ' + (pe.sign || 'curious') + ' energy profile led by ' + (pe.top || 'wit') + '. I would start with the hardest thing while your ' + (pe.top || 'wit') + ' is fresh.';
+      pushMsg('bot', line); setCaption(line); refreshSugs(line); speak(line);
+    });
+    $('[data-ag="prompt"]', host).addEventListener('click', function () {
+      var likes = lsJson(LS_LIKES, []);
+      var pe = lsJson('aimv_profile_v1', {}).persona || {};
+      var sub = likes.length ? likes[likes.length - 1] : 'a luminous digital twin';
+      var line = 'Craiyon prompt: "' + sub + ' as a ' + (pe.sign || 'celestial') + ' deity of the metaverse, ' +
+        (pe.element || 'light') + '-element ribbons, volumetric glow, cinematic rim light, 8k detail" — copied to your clipboard and queued in Ai-Labs.';
+      try { if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(sub + ' as a ' + (pe.sign || 'celestial') + ' deity of the metaverse, ' + (pe.element || 'light') + '-element ribbons, volumetric glow, cinematic rim light, 8k detail'); } catch (e) {}
+      pushMsg('bot', line); setCaption(line); refreshSugs(line); speak(line);
+    });
+    $('[data-ag="rem"]', host).addEventListener('click', function () {
+      var i = $('#hm-input'); if (i) { i.value = 'remind me to '; i.focus(); }
+    });
+    $('[data-ag="apis"]', host).addEventListener('click', function () { location.href = 'apikonnect/index.html'; });
+  }
+
+  /* ---------- public controls ---------- */
+  function setFace(f) {
+    if (['spatial', 'real', 'robot'].indexOf(f) === -1) return;
+    state.face = f;
+    lsSet(LS_FACE, f);
+    renderFace();
+    syncStages();
+    var names = { spatial: 'my spatial light-ribbon head', real: 'my photographed human face', robot: 'my brushed-metal robot head' };
+    setStatus('Face: ' + f);
+    if (state.open) speak('This is ' + names[f] + '. Same buddy, new look.');
+  }
+  function setPersona(k) {
+    if (!PERSONAS[k]) return;
+    state.persona = k;
+    lsSet(LS_PERS, k);
+    applyAccent();
+    syncControls();
+    setStatus('Persona: ' + PERSONAS[k].label);
+  }
+
+  /* ---------- Python (Eel) bridge: desktop voice lip-sync ---------- */
+  window.avatar_say = function (text) {
+    if (!state.open) open();
+    setState('speaking');
+    setStatus('Speaking via Python TTS…');
+    startMouth(true);
+    var ms = Math.min(12000, 1400 + String(text).length * 55);
+    setTimeout(function () { stopMouth(); setState('idle'); setStatus('Online'); }, ms);
+    return String(text || '');
+  };
+
+
+  /* ==========================================================
+     SUGGESTIVE PROMPTING — chips drawn from the repo brain
+     ========================================================== */
+  var SUGGESTS = [
+    'Clone myself in four steps', 'Show me worlds for music lovers',
+    'Write a Craiyon prompt for my avatar', 'What trait does my birthday give me?',
+    'Find a free tool for video edits', 'Remember demo day on Friday',
+    'Tell me a joke', 'Connect my APIs in APIKonnect',
+    'Plan my day', 'Deliver a message to my team: the build is live'
+  ];
+  function followups(reply) {
+    var r = String(reply).toLowerCase(), out = [];
+    if (/clone|selfie|avatar|birthday/.test(r)) out = ['Record my voice snippet', 'What does my zodiac say?', 'Forge the agent now'];
+    else if (/world|metaverse|mars/.test(r)) out = ['Which world fits a concert?', 'Route me to Somnium Space', 'What is Planet.Ai?'];
+    else if (/art|craiyon|image|prompt/.test(r)) out = ['Make it cyberpunk', 'Nine variants please', 'Save the prompt to my agent'];
+    else if (/tool|free|directory/.test(r)) out = ['Best tool for lyrics?', 'Is Wordtune free?', 'Open the tools directory'];
+    else if (/schedule|remind|calendar/.test(r)) out = ['Remind me in 2 minutes to stretch', 'List my reminders', 'Add task ship the demo'];
+    else if (/joke|trivia|news/.test(r)) out = ['Another one', 'Tell me trivia', 'What is new today?'];
+    else if (/voice|persona/.test(r)) out = ['Sound like ATLAS', 'Sound like PIXEL', 'Mute yourself'];
+    else out = ['What can you do for me?', 'Clone myself in four steps', 'Tell me a joke'];
+    return out;
+  }
+  var sugHosts = [];
+  function renderSugs(host, list) {
+    if (!host) return;
+    host.innerHTML = (list || SUGGESTS).slice(0, 4).map(function (t) {
+      return '<button class="hm-sug" type="button" data-sug="' + escapeHtml(t) + '">✨ ' + escapeHtml(t) + '</button>';
+    }).join('');
+    $$('[data-sug]', host).forEach(function (b) {
+      b.addEventListener('click', function () { say(b.dataset.sug, false); });
+    });
+    if (sugHosts.indexOf(host) === -1) sugHosts.push(host);
+  }
+  function refreshSugs(reply) {
+    sugHosts.forEach(function (h) { renderSugs(h, followups(reply)); });
+  }
+
+  /* ==========================================================
+     AD-SERVE BOX — sponsored by Alibaba & Qwen
+     ========================================================== */
+  var ADS = [
+    { tag: 'Alibaba Cloud', t: 'Model Studio', d: 'Fine-tune and serve Qwen-Max behind your agent with one console.', u: 'https://www.alibabacloud.com/product/modelstudio' },
+    { tag: 'Qwen', t: 'Qwen-Max', d: 'Frontier reasoning from the Tongyi Qianwen family — a single API call away.', u: 'https://qwen.ai' },
+    { tag: 'Qwen', t: 'Qwen-VL', d: 'Vision-language eyes for your avatar: images in, grounded answers out.', u: 'https://huggingface.co/Qwen' },
+    { tag: 'Alibaba Cloud', t: 'PAI-EAS inference', d: 'GPU endpoints that scale to zero between conversations. Pay per token.', u: 'https://www.alibabacloud.com/product/machine-learning' },
+    { tag: 'Qwen', t: 'Qwen-Agent', d: 'Open-source agent framework: tools, memory and planning for your forge.', u: 'https://github.com/QwenLM/Qwen-Agent' },
+    { tag: 'Alibaba Cloud', t: 'Tongyi Tingwu', d: 'Meeting transcription that feeds your companion\u2019s schedule automatically.', u: 'https://www.alibabacloud.com' }
+  ];
+  var adHosts = [], adIx = 0;
+  function renderAds(host) {
+    if (!host || adHosts.indexOf(host) !== -1) return;
+    adHosts.push(host);
+    paintAd(host, adIx);
+  }
+  function paintAd(host, ix) {
+    var a = ADS[ix % ADS.length];
+    host.innerHTML =
+      '<div class="hm-ad-head"><span class="hm-ad-badge">Ad</span><span>Sponsored · served by Alibaba &amp; Qwen</span>' +
+      '<button class="hm-ad-next" type="button" title="Next ad">↻</button></div>' +
+      '<a class="hm-ad" href="' + a.u + '" target="_blank" rel="noopener noreferrer sponsored">' +
+        '<b>' + a.t + '</b><span>' + a.d + '</span><em>' + a.tag + ' ↗</em>' +
+      '</a>';
+    var nx = $('.hm-ad-next', host);
+    if (nx) nx.addEventListener('click', function (e) { e.preventDefault(); adIx++; paintAllAds(); });
+  }
+  function paintAllAds() { adHosts.forEach(function (h) { paintAd(h, adIx); }); }
+  setInterval(function () { adIx++; paintAllAds(); }, 9000);
+
+  /* ==========================================================
+     REMINDERS · TASKS · DELIVERED MESSAGES (agentic + communicative)
+     ========================================================== */
+  var LS_REM = 'aimv_reminders', LS_TASKS = 'aimv_tasks', LS_SENT = 'aimv_sent';
+  var DAYMS = 86400000;
+  function parseReminder(text) {
+    var m, now = Date.now();
+    if ((m = text.match(/remind me to (.+?) in (\d+(?:\.\d+)?)\s*(minute|min|hour|hr|second|sec)s?/i))) {
+      var mult = /h/i.test(m[3]) ? 3600000 : (/s/i.test(m[3]) && !/min/i.test(m[3]) ? 1000 : 60000);
+      return { t: m[1].trim(), due: now + parseFloat(m[2]) * mult };
+    }
+    if ((m = text.match(/remind me to (.+?) at (\d{1,2})(?::(\d{2}))?\s*(am|pm)?/i))) {
+      var d = new Date(); var h = +m[2]; var ap = (m[4] || '').toLowerCase();
+      if (ap === 'pm' && h < 12) h += 12; if (ap === 'am' && h === 12) h = 0;
+      d.setHours(h, +(m[3] || 0), 0, 0);
+      if (d.getTime() < now) d.setTime(d.getTime() + DAYMS);
+      return { t: m[1].trim(), due: d.getTime() };
+    }
+    if ((m = text.match(/remind me to (.+?) on (monday|tuesday|wednesday|thursday|friday|saturday|sunday)/i))) {
+      var names = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+      var target = names.indexOf(m[2].toLowerCase());
+      var dd = new Date(); dd.setHours(9, 0, 0, 0);
+      var delta = (target - dd.getDay() + 7) % 7 || 7;
+      dd.setTime(dd.getTime() + delta * DAYMS);
+      return { t: m[1].trim(), due: dd.getTime() };
+    }
+    if ((m = text.match(/remind me to (.+)/i))) return { t: m[1].trim(), due: now + 3600000 };
+    return null;
+  }
+  function reminders() { return lsJson(LS_REM, []); }
+  function saveReminders(v) { lsSave(LS_REM, v); }
+  function tasks() { return lsJson(LS_TASKS, []); }
+  function saveTasks(v) { lsSave(LS_TASKS, v); }
+  function sentMsgs() { return lsJson(LS_SENT, []); }
+
+  function checkReminders() {
+    var list = reminders(), now = Date.now(), fired = false;
+    list.forEach(function (r) {
+      if (!r.done && r.due <= now) {
+        r.done = true; fired = true;
+        var line = '⏰ Reminder: ' + r.t + '. Right on time — I am never late.';
+        if (state.open) { pushMsg('bot', line); setCaption(line); }
+        toastAgent(line);
+        speak(line);
+      }
+    });
+    if (fired) saveReminders(list);
+  }
+  function toastAgent(line) {
+    var t = $('#hm-rem-toast');
+    if (!t) {
+      t = document.createElement('div'); t.id = 'hm-rem-toast'; t.className = 'hm-rem-toast';
+      document.body.appendChild(t);
+      t.addEventListener('click', function () { open(); t.classList.remove('show'); });
+    }
+    t.textContent = line;
+    t.classList.add('show');
+    setTimeout(function () { t.classList.remove('show'); }, 12000);
+  }
+
+  /* ==========================================================
+     EMBEDDED STAGE (hero / pages) — face + CLICK TO TALK inline
+     ========================================================== */
+  function mountStage(host) {
+    if (!host || host.dataset.hmStage) return;
+    host.dataset.hmStage = '1';
+    host.classList.add('hm-stage-embed');
+    host.innerHTML =
+      '<div class="hm-estage"><canvas class="orb-canvas" data-e="orb"></canvas><span class="hm-orb-ring"></span><span class="hm-orb-ring r2"></span><span class="aura"></span><div class="hm-face" data-e="face"></div></div>' +
+      '<div class="hm-caption idle" data-e="cap">Click to talk — I listen, I answer, I remember.</div>' +
+      '<div class="hm-talkrow"><button class="hm-talk" data-e="talk" type="button">' + micSvg() + '<span data-e="talklabel">Click to talk</span></button>' +
+      '<button class="hm-mini-btn" data-e="joke" type="button" title="Joke">😄</button>' +
+      '<button class="hm-mini-btn" data-e="trivia" type="button" title="Trivia">🧠</button>' +
+      '<button class="hm-mini-btn" data-e="hug" type="button" title="Hug">💜</button></div>' +
+      '<div class="hm-faceswitch" data-e="fs" role="group" aria-label="Companion face">' +
+        '<button class="hm-fs" data-eface="spatial" type="button" title="Spatial light-ribbon face">' + waveSvg() + '</button>' +
+        '<button class="hm-fs" data-eface="real" type="button" title="Photoreal face">' + userSvg() + '</button>' +
+        '<button class="hm-fs" data-eface="robot" type="button" title="Robot face">' + botSvg() + '</button>' +
+      '</div>' +
+      '<div class="hm-sugs" data-e="sugs"></div>' +
+      '<div class="hm-ads" data-e="ads"></div>';
+    $$('[data-eface]', host).forEach(function (b) {
+      b.addEventListener('click', function () { setFace(b.dataset.eface); });
+    });
+    var face = $('[data-e="face"]', host);
+    function paint() { face.innerHTML = faceMarkup(); }
+    paint();
+    host._hmPaint = paint;
+    $('[data-e="talk"]', host).addEventListener('click', function () {
+      if (state.st === 'speaking') { stopSpeaking(); return; }
+      if (state.st === 'listening') { stopListening(); return; }
+      listen();
+    });
+    $('[data-e="joke"]', host).addEventListener('click', function () { say('joke', false); });
+    $('[data-e="trivia"]', host).addEventListener('click', function () { say('trivia nugget', false); });
+    $('[data-e="hug"]', host).addEventListener('click', function () { say('hug', false); });
+    renderSugs($('[data-e="sugs"]', host));
+    renderAds($('[data-e="ads"]', host));
+    registerOrb($('[data-e="orb"]', host));
+    stageHosts.push(host);
+    syncStages();
+  }
+  var stageHosts = [];
+  function syncStages() {
+    stageHosts.forEach(function (h) {
+      var f = $('[data-e="face"]', h); if (f) f.innerHTML = faceMarkup();
+      var cap = $('[data-e="cap"]', h);
+      if (cap) cap.textContent = state.st === 'listening' ? 'Listening…' : (state.st === 'speaking' ? 'Speaking…' : 'Click to talk — I listen, I answer, I remember.');
+      var tk = $('[data-e="talk"]', h);
+      if (tk) { tk.classList.remove('listening', 'thinking', 'speaking'); if (state.st !== 'idle') tk.classList.add(state.st); }
+      var lb = $('[data-e="talklabel"]', h);
+      if (lb) lb.textContent = { idle: 'Click to talk', listening: 'Listening… tap to stop', thinking: 'Thinking…', speaking: 'Speaking… tap to stop' }[state.st];
+      $$('[data-eface]', h).forEach(function (b) { b.classList.toggle('on', b.dataset.eface === state.face); });
+      var mouth = $('.hm-estage', h);
+      if (mouth) mouth.style.setProperty('--mouth', el.stage ? (el.stage.style.getPropertyValue('--mouth') || '') : '');
+    });
+  }
+
+  /* ==========================================================
+     LIVE ORB CANVAS — the PIL orb art, animated
+     base texture: assets/face-orb.jpg + drifting constellation
+     ========================================================== */
+  var orbCanvases = [], orbPts = [], orbImg = null, orbRaf = null;
+  function orbImage() {
+    if (orbImg) return orbImg;
+    try {
+      orbImg = new Image();
+      orbImg.src = assetBase() + 'face-orb.jpg';
+    } catch (e) { orbImg = null; }
+    return orbImg;
+  }
+  function seedOrb() {
+    orbPts = [];
+    for (var i = 0; i < 34; i++) {
+      var a = Math.random() * Math.PI * 2, r = Math.sqrt(Math.random()) * .82;
+      orbPts.push({ x: Math.cos(a) * r, y: Math.sin(a) * r,
+                    vx: (Math.random() - .5) * .0009, vy: (Math.random() - .5) * .0009,
+                    s: 1 + Math.random() * 2.2, p: Math.random() * 6.28 });
+    }
+  }
+  function registerOrb(cvs) {
+    if (!cvs || orbCanvases.indexOf(cvs) !== -1) return;
+    var ctx = null;
+    try { ctx = cvs.getContext('2d'); } catch (e) { cvs.style.display = 'none'; return; }
+    if (!ctx) { cvs.style.display = 'none'; return; }
+    orbCanvases.push(cvs);
+    if (!orbPts.length) seedOrb();
+    if (orbRaf === null && !reduceMotion) orbRaf = requestAnimationFrame(orbLoop);
+    if (reduceMotion) drawOrb(cvs, ctx, 0);
+  }
+  function orbLoop(t) {
+    for (var i = 0; i < orbCanvases.length; i++) {
+      var cvs = orbCanvases[i];
+      if (!cvs.isConnected || !cvs.offsetParent) continue;
+      var ctx = null;
+      try { ctx = cvs.getContext('2d'); } catch (e) { continue; }
+      drawOrb(cvs, ctx, t);
+    }
+    orbRaf = requestAnimationFrame(orbLoop);
+  }
+  function drawOrb(cvs, ctx, t) {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var w = cvs.clientWidth || 300, h = cvs.clientHeight || w;
+    if (cvs.width !== Math.round(w * dpr)) { cvs.width = Math.round(w * dpr); cvs.height = Math.round(h * dpr); }
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    var cx = w / 2, cy = h / 2, R = Math.min(w, h) / 2;
+    var pulse = 1 + (reduceMotion ? 0 : Math.sin(t / 900) * .012);
+    /* base texture: the generated orb art */
+    var img = orbImage();
+    ctx.save();
+    ctx.beginPath(); ctx.arc(cx, cy, R, 0, 6.2832); ctx.clip();
+    if (!photoMode && img && img.complete && img.naturalWidth) {
+      ctx.globalAlpha = .85;
+      try { ctx.drawImage(img, 0, 0, w, h); } catch (e) {}
+      ctx.globalAlpha = 1;
+    }
+    var photoMode = (state.face === 'real');
+    if (!photoMode) {
+      /* inner glow sphere (spatial / robot modes) */
+      var g = ctx.createRadialGradient(cx, cy - R * .18, R * .08, cx, cy, R * pulse);
+      g.addColorStop(0, 'rgba(160,96,255,.55)');
+      g.addColorStop(.55, 'rgba(84,42,196,.28)');
+      g.addColorStop(1, 'rgba(8,4,24,0)');
+      ctx.fillStyle = g;
+      ctx.beginPath(); ctx.arc(cx, cy, R * pulse, 0, 6.2832); ctx.fill();
+    }
+    /* drifting constellation inside the orb */
+    var i, j, p, q;
+    for (i = 0; i < orbPts.length; i++) {
+      p = orbPts[i];
+      p.x += p.vx * 16; p.y += p.vy * 16; p.p += .02;
+      var rr = Math.sqrt(p.x * p.x + p.y * p.y);
+      if (rr > .86) { p.vx *= -1; p.vy *= -1; p.x *= .86 / rr; p.y *= .86 / rr; }
+    }
+    for (i = 0; i < orbPts.length; i++) {
+      p = orbPts[i];
+      for (j = i + 1; j < orbPts.length; j++) {
+        q = orbPts[j];
+        var dx = p.x - q.x, dy = p.y - q.y, d = Math.sqrt(dx * dx + dy * dy);
+        if (d < .34) {
+          ctx.strokeStyle = 'rgba(168,85,247,' + ((1 - d / .34) * (photoMode ? .18 : .5)).toFixed(3) + ')';
+          ctx.lineWidth = .8;
+          ctx.beginPath();
+          ctx.moveTo(cx + p.x * R, cy + p.y * R);
+          ctx.lineTo(cx + q.x * R, cy + q.y * R);
+          ctx.stroke();
+        }
+      }
+    }
+    for (i = 0; i < orbPts.length; i++) {
+      p = orbPts[i];
+      var tw = .5 + .5 * Math.abs(Math.sin(p.p));
+      ctx.fillStyle = 'rgba(0,240,255,' + ((photoMode ? .22 : .5) + .5 * tw * (photoMode ? .35 : 1)).toFixed(3) + ')';
+      ctx.beginPath(); ctx.arc(cx + p.x * R, cy + p.y * R, p.s * .8, 0, 6.2832); ctx.fill();
+      ctx.fillStyle = 'rgba(0,240,255,' + ((photoMode ? .05 : .12) * tw).toFixed(3) + ')';
+      ctx.beginPath(); ctx.arc(cx + p.x * R, cy + p.y * R, p.s * 2.6, 0, 6.2832); ctx.fill();
+    }
+    /* rim light */
+    ctx.strokeStyle = 'rgba(0,240,255,.28)';
+    ctx.lineWidth = 1.4;
+    ctx.beginPath(); ctx.arc(cx, cy, R - 1.5, 0, 6.2832); ctx.stroke();
+    ctx.restore();
+  }
+
+  /* ---------- boot ---------- */
+  
+  function boot() {
+    build();
+    if (HAS_TTS) { try { speechSynthesis.getVoices(); } catch (e) {} }
+    window.addEventListener('pagehide', function () { if (HAS_TTS) speechSynthesis.cancel(); stopMouth(); });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+
+  window.AIMV_HUMANOID = {
+    open: open, close: close,
+    toggle: function () { state.open ? close() : open(); },
+    speak: function (t) { if (!state.open) open(); setCaption(t); speak(t); },
+    dockOpen: function () { return state.open; },
+    think: function () { setState('thinking'); setStatus('Thinking…'); setCaption('Thinking…'); },
+    say: say, listen: listen, stop: stopSpeaking,
+    face: function () { return state.face; }, setFace: setFace,
+    persona: function () { return state.persona; }, setPersona: setPersona,
+    voiceOn: function () { return state.voiceOn; },
+    setVoice: function (on) { state.voiceOn = !!on; lsSet(LS_VOICE, on ? '1' : '0'); syncControls(); },
+    state: function () { return state.st; },
+    brain: brain,
+    mountStage: mountStage, renderAds: renderAds, renderSugs: renderSugs,
+    reminders: reminders, tasks: tasks, sent: sentMsgs,
+    likes: function () { return lsJson(LS_LIKES, []); },
+    events: function () { return lsJson(LS_EVENTS, []); },
+    PERSONAS: PERSONAS
+  };
+})();
+
+</script>
+
+<script>
+
+        // Simple interaction for category tags
+        document.querySelectorAll('.mvc-embed .tag').forEach(tag => {
+            tag.addEventListener('click', function() {
+                // Remove active class from all
+                document.querySelectorAll('.mvc-embed .tag').forEach(t => t.style.background = '');
+                document.querySelectorAll('.mvc-embed .tag').forEach(t => t.style.borderColor = '');
+                
+                // Add active style to clicked
+                this.style.background = 'rgba(0, 212, 255, 0.2)';
+                this.style.borderColor = '#00d4ff';
+                
+                console.log(`Filtering by category: ${this.innerText}`);
+                // In production, this would filter the grid above
+            });
+        });
+
+        // Add hover sound effect logic or analytics here if needed
+        console.log('Metaverse Communities Section Loaded Successfully');
+    
+</script>
+</body>
+</html>

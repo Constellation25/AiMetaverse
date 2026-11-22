@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mars / Mars.Html — AiMetaverse Pack</title>
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --panel: #131a27;
+      --text: #e6edf7;
+      --muted: #9fb0c8;
+      --accent: #38bdf8;
+      --border: #253248;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .card {
+      width: 100%;
+      max-width: 680px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    }
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 999px;
+      padding: 4px 10px;
+      margin-bottom: 12px;
+    }
+    h1 { margin: 0 0 8px; font-size: 24px; }
+    p { margin: 0 0 14px; color: var(--muted); line-height: 1.5; }
+    code {
+      background: rgba(255, 255, 255, 0.06);
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: var(--text);
+      word-break: break-all;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    a.btn {
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    a.primary {
+      background: var(--accent);
+      color: #06101a;
+    }
+    a.secondary {
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .meta {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main class="card" data-c25-pack="404-recovery">
+    <span class="badge">AiMetaverse Route Pack</span>
+    <h1>Mars / Mars.Html</h1>
+    <p>This pack restores user-side navigation for <code>/AiMetaverse/mars/mars.html</code> and routes visitors to the canonical destination.</p>
+    <p>Recommended target: <code id="c25-target">/AiMetaverse/mars/index.html</code></p>
+    <div class="actions">
+      <a class="btn primary" id="c25-go" href="/AiMetaverse/mars/index.html">Open Destination</a>
+      <a class="btn secondary" href="/AiMetaverse/index.html">AiMetaverse Home</a>
+      <a class="btn secondary" href="javascript:history.back()">Go Back</a>
+    </div>
+    <div class="meta">
+      <div>Original URL: <code>https://constellation25.github.io/AiMetaverse/mars/mars.html</code></div>
+      <div>Referrer: <code>https://constellation25.github.io/AiMetaverse/mars/index.html</code></div>
+      <div id="c25-status">Ready</div>
+    </div>
+  </main>
+  <script>
+    (function () {
+      const target = "/AiMetaverse/mars/index.html";
+      const params = new URLSearchParams(window.location.search);
+      const statusEl = document.getElementById("c25-status");
+      const linkEl = document.getElementById("c25-go");
+      if (linkEl) linkEl.setAttribute("href", target + window.location.hash);
+      if (params.get("autoredirect") === "1") {
+        if (statusEl) statusEl.textContent = "Redirecting to " + target + "...";
+        window.location.replace(target + window.location.hash);
+      }
+    })();
+  </script>
+</body>
+</html>

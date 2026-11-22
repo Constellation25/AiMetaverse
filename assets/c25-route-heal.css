@@ -1,0 +1,57 @@
+/* C25 Route Healing & Recovery Styles */
+:root {
+  --c25-heal-bg: #0b1020;
+  --c25-heal-card: rgba(17, 24, 39, 0.88);
+  --c25-heal-border: rgba(125, 211, 252, 0.35);
+  --c25-heal-text: #e2e8f0;
+  --c25-heal-muted: #94a3b8;
+  --c25-heal-accent: #38bdf8;
+}
+
+.c25-route-notice {
+  margin: 16px auto;
+  max-width: 820px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: var(--c25-heal-card);
+  border: 1px solid var(--c25-heal-border);
+  color: var(--c25-heal-text);
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.c25-route-notice__badge {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(56, 189, 248, 0.18);
+  color: var(--c25-heal-accent);
+}
+
+.c25-route-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.c25-route-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+  background: rgba(56, 189, 248, 0.14);
+  color: var(--c25-heal-text);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+.c25-route-link:hover {
+  background: rgba(56, 189, 248, 0.26);
+}

@@ -17,7 +17,7 @@
 <main>
 <section class="page-hero">
   <div class="wrap">
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span class="current">My AI Agent</span></nav>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/AiMetaverse/agents/agent/index.html">Home</a><span class="sep">/</span><span class="current">My AI Agent</span></nav>
     <span class="eyebrow"><span class="dot"></span> Live persona</span>
     <h1>Your agent, <span class="grad-text">in the flesh</span></h1>
     <p class="prose" style="font-size:clamp(1rem,1.7vw,1.15rem)">This page reads your stored profile and runs the persona locally. For a shareable copy, use “Download standalone agent page” on the forge step — that file embeds everything and works offline.</p>
@@ -134,7 +134,7 @@
     h.innerHTML =
       '<canvas id="constellation" aria-hidden="true"></canvas>' +
       '<div class="wrap nav">' +
-        '<a class="brand" href="index.html" aria-label="Ai Metaverse home">' +
+        '<a class="brand" href="/AiMetaverse/agents/agent/index.html" aria-label="Ai Metaverse home">' +
           '<span class="mark"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
             '<circle cx="12" cy="12" r="8.2" stroke="#070312" stroke-width="2"/>' +
             '<circle cx="12" cy="12" r="3" fill="#070312"/>' +
@@ -198,7 +198,7 @@
       '<div class="wrap">' +
         '<div class="foot-grid">' +
           '<div class="foot-about">' +
-            '<a class="brand" href="index.html">' +
+            '<a class="brand" href="/AiMetaverse/agents/agent/index.html">' +
               '<span class="mark"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
                 '<circle cx="12" cy="12" r="8.2" stroke="#070312" stroke-width="2"/>' +
                 '<circle cx="12" cy="12" r="3" fill="#070312"/>' +
@@ -2453,7 +2453,7 @@ window.AIMV_FACES={real:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBD
     var kb = personaKnowledge(spec);
     return '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width,initial-scale=1">\n' +
       '<title>' + escapeHtml(spec.name) + ' · AI Agent · Ai Metaverse</title>\n<style>\n' + AGENT_CSS + '\n</style>\n</head>\n<body>\n' +
-      '<div class="bg"></div>\n<header><div class="w"><a class="bk" href="index.html">← Ai Metaverse</a>' +
+      '<div class="bg"></div>\n<header><div class="w"><a class="bk" href="/AiMetaverse/agents/agent/index.html">← Ai Metaverse</a>' +
       '<span class="id">' + spec.id + '</span></div></header>\n' +
       '<main class="w">\n' +
       '<section class="hero"><div class="por">' + img + '</div><div>' +

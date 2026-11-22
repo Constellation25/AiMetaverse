@@ -37,7 +37,7 @@
   <input id="ainput" maxlength="240" placeholder="Talk to your agent…" /><button class="btn btn-sm" type="submit">Send</button></form>
 </div>
 <div class="btn-row reveal" style="margin-top:22px">
-  <a class="btn" href="avatar-create/index.html">Edit my clone</a>
+  <a class="btn" href="/AiMetaverse/avatar-create/index.html">Edit my clone</a>
   <button class="btn btn-ghost" id="wipe-all" type="button">Delete everything</button>
 </div></div></section>
 </main>
@@ -194,7 +194,7 @@
     if ($('#site-strip')) return;
     var d = document.createElement('div');
     d.className = 'topstrip'; d.id = 'site-strip';
-    d.innerHTML = '<a href="avatar-create/index.html">★ Start your free trial — take a selfie, record your voice, build your AI agent ★</a>';
+    d.innerHTML = '<a href="/AiMetaverse/avatar-create/index.html">★ Start your free trial — take a selfie, record your voice, build your AI agent ★</a>';
     document.body.insertBefore(d, document.body.firstChild);
   }
 
@@ -2883,7 +2883,7 @@ document.addEventListener('DOMContentLoaded', function(){
   var P = window.AIMV_PROFILE ? window.AIMV_PROFILE.get() : null;
   function row(k,v){ return '<div><span class="k">'+k+'</span><span class="v">'+v+'</span></div>'; }
   if(!P || (!P.image && !P.persona && !P.agent)){
-    $('#dash-identity').innerHTML = '<h3>Identity</h3><p style="color:var(--muted)">No clone yet. <a href="avatar-create/index.html" style="color:var(--cyan)">Forge one in four steps →</a></p>';
+    $('#dash-identity').innerHTML = '<h3>Identity</h3><p style="color:var(--muted)">No clone yet. <a href="/AiMetaverse/avatar-create/index.html" style="color:var(--cyan)">Forge one in four steps →</a></p>';
     $('#dash-voice').innerHTML = '<h3>Voice profile</h3><p style="color:var(--dim)">—</p>';
     $('#dash-persona').innerHTML = '<h3>Personality vector</h3><p style="color:var(--dim)">—</p>';
     $('#dash-agent').innerHTML = '<h3>Forged agents</h3><p style="color:var(--dim)">—</p>';
