@@ -4466,272 +4466,272 @@
   "routes": [
     {
       "token": "rte_10f7cf5edc2c",
-      "broken_path": "/AiMetaverse/why-ai/avatar-create/index.html",
-      "target_path": "/AiMetaverse/avatar-create/index.html",
+      "broken_path": "../why-ai/avatar-create/index.html",
+      "target_path": "../avatar-create/index.html",
       "target_url": null
     },
     {
       "token": "rte_26db69b83d91",
-      "broken_path": "/AiMetaverse/enterprise/contact/index.html",
-      "target_path": "/AiMetaverse/contact/index.html",
+      "broken_path": "../enterprise/contact/index.html",
+      "target_path": "../contact/index.html",
       "target_url": null
     },
     {
       "token": "rte_ad6e8bb1ef18",
-      "broken_path": "/AiMetaverse/enterprise/avatar-create/index.html",
-      "target_path": "/AiMetaverse/avatar-create/index.html",
+      "broken_path": "../enterprise/avatar-create/index.html",
+      "target_path": "../avatar-create/index.html",
       "target_url": null
     },
     {
       "token": "rte_82173f6d25aa",
-      "broken_path": "/AiMetaverse/tools/labs/index.html",
-      "target_path": "/AiMetaverse/labs/index.html",
+      "broken_path": "../tools/labs/index.html",
+      "target_path": "../labs/index.html",
       "target_url": null
     },
     {
       "token": "rte_4af53e99ace3",
-      "broken_path": "/AiMetaverse/tools/enterprise/index.html",
-      "target_path": "/AiMetaverse/enterprise/index.html",
+      "broken_path": "../tools/enterprise/index.html",
+      "target_path": "../enterprise/index.html",
       "target_url": null
     },
     {
       "token": "rte_167ebee2b69f",
-      "broken_path": "/AiMetaverse/tools/education/index.html",
-      "target_path": "/AiMetaverse/education/index.html",
+      "broken_path": "../tools/education/index.html",
+      "target_path": "../education/index.html",
       "target_url": null
     },
     {
       "token": "rte_3b4121866e36",
-      "broken_path": "/AiMetaverse/labs/education/index.html",
-      "target_path": "/AiMetaverse/education/index.html",
+      "broken_path": "../labs/education/index.html",
+      "target_path": "../education/index.html",
       "target_url": null
     },
     {
       "token": "rte_3932038738ce",
-      "broken_path": "/AiMetaverse/labs/why-ai/index.html",
-      "target_path": "/AiMetaverse/why-ai/index.html",
+      "broken_path": "../labs/why-ai/index.html",
+      "target_path": "../why-ai/index.html",
       "target_url": null
     },
     {
       "token": "rte_96cb3bc8cd00",
-      "broken_path": "/AiMetaverse/labs/metabox/index.html",
-      "target_path": "/AiMetaverse/metabox/index.html",
+      "broken_path": "../labs/metabox/index.html",
+      "target_path": "../metabox/index.html",
       "target_url": null
     },
     {
       "token": "rte_c4930edb0c10",
-      "broken_path": "/AiMetaverse/education/labs/index.html",
-      "target_path": "/AiMetaverse/labs/index.html",
+      "broken_path": "../education/labs/index.html",
+      "target_path": "../labs/index.html",
       "target_url": null
     },
     {
       "token": "rte_18829f9db085",
-      "broken_path": "/AiMetaverse/education/developers/index.html",
-      "target_path": "/AiMetaverse/developers/index.html",
+      "broken_path": "../education/developers/index.html",
+      "target_path": "../developers/index.html",
       "target_url": null
     },
     {
       "token": "rte_339d5e018d7f",
-      "broken_path": "/AiMetaverse/education/signup/index.html",
-      "target_path": "/AiMetaverse/signup/index.html",
+      "broken_path": "../education/signup/index.html",
+      "target_path": "../signup/index.html",
       "target_url": null
     },
     {
       "token": "rte_091ffd0ed750",
-      "broken_path": "/AiMetaverse/education/avatar-create/index.html",
-      "target_path": "/AiMetaverse/avatar-create/index.html",
+      "broken_path": "../education/avatar-create/index.html",
+      "target_path": "../avatar-create/index.html",
       "target_url": null
     },
     {
       "token": "rte_a361f0341a2b",
-      "broken_path": "/AiMetaverse/worlds/metabox/index.html",
-      "target_path": "/AiMetaverse/metabox/index.html",
+      "broken_path": "../worlds/metabox/index.html",
+      "target_path": "../metabox/index.html",
       "target_url": null
     },
     {
       "token": "rte_37cff72f0578",
-      "broken_path": "/AiMetaverse/voice-lipsync/twin-studio/index.html",
-      "target_path": "/AiMetaverse/twin-studio/index.html",
+      "broken_path": "../voice-lipsync/twin-studio/index.html",
+      "target_path": "../twin-studio/index.html",
       "target_url": null
     },
     {
       "token": "rte_330462ee392f",
-      "broken_path": "/AiMetaverse/voice-lipsync/avatar-create/index.html",
-      "target_path": "/AiMetaverse/avatar-create/index.html",
+      "broken_path": "../voice-lipsync/avatar-create/index.html",
+      "target_path": "../avatar-create/index.html",
       "target_url": null
     },
     {
       "token": "rte_7ab984981b1a",
-      "broken_path": "/AiMetaverse/avatar-create/avatar-create.html",
-      "target_path": "/AiMetaverse/avatar-create/index.html",
+      "broken_path": "../avatar-create/avatar-create.html",
+      "target_path": "../avatar-create/index.html",
       "target_url": null
     },
     {
       "token": "rte_604b6aa6c5d1",
-      "broken_path": "/AiMetaverse/avatar-create/avatar/index.html",
-      "target_path": "/AiMetaverse/avatar/index.html",
+      "broken_path": "../avatar-create/avatar/index.html",
+      "target_path": "../avatar/index.html",
       "target_url": null
     },
     {
       "token": "rte_774b3b389adb",
-      "broken_path": "/AiMetaverse/avatar-create/metabox/index.html",
-      "target_path": "/AiMetaverse/metabox/index.html",
+      "broken_path": "../avatar-create/metabox/index.html",
+      "target_path": "../metabox/index.html",
       "target_url": null
     },
     {
       "token": "rte_7a4e163ff15a",
-      "broken_path": "/AiMetaverse/avatar-create/developers/index.html",
-      "target_path": "/AiMetaverse/developers/index.html",
+      "broken_path": "../avatar-create/developers/index.html",
+      "target_path": "../developers/index.html",
       "target_url": null
     },
     {
       "token": "rte_86d6b96e7418",
-      "broken_path": "/AiMetaverse/avatar-create/worlds/index.html",
-      "target_path": "/AiMetaverse/worlds/index.html",
+      "broken_path": "../avatar-create/worlds/index.html",
+      "target_path": "../worlds/index.html",
       "target_url": null
     },
     {
       "token": "rte_d712a18cf9f5",
-      "broken_path": "/AiMetaverse/avatar-create/enterprise/index.html",
-      "target_path": "/AiMetaverse/enterprise/index.html",
+      "broken_path": "../avatar-create/enterprise/index.html",
+      "target_path": "../enterprise/index.html",
       "target_url": null
     },
     {
       "token": "rte_5841ccefb7e3",
-      "broken_path": "/AiMetaverse/avatar-create/twin-studio/index.html",
-      "target_path": "/AiMetaverse/twin-studio/index.html",
+      "broken_path": "../avatar-create/twin-studio/index.html",
+      "target_path": "../twin-studio/index.html",
       "target_url": null
     },
     {
       "token": "rte_92d3dfa60532",
-      "broken_path": "/AiMetaverse/avatar-create/voice-lipsync/index.html",
-      "target_path": "/AiMetaverse/voice-lipsync/index.html",
+      "broken_path": "../avatar-create/voice-lipsync/index.html",
+      "target_path": "../voice-lipsync/index.html",
       "target_url": null
     },
     {
       "token": "rte_c83c2352a92f",
-      "broken_path": "/AiMetaverse/twin-studio/avatar-create/index.html",
-      "target_path": "/AiMetaverse/avatar-create/index.html",
+      "broken_path": "../twin-studio/avatar-create/index.html",
+      "target_path": "../avatar-create/index.html",
       "target_url": null
     },
     {
       "token": "rte_6a91c097381a",
-      "broken_path": "/AiMetaverse/prompter/avatar-create/index.html",
-      "target_path": "/AiMetaverse/avatar-create/index.html",
+      "broken_path": "../prompter/avatar-create/index.html",
+      "target_path": "../avatar-create/index.html",
       "target_url": null
     },
     {
       "token": "rte_666a1c7e4489",
-      "broken_path": "/AiMetaverse/ai-education/ai-education.html",
-      "target_path": "/AiMetaverse/ai-education/index.html",
+      "broken_path": "../ai-education/ai-education.html",
+      "target_path": "../ai-education/index.html",
       "target_url": null
     },
     {
       "token": "rte_f927cc5e8d31",
-      "broken_path": "/AiMetaverse/ai4reelz/ai4reelz.html",
-      "target_path": "/AiMetaverse/ai4reelz/index.html",
+      "broken_path": "../ai4reelz/ai4reelz.html",
+      "target_path": "../ai4reelz/index.html",
       "target_url": null
     },
     {
       "token": "rte_38a59600a258",
-      "broken_path": "/AiMetaverse/webstudio/webstudio.html",
-      "target_path": "/AiMetaverse/webstudio/index.html",
+      "broken_path": "../webstudio/webstudio.html",
+      "target_path": "../webstudio/index.html",
       "target_url": null
     },
     {
       "token": "rte_3e62c3bc23b0",
-      "broken_path": "/AiMetaverse/commz/commz.html",
-      "target_path": "/AiMetaverse/commz/index.html",
+      "broken_path": "../commz/commz.html",
+      "target_path": "../commz/index.html",
       "target_url": null
     },
     {
       "token": "rte_d22088f4b35a",
-      "broken_path": "/AiMetaverse/vstore/vstore.html",
-      "target_path": "/AiMetaverse/vstore/index.html",
+      "broken_path": "../vstore/vstore.html",
+      "target_path": "../vstore/index.html",
       "target_url": null
     },
     {
       "token": "rte_115ee11fb613",
-      "broken_path": "/AiMetaverse/bitbucks/bitbucks.html",
-      "target_path": "/AiMetaverse/bitbucks/index.html",
+      "broken_path": "../bitbucks/bitbucks.html",
+      "target_path": "../bitbucks/index.html",
       "target_url": null
     },
     {
       "token": "rte_4aa8cf80a854",
-      "broken_path": "/AiMetaverse/mars/mars.html",
-      "target_path": "/AiMetaverse/mars/index.html",
+      "broken_path": "../mars/mars.html",
+      "target_path": "../mars/index.html",
       "target_url": null
     },
     {
       "token": "rte_8f43bee8a637",
-      "broken_path": "/AiMetaverse/records/records.html",
-      "target_path": "/AiMetaverse/records/index.html",
+      "broken_path": "../records/records.html",
+      "target_path": "../records/index.html",
       "target_url": null
     },
     {
       "token": "rte_53c62f97dd6a",
-      "broken_path": "/AiMetaverse/avatar/avatar-create/index.html",
-      "target_path": "/AiMetaverse/avatar-create/index.html",
+      "broken_path": "../avatar/avatar-create/index.html",
+      "target_path": "../avatar-create/index.html",
       "target_url": null
     },
     {
       "token": "rte_7886aa88269b",
-      "broken_path": "/AiMetaverse/developers/education/index.html",
-      "target_path": "/AiMetaverse/education/index.html",
+      "broken_path": "../developers/education/index.html",
+      "target_path": "../education/index.html",
       "target_url": null
     },
     {
       "token": "rte_25197faad088",
-      "broken_path": "/AiMetaverse/developers/enterprise/index.html",
-      "target_path": "/AiMetaverse/enterprise/index.html",
+      "broken_path": "../developers/enterprise/index.html",
+      "target_path": "../enterprise/index.html",
       "target_url": null
     },
     {
       "token": "rte_0398c631a952",
-      "broken_path": "/AiMetaverse/developers/contact/index.html",
-      "target_path": "/AiMetaverse/contact/index.html",
+      "broken_path": "../developers/contact/index.html",
+      "target_path": "../contact/index.html",
       "target_url": null
     },
     {
       "token": "rte_c90a598955e8",
-      "broken_path": "/AiMetaverse/communities/worlds/index.html",
-      "target_path": "/AiMetaverse/worlds/index.html",
+      "broken_path": "../communities/worlds/index.html",
+      "target_path": "../worlds/index.html",
       "target_url": null
     },
     {
       "token": "rte_f2d6bcc28e37",
-      "broken_path": "/AiMetaverse/communities/avatar-create/index.html",
-      "target_path": "/AiMetaverse/avatar-create/index.html",
+      "broken_path": "../communities/avatar-create/index.html",
+      "target_path": "../avatar-create/index.html",
       "target_url": null
     },
     {
       "token": "rte_d323ecfff355",
-      "broken_path": "/AiMetaverse/signup/signin/index.html",
-      "target_path": "/AiMetaverse/signin/index.html",
+      "broken_path": "../signup/signin/index.html",
+      "target_path": "../signin/index.html",
       "target_url": null
     },
     {
       "token": "rte_e7d44629d9ca",
-      "broken_path": "/AiMetaverse/signin/signup/index.html",
-      "target_path": "/AiMetaverse/signup/index.html",
+      "broken_path": "../signin/signup/index.html",
+      "target_path": "../signup/index.html",
       "target_url": null
     },
     {
       "token": "rte_744cf46eb885",
-      "broken_path": "/AiMetaverse/signin/contact/index.html",
-      "target_path": "/AiMetaverse/contact/index.html",
+      "broken_path": "../signin/contact/index.html",
+      "target_path": "../contact/index.html",
       "target_url": null
     },
     {
       "token": "rte_1da82c406039",
-      "broken_path": "/AiMetaverse/privacy/news/index.html",
-      "target_path": "/AiMetaverse/news/index.html",
+      "broken_path": "../privacy/news/index.html",
+      "target_path": "../news/index.html",
       "target_url": null
     },
     {
       "token": "rte_061bd1520204",
-      "broken_path": "/AiMetaverse/privacy/contact/index.html",
-      "target_path": "/AiMetaverse/contact/index.html",
+      "broken_path": "../privacy/contact/index.html",
+      "target_path": "../contact/index.html",
       "target_url": null
     }
   ]

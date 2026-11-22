@@ -61,3 +61,54 @@
     healAnchors();
   }
 })();
+
+(() => {
+  const detectBasePrefix = () => {
+    if (typeof window === "undefined" || !window.location) return "";
+    const p = window.location.pathname || "/";
+    if (p === "/AiMetaverse" || p.startsWith("/AiMetaverse/")) return "/AiMetaverse";
+    return "";
+  };
+
+  const resolveRepoPath = (target) => {
+    if (!target || typeof target !== "string") return target;
+    if (/^(?:https?:\/\/|\/\/|data:|mailto:|javascript:|#)/i.test(target)) return target;
+    const prefix = detectBasePrefix();
+    if (target.startsWith("/AiMetaverse/")) {
+      return prefix ? target : target.slice("/AiMetaverse".length);
+    }
+    if (target.startsWith("/")) {
+      return prefix ? `${prefix}${target}` : target;
+    }
+    return target;
+  };
+
+  if (typeof window !== "undefined") {
+    window.C25PathResolver = { detectBasePrefix, resolveRepoPath };
+  }
+  if (typeof module !== "undefined" && module.exports) {
+    module.exports = { detectBasePrefix, resolveRepoPath };
+  }
+})();
+
+(() => {
+  const applyResolvedPaths = () => {
+    if (typeof document === "undefined" || !window.C25PathResolver) return;
+    const { resolveRepoPath } = window.C25PathResolver;
+    for (const el of document.querySelectorAll("[href],[src]")) {
+      const attr = el.hasAttribute("href") ? "href" : "src";
+      const val = el.getAttribute(attr);
+      const next = resolveRepoPath(val);
+      if (next && next !== val) {
+        el.setAttribute(attr, next);
+      }
+    }
+  };
+  if (typeof document !== "undefined") {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", applyResolvedPaths, { once: true });
+    } else {
+      applyResolvedPaths();
+    }
+  }
+})();

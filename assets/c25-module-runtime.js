@@ -2,6 +2,37 @@
   const MANIFEST_URL = "./data/module-runtime-manifest.json";
   const STATE_URL = "./data/system-state.json";
 
+  const HARNESS_SPECS = [
+    {
+      moduleId: "store_tailwindcdn",
+      scriptPath: "store/tailwindcdn.js",
+      targetPage: "index.html",
+      kind: "browser-bundle",
+      notes: "Tailwind CDN bundle loaded via <script> tag.",
+    },
+    {
+      moduleId: "tools_tpr",
+      scriptPath: "tools/tpr.js",
+      targetPage: "prompter/index.html",
+      kind: "jsdom-harness",
+      notes: "Loads prompter/index.html in JSDOM and tracks errors and copied state.",
+    },
+    {
+      moduleId: "tools_tvl",
+      scriptPath: "tools/tvl.js",
+      targetPage: "voice-lipsync/index.html",
+      kind: "jsdom-harness",
+      notes: "Loads voice-lipsync/index.html in JSDOM and tracks errors and downloads.",
+    },
+    {
+      moduleId: "tools_tvt",
+      scriptPath: "tools/tvt.js",
+      targetPage: "twin-studio/index.html",
+      kind: "jsdom-harness",
+      notes: "Loads twin-studio/index.html in JSDOM and tracks errors, spoke, and listened counts.",
+    },
+  ];
+
   class ModuleRuntime {
     constructor() {
       this.handlers = new Map();
@@ -47,23 +78,141 @@
       });
 
       this.register("system", "activity", async () => {
-        const sys = window.C25LiveSystem;
+        const sys = typeof window !== "undefined" ? window.C25LiveSystem : null;
         return {
           entries: sys ? sys.loadActivity() : [],
         };
       });
+
+      this.registerToolsetActions();
+      this.registerHarnessVerifiedStoreFunctions();
+    }
+
+    hasScriptInDom(relPath) {
+      if (typeof document === "undefined" || typeof document.querySelectorAll !== "function") {
+        return false;
+      }
+      const base = relPath.split("/").pop();
+      return Array.from(document.querySelectorAll("script[src]")).some((el) => {
+        const src = el.getAttribute("src") || "";
+        return src === relPath || src === `./${relPath}` || src.endsWith(`/${base}`);
+      });
+    }
+
+    async probeTargetPage(targetPage) {
+      if (typeof fetch !== "function") return { reachable: null, status: null };
+      try {
+        const res = await fetch(`./${targetPage}`, { cache: "no-cache" });
+        return { reachable: res.ok, status: res.status };
+      } catch (err) {
+        return { reachable: false, status: null, error: err && err.message ? err.message : String(err) };
+      }
+    }
+
+    runNodeHarness(scriptPath) {
+      if (typeof process === "undefined" || !process.versions || !process.versions.node) {
+        return null;
+      }
+      try {
+        const { execFileSync } = require("child_process");
+        const path = require("path");
+        const repoRoot = path.join(process.env.HOME || ".", "AiMetaverse");
+        const fullScript = path.join(repoRoot, scriptPath);
+        const stdout = execFileSync(process.execPath, [fullScript], {
+          cwd: repoRoot,
+          encoding: "utf8",
+          timeout: 15000,
+        });
+        return {
+          executed: true,
+          cwd: repoRoot,
+          stdout: stdout.trim(),
+        };
+      } catch (err) {
+        return {
+          executed: false,
+          error: err && err.message ? err.message : String(err),
+          stdout: err && err.stdout ? String(err.stdout).trim() : "",
+          stderr: err && err.stderr ? String(err.stderr).trim() : "",
+        };
+      }
+    }
+
+    registerToolsetActions() {
+      for (const spec of HARNESS_SPECS) {
+        this.register(spec.moduleId, "inspect", async () => {
+          const targetProbe = await this.probeTargetPage(spec.targetPage);
+          return {
+            moduleId: spec.moduleId,
+            scriptPath: spec.scriptPath,
+            targetPage: spec.targetPage,
+            kind: spec.kind,
+            loadedInDom: this.hasScriptInDom(spec.scriptPath),
+            targetPageProbe: targetProbe,
+            supportedActions: ["inspect", "checkTarget", "run"],
+            notes: spec.notes,
+          };
+        });
+
+        this.register(spec.moduleId, "checkTarget", async () => {
+          const targetProbe = await this.probeTargetPage(spec.targetPage);
+          return {
+            moduleId: spec.moduleId,
+            targetPage: spec.targetPage,
+            ...targetProbe,
+          };
+        });
+
+        this.register(spec.moduleId, "run", async (payload = {}) => {
+          const targetProbe = await this.probeTargetPage(spec.targetPage);
+          if (spec.kind === "jsdom-harness") {
+            const harness = this.runNodeHarness(spec.scriptPath);
+            return {
+              moduleId: spec.moduleId,
+              scriptPath: spec.scriptPath,
+              targetPage: spec.targetPage,
+              targetPageProbe: targetProbe,
+              harness,
+              payload,
+            };
+          }
+          return {
+            moduleId: spec.moduleId,
+            scriptPath: spec.scriptPath,
+            targetPage: spec.targetPage,
+            targetPageProbe: targetProbe,
+            loadedInDom: this.hasScriptInDom(spec.scriptPath),
+            payload,
+          };
+        });
+      }
+    }
+
+    registerHarnessVerifiedStoreFunctions() {
+      const verifiedStoreFunctions = {};
+      for (const [scriptPath, fns] of Object.entries(verifiedStoreFunctions)) {
+        const moduleId = scriptPath.replace(/\.(m?js|ts|jsx|tsx|html)$/i, "").replace(/[^A-Za-z0-9]+/g, "_").replace(/^_+|_+$/g, "").toLowerCase();
+        this.register(moduleId, "listVerifiedFunctions", async () => ({
+          moduleId,
+          scriptPath,
+          verifiedFunctions: fns,
+        }));
+      }
+        // No passing store AI functions found in report.
     }
 
     async bindDiscoveredModules() {
       const manRes = await this.call("system", "listModules", {}, { render: false });
       const list = (manRes.data && manRes.data.modules) || [];
       for (const mod of list) {
-        this.register(mod.id, "inspect", async () => ({
-          id: mod.id,
-          path: mod.path,
-          type: mod.type,
-          symbols: mod.symbols,
-        }));
+        if (!this.handlers.has(`${mod.id}:inspect`)) {
+          this.register(mod.id, "inspect", async () => ({
+            id: mod.id,
+            path: mod.path,
+            type: mod.type,
+            symbols: mod.symbols,
+          }));
+        }
       }
       return { boundModules: list.length };
     }
@@ -85,17 +234,19 @@
           durationMs: 0,
           timestamp: new Date().toISOString(),
         };
-        if (opts.targetSelector && window.C25LiveSystem) {
+        if (opts.targetSelector && typeof window !== "undefined" && window.C25LiveSystem) {
           window.C25LiveSystem.renderToEndUser(errEnvelope, opts.targetSelector);
         }
         return errEnvelope;
       }
 
-      if (window.C25LiveSystem && typeof window.C25LiveSystem.deliverCall === "function") {
-        return window.C25LiveSystem.deliverCall(moduleId, actionName, fn, payload, opts);
+      const liveSys = typeof window !== "undefined" ? window.C25LiveSystem : null;
+      if (liveSys && typeof liveSys.deliverCall === "function") {
+        return liveSys.deliverCall(moduleId, actionName, fn, payload, opts);
       }
 
-      const startedAt = performance.now();
+      const startedAt = typeof performance !== "undefined" && performance.now ? performance.now() : Date.now();
+      const nowMs = () => (typeof performance !== "undefined" && performance.now ? performance.now() : Date.now());
       try {
         const data = await fn(payload);
         return {
@@ -104,7 +255,7 @@
           action: actionName,
           data,
           error: null,
-          durationMs: Math.max(0, Math.round((performance.now() - startedAt) * 100) / 100),
+          durationMs: Math.max(0, Math.round((nowMs() - startedAt) * 100) / 100),
           timestamp: new Date().toISOString(),
         };
       } catch (err) {
@@ -114,7 +265,7 @@
           action: actionName,
           data: null,
           error: err && err.message ? err.message : String(err),
-          durationMs: Math.max(0, Math.round((performance.now() - startedAt) * 100) / 100),
+          durationMs: Math.max(0, Math.round((nowMs() - startedAt) * 100) / 100),
           timestamp: new Date().toISOString(),
         };
       }
@@ -122,5 +273,10 @@
   }
 
   const runtime = new ModuleRuntime();
-  window.C25ModuleRuntime = runtime;
+  if (typeof window !== "undefined") {
+    window.C25ModuleRuntime = runtime;
+  }
+  if (typeof module !== "undefined" && module.exports) {
+    module.exports = { ModuleRuntime, runtime };
+  }
 })();
