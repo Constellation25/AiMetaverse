@@ -1,0 +1,4716 @@
+{
+  "projects": [
+    {
+      "name": "AiMetaverse Hub",
+      "source_type": "repo",
+      "description": "Virtual world frontend and cosmic gallery hub",
+      "version": "1.0.0",
+      "author": "FacePrintPay",
+      "license": "MIT",
+      "tags": [
+        "metaverse",
+        "gallery",
+        "web"
+      ],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/AiMetaverse",
+      "stars": 12,
+      "forks": 0
+    },
+    {
+      "name": "C25 Agent Hub",
+      "source_type": "repo",
+      "description": "Autonomous planetary agent orchestration service",
+      "version": "1.0.0",
+      "author": "FacePrintPay",
+      "license": "MIT",
+      "tags": [
+        "agents",
+        "python",
+        "orchestration"
+      ],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/PlanetaryAgents",
+      "stars": 8,
+      "forks": 0
+    },
+    {
+      "name": "agentik",
+      "source_type": "repo",
+      "description": "Local-first AGI agent orchestration platform. Runs on your hardware. Data stays on-device.",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/agentik",
+      "stars": 2,
+      "forks": 0
+    },
+    {
+      "name": "aimeta",
+      "source_type": "repo",
+      "description": "The AI Metaverse Project is an ambitious initiative to create a virtual world powered by artificial intelligence. This immersive environment will enable users to interact with each other and with AI-powered entities in a realistic and engaging way. The project aims to revolutionize the way we interact with technology and with each other.",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/aimeta",
+      "stars": 1,
+      "forks": 0
+    },
+    {
+      "name": "AiMetaverse-Orgin",
+      "source_type": "repo",
+      "description": "They thought they could hide it. Google tried to bury the origin story — claiming they built the AI autonomy infrastructure. But the truth was forged in 2023, by one man, powered by purpose. The AiMetaverse deployment: a full-stack system of 25 Planetary Agents, Dockerized intelligence, NLP automation, ALL COVERED UP.",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/AiMetaverse-Orgin",
+      "stars": 1,
+      "forks": 0
+    },
+    {
+      "name": "build-agentic-software-w-coral-os-agents",
+      "source_type": "repo",
+      "description": "",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/build-agentic-software-w-coral-os-agents",
+      "stars": 1,
+      "forks": 0
+    },
+    {
+      "name": "c25-agent-api",
+      "source_type": "repo",
+      "description": "Built by https://www.blackbox.ai",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-agent-api",
+      "stars": 1,
+      "forks": 0
+    },
+    {
+      "name": "c25-agent-automation",
+      "source_type": "repo",
+      "description": "Built by https://www.blackbox.ai",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-agent-automation",
+      "stars": 1,
+      "forks": 0
+    },
+    {
+      "name": "c25-agent-core",
+      "source_type": "repo",
+      "description": "Built by https://www.blackbox.ai",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-agent-core",
+      "stars": 1,
+      "forks": 0
+    },
+    {
+      "name": "c25-agent-dashboard",
+      "source_type": "repo",
+      "description": "autonomous agents dashboard entry",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-agent-dashboard",
+      "stars": 1,
+      "forks": 0
+    },
+    {
+      "name": "c25-agent-deploy",
+      "source_type": "repo",
+      "description": "Built by https://www.blackbox.ai",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-agent-deploy",
+      "stars": 1,
+      "forks": 0
+    },
+    {
+      "name": "c25-agent-integrations",
+      "source_type": "repo",
+      "description": "Built by CyGel White",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-agent-integrations",
+      "stars": 1,
+      "forks": 0
+    },
+    {
+      "name": "c25-agent-pipeline",
+      "source_type": "repo",
+      "description": "Built by https://www.blackbox.ai",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-agent-pipeline",
+      "stars": 1,
+      "forks": 0
+    },
+    {
+      "name": "c25-find-videocourts",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-find-videocourts",
+      "stars": 1,
+      "forks": 0
+    },
+    {
+      "name": "constellation25.v1",
+      "source_type": "repo",
+      "description": "Sovereign AI — constellation25 | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/constellation25.v1",
+      "stars": 1,
+      "forks": 0
+    },
+    {
+      "name": "coral-server",
+      "source_type": "repo",
+      "description": "Open collaboration infrastructure that enables communication, coordination, trust and payments for The Internet of Agents.",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/coral-server",
+      "stars": 1,
+      "forks": 0
+    },
+    {
+      "name": "versed_ai",
+      "source_type": "repo",
+      "description": "The vision and overall objective Of Kre8Tive Konceptz ‘ ie, KRe8TiVE  is to create the world first ai-metaverse by learning and creating a complete repository of ai apis located on the entire internet linking all open source api codes together to create the the most sophisticated intelligent ai website in the world.",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/versed_ai",
+      "stars": 1,
+      "forks": 0
+    },
+    {
+      "name": ".agent-engine",
+      "source_type": "repo",
+      "description": "Sovereign AI",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/.agent-engine",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": ".c25",
+      "source_type": "repo",
+      "description": "Sovereign AI",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/.c25",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": ".c25_backend",
+      "source_type": "repo",
+      "description": "Sovereign AI",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/.c25_backend",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": ".c25_bridge",
+      "source_type": "repo",
+      "description": "Sovereign AI",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/.c25_bridge",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": ".c25_connector",
+      "source_type": "repo",
+      "description": "Sovereign AI",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/.c25_connector",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": ".c25_db",
+      "source_type": "repo",
+      "description": "Sovereign AI",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/.c25_db",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": ".c25_debug",
+      "source_type": "repo",
+      "description": "Sovereign AI",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/.c25_debug",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": ".c25_deploy_fix",
+      "source_type": "repo",
+      "description": "Sovereign AI",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/.c25_deploy_fix",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": ".c25_deps",
+      "source_type": "repo",
+      "description": "Sovereign AI",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/.c25_deps",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": ".c25_diag",
+      "source_type": "repo",
+      "description": "Sovereign AI",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/.c25_diag",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": ".c25_emergency_quarantine",
+      "source_type": "repo",
+      "description": "Sovereign AI",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/.c25_emergency_quarantine",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": ".c25_integrity",
+      "source_type": "repo",
+      "description": "Sovereign AI",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/.c25_integrity",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": ".c25_mcp",
+      "source_type": "repo",
+      "description": "Sovereign AI",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/.c25_mcp",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": ".c25_mesh",
+      "source_type": "repo",
+      "description": "Sovereign AI",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/.c25_mesh",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": ".c25_migrations",
+      "source_type": "repo",
+      "description": "Sovereign AI",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/.c25_migrations",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": ".c25_rss",
+      "source_type": "repo",
+      "description": "Sovereign AI",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/.c25_rss",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": ".c25_upgrade",
+      "source_type": "repo",
+      "description": "Sovereign AI",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/.c25_upgrade",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "agents",
+      "source_type": "repo",
+      "description": "Sovereign AI — agents | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/agents",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "ai-kre8tive-sovereign-genesis",
+      "source_type": "repo",
+      "description": "C25 Complete Build",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/ai-kre8tive-sovereign-genesis",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "aikre8tive",
+      "source_type": "repo",
+      "description": "This is the core deployment stack for FacePrintPay, a module of the larger AiKre8tive ecosystem — enabling secure, biometric-authenticated access to AI systems, avatars, documents, payments, and agents.",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/aikre8tive",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "aikre8tive-",
+      "source_type": "repo",
+      "description": "AiKre8tive is the Sovereign AI Metaverse stack by Cygel White (aka #MrGGTP). It powers Planetary Agents, BioAuth, LEGYC protocol, and WhisperSync forensic indexing. This repo includes Z-series exhibits, Termux scripts, PaTHos logic, and Nexus bundles for sovereign infrastructure and Total Recall archival.",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/aikre8tive-",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "aikre8tive-sovereign-genesis",
+      "source_type": "repo",
+      "description": "C25 Complete Build",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/aikre8tive-sovereign-genesis",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "aimetaverse",
+      "source_type": "repo",
+      "description": "",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/aimetaverse",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "aimetaverse-demo",
+      "source_type": "repo",
+      "description": "",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/aimetaverse-demo",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "apple",
+      "source_type": "repo",
+      "description": "Sovereign AI — apple | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/apple",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-1basher",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-1basher",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-agent-starter",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-agent-starter",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-agents",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-agents",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-arcai-copy-1",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-arcai-copy-1",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-arcai-copy-2",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-arcai-copy-2",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-arcai-copy-3",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-arcai-copy-3",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-arcai-copy-4",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-arcai-copy-4",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-arcai-deploy",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-arcai-deploy",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-arcai-original",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-arcai-original",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-arcai-original-oldest",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-arcai-original-oldest",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-archive-agentik",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-archive-agentik",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-backfill-artifacts-from-done",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-backfill-artifacts-from-done",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-bio-push",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-bio-push",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-bioauth",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-bioauth",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-blackbox-github-update",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-blackbox-github-update",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-broadcast-whisper-echo",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-broadcast-whisper-echo",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-build",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-build",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-build-bash",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-build-bash",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-build-broccoli",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-build-broccoli",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-build-fixer-agent",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-build-fixer-agent",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-build-memoria",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-build-memoria",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-build-precedence-dossier",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-build-precedence-dossier",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-buzzblast",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-buzzblast",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-c25-mirror-push",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-c25-mirror-push",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-c25-ranger",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-c25-ranger",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-check-status",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-check-status",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-check-todo",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-check-todo",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-cleanup-failed",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-cleanup-failed",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-consolidate-obsidian",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-consolidate-obsidian",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-constellation",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-constellation",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-constellation-25",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-constellation-25",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-constellation25",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-constellation25",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-constellation25-swarm",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-constellation25-swarm",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-create-home-symlinks",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-create-home-symlinks",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-dashboard",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-dashboard",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-demo-teaser",
+      "source_type": "repo",
+      "description": "",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-demo-teaser",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-deploy",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-deploy",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-deploy-agents",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-deploy-agents",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-deploy-all",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-deploy-all",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-deploy-linked2",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-deploy-linked2",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-deploy-log-dialog",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-deploy-log-dialog",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-deploy-sovereign",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-deploy-sovereign",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-deploy-to-github",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-deploy-to-github",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-deploy-universe",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-deploy-universe",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-deploy-v3-0",
+      "source_type": "repo",
+      "description": "",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-deploy-v3-0",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-direct-agent-activation",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-direct-agent-activation",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-do",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-do",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-final-sync",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-final-sync",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-find-and-run-everything",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-find-and-run-everything",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-fix-everything",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-fix-everything",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-forensic-scan-365d",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-forensic-scan-365d",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-fp-clean-forks",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-fp-clean-forks",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-fp-code-audit",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-fp-code-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-fp-consolidate",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-fp-consolidate",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-generate-qr-affiliate",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-generate-qr-affiliate",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-git-autocommit",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-git-autocommit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-graph-viewer",
+      "source_type": "repo",
+      "description": "Sovereign AI — C25_Graph_Viewer | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-graph-viewer",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-inject-versedna",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-inject-versedna",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-install",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-install",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-install-qrencode",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-install-qrencode",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-integrity-run",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-integrity-run",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-key-rotate",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-key-rotate",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-kre8tive-portfolio-build",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-kre8tive-portfolio-build",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-launch",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-launch",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-launch-agents",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-launch-agents",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-launch-presskit",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-launch-presskit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-launch-tunnel",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-launch-tunnel",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-link-github",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-link-github",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-live",
+      "source_type": "repo",
+      "description": "",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-live",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-mars-sharecrop",
+      "source_type": "repo",
+      "description": "VRWAP Spatial Metaverse",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-mars-sharecrop",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-meaningful-inventory",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-meaningful-inventory",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-meaningful-inventory-fixed",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-meaningful-inventory-fixed",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "C25-mono",
+      "source_type": "repo",
+      "description": "",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/C25-mono",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-package-portfolio",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-package-portfolio",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-parasol-termux",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-parasol-termux",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-ping-agents",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-ping-agents",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-planetary-crawl-inject-loop",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-planetary-crawl-inject-loop",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-pypi",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-pypi",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-quick-deploy",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-quick-deploy",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-reactivate-planetary-agents",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-reactivate-planetary-agents",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-rebuild-percellify",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-rebuild-percellify",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-recloak",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-recloak",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-run",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-run",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-run-all-apps",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-run-all-apps",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-run-all-home",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-run-all-home",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-run-all-tasks",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-run-all-tasks",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-run-monorepo",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-run-monorepo",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-run-stack",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-run-stack",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-secure-github-auth",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-secure-github-auth",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-send-echo-trace",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-send-echo-trace",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-setup",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-setup",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-setup-multi-repo",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-setup-multi-repo",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-setup-pingpang-demo",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-setup-pingpang-demo",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-setup-shizuku",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-setup-shizuku",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-setup-single-repo",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-setup-single-repo",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-setup-ssh",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-setup-ssh",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-setup-termux-obsidian-sync",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-setup-termux-obsidian-sync",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-setup-vscode",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-setup-vscode",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-sovereign-auto-start",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-sovereign-auto-start",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-sovereign-deployer",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-sovereign-deployer",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-sovereign-launch",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-sovereign-launch",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-sovereign-product",
+      "source_type": "repo",
+      "description": "",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-sovereign-product",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-sovereign-push-everywhere",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-sovereign-push-everywhere",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-sovereign-unified-launch",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-sovereign-unified-launch",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-sovereigngtp",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-sovereigngtp",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-start-stack",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-start-stack",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-sync-obsidian-cloud",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-sync-obsidian-cloud",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-sync-to-obsidian",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-sync-to-obsidian",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-tailwind-view",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-tailwind-view",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-test-agents",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-test-agents",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-test-project",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-test-project",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-throne",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-throne",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-totalrecall-audit",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-totalrecall-audit",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-vercel-deploy",
+      "source_type": "repo",
+      "description": "",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-vercel-deploy",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-vercel-secrets-sync",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-vercel-secrets-sync",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-whisper-auto-loop",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-whisper-auto-loop",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-whisper-holiday-bash",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-whisper-holiday-bash",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25-yesquid-task-worker",
+      "source_type": "repo",
+      "description": "C25 Confirmed Script",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25-yesquid-task-worker",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25_aios",
+      "source_type": "repo",
+      "description": "",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25_aios",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25_monorepo",
+      "source_type": "repo",
+      "description": "",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25_monorepo",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "c25_static_master",
+      "source_type": "repo",
+      "description": "",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/c25_static_master",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "camel-search-maths",
+      "source_type": "repo",
+      "description": "Sovereign AI — camel-search-maths | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/camel-search-maths",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "ci",
+      "source_type": "repo",
+      "description": "Sovereign AI — ci | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/ci",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "constellation-25",
+      "source_type": "repo",
+      "description": "25 specialize autonomous DevOps Orchestration",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/constellation-25",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "constellation25-adserver",
+      "source_type": "repo",
+      "description": "Sovereign AI — constellation25-adserver | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/constellation25-adserver",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "constellation25-mono",
+      "source_type": "repo",
+      "description": "Sovereign AI — constellation25-mono | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/constellation25-mono",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "constellation25-mvp",
+      "source_type": "repo",
+      "description": "",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/constellation25-mvp",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "constellation25-recon",
+      "source_type": "repo",
+      "description": "Sovereign AI — constellation25-recon | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/constellation25-recon",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "devcurity",
+      "source_type": "repo",
+      "description": "Proactive DevOps and IP defense grid designed specifically to track down enterprise data theft across Termux, GitHub, Vercel, and all major LLM training pipelines",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/devcurity",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "docs",
+      "source_type": "repo",
+      "description": "Sovereign AI — docs | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/docs",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "downloads",
+      "source_type": "repo",
+      "description": "Sovereign AI — downloads | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/downloads",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "examples",
+      "source_type": "repo",
+      "description": "Sovereign AI — examples | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/examples",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "gguf-split",
+      "source_type": "repo",
+      "description": "Sovereign AI — gguf-split | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/gguf-split",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "home",
+      "source_type": "repo",
+      "description": "C25 Complete Build",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/home",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "https-github-com-faceprintpay-portaled-",
+      "source_type": "repo",
+      "description": "C25 Complete Build",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/https-github-com-faceprintpay-portaled-",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "kre8tive-konceptz",
+      "source_type": "repo",
+      "description": "Sovereign AI — Kre8tive-Konceptz | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/kre8tive-konceptz",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "linked2-platform",
+      "source_type": "repo",
+      "description": "Sovereign AI — Linked2-platform | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/linked2-platform",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "linked2-platform-salvage-1779151043",
+      "source_type": "repo",
+      "description": "Sovereign AI — Linked2-platform_salvage_1779151043 | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/linked2-platform-salvage-1779151043",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "llama.cpp",
+      "source_type": "repo",
+      "description": "Sovereign AI — llama.cpp | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/llama.cpp",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "MarsFiat",
+      "source_type": "repo",
+      "description": "Spatialverse ☰0MF Connect Beta v0.1 — Early AccessWelcome to theSpatial MetaverseVRWAP combines virtual reality, spatial mapping, digital real estate, NASA-grade education, and AI guidance into one immersive platform. Own land on Mars, earn MarsFiat currency, and win a real trip to space.",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/MarsFiat",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "master",
+      "source_type": "repo",
+      "description": "C25 Complete Build",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/master",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "mtmd",
+      "source_type": "repo",
+      "description": "Sovereign AI — mtmd | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/mtmd",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "neptune-agent",
+      "source_type": "repo",
+      "description": "",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/neptune-agent",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "obsidian-vault-bare",
+      "source_type": "repo",
+      "description": "Sovereign AI — obsidian-vault-bare.git | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/obsidian-vault-bare",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "PlanetaryAgents",
+      "source_type": "repo",
+      "description": "",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/PlanetaryAgents",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "public",
+      "source_type": "repo",
+      "description": "Sovereign AI — public | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/public",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "quantize",
+      "source_type": "repo",
+      "description": "Sovereign AI — quantize | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/quantize",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "recon-agent",
+      "source_type": "repo",
+      "description": "",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/recon-agent",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "server",
+      "source_type": "repo",
+      "description": "Sovereign AI — server | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/server",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "sovereign",
+      "source_type": "repo",
+      "description": "Sovereign AI — sovereign | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/sovereign",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "src",
+      "source_type": "repo",
+      "description": "Sovereign AI — src | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/src",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "sycl",
+      "source_type": "repo",
+      "description": "Sovereign AI — sycl | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/sycl",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "tests",
+      "source_type": "repo",
+      "description": "Sovereign AI — tests | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/tests",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "versed-ai",
+      "source_type": "repo",
+      "description": "Sovereign AI — VeRseD_Ai | Constellation-25",
+      "version": "1.0.0",
+      "author": "Unknown",
+      "license": "Unspecified",
+      "tags": [],
+      "usage_examples": [],
+      "compatibility_information": {
+        "programming_languages": [
+          "Python",
+          "JavaScript"
+        ],
+        "frameworks": [],
+        "platforms": [
+          "Linux",
+          "Android / Termux"
+        ]
+      },
+      "github_url": "https://github.com/FacePrintPay/versed-ai",
+      "stars": 0,
+      "forks": 0
+    }
+  ]
+}

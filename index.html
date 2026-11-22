@@ -4,14 +4,14 @@
 <meta charset="UTF-8" />
 <base href="./" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ai Metaverse — Creative Intelligence, Virtual Worlds &amp; AI for All</title>
+<title>sovereign-architect | Constellation 25 v1.0 Production</title>
 <meta name="description" content="Ai Metaverse (VERSED'ai) — an AI-powered metaverse hub. Clone yourself virtually, create royalty-free AI art, explore 100s of metaverse environments, access VR platforms, free AI tools directory, AI education &amp; enterprise agent models." />
 <meta name="keywords" content="AI metaverse, virtual reality, augmented reality, AI tools, Craiyon, avatar creation, VERSED ai, AI enterprise, metaverse environments" />
 <meta name="theme-color" content="#070312" />
 <meta property="og:title" content="Ai Metaverse — Explore the New Worlds of the Metaverse" />
 <meta property="og:description" content="Clone yourself virtually with a selfie, a voice snippet &amp; your birthday. Free AI tools, AI-Labs, AI Education and enterprise agent models." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://aimetaverse.cloud/" />
+<meta property="og:url" content="https://sovereign-architect.cloud/" />
 <!-- Present only when this page is served by py/main.py (Eel injects its RPC bridge).
      A 404 here is expected and harmless when the file is opened standalone. -->
 <script defer src="/eel.js" onerror="window.__eelMissing=true"></script>
@@ -948,6 +948,24 @@ form.contact{border-radius:var(--r-lg);border:1px solid var(--stroke);background
 </head>
 <body>
 
+<div id="c25-sovereign-bar" style="background:#090d16;border-bottom:1px solid #1e293b;padding:10px 18px;font-family:system-ui,sans-serif;font-size:13px;color:#e2e8f0;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;position:relative;z-index:99999;">
+  <div>
+    <strong style="color:#38bdf8;">CONSTELLATION 25 v1.0</strong> &bull;
+    <span style="color:#34d399;font-family:monospace;">TIER_2_PYTHON_ENGINES</span> &bull;
+    <span style="font-family:monospace;">FacePrintPay/sovereign-architect</span>
+  </div>
+  <div style="display:flex;gap:14px;flex-wrap:wrap;">
+    <a href="https://github.comFacePrintPay/sovereign-architect" target="_blank" style="color:#38bdf8;text-decoration:none;">Repo Source</a>
+    <a href="https://github.io" target="_blank" style="color:#38bdf8;text-decoration:none;">Aimetaverse</a>
+    <a href="https://godaddysites.com" target="_blank" style="color:#34d399;text-decoration:none;">AGI KRE8TIVE Hub</a>
+  </div>
+</div>
+<div id="c25-node-context" style="max-width:960px;margin:16px auto;padding:14px 18px;background:rgba(15,23,42,0.92);border:1px solid #1e293b;border-radius:8px;font-family:system-ui,sans-serif;color:#cbd5e1;font-size:14px;position:relative;z-index:99998;">
+  <div style="font-size:12px;color:#94a3b8;font-family:monospace;margin-bottom:4px;">STACK: Python(14) | HTML(6) | JSON(1046) | MD(2003) | Shell(14) &bull; ECOSYSTEM: PaThos | Link2 | Total Recall | RepoDepo | VideoCourts | FacePrintPay | AGENTIK&trade;</div>
+  <div>Sovereign Architect AI-powered planning system for complex, multi-agent workflows. Architecture - **Planner**: Breaks down high-level goals into hierarchical step plans</div>
+</div>
+
+
 <div class="bg-fx" aria-hidden="true">
   <div class="grid"></div>
   <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
@@ -1787,7 +1805,7 @@ form.contact{border-radius:var(--r-lg);border:1px solid var(--stroke);background
         </div>
         <div class="info-row">
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v14H5.5L4 19.5z"/><path d="M8 9h8M8 13h5"/></svg></span>
-          <div><b>Email</b><a href="mailto:hello@aimetaverse.cloud">hello@aimetaverse.cloud</a></div>
+          <div><b>Email</b><a href="mailto:hello@sovereign-architect.cloud">hello@sovereign-architect.cloud</a></div>
         </div>
       </aside>
 
@@ -3522,6 +3540,115 @@ window.AIMV_FACES={real:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBD
   };
 })();
 
+</script>
+<script>
+function resolveHubUrl(relPath) {
+  if (!relPath || /^(https?:\/\/|data:|blob:)/i.test(relPath)) return relPath;
+  return new URL(relPath.replace(/^\/+/, ""), document.baseURI).href;
+}
+
+async function loadHubFeeds() {
+  const [feedRes, vercelRes] = await Promise.all([
+    fetch(resolveHubUrl("feed_database.json")),
+    fetch(resolveHubUrl("vercel_projects.json"))
+  ]);
+  if (!feedRes.ok) throw new Error("feed_database.json HTTP " + feedRes.status);
+  if (!vercelRes.ok) throw new Error("vercel_projects.json HTTP " + vercelRes.status);
+
+  const feedData = await feedRes.json();
+  const vercelData = await vercelRes.json();
+  return {
+    feedProjects: Array.isArray(feedData.projects) ? feedData.projects : [],
+    vercelProjects: Array.isArray(vercelData.projects) ? vercelData.projects : []
+  };
+}
+</script>
+<section id="hub-feeds-mount" data-hub-feeds="true" style="margin:1.5rem 0;">
+  <div id="vercel-projects-status"></div>
+  <div id="vercel-projects-grid"></div>
+  <div id="feed-projects-status"></div>
+  <div id="feed-projects-grid"></div>
+</section>
+<script>
+function renderHubCards(container, items, label) {
+  if (!container) return;
+  container.textContent = "";
+  const frag = document.createDocumentFragment();
+
+  items.forEach((proj) => {
+    const card = document.createElement("article");
+    card.className = "hub-project-card";
+
+    const title = document.createElement("h3");
+    title.textContent = proj && proj.name ? String(proj.name) : "Untitled Project";
+    card.appendChild(title);
+
+    if (proj && proj.description) {
+      const desc = document.createElement("p");
+      desc.textContent = String(proj.description);
+      card.appendChild(desc);
+    }
+
+    const meta = document.createElement("div");
+    meta.className = "hub-project-meta";
+    const stars = Number(proj && proj.stars ? proj.stars : 0);
+    const sourceType = proj && proj.source_type ? String(proj.source_type) : label;
+    meta.textContent = `${sourceType} | ★ ${stars}`;
+    card.appendChild(meta);
+
+    const linkUrl = (proj && (proj.github_url || proj.deploy_url)) || "";
+    if (linkUrl && /^https?:\/\//i.test(String(linkUrl))) {
+      const link = document.createElement("a");
+      link.href = String(linkUrl);
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "Open Repository";
+      card.appendChild(link);
+    }
+
+    frag.appendChild(card);
+  });
+
+  container.appendChild(frag);
+}
+
+async function renderHubFeedsUI() {
+  if (typeof loadHubFeeds !== "function") return;
+
+  const vercelGrid =
+    document.getElementById("vercel-projects-grid") ||
+    document.querySelector("[data-vercel-projects]");
+  const feedGrid =
+    document.getElementById("feed-projects-grid") ||
+    document.querySelector("[data-feed-projects]");
+  const vercelStatus = document.getElementById("vercel-projects-status");
+  const feedStatus = document.getElementById("feed-projects-status");
+
+  try {
+    const { feedProjects, vercelProjects } = await loadHubFeeds();
+
+    if (vercelStatus) {
+      vercelStatus.textContent = `Normalized Vercel / Hub Projects (${vercelProjects.length})`;
+    }
+    if (feedStatus) {
+      feedStatus.textContent = `Feed Database Projects (${feedProjects.length})`;
+    }
+
+    renderHubCards(vercelGrid, vercelProjects, "vercel");
+    renderHubCards(feedGrid, feedProjects, "feed");
+  } catch (err) {
+    const msg = err && err.message ? err.message : String(err);
+    if (vercelStatus) vercelStatus.textContent = `Feed load error: ${msg}`;
+    if (feedStatus) feedStatus.textContent = `Feed load error: ${msg}`;
+    console.error("renderHubFeedsUI failed:", err);
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", renderHubFeedsUI, { once: true });
+} else {
+  renderHubFeedsUI();
+}
 </script>
 </body>
 </html>
